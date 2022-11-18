@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  position: relative;
+  width: 100vw;
+  height: 20vh;
+  background-color: black;
+}
+header div.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-image: url(../images/logo_bez_bg100.png);
+  -webkit-animation: logoAnimate 2s steps(10) infinite;
+          animation: logoAnimate 2s steps(10) infinite;
+}
+header div.burger {
+  position: absolute;
+  width: 20%;
+  height: 60%;
+  top: 0;
+  right: 0;
+  background-color: green;
+}
+
+@-webkit-keyframes logoAnimate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+@keyframes logoAnimate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}/*# sourceMappingURL=style.css.map */
