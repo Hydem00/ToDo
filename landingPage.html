@@ -16,15 +16,24 @@
 <body>
     <header>
         <div class="logo"></div>
+        <nav class="desktop">
+            <ul>
+                <li><a href="">About us</a></li>
+                <li><a href="">Offer</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="register.php">Sign in</a></li>
+                <li><a href="login.php">Sign up</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
+    <nav class="mobile">
         <h1>Menu</h1>
         <ul>
-            <li><a href="">O nas</a></li>
-            <li><a href="">Funkcjonalność</a></li>
-            <li><a href="">Kontakt</a></li>
-            <li><a href="register.php">Rejestracja</a></li>
-            <li><a href="login.php">Logowanie</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="#main">Offer</a></li>
+            <li><a href="#footer">Contact</a></li>
+            <li><a href="register.php">Sign in</a></li>
+            <li><a href="login.php">Sign up</a></li>
         </ul>
         <div class="burger">
             <i class="fa-solid fa-arrow-up"></i>
@@ -32,10 +41,11 @@
     </nav>
 
 
-    <main>
+
+    <main id="main">
 
     </main>
-    <footer>
+    <footer id="footer">
 
     </footer>
     <script src="main.js"></script>

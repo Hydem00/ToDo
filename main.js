@@ -1,5 +1,5 @@
-const navBurger = document.querySelector('div.burger');
-const nav = document.querySelector('nav');
+const navBurger = document.querySelector('nav.mobile div.burger');
+const nav = document.querySelector('nav.mobile');
 
 const navRollOut = () => {
     navBurger.classList.toggle('active');
