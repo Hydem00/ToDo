@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 10px;
+  font-family: roboto, sans-serif;
+}
+
+section.register {
+  position: relative;
+  width: 60vw;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+section.register fieldset.form {
+  margin-top: 75px;
+  background-color: black;
+}
+section.register fieldset.form div.logo {
+  width: 150px;
+  height: 150px;
+  background-image: url("../../images/logo_bez_bg150.png");
+  -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
+          animation: logoAnimate100 2.5s steps(9) forwards;
+}
+section.register fieldset.form h1 {
+  width: 100%;
+  padding: 20px;
+  margin-top: 2%;
+  font-size: 2rem;
+  background-color: rgba(45, 43, 43, 0.5019607843);
+  color: white;
+}
+section.register fieldset.form form {
+  margin: 5% 0 5% 0;
+}
+section.register fieldset.form form input {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+}
+section.register fieldset.form form input:last-child {
+  width: 10%;
+  padding: 20px;
+  margin-top: 3%;
+}
+section.register fieldset.form form input[placeholder] {
+  font-size: 1rem;
+}
+
+@-webkit-keyframes logoAnimate100 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes logoAnimate100 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}/*# sourceMappingURL=logging.css.map */
