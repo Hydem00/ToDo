@@ -1,3 +1,21 @@
+<?php
+
+require '../vendor/autoload.php';
+require '../config.php';
+
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
+
+if(!empty($_POST["activateCode"])){
+    $res = $auth->activate($_POST["activateCode"]);
+    $message = $res["message"];
+}else{
+    $message = "";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +36,8 @@
                 <div class="logo"></div>
             </legend>
             <h1>Registration</h1>
-            <form action="">
-                <p></p>
+            <form method="POST" action="">
+                <p><?php echo $message; ?></p>
                 <input type="text" name="activateCode" id="activateCode" placeholder="activateCode">
                 <input type="submit" name="submit" id="submit" value="Sign in">
             </form>
