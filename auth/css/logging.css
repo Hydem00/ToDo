@@ -6,21 +6,23 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-size: 10px;
   font-family: roboto, sans-serif;
 }
 
 section.register {
   position: relative;
-  width: 60vw;
+  width: 60%;
   height: 100%;
   margin: 0 auto;
   text-align: center;
+  overflow-y: hidden;
 }
 section.register fieldset.form {
   margin-top: 75px;
   background-color: black;
+  border-radius: 10%;
 }
 section.register fieldset.form div.logo {
   width: 150px;
@@ -40,11 +42,18 @@ section.register fieldset.form h1 {
 section.register fieldset.form form {
   margin: 5% 0 5% 0;
 }
+section.register fieldset.form form p {
+  color: white;
+  height: 30px;
+  font-size: 1rem;
+  line-height: 0px;
+}
 section.register fieldset.form form input {
   display: block;
   margin: 0 auto;
   width: 50%;
   padding: 20px;
+  border-radius: 10px;
 }
 section.register fieldset.form form input:last-child {
   width: 10%;
