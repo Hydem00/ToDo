@@ -1,3 +1,19 @@
+<?php
+
+require '../vendor/autoload.php';
+require '../config.php';
+
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
+
+
+if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["cpassword"])){
+    $response = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(),"", true);
+    //var_dump($response);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +34,7 @@
                 <div class="logo"></div>
             </legend>
             <h1>Registration</h1>
-            <form action="">
+            <form method="POST" action="">
                 <input type="email" name="email" id="email" placeholder="Email">
                 <input type="password" name="password" id="password" placeholder="Password">
                 <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
