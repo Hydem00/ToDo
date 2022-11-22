@@ -46,7 +46,7 @@ if(isset($_POST["submit"])){
             </legend>
             <h1>Registration</h1>
             <form method="POST" action="">
-                <p><?php echo $message . $reponse["message"]; ?></p>
+                <p><?php echo $message; ?></p>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <input type="password" name="password" id="password" placeholder="Password">
                 <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
