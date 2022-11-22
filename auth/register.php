@@ -6,23 +6,23 @@ require '../config.php';
 $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
 
-
-if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if (preg_match("#.*^(?=.{10,100})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
-            //$message = "Your password is strong.";
-            $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
-            $message = $res["message"];
-        } else {
-            $message = "Your password is not safe. (At least 10 characters, must include: uppercase, lowercase, numeric, or special characters)";
+if(isset($_POST["submit"])){
+    if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
+        if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            if (preg_match("#.*^(?=.{10,100})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
+                //$message = "Your password is strong.";
+                $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
+                $message = $res["message"];
+            } else {
+                $message = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.";
+            }
+        }else {
+            $message = "Provided e-mail is invalid.";
         }
-    }else {
-        $message = "Your e-mail is inavalid.";
+    }else{
+        $message = "Some fields are empty!";
     }
-}else{
-    $message = "";
 }
-
 ?>
 
 <!DOCTYPE html>
