@@ -8,7 +8,7 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 
 
 if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
-    if (preg_match("#.*^(?=.{10,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)){
+    if (preg_match("#.*^(?=.{10,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
         //$message = "Your password is strong.";
         $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
         $message = $res["message"];
