@@ -1,18 +1,18 @@
 <?php
 
-require '../vendor/autoload.php';
-require '../config.php';
+// require '../vendor/autoload.php';
+// require '../config.php';
 
-$config = new \PHPAuth\Config($dbh);
-$auth   = new \PHPAuth\Auth($dbh, $config);
+// $config = new \PHPAuth\Config($dbh);
+// $auth   = new \PHPAuth\Auth($dbh, $config);
 
 
-if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
-    $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
-    $message = $res["message"];
-}else{
-    $message = "";
-}
+// if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
+//     $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
+//     $message = $res["message"];
+// }else{
+//     $message = "";
+// }
 
 ?>
 
@@ -42,9 +42,9 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpass
             <h1>Registration</h1>
             <form method="POST" action="">
                 <p><?php echo $message; ?></p>
-                <input type="email" name="email" id="email" placeholder="Email">
-                <input type="password" name="password" id="password" placeholder="Password">
-                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
                 <input type="submit" name="submit" id="submit" value="Sign in">
             </form>
         </fieldset>

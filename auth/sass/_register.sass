@@ -1,14 +1,15 @@
 section.register
     position: relative
-    width: 60%
+    width: 30%
     height: 100%
     margin: 0 auto
     text-align: center
-    overflow-y: hidden
+    // overflow-y: hidden
     fieldset.form
         position: relative
         margin-top: calc(150px/2)
         background-color: black
+        border: 10px solid greenYellow
         border-radius: 10%
         div.goBackBtn
             position: absolute
@@ -34,6 +35,7 @@ section.register
             font-size: 2rem
             background-color: #2d2b2b80
             color: white 
+
         form
             margin: 5% 0 5% 0
             p
@@ -45,7 +47,7 @@ section.register
                 width: 50%
                 padding: 20px
                 border-radius: 10px
-                &:focus:hover
+                &:focus
                     outline: none
                     // box-shadow: none
                     border: 2px solid greenYellow

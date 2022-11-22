@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -9,22 +10,22 @@ body {
   font-size: 10px;
   font-family: roboto, sans-serif;
   background-image: url("../../images/polygon.png");
-  -webkit-animation: bgcMove 20s alternate linear infinite;
-          animation: bgcMove 20s alternate linear infinite;
+  -webkit-animation: bgcMove 60s alternate linear infinite;
+          animation: bgcMove 60s alternate linear infinite;
 }
 
 section.register {
   position: relative;
-  width: 60%;
+  width: 30%;
   height: 100%;
   margin: 0 auto;
   text-align: center;
-  overflow-y: hidden;
 }
 section.register fieldset.form {
   position: relative;
   margin-top: 75px;
   background-color: black;
+  border: 10px solid greenYellow;
   border-radius: 10%;
 }
 section.register fieldset.form div.goBackBtn {
@@ -36,7 +37,8 @@ section.register fieldset.form div.goBackBtn {
 section.register fieldset.form div.goBackBtn i {
   font-size: 2rem;
   color: white;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 section.register fieldset.form div.logo {
   width: 150px;
@@ -71,7 +73,7 @@ section.register fieldset.form form input {
   padding: 20px;
   border-radius: 10px;
 }
-section.register fieldset.form form input:focus:hover {
+section.register fieldset.form form input:focus {
   outline: none;
   border: 2px solid greenYellow;
 }
