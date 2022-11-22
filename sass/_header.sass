@@ -6,6 +6,7 @@ header
     height: 25vh
     background-color: black
     z-index: 1
+    overflow: hidden
     div.logo
         position: absolute
         width: 100px
@@ -76,23 +77,6 @@ nav.desktop
     display: none
 
 @media (min-width: 360px) and (orientation: portrait)
-    header
-        div.logo
-            width: 150px
-            height: 150px
-            background-image: url("../images/logo_bez_bg150.png")
-    nav.mobile
-        h1
-            font-size: 2rem
-        ul
-            li
-                a
-                    font-size: 1.4rem
-        div.burger
-            i
-                font-size: 2rem
-
-@media (min-width: 375px) and (orientation: portrait)
     header
         div.logo
             width: 150px
