@@ -1,18 +1,18 @@
 <?php
 
-require '../vendor/autoload.php';
-require '../config.php';
+// require '../vendor/autoload.php';
+// require '../config.php';
 
-$config = new \PHPAuth\Config($dbh);
-$auth   = new \PHPAuth\Auth($dbh, $config);
+// $config = new \PHPAuth\Config($dbh);
+// $auth   = new \PHPAuth\Auth($dbh, $config);
 
 
-if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
-    $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
-    $message = $res["message"];
-}else{
-    $message = "";
-}
+// if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
+//     $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
+//     $message = $res["message"];
+// }else{
+//     $message = "";
+// }
 
 ?>
 
@@ -26,6 +26,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpass
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff5fd0c0f4.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../images/Logo16.png">
     <link rel="stylesheet" href="css/logging.css">
 </head>
@@ -33,8 +34,11 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpass
     <section class="register">      
         <fieldset class="form">
             <legend>
-                <div class="logo"></div>
+            <a href="../index.html"><div class="logo"></div></a>
             </legend>
+            <div class="goBackBtn">
+                <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
             <h1>Registration</h1>
             <form method="POST" action="">
                 <p><?php echo $message . $reponse["message"]; ?></p>

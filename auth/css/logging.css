@@ -1,14 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
   font-size: 10px;
   font-family: roboto, sans-serif;
+  background-image: url("../../images/polygon.png");
+  -webkit-animation: bgcMove 20s alternate linear infinite;
+          animation: bgcMove 20s alternate linear infinite;
 }
 
 section.register {
@@ -20,9 +22,21 @@ section.register {
   overflow-y: hidden;
 }
 section.register fieldset.form {
+  position: relative;
   margin-top: 75px;
   background-color: black;
   border-radius: 10%;
+}
+section.register fieldset.form div.goBackBtn {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  border-radius: 25%;
+}
+section.register fieldset.form div.goBackBtn i {
+  font-size: 2rem;
+  color: white;
+  transform: rotate(-90deg);
 }
 section.register fieldset.form div.logo {
   width: 150px;
@@ -30,6 +44,10 @@ section.register fieldset.form div.logo {
   background-image: url("../../images/logo_bez_bg150.png");
   -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
           animation: logoAnimate100 2.5s steps(9) forwards;
+  cursor: pointer;
+}
+section.register fieldset.form div.logo:hover {
+  background-image: url("../../images/logo_hover150.png");
 }
 section.register fieldset.form h1 {
   width: 100%;
@@ -44,9 +62,7 @@ section.register fieldset.form form {
 }
 section.register fieldset.form form p {
   color: white;
-  height: 30px;
   font-size: 1rem;
-  line-height: 0px;
 }
 section.register fieldset.form form input {
   display: block;
@@ -54,6 +70,10 @@ section.register fieldset.form form input {
   width: 50%;
   padding: 20px;
   border-radius: 10px;
+}
+section.register fieldset.form form input:focus:hover {
+  outline: none;
+  border: 2px solid greenYellow;
 }
 section.register fieldset.form form input:last-child {
   width: 10%;
@@ -79,5 +99,21 @@ section.register fieldset.form form input[placeholder] {
   }
   100% {
     background-position: 100% 0;
+  }
+}
+@-webkit-keyframes bgcMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes bgcMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
   }
 }/*# sourceMappingURL=logging.css.map */

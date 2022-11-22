@@ -6,37 +6,55 @@ section.register
     text-align: center
     overflow-y: hidden
     fieldset.form
+        position: relative
         margin-top: calc(150px/2)
         background-color: black
         border-radius: 10%
+        div.goBackBtn
+            position: absolute
+            top: -10%
+            left: 10%
+            border-radius: 25%
+            i
+                font-size: 2rem
+                color: white
+                transform: rotate(-90deg)
         div.logo
             width: 150px
             height: 150px
             background-image: url("../../images/logo_bez_bg150.png")
             animation: logoAnimate100 2.5s steps(9) forwards
+            cursor: pointer
+            &:hover
+                background-image: url("../../images/logo_hover150.png")
         h1
             width: 100%
             padding: 20px
             margin-top: 2%
             font-size: 2rem
             background-color: #2d2b2b80
-            color: white
+            color: white 
         form
             margin: 5% 0 5% 0
             p
                 color: white
-                height: 30px
                 font-size: 1rem
-                line-height: 0px
             input
                 display: block
                 margin: 0 auto
                 width: 50%
                 padding: 20px
                 border-radius: 10px
-            input:last-child
-                width: 10%
-                padding: 20px
-                margin-top: 3%
-            input[placeholder]
-                font-size: 1rem
+                &:focus:hover
+                    outline: none
+                    // box-shadow: none
+                    border: 2px solid greenYellow
+                &:last-child
+                    width: 10%
+                    padding: 20px
+                    margin-top: 3%
+                &[placeholder]
+                    font-size: 1rem
+        
+
+    
