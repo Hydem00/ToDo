@@ -1,0 +1,116 @@
+footer
+  background-color: black
+  color: white
+
+  div
+    &.socials
+      text-transform: uppercase
+
+      p
+        &.contact
+          font-size: 1.3rem
+          text-align: center
+          padding: 20px 0
+
+        &.social
+          text-align: left
+          font-size: 1rem
+          width: 65%
+          margin: 0 auto 15px auto
+
+          i
+            font-size: 1.3rem
+            padding-right: 10px
+            color: #179CF0
+            vertical-align: -4px
+
+    &.map, &.socials, &.copy
+      width: 95%
+      margin: 0 auto 35px auto
+      border-top: 1px solid gray
+
+    &.map
+      overflow: hidden
+      p
+        text-align: center
+        font-size: 1.3rem
+        padding: 20px 0
+        text-transform: uppercase
+
+      iframe
+        display: block
+        margin: 10px auto
+
+    &.copy p
+      text-align: center
+      font-size: 1rem
+      padding: 10px
+      text-transform: uppercase
+
+@media (min-width: 667px) and (orientation: landscape)
+  footer
+    display: flex
+    flex-wrap: wrap
+
+    div
+      &.socials, &.map
+        flex-basis: 47%
+
+      &.socials p.social
+        margin: 15px auto
+        width: 70%
+
+@media (min-width: 896px) and (orientation: landscape)
+  footer div.socials p.social
+    width: 60%
+
+@media (min-width: 915px) and (orientation: landscape)
+  footer div
+    &.socials p.social, &.copy p
+      font-size: 1.3rem
+
+    &.socials p.contact, &.map p
+      font-size: 1.6rem
+
+@media (min-width: 768px)
+  footer div
+    &.socials p.social, &.copy p
+      font-size: 1.6rem
+
+    &.socials p
+      &.social
+        width: 50%
+        margin: 0 auto 15px auto
+
+      &.contact
+        font-size: 1.9rem
+
+    &.map
+      p
+        font-size: 1.9rem
+
+      iframe
+        height: 300px
+        width: 400px
+
+    &.socials p.social i
+      font-size: 2.1rem
+
+@media (min-width: 918px)
+  footer div
+    &.map iframe
+      height: 250px
+      width: 350px
+
+    &.socials p.social
+      width: 80%
+      margin: 0 auto 15px auto
+
+@media (min-width: 1024px)
+  footer
+    padding-top: 100px
+
+    div.socials p.social
+      width: 60%
+      margin: 0 auto 15px auto
+      font-size: 1.4rem
