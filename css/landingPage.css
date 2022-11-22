@@ -94,6 +94,7 @@ nav.mobile div.burger {
   right: 5%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  cursor: pointer;
 }
 nav.mobile div.burger i {
   display: block;
