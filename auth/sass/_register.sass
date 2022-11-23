@@ -13,21 +13,21 @@ section.register
         border-radius: 20px
         div.goBackBtn
             position: absolute
-            top: -14%
+            top: -8%
             left: 10%
             border-radius: 25%
             i
                 font-size: 1.5rem
                 color: white
                 transform: rotate(-90deg)
-        div.logo
-            width: 100px
-            height: 100px
-            background-image: url("../../images/logo_bez_bg100.png")
-            animation: logoAnimate100 2.5s steps(9) forwards
-            // cursor: pointer
-            // &:hover
-            //     background-image: url("../../images/logo_hover150.png")
+        legend
+            margin: 0 auto 
+            a
+                div.logo
+                    width: 100px
+                    height: 100px
+                    background-image: url("../../images/logo_bez_bg100.png")
+                    animation: logoAnimate100 2.5s steps(9) forwards
         h1
             width: 100%
             padding: 20px
@@ -37,26 +37,29 @@ section.register
             color: white 
         form
             margin: 5% 0 5% 0
-            p
-                display: block
-                text-align: justify
-                padding: 0 10px 5px 10px
-                color: white
-                font-size: .7rem
+            div.informationText
+                width: 80vw
+                word-wrap: break-word
+                margin: 0 auto
+                p
+                    display: block
+                    text-align: justify
+                    padding: 0 10% 5px 10%
+                    color: white
+                    font-size: .7rem
             input
                 display: block
                 width: 80%
                 margin: 0 auto
                 padding: 5px 0
                 border-radius: 10px
+                font-size: 1rem
                 &:focus
                     outline: none
                     border: 2px solid greenYellow
                 &:last-child
                     display: inline-block
                     margin-top: 5%
-                &[placeholder]
-                    font-size: 1rem
                 &[type="submit"]
                     width: auto
                     border-radius: 10px
@@ -66,30 +69,159 @@ section.register
                     box-shadow: 0 0 0 2px black, 0 0 0 4px white
 
 @media (min-width: 360px) and (orientation: portrait)
-
+    section.register
+        fieldset.form
+            h1
+                font-size: 2rem
+            form
+                div.informationText
+                    p
+                        font-size: .9rem
+                input
+                    font-size: 1.1rem  
+                    &[type="submit"]
+                        font-size: 1.1rem
 
 @media (min-width: 390px) and (orientation: portrait)
     section.register
         fieldset.form
             div.goBackBtn
-                top: -12%
-                left: 10%
-            div.logo
-                width: 150px
-                height: 150px
-                background-image: url("../../images/logo_bez_bg150.png")
+                top: -8%
+                left: 8%
+                i
+                    font-size: 1.6rem
+            legend
+                a
+                    div.logo
+                        width: 150px
+                        height: 150px
+                        background-image: url("../../images/logo_bez_bg150.png")
+                        cursor: pointer
+                        &:hover
+                            background-image: url("../../images/logo_hover150.png")
             h1
-                padding: 20px
+                padding: 30px
                 margin-top: 2%
                 font-size: 2rem
                 background-color: #2d2b2b80
                 color: white 
             form
-                p
-                    font-size: .8rem
+                div.informationText
+                    p
+                        font-size: .9rem
                 input
                     padding: 10px
-                    &[placeholder]
-                        font-size: 1.2rem
                     &[type="submit"]
                         font-size: 1.1rem
+
+@media (min-width: 660px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goBackBtn
+                top: -8%
+                left: 8%
+                i
+                    font-size: 2.3rem
+            h1
+                font-size: 2.5rem
+            form
+                div.informationText
+                    p
+                        font-size: 1rem
+                input
+                    padding: 10px
+                    font-size: 1.2rem
+                    &[type="submit"]
+                        font-size: 1.2rem
+
+@media (min-width: 800px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goBackBtn
+                top: -8%
+                left: 8%
+                i
+                    font-size: 2.3rem
+            h1
+                font-size: 2.5rem
+            form
+                div.informationText
+                    width: 50vw
+                    p
+                        font-size: 1rem
+                input
+                    padding: 10px
+                    font-size: 1.2rem
+                    &[type="submit"]
+                        font-size: 1.2rem
+
+@media (min-width: 533px) and (orientation: landscape)
+    section.register
+        margin: 20% 0
+        fieldset.form
+            div.goBackBtn
+                i
+                    font-size: 1.7rem
+            h1
+                font-size: 2rem
+            form
+                div.informationText
+                    width: 70vw
+                    p
+                        font-size: .8rem
+                input
+                    font-size: 1.2rem
+                    &[type="submit"]
+                        padding: 10px 20px
+
+@media (min-width: 700px) and (orientation: landscape)
+    section.register
+        margin: 15% 0
+        fieldset.form
+            legend
+                a
+                    div.logo
+                        width: 150px
+                        height: 150px
+                        background-image: url("../../images/logo_bez_bg150.png")
+                        cursor: pointer
+                        &:hover
+                            background-image: url("../../images/logo_hover150.png")
+            div.goBackBtn
+                i
+                    font-size: 2rem
+            h1
+                font-size: 2.2rem
+            form
+                div.informationText
+                    width: 60vw
+                    p
+                        font-size: 1rem
+                input
+                    width: 60%
+                    font-size: 1.3rem
+                    &[type="submit"]
+                        padding: 10px 20px
+
+@media (min-width: 896px) and (orientation: landscape)
+    section.register
+        margin: 10% 0
+        fieldset.form
+            form
+                div.informationText
+                    width: 50vw
+
+@media (min-width: 1100px) and (orientation: landscape)
+    section.register
+        margin: 0
+        fieldset.form
+            form
+                div.informationText
+                    width: 40vw
+
+@media (min-width: 1400px) and (orientation: landscape)
+    section.register
+        fieldset.form
+            form
+                div.informationText
+                    width: 30vw

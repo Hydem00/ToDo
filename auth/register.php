@@ -6,7 +6,7 @@
 // $config = new \PHPAuth\Config($dbh);
 // $auth   = new \PHPAuth\Auth($dbh, $config);
 
-
+$message = "";
 if(isset($_POST["submit"])){
     if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
@@ -44,20 +44,23 @@ if(isset($_POST["submit"])){
     <section class="register">      
         <fieldset class="form">
             <legend>
-            <a href="../index.html"><div class="logo"></div></a>
+                <a href="../index.html"><div class="logo"></div></a>
             </legend>
             <div class="goBackBtn">
                 <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
             </div>
             <h1>Registration</h1>
             <form method="POST" action="">
-                <p><?php echo $message; ?></p>
+                <div class="informationText">
+                    <p><?php echo $message; ?></p>
+                </div>
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
-                <input type="submit" name="submit" id="submit" value="Sign in">
+                <input type="submit" name="submit" id="submit" value="Sign up">
             </form>
         </fieldset>
     </section>
+    <script src="validation.js"></script>
 </body>
 </html>
