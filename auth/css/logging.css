@@ -42,7 +42,10 @@ section.register fieldset.form div.goBackBtn i {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-section.register fieldset.form div.logo {
+section.register fieldset.form legend {
+  margin: 0 auto;
+}
+section.register fieldset.form legend a div.logo {
   width: 100px;
   height: 100px;
   background-image: url("../../images/logo_bez_bg100.png");
@@ -120,13 +123,13 @@ section.register fieldset.form form input[type=submit] {
   section.register fieldset.form div.goBackBtn i {
     font-size: 1.6rem;
   }
-  section.register fieldset.form div.logo {
+  section.register fieldset.form legend a div.logo {
     width: 150px;
     height: 150px;
     background-image: url("../../images/logo_bez_bg150.png");
     cursor: pointer;
   }
-  section.register fieldset.form div.logo:hover {
+  section.register fieldset.form legend a div.logo:hover {
     background-image: url("../../images/logo_hover150.png");
   }
   section.register fieldset.form h1 {
@@ -220,13 +223,13 @@ section.register fieldset.form form input[type=submit] {
   section.register {
     margin: 15% 0;
   }
-  section.register fieldset.form div.logo {
+  section.register fieldset.form legend a div.logo {
     width: 150px;
     height: 150px;
     background-image: url("../../images/logo_bez_bg150.png");
     cursor: pointer;
   }
-  section.register fieldset.form div.logo:hover {
+  section.register fieldset.form legend a div.logo:hover {
     background-image: url("../../images/logo_hover150.png");
   }
   section.register fieldset.form div.goBackBtn i {
