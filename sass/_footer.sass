@@ -72,6 +72,11 @@ footer
     &.socials p.contact, &.map p
       font-size: 1.6rem
 
+@media (min-width: 760px) and (orientation: portrait)
+  footer div
+    &.socials p.contact, &.map p
+      font-size: 2.6rem
+
 @media (min-width: 768px)
   footer div
     &.socials p.social, &.copy p
@@ -96,6 +101,10 @@ footer
     &.socials p.social i
       font-size: 2.1rem
 
+@media (min-width: 844px) and (orientation: landscape)
+  footer div.socials p.social
+    width: 80%
+
 @media (min-width: 918px)
   footer div
     &.map iframe
@@ -106,7 +115,7 @@ footer
       width: 80%
       margin: 0 auto 15px auto
 
-@media (min-width: 1024px)
+@media (min-width: 1024px) and (orientation: landscape)
   footer
     padding-top: 100px
 
@@ -114,3 +123,16 @@ footer
       width: 60%
       margin: 0 auto 15px auto
       font-size: 1.4rem
+
+  footer div
+    &.socials p.contact, &.map p
+      font-size: 3rem
+
+@media (min-width: 1280px) and (orientation: landscape)
+  footer div
+    &.socials p.contact, &.map p
+      font-size: 3.3rem
+
+  footer
+    max-width: 1600px
+    margin: 0 auto

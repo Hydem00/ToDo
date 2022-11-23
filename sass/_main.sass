@@ -1,0 +1,343 @@
+main
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+
+  div.banner
+    -ms-flex-preferred-size: 100%
+    flex-basis: 100%
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    background-image: url("../images/pocket.jpg")
+    height: 200px
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+    h1
+      background-color: rgba(0, 0, 0, 0.5)
+      -ms-flex-preferred-size: 100%
+      flex-basis: 100%
+      text-align: center
+      color: white
+      text-transform: uppercase
+      padding: 80px 5px 80px 5px
+
+  p.information
+    color: white
+    width: 95%
+    padding-top: 10px
+    font-size: 0.8rem
+    text-align: justify
+
+  a
+    display: block
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 1.3rem
+    color: white
+    -webkit-box-shadow: 0 0 10px white
+    box-shadow: 0 0 10px white
+    padding: 5px 10px
+    border-radius: 10px
+    margin: 30px 0
+    background-color: #179CF0
+
+  div
+    &.aboutUs
+      width: 95%
+      border-top: 1px solid gray
+      color: white
+      padding-bottom: 20px
+
+    &.offer
+      width: 95%
+      border-top: 1px solid gray
+      color: white
+      padding-bottom: 20px
+
+      div
+        align-items: center
+        justify-content: space-between
+
+    &.aboutUs h1, &.offer h1
+      font-size: 1.3rem
+      text-align: center
+      padding: 20px 0
+      text-transform: uppercase
+      color: #179CF0
+
+    &.aboutUs p, &.offer p
+      font-size: 0.8rem
+      padding: 0 0 20px 0
+
+    &.aboutUs p span, &.offer p span
+      color: #179CF0
+
+    &.aboutUs img
+      display: block
+      margin: 0 auto
+      width: 40%
+
+    &.offer img
+      display: block
+
+      /* width: 100%;
+      margin: 0 auto 20px auto
+      width: 80%
+      height: 220px
+
+@media (min-width: 360px) and (orientation: portrait)
+  main
+    div.banner h1
+      font-size: 1.4rem
+
+    p.information
+      font-size: 1rem
+
+    div
+      &.aboutUs p, &.offer p
+        font-size: 1rem
+
+@media (min-width: 533px) and (orientation: landscape)
+  main
+    div.banner h1
+      font-size: 1.4rem
+
+    p.information
+      font-size: 0.9rem
+
+    div
+      &.aboutUs p
+        font-size: 0.9rem
+
+      &.offer
+        p
+          font-size: 0.9rem
+
+        div img
+          width: 60%
+
+@media (min-width: 667px) and (orientation: landscape)
+  main
+    div
+      &.offer
+        display: -webkit-box
+        display: -ms-flexbox
+        display: flex
+        -ms-flex-wrap: wrap
+        flex-wrap: wrap
+
+        h1
+          -ms-flex-preferred-size: 100%
+          flex-basis: 100%
+
+      &.banner h1
+        font-size: 1.8rem
+
+    p.information
+      font-size: 0.95rem
+      text-align: justify
+
+    div
+      &.aboutUs p, &.offer p
+        font-size: 0.95rem
+        text-align: justify
+
+      &.aboutUs h1
+        font-size: 2rem
+
+      &.offer
+        h1
+          font-size: 2rem
+
+        div
+          display: -webkit-box
+          display: -ms-flexbox
+          display: flex
+          margin: 0 auto 40px auto
+          -ms-flex-pack: distribute
+          justify-content: space-around
+          height: 200px
+
+          &:nth-child(odd)
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            -webkit-box-orient: horizontal
+            -webkit-box-direction: reverse
+            -ms-flex-direction: row-reverse
+            flex-direction: row-reverse
+
+        p, img
+          -ms-flex-preferred-size: 45%
+          flex-basis: 45%
+          width: 45%
+          margin: 0 0 10px 0
+
+        p
+          padding: 10px 0 10px 0
+
+@media (min-width: 844px) and (orientation: landscape)
+  main
+    p.information
+      font-size: 1.1rem
+      text-align: justify
+
+    div
+      &.aboutUs p, &.offer p
+        font-size: 1.1rem
+        text-align: justify
+
+      &.aboutUs h1
+        font-size: 2.2rem
+
+      &.offer
+        h1
+          font-size: 2.2rem
+
+        div img
+          height: 230px
+
+@media (min-width: 760px) and (orientation: portrait)
+  main
+    div.banner
+      h1
+        font-size: 2.15rem
+        line-height: 150px
+
+        height: 300px
+  main
+    div.banner
+      height: 300px
+    a
+      padding: 15px 25px
+      font-size: 1.6rem
+
+    p.information
+      font-size: 1.4rem
+      width: 90%
+      margin: 0 auto
+
+    div
+      &.aboutUs p
+        font-size: 1.4rem
+        width: 90%
+        margin: 0 auto
+
+      &.offer
+        p
+          font-size: 1.4rem
+          width: 90%
+          margin: 0 auto
+
+        div img
+          width: 60%
+          height: 270px
+
+      &.aboutUs h1, &.offer h1
+        font-size: 2.6rem
+
+@media (min-width: 1024px) and (orientation: landscape)
+  main
+    div.banner
+      h1
+        font-size: 2.7rem
+        line-height: 320px
+        height: 500px
+  main
+    div.banner
+      height: 500px
+    a
+      padding: 20px 30px
+      font-size: 1.7rem
+
+    p.information
+      font-size: 1.5rem
+      width: 90%
+      margin: 0 auto
+
+    div
+      &.aboutUs p
+        font-size: 1.5rem
+        width: 90%
+        margin: 0 auto
+
+      &.offer
+        p
+          font-size: 1.5rem
+          width: 90%
+          margin: 0 auto
+
+        div
+          height: 300px
+          width: 90%
+          align-items: center
+          justify-content: space-between
+
+          p
+            flex-basis: 40%
+
+          img
+            flex-basis: 47%
+            height: 280px
+
+      &.aboutUs h1, &.offer h1
+        font-size: 3rem
+
+@media (min-width: 1280px) and (orientation: landscape)
+  main
+    div.banner
+      h1
+        font-size: 3.7rem
+        line-height: 320px
+        height: 500px
+
+    a
+      padding: 35px 45px
+      font-size: 3rem
+
+    p.information
+      width: 100%
+      max-width: 1600px
+      font-size: 2rem
+      margin: 20px auto
+
+    div
+      &.aboutUs p
+        max-width: 1600px
+        font-size: 2rem
+        margin: 20px auto
+
+      &.offer
+        p
+          max-width: 1600px
+          font-size: 2rem
+          margin: 20px auto
+
+        div
+          height: 300px
+          width: 90%
+          align-items: center
+          justify-content: space-between
+          margin: 50px auto
+
+          p
+            flex-basis: 47%
+
+          img
+            flex-basis: 47%
+            height: 350px
+
+      &.aboutUs h1, &.offer h1
+        font-size: 3.3rem
+
+      &.aboutUs img
+        width: 30%
