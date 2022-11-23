@@ -16,46 +16,44 @@ body {
 
 section.register {
   position: relative;
-  width: 30%;
-  height: 100%;
-  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
   text-align: center;
 }
 section.register fieldset.form {
-  position: relative;
-  margin-top: 75px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: black;
-  border: 10px solid greenYellow;
-  border-radius: 10%;
+  border: 5px solid greenYellow;
+  border-radius: 20px;
 }
 section.register fieldset.form div.goBackBtn {
   position: absolute;
-  top: -10%;
+  top: -14%;
   left: 10%;
   border-radius: 25%;
 }
 section.register fieldset.form div.goBackBtn i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 section.register fieldset.form div.logo {
-  width: 150px;
-  height: 150px;
-  background-image: url("../../images/logo_bez_bg150.png");
+  width: 100px;
+  height: 100px;
+  background-image: url("../../images/logo_bez_bg100.png");
   -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
           animation: logoAnimate100 2.5s steps(9) forwards;
-  cursor: pointer;
-}
-section.register fieldset.form div.logo:hover {
-  background-image: url("../../images/logo_hover150.png");
 }
 section.register fieldset.form h1 {
   width: 100%;
   padding: 20px;
   margin-top: 2%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: rgba(45, 43, 43, 0.5019607843);
   color: white;
 }
@@ -63,14 +61,17 @@ section.register fieldset.form form {
   margin: 5% 0 5% 0;
 }
 section.register fieldset.form form p {
+  display: block;
+  text-align: justify;
+  padding: 0 10px 5px 10px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 section.register fieldset.form form input {
   display: block;
+  width: 80%;
   margin: 0 auto;
-  width: 50%;
-  padding: 20px;
+  padding: 5px 0;
   border-radius: 10px;
 }
 section.register fieldset.form form input:focus {
@@ -78,14 +79,52 @@ section.register fieldset.form form input:focus {
   border: 2px solid greenYellow;
 }
 section.register fieldset.form form input:last-child {
-  width: 10%;
-  padding: 20px;
-  margin-top: 3%;
+  display: inline-block;
+  margin-top: 5%;
 }
 section.register fieldset.form form input[placeholder] {
   font-size: 1rem;
 }
+section.register fieldset.form form input[type=submit] {
+  width: auto;
+  border-radius: 10px;
+  background-color: #587cf1;
+  color: white;
+  border: 1px solid #587cf1;
+  -webkit-box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+          box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+}
 
+@media (min-width: 390px) and (orientation: portrait) {
+  section.register fieldset.form div.goBackBtn {
+    top: -12%;
+    left: 10%;
+  }
+  section.register fieldset.form div.logo {
+    width: 150px;
+    height: 150px;
+    background-image: url("../../images/logo_bez_bg150.png");
+  }
+  section.register fieldset.form h1 {
+    padding: 20px;
+    margin-top: 2%;
+    font-size: 2rem;
+    background-color: rgba(45, 43, 43, 0.5019607843);
+    color: white;
+  }
+  section.register fieldset.form form p {
+    font-size: 0.8rem;
+  }
+  section.register fieldset.form form input {
+    padding: 10px;
+  }
+  section.register fieldset.form form input[placeholder] {
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form input[type=submit] {
+    font-size: 1.1rem;
+  }
+}
 @-webkit-keyframes logoAnimate100 {
   0% {
     background-position: 0 0;
@@ -94,7 +133,6 @@ section.register fieldset.form form input[placeholder] {
     background-position: 100% 0;
   }
 }
-
 @keyframes logoAnimate100 {
   0% {
     background-position: 0 0;
