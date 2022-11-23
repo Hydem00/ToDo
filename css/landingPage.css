@@ -731,22 +731,32 @@ main div.offer img {
     padding: 20px 30px;
     font-size: 1.7rem;
   }
-  main p.information {
+  div.link {
+    width: 100%;
+  }
+  div.link a {
+    padding: 30px 40px;
+    font-size: 2rem;
+    width: 20%;
+    text-align: center;
+    margin: 20px auto;
+  }
+  div.link p.information {
     font-size: 1.5rem;
     width: 90%;
     margin: 0 auto;
   }
-  main div.aboutUs p {
+  div.link div.aboutUs p {
     font-size: 1.5rem;
     width: 90%;
     margin: 0 auto;
   }
-  main div.offer p {
+  div.link div.offer p {
     font-size: 1.5rem;
     width: 90%;
     margin: 0 auto;
   }
-  main div.offer div {
+  div.link div.offer div {
     height: 300px;
     width: 90%;
     -webkit-box-align: center;
@@ -756,16 +766,16 @@ main div.offer img {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  main div.offer div p {
+  div.link div.offer div p {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
   }
-  main div.offer div img {
+  div.link div.offer div img {
     -ms-flex-preferred-size: 47%;
         flex-basis: 47%;
     height: 280px;
   }
-  main div.aboutUs h1, main div.offer h1 {
+  div.link div.aboutUs h1, div.link div.offer h1 {
     font-size: 3rem;
   }
 }
@@ -775,9 +785,16 @@ main div.offer img {
     line-height: 320px;
     height: 500px;
   }
-  main a {
+  main div.link {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  main div.link a {
     padding: 35px 45px;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
   }
   main p.information {
     width: 100%;
