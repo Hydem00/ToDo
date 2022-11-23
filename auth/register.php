@@ -6,7 +6,7 @@
 // $config = new \PHPAuth\Config($dbh);
 // $auth   = new \PHPAuth\Auth($dbh, $config);
 
-
+$message = "";
 if(isset($_POST["submit"])){
     if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
