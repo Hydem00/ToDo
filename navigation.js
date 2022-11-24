@@ -21,7 +21,6 @@ navLiElementsMobile.forEach((liElement) => {
         const navMobileHeight = document.querySelector('nav.mobile').clientHeight;
         const navTo = liElement.dataset.nav;
 
-        setTimeout
         window.scrollTo(0, (document.querySelector(navTo).offsetTop) - (navMobileHeight));
 
         navMobile.classList.toggle('active');
