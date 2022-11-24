@@ -28,6 +28,7 @@ if(isset($_POST["submit"])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff5fd0c0f4.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../images/Logo16.png">
     <link rel="stylesheet" href="css/logging.css">
 </head>
@@ -35,8 +36,11 @@ if(isset($_POST["submit"])){
     <section class="register">      
         <fieldset class="form">
             <legend>
-                <div class="logo"></div>
+                <a href="../index.html"><div class="logo"></div></a>
             </legend>
+            <div class="goBackBtn">
+                <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
             <h1>Account Activation</h1>
             <form method="POST" action="">
                 <div class="informationText">
