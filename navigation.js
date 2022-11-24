@@ -1,9 +1,9 @@
 const navBurger = document.querySelector('nav.mobile div.burger');
 const navMobile = document.querySelector('nav.mobile');
 
-const navLiElementsDesktop = document.querySelectorAll('nav.desktop li');
+const navLiElementsDesktop = document.querySelectorAll('nav.desktop li[data-nav]');
 
-const navLiElementsMobile = document.querySelectorAll('nav.mobile li');
+const navLiElementsMobile = document.querySelectorAll('nav.mobile li[data-nav]');
 
 navLiElementsDesktop.forEach((liElement) => {
     liElement.addEventListener('click', (e) => {
