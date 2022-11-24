@@ -38,12 +38,14 @@
 
 <body>
     <header>
-        <div class="logo"></div>
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
         <nav class="desktop">
             <ul>
-                <li><a href="">About us</a></li>
-                <li><a href="">Offer</a></li>
-                <li><a href="">Contact</a></li>
+                <li data-nav="#aboutUs"><a href="#">About us</a></li>
+                <li data-nav="#offer"><a href="#">Offer</a></li>
+                <li data-nav="#footer"><a href="#">Contact</a></li>
                 <li><a href="auth/register.php">Sign up</a></li>
                 <li><a href="login.php">Sign in</a></li>
             </ul>
@@ -52,9 +54,9 @@
     <nav class="mobile">
         <h1>Menu</h1>
         <ul>
-            <li><a href="#aboutUs">About us</a></li>
-            <li><a href="#main">Offer</a></li>
-            <li><a href="#footer">Contact</a></li>
+            <li data-nav="#aboutUs"><a href="#">About us</a></li>
+            <li data-nav="#offer"><a href="#">Offer</a></li>
+            <li data-nav="#footer"><a href="#">Contact</a></li>
             <li><a href="auth/register.php">Sign up</a></li>
             <li><a href="login.php">Sign in</a></li>
         </ul>
@@ -80,7 +82,7 @@
                 project.</p>
             <img src="images/amw.png" alt="">
         </div>
-        <div class="offer">
+        <div class="offer" id="offer">
             <h1>Offer</h1>
             <div>
                 <p><span>More organized life:</span> One of the most important reasons you should use a to do list is
@@ -130,7 +132,7 @@
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="navigation.js"></script>
 </body>
 
 </html>
