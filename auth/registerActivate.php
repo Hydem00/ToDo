@@ -7,13 +7,14 @@ $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
-if(!empty($_POST["activateCode"])){
-    $res = $auth->activate($_POST["activateCode"]);
-    $message = $res["message"];
-}else{
-    $message = "";
+if(isset($_POST["submit"])){
+    if(!empty($_POST["activateCode"])){
+        $res = $auth->activate($_POST["activateCode"]);
+        $message = $res["message"];
+    }else{
+        $message = "Field is empty!";
+    }
 }
-
 ?>
 
 
