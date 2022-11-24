@@ -36,11 +36,13 @@ if(!empty($_POST["activateCode"])){
             <legend>
                 <div class="logo"></div>
             </legend>
-            <h1>Registration</h1>
+            <h1>Account Activation</h1>
             <form method="POST" action="">
-                <p><?php echo $message; ?></p>
+                <div class="informationText">
+                    <p><?php echo $message; ?></p>
+                </div>
                 <input type="text" name="activateCode" id="activateCode" placeholder="activateCode">
-                <input type="submit" name="submit" id="submit" value="Sign in">
+                <input type="submit" name="submit" id="submit" value="Activate">
             </form>
         </fieldset>
     </section>
