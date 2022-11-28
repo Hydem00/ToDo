@@ -29,6 +29,8 @@ section.register fieldset.form {
   background-color: black;
   border: 5px solid greenYellow;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 50px 10px #aaaaaa;
+          box-shadow: 0px 0px 50px 10px #aaaaaa;
 }
 section.register fieldset.form div.goBackBtn {
   position: absolute;
@@ -82,10 +84,15 @@ section.register fieldset.form form input {
   padding: 5px 0;
   border-radius: 10px;
   font-size: 1rem;
+  background-color: black;
+  border: 0.5px solid transparent;
+  border-bottom: 2px solid greenYellow;
+  color: white;
 }
 section.register fieldset.form form input:focus {
   outline: none;
-  border: 2px solid greenYellow;
+  border: 0.5px solid transparent;
+  border-bottom: 2px solid greenYellow;
 }
 section.register fieldset.form form input:last-child {
   display: inline-block;
