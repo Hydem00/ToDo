@@ -7,13 +7,14 @@ $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
-if(!empty($_POST["activateCode"])){
-    $res = $auth->activate($_POST["activateCode"]);
-    $message = $res["message"];
-}else{
-    $message = "";
+if(isset($_POST["submit"])){
+    if(!empty($_POST["activateCode"])){
+        $res = $auth->activate($_POST["activateCode"]);
+        $message = $res["message"];
+    }else{
+        $message = "Field is empty!";
+    }
 }
-
 ?>
 
 
@@ -27,6 +28,7 @@ if(!empty($_POST["activateCode"])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff5fd0c0f4.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../images/Logo16.png">
     <link rel="stylesheet" href="css/logging.css">
 </head>
@@ -34,13 +36,18 @@ if(!empty($_POST["activateCode"])){
     <section class="register">      
         <fieldset class="form">
             <legend>
-                <div class="logo"></div>
+                <a href="../index.html"><div class="logo"></div></a>
             </legend>
-            <h1>Registration</h1>
+            <div class="goBackBtn">
+                <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+            <h1>Account Activation</h1>
             <form method="POST" action="">
-                <p><?php echo $message; ?></p>
+                <div class="informationText">
+                    <p><?php echo $message; ?></p>
+                </div>
                 <input type="text" name="activateCode" id="activateCode" placeholder="activateCode">
-                <input type="submit" name="submit" id="submit" value="Sign in">
+                <input type="submit" name="submit" id="submit" value="Activate">
             </form>
         </fieldset>
     </section>
