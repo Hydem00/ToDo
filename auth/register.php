@@ -54,10 +54,10 @@ if(isset($_POST["submit"])){
                 <div class="informationText">
                     <p><?php echo $message; ?></p>
                 </div>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
-                <input type="submit" name="submit" id="submit" value="Sign up">
+                <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
+                <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
+                <label for="cpassword"></label><input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
+                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign up">
             </form>
         </fieldset>
     </section>

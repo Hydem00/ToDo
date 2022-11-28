@@ -77,6 +77,9 @@ section.register fieldset.form form div.informationText p {
   color: white;
   font-size: 0.7rem;
 }
+section.register fieldset.form form label {
+  color: white;
+}
 section.register fieldset.form form input {
   display: block;
   width: 80%;
@@ -89,10 +92,14 @@ section.register fieldset.form form input {
   border-bottom: 2px solid greenYellow;
   color: white;
 }
+section.register fieldset.form form input.warning {
+  border: 2px solid red;
+}
 section.register fieldset.form form input:focus {
   outline: none;
+  border-radius: 10px;
   border: 0.5px solid transparent;
-  border-bottom: 2px solid greenYellow;
+  border-bottom: 2px solid green;
 }
 section.register fieldset.form form input:last-child {
   display: inline-block;

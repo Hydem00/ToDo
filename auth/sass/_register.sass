@@ -48,6 +48,8 @@ section.register
                     padding: 0 10% 5px 10%
                     color: white
                     font-size: .7rem
+            label
+                color: white
             input
                 display: block
                 width: 80%
@@ -59,10 +61,13 @@ section.register
                 border: .5px solid transparent
                 border-bottom: 2px solid greenYellow
                 color: white
+                &.warning
+                    border: 2px solid red
                 &:focus
                     outline: none
+                    border-radius: 10px
                     border: .5px solid transparent
-                    border-bottom: 2px solid greenYellow
+                    border-bottom: 2px solid green
                 &:last-child
                     display: inline-block
                     margin-top: 5%

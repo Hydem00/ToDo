@@ -1,9 +1,12 @@
+const inputEmail = document.querySelector('form input#email');
+const inputPassword = document.querySelector('form input#password');
+const inputCPassword = document.querySelector('form input#cpassword');
 const inputSubmit = document.querySelector('form input#submit');
 
 const p = document.querySelector('div.informationText p');
 
 const email = document.querySelector('#email');
-const emailValidation = /^(?=.{7,100})[\w]{3,}[@]{1}[\w]{1,}[.]{1}[\w]{1,}$/gm;
+const emailValidation = /^(?=.{7,100})[\w]{3,}[@]{1}[\w\.]{1,}[.]{1}[\w]{1,}$/gm;
 
 const password = document.querySelector('#password');
 const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
@@ -11,31 +14,92 @@ const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-
 const cpassword = document.querySelector('#cpassword');
 const cpasswordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
 
-const flag = false;
+let flag = false;
+
+const validateEmail = () => {
+    if (email.value.match(emailValidation)) {
+        flag = true;
+        document.querySelector('input#email').classList.remove("warning");
+        document.querySelector('label[for="email"]').innerHTML = "";
+    } else {
+        flag = false;
+        document.querySelector('label[for="email"]').innerHTML = "Provided e-mail is invalid!";
+        document.querySelector('input#email').classList.add("warning");
+    }
+}
+
+const validatePassword = () => {
+    if (password.value.match(passwordValidation)) {
+        flag = true;
+        inputPassword.addEventListener('input', validatePassword);
+        document.querySelector('input#password').classList.remove("warning");
+        document.querySelector('label[for="password"]').innerHTML = "";
+    } else {
+        flag = false;
+        document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+        document.querySelector('input#password').classList.add("warning");
+    }
+}
+
+const validatePasswords = () => {
+    if (password.value.match(passwordValidation)) {
+        flag = true;
+        document.querySelector('input#password').classList.remove("warning");
+        document.querySelector('label[for="password"]').innerHTML = "";
+        if (password.value === cpassword.value) {
+            flag = true;
+            document.querySelector('input#cpassword').classList.remove("warning");
+            document.querySelector('label[for="cpassword"]').innerHTML = "";
+        } else {
+            flag = false;
+            document.querySelector('label[for="cpassword"]').innerHTML = "Passwords are not the same!"
+            document.querySelector('input#cpassword').classList.add("warning");
+        }
+    } else {
+        flag = false;
+        document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+        document.querySelector('input#password').classList.add("warning");
+    }
+}
 
 function validation(e) {
+
     if (!(email.value == "") && !(password.value == "") && !(cpassword.value == "")) {
+        window.addEventListener('input', validateEmail);
         if (email.value.match(emailValidation)) {
-            if (password.value.match(passwordValidation)) {
-                if (password.value === cpassword.value) {
-                    p.innerHTML = "";
-                    flag = true;
-                } else {
-                    p.innerHTML = "Passwords are not the same."
-                }
+            flag = true;
+            document.querySelector('input#email').classList.remove("warning");
+            document.querySelector('label[for="email"]').innerHTML = "";
+        } else {
+            flag = false;
+            document.querySelector('label[for="email"]').innerHTML = "Provided e-mail is invalid!";
+            document.querySelector('input#email').classList.add("warning");
+        }
+        window.addEventListener('input', validatePasswords);
+        if (password.value.match(passwordValidation)) {
+            flag = true;
+            document.querySelector('input#password').classList.remove("warning");
+            document.querySelector('label[for="password"]').innerHTML = "";
+            if (password.value === cpassword.value) {
+                flag = true;
+                document.querySelector('input#cpassword').classList.remove("warning");
+                document.querySelector('label[for="cpassword"]').innerHTML = "";
             } else {
-                p.innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+                flag = false;
+                document.querySelector('label[for="cpassword"]').innerHTML = "Passwords are not the same!"
+                document.querySelector('input#cpassword').classList.add("warning");
             }
         } else {
-            p.innerHTML = "Provided e-mail is invalid.";
+            flag = false;
+            document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+            document.querySelector('input#password').classList.add("warning");
         }
 
-    } else
-        p.innerHTML = "Some fields are empty!";
+        if (!flag)
+            e.preventDefault();
 
-    if (flag == false) {
-        e.preventDefault();
     }
+
 }
 
 inputSubmit.addEventListener('click', validation);
