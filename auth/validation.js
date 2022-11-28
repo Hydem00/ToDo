@@ -16,66 +16,11 @@ const cpasswordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za
 
 let flag = false;
 
-const validateEmail = () => {
+const validateInputs = () => {
     if (email.value.match(emailValidation)) {
         flag = true;
         document.querySelector('input#email').classList.remove("warning");
         document.querySelector('label[for="email"]').innerHTML = "";
-    } else {
-        flag = false;
-        document.querySelector('label[for="email"]').innerHTML = "Provided e-mail is invalid!";
-        document.querySelector('input#email').classList.add("warning");
-    }
-}
-
-const validatePassword = () => {
-    if (password.value.match(passwordValidation)) {
-        flag = true;
-        inputPassword.addEventListener('input', validatePassword);
-        document.querySelector('input#password').classList.remove("warning");
-        document.querySelector('label[for="password"]').innerHTML = "";
-    } else {
-        flag = false;
-        document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
-        document.querySelector('input#password').classList.add("warning");
-    }
-}
-
-const validatePasswords = () => {
-    if (password.value.match(passwordValidation)) {
-        flag = true;
-        document.querySelector('input#password').classList.remove("warning");
-        document.querySelector('label[for="password"]').innerHTML = "";
-        if (password.value === cpassword.value) {
-            flag = true;
-            document.querySelector('input#cpassword').classList.remove("warning");
-            document.querySelector('label[for="cpassword"]').innerHTML = "";
-        } else {
-            flag = false;
-            document.querySelector('label[for="cpassword"]').innerHTML = "Passwords are not the same!"
-            document.querySelector('input#cpassword').classList.add("warning");
-        }
-    } else {
-        flag = false;
-        document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
-        document.querySelector('input#password').classList.add("warning");
-    }
-}
-
-function validation(e) {
-
-    if (!(email.value == "") && !(password.value == "") && !(cpassword.value == "")) {
-        window.addEventListener('input', validateEmail);
-        if (email.value.match(emailValidation)) {
-            flag = true;
-            document.querySelector('input#email').classList.remove("warning");
-            document.querySelector('label[for="email"]').innerHTML = "";
-        } else {
-            flag = false;
-            document.querySelector('label[for="email"]').innerHTML = "Provided e-mail is invalid!";
-            document.querySelector('input#email').classList.add("warning");
-        }
-        window.addEventListener('input', validatePasswords);
         if (password.value.match(passwordValidation)) {
             flag = true;
             document.querySelector('input#password').classList.remove("warning");
@@ -94,10 +39,24 @@ function validation(e) {
             document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
             document.querySelector('input#password').classList.add("warning");
         }
+    } else {
+        flag = false;
+        document.querySelector('label[for="email"]').innerHTML = "Provided e-mail is invalid!";
+        document.querySelector('input#email').classList.add("warning");
+    }
+
+    console.log(flag);
+    return flag;
+}
+
+function validation(e) {
+
+    if (!(email.value == "") && !(password.value == "") && !(cpassword.value == "")) {
+        window.addEventListener('input', validateInputs);
+        flag = validateInputs();
 
         if (!flag)
             e.preventDefault();
-
     }
 
 }
