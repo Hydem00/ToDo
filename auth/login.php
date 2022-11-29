@@ -50,20 +50,18 @@ if(isset($_POST["submit"])){
                 <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
             </div>
             <div class="goSignBtn">
-                <a href="login.php"><p>SIGN IN</p></a>
+                <a href="register.php"><p>SIGN UP</p></a>
             </div>
-            <h1>Registration</h1>
+            <h1>Login</h1>
             <form method="POST" action="">
                 <div class="informationText">
                     <p><?php echo $message; ?></p>
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
                 <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
-                <label for="cpassword"></label><input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
-                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign up">
+                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
             </form>
         </fieldset>
     </section>
-    <script src="validation.js"></script>
 </body>
 </html>

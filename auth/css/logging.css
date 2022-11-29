@@ -59,21 +59,21 @@ section.register fieldset.form div.goBackBtn i {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-section.register fieldset.form div.goSignInBtn {
+section.register fieldset.form div.goSignBtn {
   position: absolute;
   top: -10%;
   right: 10%;
   z-index: 1;
   overflow: hidden;
 }
-section.register fieldset.form div.goSignInBtn a {
+section.register fieldset.form div.goSignBtn a {
   text-decoration: none;
 }
-section.register fieldset.form div.goSignInBtn a p {
+section.register fieldset.form div.goSignBtn a p {
   font-size: 1.4rem;
   color: white;
 }
-section.register fieldset.form div.goSignInBtn::after {
+section.register fieldset.form div.goSignBtn::after {
   content: "";
   position: absolute;
   display: block;
@@ -86,7 +86,7 @@ section.register fieldset.form div.goSignInBtn::after {
   -webkit-transition: left 0.5s, opacity 0.5s 0.1s;
   transition: left 0.5s, opacity 0.5s 0.1s;
 }
-section.register fieldset.form div.goSignInBtn:hover::after {
+section.register fieldset.form div.goSignBtn:hover::after {
   bottom: 0;
   left: 0%;
   opacity: 1;
@@ -150,19 +150,19 @@ section.register fieldset.form form input {
   letter-spacing: 1px;
 }
 section.register fieldset.form form input::-webkit-input-placeholder {
-  color: black;
+  color: #bbbaba;
 }
 section.register fieldset.form form input::-moz-placeholder {
-  color: black;
+  color: #bbbaba;
 }
 section.register fieldset.form form input:-ms-input-placeholder {
-  color: black;
+  color: #bbbaba;
 }
 section.register fieldset.form form input::-ms-input-placeholder {
-  color: black;
+  color: #bbbaba;
 }
 section.register fieldset.form form input::placeholder {
-  color: black;
+  color: #bbbaba;
 }
 section.register fieldset.form form input:focus::-webkit-input-placeholder, section.register fieldset.form form input:hover::-webkit-input-placeholder {
   color: white;
