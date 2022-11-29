@@ -66,7 +66,7 @@ $lang['activation_sent'] = "Activation email has been sent.";
 $lang['activation_exists'] = "An activation email has already been sent. Next reactivation will available at %s";       //@todo: updated 2018-06-28
 
 $lang['email_activation_subject'] = '%s - Activate account';
-$lang['email_activation_body'] = 'Hello,<br/><br/> To be able to log in to your account you first need to activate your account by clicking on the following link: <strong><a href="%1$s/%2$s">%1$s/%2$s</a></strong><br/><br/> You then need to use the following activation key: <strong>%3$s</strong><br/>Activation link: <strong><a href="%1$s/%2$s?activation=%3$s">%1$s/%2$s?activation=%3$s</a></strong><br/><br/> If you did not sign up on %1$s recently then this message was sent in error, please ignore it.';
+$lang['email_activation_body'] = 'Hello,<br/><br/> To be able to log in to your account you first need to activate your account by clicking on the following link: <strong><a href="%1$s/%2$s?activation=%3$s">ACTIVATE</a></strong><br/><br/> You then need to use the following activation key: <strong>%3$s</strong><br/>Link to activation page: <strong><a href="%1$s/%2$s">%1$s/%2$s</a></strong><br/><br/> If you did not sign up on %1$s recently then this message was sent in error, please ignore it.';
 $lang['email_activation_altbody'] = 'Hello, ' . "\n\n" . 'To be able to log in to your account you first need to activate your account by visiting the following link:' . "\n" . '%1$s/%2$s?%3$s' . "\n\n" . 'You then need to use the following activation key: %3$s' . "\n\n" . 'If you did not sign up on %1$s recently then this message was sent in error, please ignore it.';
 
 $lang['email_reset_subject'] = '%s - Password reset request';
