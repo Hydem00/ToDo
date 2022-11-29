@@ -49,6 +49,9 @@ if(isset($_POST["submit"])){
             <div class="goBackBtn">
                 <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
             </div>
+            <div class="goSignInBtn">
+                <a href="login.php"><p>SIGN IN</p></a>
+            </div>
             <h1>Registration</h1>
             <form method="POST" action="">
                 <div class="informationText">

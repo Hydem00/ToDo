@@ -8,36 +8,83 @@ section.register
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        background-color: black
-        border: 5px solid greenYellow
+        background-image: url(../../images/park.jpg)
+        background-position: center
+        background-size: cover
         border-radius: 20px
-        box-shadow: 0px 0px 50px 10px #aaaaaa
+        box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85)
+        &::after
+            content: ''
+            display: inline-block
+            position: absolute
+            z-index: 0
+            top: -75px
+            right: 0
+            bottom: 0
+            left: 0
+            background-color: rgba(0,0,0,.6)
+            border-radius: 20px
+            box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5)
         div.goBackBtn
             position: absolute
-            top: -8%
+            top: -10%
             left: 10%
-            border-radius: 25%
+            z-index: 1
             i
                 font-size: 1.5rem
                 color: white
                 transform: rotate(-90deg)
+        div.goSignInBtn
+            position: absolute
+            top: -10%
+            right: 10%
+            z-index: 1
+            overflow: hidden
+            a
+                text-decoration: none
+                p
+                    font-size: 1.4rem
+                    color: white
+            &::after
+                content: ''
+                position: absolute
+                display: block
+                bottom: 0%
+                left: -100%
+                width: 100%
+                height: 10%
+                background-color: #8cf459
+                opacity: 0
+                transition: left .5s, opacity .5s .1s
+            &:hover::after
+                bottom: 0
+                left: 0%
+                opacity: 1
+                background-color: #8cf459
+                transition: opacity .1s, left .5s
         legend
             margin: 0 auto 
             a
                 div.logo
+                    position: relative
                     width: 100px
                     height: 100px
                     background-image: url("../../images/logo_bez_bg100.png")
                     animation: logoAnimate100 2.5s steps(9) forwards
+                    z-index: 1
         h1
+            position: relative
             width: 100%
             padding: 20px
             margin-top: 2%
             font-size: 1.5rem
-            background-color: #2d2b2b80
+            background-color: rgba(0,0,0,.4)
             color: white 
+            z-index: 1
         form
+            position: relative
             margin: 5% 0 5% 0
+            z-index: 1
             div.informationText
                 width: 80vw
                 word-wrap: break-word
@@ -53,21 +100,29 @@ section.register
             input
                 display: block
                 width: 80%
-                margin: 0 auto
-                padding: 5px 0
-                border-radius: 10px
                 font-size: 1rem
-                background-color: black
-                border: .5px solid transparent
-                border-bottom: 2px solid greenYellow
-                color: white
+                margin: 10px auto
+                color: black
+                border: 2px solid transparent
+                outline: none
+                border-radius: 1.5rem
+                padding: 5px 1rem
+                background-color: rgba(255, 255, 255, 0.25)
+                letter-spacing: 1px   
+                &::placeholder
+                    color: black
+                &:focus::placeholder,&:hover::placeholder
+                    color: white
+                &:hover
+                    color: black
+                    border: 2px solid rgba(255, 255, 255, 0.5)
+                    background-color: transparent
                 &.warning
                     border: 2px solid red
                 &:focus
-                    outline: none
-                    border-radius: 10px
-                    border: .5px solid transparent
-                    border-bottom: 2px solid green
+                    color: white
+                    border: 2px solid rgba(255, 255, 255, 0.5)
+                    background-color: transparent
                 &:last-child
                     display: inline-block
                     margin-top: 5%

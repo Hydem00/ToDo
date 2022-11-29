@@ -26,17 +26,32 @@ section.register fieldset.form {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: black;
-  border: 5px solid greenYellow;
+  background-image: url(../../images/park.jpg);
+  background-position: center;
+  background-size: cover;
   border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 50px 10px #aaaaaa;
-          box-shadow: 0px 0px 50px 10px #aaaaaa;
+  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+}
+section.register fieldset.form::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  top: -75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
 }
 section.register fieldset.form div.goBackBtn {
   position: absolute;
-  top: -8%;
+  top: -10%;
   left: 10%;
-  border-radius: 25%;
+  z-index: 1;
 }
 section.register fieldset.form div.goBackBtn i {
   font-size: 1.5rem;
@@ -44,26 +59,67 @@ section.register fieldset.form div.goBackBtn i {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
+section.register fieldset.form div.goSignInBtn {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  z-index: 1;
+  overflow: hidden;
+}
+section.register fieldset.form div.goSignInBtn a {
+  text-decoration: none;
+}
+section.register fieldset.form div.goSignInBtn a p {
+  font-size: 1.4rem;
+  color: white;
+}
+section.register fieldset.form div.goSignInBtn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0%;
+  left: -100%;
+  width: 100%;
+  height: 10%;
+  background-color: #8cf459;
+  opacity: 0;
+  -webkit-transition: left 0.5s, opacity 0.5s 0.1s;
+  transition: left 0.5s, opacity 0.5s 0.1s;
+}
+section.register fieldset.form div.goSignInBtn:hover::after {
+  bottom: 0;
+  left: 0%;
+  opacity: 1;
+  background-color: #8cf459;
+  -webkit-transition: opacity 0.1s, left 0.5s;
+  transition: opacity 0.1s, left 0.5s;
+}
 section.register fieldset.form legend {
   margin: 0 auto;
 }
 section.register fieldset.form legend a div.logo {
+  position: relative;
   width: 100px;
   height: 100px;
   background-image: url("../../images/logo_bez_bg100.png");
   -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
           animation: logoAnimate100 2.5s steps(9) forwards;
+  z-index: 1;
 }
 section.register fieldset.form h1 {
+  position: relative;
   width: 100%;
   padding: 20px;
   margin-top: 2%;
   font-size: 1.5rem;
-  background-color: rgba(45, 43, 43, 0.5019607843);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
+  z-index: 1;
 }
 section.register fieldset.form form {
+  position: relative;
   margin: 5% 0 5% 0;
+  z-index: 1;
 }
 section.register fieldset.form form div.informationText {
   width: 80vw;
@@ -83,23 +139,58 @@ section.register fieldset.form form label {
 section.register fieldset.form form input {
   display: block;
   width: 80%;
-  margin: 0 auto;
-  padding: 5px 0;
-  border-radius: 10px;
   font-size: 1rem;
-  background-color: black;
-  border: 0.5px solid transparent;
-  border-bottom: 2px solid greenYellow;
+  margin: 10px auto;
+  color: black;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 1.5rem;
+  padding: 5px 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 1px;
+}
+section.register fieldset.form form input::-webkit-input-placeholder {
+  color: black;
+}
+section.register fieldset.form form input::-moz-placeholder {
+  color: black;
+}
+section.register fieldset.form form input:-ms-input-placeholder {
+  color: black;
+}
+section.register fieldset.form form input::-ms-input-placeholder {
+  color: black;
+}
+section.register fieldset.form form input::placeholder {
+  color: black;
+}
+section.register fieldset.form form input:focus::-webkit-input-placeholder, section.register fieldset.form form input:hover::-webkit-input-placeholder {
   color: white;
+}
+section.register fieldset.form form input:focus::-moz-placeholder, section.register fieldset.form form input:hover::-moz-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus:-ms-input-placeholder, section.register fieldset.form form input:hover:-ms-input-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus::-ms-input-placeholder, section.register fieldset.form form input:hover::-ms-input-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus::placeholder, section.register fieldset.form form input:hover::placeholder {
+  color: white;
+}
+section.register fieldset.form form input:hover {
+  color: black;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
 }
 section.register fieldset.form form input.warning {
   border: 2px solid red;
 }
 section.register fieldset.form form input:focus {
-  outline: none;
-  border-radius: 10px;
-  border: 0.5px solid transparent;
-  border-bottom: 2px solid green;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
 }
 section.register fieldset.form form input:last-child {
   display: inline-block;
