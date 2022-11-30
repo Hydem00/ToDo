@@ -1,11 +1,10 @@
 <?php
-
 require '../vendor/autoload.php';
 require '../config.php';
-
+ 
 $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
-
+ 
 $message = "";
 if(isset($_POST["submit"])){
     if(!empty($_POST["email"])){
@@ -16,7 +15,7 @@ if(isset($_POST["submit"])){
     }
 }
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,5 +49,6 @@ if(isset($_POST["submit"])){
             </form>
         </fieldset>
     </section>
+    <script src="emailValidation.js"></script>
 </body>
 </html>
