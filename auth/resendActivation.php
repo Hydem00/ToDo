@@ -8,8 +8,8 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
 if(isset($_POST["submit"])){
-    if(!empty($_POST["email"]) && !empty($_POST["password"])){
-        $res = $auth->login($_POST["email"], $_POST["password"]);
+    if(!empty($_POST["email"])){
+        $res = $auth->resendActivation($_POST["email"], true);
         $message = $res["message"];
     }else{
         $message = "Some fields are empty!";
