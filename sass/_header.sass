@@ -12,7 +12,7 @@ header
         height: 100px
         top: 50%
         left: 50%
-        transform: translate(-50%, -50%) 
+        transform: translate(-50%, -50%)
         background-image: url(../images/logo_bez_bg100.png)
         animation: logoAnimate100 2.5s steps(9) forwards
 nav.mobile
@@ -127,7 +127,6 @@ nav.desktop
             i
                 font-size: 4rem
 
-
 @media (min-width: 533px) and (orientation: landscape)
     header
         height: 32vh
@@ -163,7 +162,7 @@ nav.desktop
     header
         position: sticky
         width: 100%
-        height: auto
+        height: 10vh
         div.logo
             position: absolute
             top: 100%
@@ -181,7 +180,7 @@ nav.desktop
             display: block
             top: 0
             left: 20%
-            height: 10vh 
+            height: 10vh
             width: 80%
             background-color: rgba(0,0,0,1)
             &.active
@@ -194,17 +193,17 @@ nav.desktop
                 display: block
                 top: 50%
                 left: 50%
-                height: 100%
+                height: 10vh
                 width: 100%
                 transform: translate(-50%, -50%)
                 font-size: 0
                 position: absolute
                 list-style-type: none
-                li            
-                    position: relative  
+                li
+                    position: relative
                     display: inline-block
                     margin: calc(6vh*0.7) 10px 0 0
-                    height: 46%
+                    height: 5vh
                     width: 12.5%
                     background-color: black
                     overflow: hidden
@@ -215,7 +214,7 @@ nav.desktop
                         top: 0
                         left: 0
                         width: 100%
-                        height: 100%
+                        // height: 10vh
                         display: block
                         text-align: center
                         font-size: 1.5rem
@@ -239,12 +238,12 @@ nav.desktop
                         opacity: 1
                         background-color: #8cf459
                         transition: opacity .1s, left .5s
-                    
+
             div.burger
                 display: none
     nav.mobile
         display: none
-            
+
 @media (min-width: 1368px) and (orientation: landscape)
     header
         div.logo
@@ -262,12 +261,3 @@ nav.desktop
                 li
                     a
                         font-size: 1.8rem
-        
-
-
-
-    
- 
-
-                
-            
