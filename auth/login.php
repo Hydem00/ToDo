@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/au/toload.php';
+require '../vendor/autoload.php';
 require '../config.php';
 
 $config = new \PHPAuth\Config($dbh);
@@ -50,7 +50,9 @@ if(isset($_POST["submit"])){
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
                 <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
+                <a href="">Resend activation</a>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
+                
             </form>
         </fieldset>
     </section>
