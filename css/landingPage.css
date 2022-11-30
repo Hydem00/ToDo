@@ -530,6 +530,9 @@ main a {
   margin: 30px 0;
   background-color: #179CF0;
 }
+main a:hover {
+  background-color: transparent;
+}
 main div.aboutUs {
   width: 95%;
   border-top: 1px solid gray;

@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require '../vendor/au/toload.php';
 require '../config.php';
 
 $config = new \PHPAuth\Config($dbh);

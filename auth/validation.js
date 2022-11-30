@@ -36,7 +36,7 @@ const validateInputs = () => {
             }
         } else {
             flag = false;
-            document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+            document.querySelector('label[for="password"]').innerHTML = "Your password is not safe. Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
             document.querySelector('input#password').classList.add("warning");
         }
     } else {

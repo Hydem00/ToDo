@@ -134,7 +134,11 @@ section.register fieldset.form form div.informationText p {
   font-size: 0.7rem;
 }
 section.register fieldset.form form label {
+  display: block;
   color: white;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem;
 }
 section.register fieldset.form form input {
   display: block;
@@ -204,8 +208,31 @@ section.register fieldset.form form input[type=submit] {
   border: 1px solid #587cf1;
   -webkit-box-shadow: 0 0 0 2px black, 0 0 0 4px white;
           box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+  cursor: pointer;
+}
+section.register fieldset.form form input[type=submit]:hover {
+  background-color: transparent;
+  border-color: transparent;
 }
 
+@media (min-width: 280px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    top: -7%;
+    right: 9%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 320px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 5%;
+    top: -8%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 360px) and (orientation: portrait) {
   section.register fieldset.form h1 {
     font-size: 2rem;
@@ -218,6 +245,16 @@ section.register fieldset.form form input[type=submit] {
   }
   section.register fieldset.form form input[type=submit] {
     font-size: 1.1rem;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+    top: -7%;
+  }
+}
+@media (min-width: 375px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 8%;
+    top: -6%;
   }
 }
 @media (min-width: 390px) and (orientation: portrait) {
@@ -252,6 +289,16 @@ section.register fieldset.form form input[type=submit] {
   }
   section.register fieldset.form form input[type=submit] {
     font-size: 1.1rem;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 6%;
+    top: -8%;
+  }
+}
+@media (min-width: 414px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+    top: -9%;
   }
 }
 @media (min-width: 660px) and (orientation: portrait) {
@@ -300,6 +347,9 @@ section.register fieldset.form form input[type=submit] {
   section.register fieldset.form form input[type=submit] {
     font-size: 1.2rem;
   }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 533px) and (orientation: landscape) {
   section.register {
@@ -322,6 +372,22 @@ section.register fieldset.form form input[type=submit] {
   }
   section.register fieldset.form form input[type=submit] {
     padding: 10px 20px;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 9%;
+    top: -7%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 540px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 8%;
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 700px) and (orientation: landscape) {
@@ -357,6 +423,21 @@ section.register fieldset.form form input[type=submit] {
     padding: 10px 20px;
   }
 }
+@media (min-width: 720px) and (orientation: landscape) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+    right: 9%;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    top: -9%;
+    right: 13%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.5rem;
+  }
+}
 @media (min-width: 896px) and (orientation: landscape) {
   section.register {
     margin: 10% 0;
@@ -371,6 +452,25 @@ section.register fieldset.form form input[type=submit] {
   }
   section.register fieldset.form form div.informationText {
     width: 40vw;
+  }
+}
+@media (min-width: 912px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+  }
+}
+@media (min-width: 800px) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+    right: 7%;
+  }
+}
+@media (min-width: 1024px) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1400px) and (orientation: landscape) {

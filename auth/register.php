@@ -11,7 +11,7 @@ if(isset($_POST["submit"])){
     if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
             if (preg_match("#.*^(?=.{10,100})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
-                //$message = "Your password is strong.";
+                $message = "Your password is strong.";
                 $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
                 $message = $res["message"];
             } else {
@@ -58,7 +58,9 @@ if(isset($_POST["submit"])){
                     <p><?php echo $message; ?></p>
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
-                <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
+                <label for="password" class="tooltip">
+                    <!-- <p class="tooltiptext">Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.</p> -->
+                </label><input type="password" name="password" id="password" placeholder="Password" required>
                 <label for="cpassword"></label><input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign up">
             </form>

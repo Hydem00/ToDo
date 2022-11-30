@@ -63,7 +63,7 @@ section.register
                 background-color: #8cf459
                 transition: opacity .1s, left .5s
         legend
-            margin: 0 auto 
+            margin: 0 auto
             a
                 div.logo
                     position: relative
@@ -79,7 +79,7 @@ section.register
             margin-top: 2%
             font-size: 1.5rem
             background-color: rgba(0,0,0,.4)
-            color: white 
+            color: white
             z-index: 1
         form
             position: relative
@@ -96,7 +96,32 @@ section.register
                     color: white
                     font-size: .7rem
             label
+                display: block
                 color: white
+                width: 70%
+                margin: 0 auto
+                font-size: 0.8rem
+            // .tooltip
+            //     position: absolute
+            //     display: block
+            //     left: 75%
+            //     top: 32%
+            //     .tooltiptext
+            //         visibility: hidden
+            //         width: 120px
+            //         background-color: black
+            //         color: #fff
+            //         text-align: center
+            //         border-radius: 6px
+            //         padding: 5px 0
+            //         position: absolute
+            //         z-index: 1
+
+            //     &:hover
+            //         .tooltiptext
+            //             visibility: visible
+            //     &::after
+            //         content: "?"
             input
                 display: block
                 width: 80%
@@ -108,7 +133,7 @@ section.register
                 border-radius: 1.5rem
                 padding: 5px 1rem
                 background-color: rgba(255, 255, 255, 0.25)
-                letter-spacing: 1px   
+                letter-spacing: 1px
                 &::placeholder
                     color: #bbbaba
                 &:focus::placeholder,&:hover::placeholder
@@ -133,6 +158,38 @@ section.register
                     color: white
                     border: 1px solid #587cf1
                     box-shadow: 0 0 0 2px black, 0 0 0 4px white
+                    cursor: pointer
+                    &:hover
+                        background-color: transparent
+                        border-color: transparent
+
+@media (min-width: 280px) and (orientation:portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                top: -7%
+                right: 9%
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 0.7rem
+
+@media(min-width: 320px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 5%
+                top: -8%
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1rem
 
 @media (min-width: 360px) and (orientation: portrait)
     section.register
@@ -144,9 +201,21 @@ section.register
                     p
                         font-size: .9rem
                 input
-                    font-size: 1.1rem  
+                    font-size: 1.1rem
                     &[type="submit"]
                         font-size: 1.1rem
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 7%
+                top: -7%
+
+@media (min-width: 375px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 8%
+                top: -6%
 
 @media (min-width: 390px) and (orientation: portrait)
     section.register
@@ -170,7 +239,7 @@ section.register
                 margin-top: 2%
                 font-size: 2rem
                 background-color: #2d2b2b80
-                color: white 
+                color: white
             form
                 div.informationText
                     p
@@ -179,6 +248,19 @@ section.register
                     padding: 10px
                     &[type="submit"]
                         font-size: 1.1rem
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 6%
+                top: -8%
+
+@media (min-width: 414px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 7%
+                top: -9%
 
 @media (min-width: 660px) and (orientation: portrait)
     section.register
@@ -220,6 +302,12 @@ section.register
                     font-size: 1.2rem
                     &[type="submit"]
                         font-size: 1.2rem
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1.3rem
 
 @media (min-width: 533px) and (orientation: landscape)
     section.register
@@ -239,6 +327,30 @@ section.register
                     font-size: 1.2rem
                     &[type="submit"]
                         padding: 10px 20px
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 9%
+                top: -7%
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1.3rem
+@media (min-width: 540px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 8%
+                top: -10%
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1.4rem
 
 @media (min-width: 700px) and (orientation: landscape)
     section.register
@@ -269,6 +381,27 @@ section.register
                     &[type="submit"]
                         padding: 10px 20px
 
+@media (min-width: 720px) and (orientation: landscape)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                top: -10%
+                right: 9%
+
+@media (min-width: 768px) and (orientation:portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                top: -9%
+                right: 13%
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1.5rem
+
 @media (min-width: 896px) and (orientation: landscape)
     section.register
         margin: 10% 0
@@ -284,6 +417,32 @@ section.register
             form
                 div.informationText
                     width: 40vw
+
+@media (min-width: 912px) and (orientation: portrait)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                right: 7%
+
+@media (min-width:800px)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                top: -10%
+                right: 7%
+
+@media (min-width:1024px)
+    section.register
+        fieldset.form
+            div.goSignBtn
+                top: -10%
+
+    section.register
+        fieldset.form
+            div.goSignBtn
+                a
+                    p
+                        font-size: 1.5rem
 
 @media (min-width: 1400px) and (orientation: landscape)
     section.register
