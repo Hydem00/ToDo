@@ -217,8 +217,8 @@ section.register fieldset.form form input[type=submit]:hover {
 
 @media (min-width: 280px) and (orientation: portrait) {
   section.register fieldset.form div.goSignBtn {
-    top: -7%;
     right: 9%;
+    top: -7%;
   }
   section.register fieldset.form div.goSignBtn a p {
     font-size: 0.7rem;

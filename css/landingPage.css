@@ -260,8 +260,8 @@ nav.desktop {
     margin: 4.2vh 10px 0 0;
     height: 5vh;
     width: 12.5%;
-    background-color: black;
     overflow: hidden;
+    background-color: black;
   }
   header nav.desktop ul li:nth-last-of-type(2) {
     margin-left: 25%;
