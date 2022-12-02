@@ -39,13 +39,13 @@ if(isset($_POST["submit"])){
             <div class="goBackBtn">
                 <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
             </div>
-            <h1>Resend Activation</h1>
+            <h1>Reset Password</h1>
             <form method="POST" action="">
                 <div class="informationText">
                     <p><?php echo $message; ?></p>
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
-                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Resend">
+                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Reset">
             </form>
         </fieldset>
     </section>
