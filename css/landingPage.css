@@ -306,6 +306,11 @@ nav.desktop {
     display: none;
   }
 }
+@media (min-width: 1280px) and (orientation: landscape) {
+  header nav.desktop ul li a {
+    top: -5px;
+  }
+}
 @media (min-width: 1368px) and (orientation: landscape) {
   header div.logo {
     left: -2%;
@@ -783,7 +788,7 @@ main div.offer img {
 }
 @media (min-width: 1280px) and (orientation: landscape) {
   main div.banner h1 {
-    font-size: 3.7rem;
+    font-size: 3.6rem;
     line-height: 320px;
     height: 500px;
   }
@@ -799,7 +804,7 @@ main div.offer img {
     margin: 0 auto;
   }
   main p.information {
-    width: 100%;
+    width: 95%;
     max-width: 1600px;
     font-size: 2rem;
     margin: 20px auto;

@@ -50,7 +50,10 @@ if(isset($_POST["submit"])){
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
                 <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
-                <a href="resendActivation.php">Resend activation</a>
+                <div class="links">
+                    <a href="resendActivation.php">Resend activation</a>
+                    <a href="">Forgot password</a>
+                </div>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
                 
             </form>
