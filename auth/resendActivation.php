@@ -45,7 +45,7 @@ if(isset($_POST["submit"])){
                     <p><?php echo $message; ?></p>
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
-                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
+                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Resend">
             </form>
         </fieldset>
     </section>
