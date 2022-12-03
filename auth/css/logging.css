@@ -213,6 +213,8 @@ section.register fieldset.form form input[type=submit] {
   -webkit-box-shadow: 0 0 0 2px black, 0 0 0 4px white;
           box-shadow: 0 0 0 2px black, 0 0 0 4px white;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 section.register fieldset.form form input[type=submit]:hover {
   background-color: transparent;
@@ -236,10 +238,16 @@ section.register fieldset.form form div.links a {
   color: yellow;
   text-decoration: none;
   font-size: 0.8rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
-section.register fieldset.form form div.links:hover {
-  border-bottom: 2px solid yellow;
-  border-radius: 10px;
+section.register fieldset.form form div.links a:nth-of-type(1):hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px white;
+}
+section.register fieldset.form form div.links a:nth-of-type(2):hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px white;
 }
 
 @media (min-width: 280px) and (orientation: portrait) {

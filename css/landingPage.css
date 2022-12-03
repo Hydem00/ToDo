@@ -534,6 +534,8 @@ main a {
   border-radius: 10px;
   margin: 30px 0;
   background-color: #179CF0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 main a:hover {
   background-color: transparent;

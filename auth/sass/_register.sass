@@ -163,6 +163,7 @@ section.register
                     border: 1px solid #587cf1
                     box-shadow: 0 0 0 2px black, 0 0 0 4px white
                     cursor: pointer
+                    transition: 0.3s
                     &:hover
                         background-color: transparent
                         border-color: transparent
@@ -177,9 +178,13 @@ section.register
                     color: yellow
                     text-decoration: none
                     font-size: 0.8rem
-                &:hover
-                    border-bottom: 2px solid yellow
-                    border-radius: 10px
+                    transition: 0.2s
+                    &:nth-of-type(1):hover
+                        text-decoration: underline
+                        text-shadow: 0 0 10px white
+                    &:nth-of-type(2):hover
+                        text-decoration: underline
+                        text-shadow: 0 0 10px white
 
 @media (min-width: 280px) and (orientation:portrait)
     section.register
