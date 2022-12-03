@@ -1,10 +1,10 @@
 <?php
 
-require '../vendor/autoload.php';
-require '../config.php';
+// require '../vendor/autoload.php';
+// require '../config.php';
 
-$config = new \PHPAuth\Config($dbh);
-$auth   = new \PHPAuth\Auth($dbh, $config);
+// $config = new \PHPAuth\Config($dbh);
+// $auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
 if(isset($_POST["submit"])){
@@ -38,7 +38,7 @@ if(isset($_POST["submit"])){
                 <a href="../index.html"><div class="logo"></div></a>
             </legend>
             <div class="goBackBtn">
-                <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
+                <i class="fa-solid fa-arrow-up"></i>
             </div>
             <div class="goSignBtn">
                 <a href="register.php"><p>SIGN UP</p></a>
@@ -56,5 +56,6 @@ if(isset($_POST["submit"])){
             </form>
         </fieldset>
     </section>
+    <script src="goBack.js"></script>
 </body>
 </html>

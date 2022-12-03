@@ -1,9 +1,9 @@
 <?php
-require '../vendor/autoload.php';
-require '../config.php';
+// require '../vendor/autoload.php';
+// require '../config.php';
  
-$config = new \PHPAuth\Config($dbh);
-$auth   = new \PHPAuth\Auth($dbh, $config);
+// $config = new \PHPAuth\Config($dbh);
+// $auth   = new \PHPAuth\Auth($dbh, $config);
  
 $message = "";
 if(isset($_POST["submit"])){
@@ -37,7 +37,7 @@ if(isset($_POST["submit"])){
                 <a href="../index.html"><div class="logo"></div></a>
             </legend>
             <div class="goBackBtn">
-                <a href="../index.html"><i class="fa-solid fa-arrow-up"></i></a>
+                <i class="fa-solid fa-arrow-up"></i>
             </div>
             <h1>Resend Activation</h1>
             <form method="POST" action="">
@@ -50,5 +50,6 @@ if(isset($_POST["submit"])){
         </fieldset>
     </section>
     <script src="emailValidation.js"></script>
+    <script src="goBack.js"></script>
 </body>
 </html>
