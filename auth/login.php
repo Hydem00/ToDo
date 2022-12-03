@@ -1,10 +1,10 @@
 <?php
 
-// require '../vendor/autoload.php';
-// require '../config.php';
+require '../vendor/autoload.php';
+require '../config.php';
 
-// $config = new \PHPAuth\Config($dbh);
-// $auth   = new \PHPAuth\Auth($dbh, $config);
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
 if(isset($_POST["submit"])){

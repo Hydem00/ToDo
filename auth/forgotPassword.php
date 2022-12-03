@@ -50,7 +50,7 @@ if(isset($_POST["submit"])){
                     <p>Enter your email to get a link to set a new password.</p>
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
-                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
+                <label for="submit"></label><input type="submit" name="submit" id="submit" value="Send">
             </form>
         </fieldset>
     </section>
