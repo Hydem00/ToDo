@@ -45,7 +45,6 @@ const validateInputs = () => {
         document.querySelector('input#email').classList.add("warning");
     }
 
-    console.log(flag);
     return flag;
 }
 

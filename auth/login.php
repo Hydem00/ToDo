@@ -52,7 +52,7 @@ if(isset($_POST["submit"])){
                 <label for="password"></label><input type="password" name="password" id="password" placeholder="Password" required>
                 <div class="links">
                     <a href="resendActivation.php">Resend activation</a>
-                    <a href="">Forgot password</a>
+                    <a href="forgotPassword.php">Forgot password</a>
                 </div>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Sign in">
                 
