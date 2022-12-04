@@ -11,6 +11,13 @@ if(isset($_POST["submit"])){
     if(!empty($_POST["email"]) && !empty($_POST["password"])){
         $res = $auth->login($_POST["email"], $_POST["password"]);
         $message = $res["message"];
+
+        //var_dump($res);
+        if(!$res["error"]){
+            setcookie($config->cookie_name, $res['hash'], $res['expire'], $config->cookie_path, $config->cookie_domain, $config->cookie_secure, $config->cookie_http);
+            header('Location: ../main/main.php');
+        }
+        
     }else{
         $message = "Some fields are empty!";
     }

@@ -1,3 +1,19 @@
+<?php
+
+require '../vendor/autoload.php';
+require '../config.php';
+
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
+
+if(!$auth->isLogged()){
+  header('HTTP/1.0 401 Unauthorized');
+  header('Location: ../login/login.php');
+}else{
+  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
