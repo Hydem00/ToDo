@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: roboto, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  font-family: arial, sans-serif;
+  color: white;
+  font-size: 30px;
+}
+
+header {
+  position: sticky;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: brown;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+}
+section main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: gray;
+  min-height: 60vh;
+  color: black;
+}
+section nav {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 280px;
+  background-color: black;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+footer div.socials {
+  text-transform: uppercase;
+}
+footer div.socials p.contact {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 20px 0;
+}
+footer div.socials p.social {
+  text-align: left;
+  font-size: 1rem;
+  width: 65%;
+  margin: 0 auto 15px auto;
+}
+footer div.socials p.social i {
+  font-size: 1.3rem;
+  padding-right: 10px;
+  color: #179CF0;
+  vertical-align: -4px;
+}
+footer div.map, footer div.socials, footer div.copy {
+  width: 95%;
+  margin: 0 auto 35px auto;
+  border-top: 1px solid gray;
+}
+footer div.map {
+  overflow: hidden;
+}
+footer div.map p {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+footer div.map iframe {
+  display: block;
+  margin: 10px auto;
+}
+footer div.copy p {
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 667px) and (orientation: landscape) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer div.socials, footer div.map {
+    -ms-flex-preferred-size: 47%;
+        flex-basis: 47%;
+  }
+  footer div.socials p.social {
+    margin: 15px auto;
+    width: 70%;
+  }
+}
+@media (min-width: 896px) and (orientation: landscape) {
+  footer div.socials p.social {
+    width: 60%;
+  }
+}
+@media (min-width: 915px) and (orientation: landscape) {
+  footer div.socials p.social, footer div.copy p {
+    font-size: 1.3rem;
+  }
+  footer div.socials p.contact, footer div.map p {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 760px) and (orientation: portrait) {
+  footer div.socials p.contact, footer div.map p {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 768px) {
+  footer div.socials p.social, footer div.copy p {
+    font-size: 1.6rem;
+  }
+  footer div.socials p.social {
+    width: 50%;
+    margin: 0 auto 15px auto;
+  }
+  footer div.socials p.contact {
+    font-size: 1.9rem;
+  }
+  footer div.map p {
+    font-size: 1.9rem;
+  }
+  footer div.map iframe {
+    height: 300px;
+    width: 400px;
+  }
+  footer div.socials p.social i {
+    font-size: 2.1rem;
+  }
+}
+@media (min-width: 844px) and (orientation: landscape) {
+  footer div.socials p.social {
+    width: 80%;
+  }
+}
+@media (min-width: 918px) {
+  footer div.map iframe {
+    height: 250px;
+    width: 350px;
+  }
+  footer div.socials p.social {
+    width: 80%;
+    margin: 0 auto 15px auto;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  footer {
+    padding-top: 100px;
+  }
+  footer div.socials p.social {
+    width: 60%;
+    margin: 0 auto 15px auto;
+    font-size: 1.4rem;
+  }
+  footer div.socials p.contact, footer div.map p {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  footer div.socials p.contact, footer div.map p {
+    font-size: 3.3rem;
+  }
+  footer {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=main.css.map */
