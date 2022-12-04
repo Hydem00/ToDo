@@ -70,7 +70,7 @@ $lang['email_activation_body'] = 'Hello,<br/><br/> To be able to log in to your 
 $lang['email_activation_altbody'] = 'Hello, ' . "\n\n" . 'To be able to log in to your account you first need to activate your account by visiting the following link:' . "\n" . '%1$s/%2$s?%3$s' . "\n\n" . 'You then need to use the following activation key: %3$s' . "\n\n" . 'If you did not sign up on %1$s recently then this message was sent in error, please ignore it.';
 
 $lang['email_reset_subject'] = '%s - Password reset request';
-$lang['email_reset_body'] = 'Hello,<br/><br/>To reset your password click the following link :<br/><br/><strong><a href="%1$s/%2$s">%1$s/%2$s</a></strong><br/><br/>You then need to use the following password reset key: <strong>%3$s</strong><br/><br/>If you did not request a password reset key on %1$s recently then this message was sent in error, please ignore it.';
+$lang['email_reset_body'] = 'Hello,<br/><br/>To reset your password click the following link: <strong><a href="%1$s/%2$s?reset=%3$s">RESET</a></strong><br/><br/>You then need to use the following password reset key: <strong>%3$s</strong><br/>Link to reset page: <strong><a href="%1$s/%2$s">%1$s/%2$s</a></strong><br/><br/> If you did not request a password reset key on %1$s recently then this message was sent in error, please ignore it.';
 $lang['email_reset_altbody'] = 'Hello, ' . "\n\n" . 'To reset your password please visiting the following link :' . "\n" . '%1$s/%2$s' . "\n\n" . 'You then need to use the following password reset key: %3$s' . "\n\n" . 'If you did not request a password reset key on %1$s recently then this message was sent in error, please ignore it.';
 
 $lang['account_deleted'] = "Account deleted successfully.";

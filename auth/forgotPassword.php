@@ -9,8 +9,9 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 $message = "";
 if(isset($_POST["submit"])){
     if(!empty($_POST["email"])){
-        $res = $auth->requestReset($_POST["email"]);
-        $message = $res["message"];
+        $reset = $auth->requestReset($_POST["email"]);
+        $email = $auth->do_SendMail($_POST["email"], "reset", $reset["token"]);
+        $message = $reset["message"];
     }else{
         $message = "Some fields are empty!";
     }
@@ -43,8 +44,11 @@ if(isset($_POST["submit"])){
             <h1>Forgot password</h1>
             <form method="POST" action="">
                 <div class="informationText">
-                    <p><?php echo $message; ?></p>
+                    <p><?php 
+                    //var_dump($email);
+                    if($message == "Password reset request is created."){ echo ""; } ?></p>
                     <p>Enter your email to get a link to set a new password.</p>
+
                 </div>
                 <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Send">
