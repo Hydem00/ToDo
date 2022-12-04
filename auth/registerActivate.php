@@ -46,7 +46,7 @@ if(isset($_POST["submit"])){
                 <div class="informationText">
                     <p><?php echo $message; ?></p>
                 </div>
-                <input type="text" name="activateCode" id="activateCode" placeholder="activateCode" autocomplete="off" required>
+                <input type="text" name="activateCode" id="activateCode" value="<?php if(!empty($_GET["activation"])){ echo $_GET["activation"];}?>" placeholder="activateCode" autocomplete="off" required>
                 <input type="submit" name="submit" id="submit" value="Activate">
             </form>
         </fieldset>
