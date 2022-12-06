@@ -8,18 +8,16 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 
 $message = "";
 if(isset($_POST["submit"])){
-    if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
-        if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-            if (preg_match("#.*^(?=.{10,100})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
-                $message = "Your password is strong.";
-                $res = $auth->register($_POST["email"], $_POST["password"], $_POST["cpassword"], Array(), "", true);
-                $message = $res["message"];
-            } else {
-                $message = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.";
-            }
-        }else {
-            $message = "Provided e-mail is invalid.";
+    if(!empty($_POST["key"]) && !empty($_POST["password"]) && !empty($_POST["cpassword"])){
+
+        if (preg_match("#.*^(?=.{10,100})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $_POST["password"])){
+            $message = "Your password is strong.";
+            $res = $auth->resetPass($_POST["key"], $_POST["password"], $_POST["cpassword"]);
+            $message = $res["message"];
+        } else {
+            $message = "Your password is not safe. <br>Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.";
         }
+
     }else{
         $message = "Some fields are empty!";
     }
@@ -55,6 +53,7 @@ if(isset($_POST["submit"])){
                     <p><?php echo $message; ?></p>
                     <p>Set your new password</p>
                 </div>
+                <label for="key"></label><input type="key" name="key" id="key" value="<?php if(isset($_GET["reset"])){ echo $_GET["reset"];} ?>" placeholder="Key" required>
                 <label for="password"></label><input type="password" name="password" id="password" placeholder="New Password" required>
                 <label for="cpassword"></label><input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required>
                 <label for="submit"></label><input type="submit" name="submit" id="submit" value="Set password">
