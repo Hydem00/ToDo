@@ -46,19 +46,19 @@
       <li><a href="#">Sign Out</a></li>
     </ul>
 </nav>
+  <header>
+    <div class="leftHeader">
+      <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
+    <div class="rightHeader">
+      <p class="name_account">Nazwa konta</p>
+    </div>
+  </header>
   <div class="wrap">
-    <header>
-      <div class="leftHeader">
-        <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-      </div>
-      <div class="rightHeader">
-        <p class="name_account">Nazwa konta</p>
-      </div>
-    </header>
     <main>
       <section class="lists">
         <div></div>
@@ -87,7 +87,7 @@
               <p>&copy; All rights reserved</p>
           </div>
       </footer>
-    </div>
-    <script src="navigation.js"></script>
+  </div>
+  <script src="navigation.js"></script>
 </body>
 </html>
