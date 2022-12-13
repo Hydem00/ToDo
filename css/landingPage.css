@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 200vh;
   font-size: 10px;

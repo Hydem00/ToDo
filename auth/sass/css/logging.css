@@ -1,0 +1,656 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 10px;
+  font-family: roboto, sans-serif;
+  background-image: url("../../images/polygon.png");
+  -webkit-animation: bgcMove 60s alternate linear infinite;
+          animation: bgcMove 60s alternate linear infinite;
+}
+
+section.register {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+section.register fieldset.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-image: url(../../images/park.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+}
+section.register fieldset.form::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  top: -75px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
+}
+section.register fieldset.form div.goBackBtn {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  z-index: 1;
+  cursor: pointer;
+}
+section.register fieldset.form div.goBackBtn i {
+  font-size: 1.5rem;
+  color: white;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+section.register fieldset.form div.goSignBtn {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  z-index: 1;
+  overflow: hidden;
+}
+section.register fieldset.form div.goSignBtn a {
+  text-decoration: none;
+}
+section.register fieldset.form div.goSignBtn a p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+}
+section.register fieldset.form div.goSignBtn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0%;
+  left: -100%;
+  width: 100%;
+  height: 10%;
+  background-color: #8cf459;
+  opacity: 0;
+  -webkit-transition: left 0.5s, opacity 0.5s 0.1s;
+  transition: left 0.5s, opacity 0.5s 0.1s;
+}
+section.register fieldset.form div.goSignBtn:hover::after {
+  bottom: 0;
+  left: 0%;
+  opacity: 1;
+  background-color: #8cf459;
+  -webkit-transition: opacity 0.1s, left 0.5s;
+  transition: opacity 0.1s, left 0.5s;
+}
+section.register fieldset.form legend {
+  margin: 0 auto;
+}
+section.register fieldset.form legend a div.logo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-image: url("../../images/logo_bez_bg100.png");
+  -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
+          animation: logoAnimate100 2.5s steps(9) forwards;
+  z-index: 1;
+}
+section.register fieldset.form h1 {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 2%;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  z-index: 1;
+}
+section.register fieldset.form form {
+  position: relative;
+  margin: 5% 0 5% 0;
+  z-index: 1;
+}
+section.register fieldset.form form div.informationText {
+  width: 80vw;
+  word-wrap: break-word;
+  margin: 0 auto;
+}
+section.register fieldset.form form div.informationText p {
+  display: block;
+  text-align: center;
+  padding: 0 10% 5px 10%;
+  color: white;
+  font-size: 0.7rem;
+}
+section.register fieldset.form form label {
+  display: block;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+}
+section.register fieldset.form form input {
+  display: block;
+  width: 80%;
+  font-size: 1rem;
+  margin: 10px auto;
+  color: white;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 1.5rem;
+  padding: 5px 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 1px;
+}
+section.register fieldset.form form input::-webkit-input-placeholder {
+  color: #bbbaba;
+}
+section.register fieldset.form form input::-moz-placeholder {
+  color: #bbbaba;
+}
+section.register fieldset.form form input:-ms-input-placeholder {
+  color: #bbbaba;
+}
+section.register fieldset.form form input::-ms-input-placeholder {
+  color: #bbbaba;
+}
+section.register fieldset.form form input::placeholder {
+  color: #bbbaba;
+}
+section.register fieldset.form form input:focus::-webkit-input-placeholder, section.register fieldset.form form input:hover::-webkit-input-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus::-moz-placeholder, section.register fieldset.form form input:hover::-moz-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus:-ms-input-placeholder, section.register fieldset.form form input:hover:-ms-input-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus::-ms-input-placeholder, section.register fieldset.form form input:hover::-ms-input-placeholder {
+  color: white;
+}
+section.register fieldset.form form input:focus::placeholder, section.register fieldset.form form input:hover::placeholder {
+  color: white;
+}
+section.register fieldset.form form input:hover {
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+section.register fieldset.form form input.warning {
+  border: 2px solid red;
+}
+section.register fieldset.form form input:focus {
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+section.register fieldset.form form input:last-child {
+  display: inline-block;
+  margin-top: 5%;
+}
+section.register fieldset.form form input[type=submit] {
+  margin: 20px auto;
+  width: auto;
+  border-radius: 10px;
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+          box-shadow: 0 0 0 2px black, 0 0 0 4px white;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+section.register fieldset.form form input[type=submit]:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}
+section.register fieldset.form form div.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 75%;
+  margin: 0 auto;
+  border-top: 1px solid gray;
+  padding: 10px 0;
+}
+section.register fieldset.form form div.links a {
+  color: white;
+  text-shadow: 10px 0 10px yellow, -10px 0 10px yellow;
+  text-decoration: none;
+  font-size: 0.8rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin: 0 0 5px 0;
+}
+section.register fieldset.form form div.links a:nth-of-type(1):hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px white;
+}
+section.register fieldset.form form div.links a:nth-of-type(2):hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px white;
+}
+
+@media (max-width: 389px) and (orientation: portrait) {
+  section.register fieldset.form::after {
+    top: -49px;
+  }
+}
+@media (min-width: 280px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 5%;
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 0.7rem;
+  }
+  section.register fieldset.form form div.links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}
+@media (min-width: 320px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 5%;
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 0.8rem;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 360px) and (orientation: portrait) {
+  section.register fieldset.form h1 {
+    font-size: 2rem;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 0.9rem;
+  }
+  section.register fieldset.form form input {
+    font-size: 1.1rem;
+  }
+  section.register fieldset.form form input[type=submit] {
+    font-size: 1.1rem;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+    top: -7%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 375px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 8%;
+    top: -8%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 390px) and (orientation: portrait) {
+  section.register fieldset.form div.goBackBtn {
+    top: -8%;
+    left: 8%;
+  }
+  section.register fieldset.form div.goBackBtn i {
+    font-size: 1.6rem;
+  }
+  section.register fieldset.form legend a div.logo {
+    width: 150px;
+    height: 150px;
+    background-image: url("../../images/logo_bez_bg150.png");
+    cursor: pointer;
+  }
+  section.register fieldset.form legend a div.logo:hover {
+    background-image: url("../../images/logo_hover150.png");
+  }
+  section.register fieldset.form h1 {
+    padding: 30px;
+    margin-top: 2%;
+    font-size: 2rem;
+    background-color: rgba(45, 43, 43, 0.5019607843);
+    color: white;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 0.9rem;
+  }
+  section.register fieldset.form form input {
+    padding: 10px;
+  }
+  section.register fieldset.form form input[type=submit] {
+    font-size: 1.1rem;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 5%;
+    top: -12%;
+  }
+  section.register fieldset.form form div.links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.85rem;
+  }
+}
+@media (min-width: 412px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+    top: -11%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 660px) and (orientation: portrait) {
+  section.register fieldset.form div.goBackBtn {
+    top: -8%;
+    left: 8%;
+  }
+  section.register fieldset.form div.goBackBtn i {
+    font-size: 2.3rem;
+  }
+  section.register fieldset.form h1 {
+    font-size: 2.5rem;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 1rem;
+  }
+  section.register fieldset.form form input {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form input[type=submit] {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 800px) and (orientation: portrait) {
+  section.register fieldset.form div.goBackBtn {
+    top: -8%;
+    left: 8%;
+  }
+  section.register fieldset.form div.goBackBtn i {
+    font-size: 2.3rem;
+  }
+  section.register fieldset.form h1 {
+    font-size: 2.5rem;
+  }
+  section.register fieldset.form form div.informationText {
+    width: 50vw;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 1rem;
+  }
+  section.register fieldset.form form input {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form input[type=submit] {
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 533px) and (orientation: landscape) {
+  section.register {
+    margin: 20% 0;
+  }
+  section.register fieldset.form div.goBackBtn i {
+    font-size: 1.7rem;
+  }
+  section.register fieldset.form h1 {
+    font-size: 2rem;
+  }
+  section.register fieldset.form form div.informationText {
+    width: 70vw;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 0.8rem;
+  }
+  section.register fieldset.form form input {
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form input[type=submit] {
+    padding: 10px 20px;
+  }
+  section.register fieldset.form div.goSignBtn {
+    right: 9%;
+    top: -7%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.3rem;
+  }
+  section.register fieldset.form form div.links {
+    margin-top: 15px;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 540px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 8%;
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.4rem;
+  }
+  section.register fieldset.form form a {
+    font-size: 1rem;
+    left: 50%;
+    top: 59%;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  section.register fieldset.form form div.links {
+    margin-top: 20px;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 700px) and (orientation: landscape) {
+  section.register {
+    margin: 15% 0;
+  }
+  section.register fieldset.form legend a div.logo {
+    width: 150px;
+    height: 150px;
+    background-image: url("../../images/logo_bez_bg150.png");
+    cursor: pointer;
+  }
+  section.register fieldset.form legend a div.logo:hover {
+    background-image: url("../../images/logo_hover150.png");
+  }
+  section.register fieldset.form div.goBackBtn i {
+    font-size: 2rem;
+  }
+  section.register fieldset.form h1 {
+    font-size: 2.2rem;
+  }
+  section.register fieldset.form form div.informationText {
+    width: 60vw;
+  }
+  section.register fieldset.form form div.informationText p {
+    font-size: 1rem;
+  }
+  section.register fieldset.form form input {
+    width: 60%;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 720px) and (orientation: landscape) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+    right: 9%;
+  }
+  section.register fieldset.form form div.links {
+    width: 65%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    top: -9%;
+    right: 13%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.5rem;
+  }
+  section.register fieldset.form form div.links {
+    margin-top: 20px;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.2rem;
+  }
+  section.register fieldset.form form input {
+    width: 70%;
+  }
+}
+@media (min-width: 896px) and (orientation: landscape) {
+  section.register {
+    margin: 10% 0;
+  }
+  section.register fieldset.form form div.informationText {
+    width: 50vw;
+  }
+  section.register fieldset.form form div.links {
+    width: 65%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1100px) and (orientation: landscape) {
+  section.register {
+    margin: 0;
+  }
+  section.register fieldset.form form div.informationText {
+    width: 40vw;
+  }
+}
+@media (min-width: 912px) and (orientation: portrait) {
+  section.register fieldset.form div.goSignBtn {
+    right: 7%;
+  }
+}
+@media (min-width: 800px) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+    right: 7%;
+  }
+  section.register fieldset.form form div.links {
+    width: 65%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 820px) and (orientation: portrait) {
+  section.register fieldset.form form div.links {
+    width: 75%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1024px) {
+  section.register fieldset.form div.goSignBtn {
+    top: -10%;
+  }
+  section.register fieldset.form div.goSignBtn a p {
+    font-size: 1.5rem;
+  }
+  section.register fieldset.form form div.links {
+    margin-top: 20px;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) and (orientation: landscape) {
+  section.register fieldset.form form div.links {
+    width: 70%;
+  }
+  section.register fieldset.form form div.links a {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1400px) and (orientation: landscape) {
+  section.register fieldset.form form div.informationText {
+    width: 30vw;
+  }
+  section.register fieldset.form form div.links {
+    width: 75%;
+  }
+}
+@-webkit-keyframes logoAnimate100 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes logoAnimate100 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@-webkit-keyframes bgcMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes bgcMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}/*# sourceMappingURL=logging.css.map */
