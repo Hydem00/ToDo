@@ -1,17 +1,17 @@
 <?php
 
-// require '../vendor/autoload.php';
-// require '../config.php';
+require '../vendor/autoload.php';
+require '../config.php';
 
-// $config = new \PHPAuth\Config($dbh);
-// $auth   = new \PHPAuth\Auth($dbh, $config);
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
 
-// if(!$auth->isLogged()){
-//   header('HTTP/1.0 401 Unauthorized');
-//   header('Location: ../login/login.php');
-// }else{
+if(!$auth->isLogged()){
+  header('HTTP/1.0 401 Unauthorized');
+  header('Location: ../login/login.php');
+}else{
   
-// }
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,22 +62,8 @@
   <div class="wrap">
     <main>
       <section class="lists">
+        <h1>Your Lists</h1>
         <div></div>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Creating List</p>
-          <form action="">
-            <label for="">Enter the title</label><input type="text">
-            <label for="">Enter description</label><input type="text">
-          </form>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque maiores ipsa, ratione dolores, corrupti odio aliquam, tempora earum quidem exercitationem laboriosam magnam omnis voluptate consectetur totam officiis ea! Itaque, recusandae.</p>
-        </div>
-
-        </div>
         <div></div>
         <div></div>
         <div></div>
@@ -86,6 +72,17 @@
         <div></div>
         <div></div>
       </section>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <h2>Creating List</h2>
+          <span class="close">&times;</span>
+          <form action="" id="addList">
+            <input type="text" placeholder = "Enter the title">
+            <textarea placeholder = "Enter the description"></textarea>
+            <button>Create</button>
+          </form>
+        </div>
+      </div>
     </main>
     </div>
     <footer id="footer">
@@ -108,7 +105,6 @@
               <p>&copy; All rights reserved</p>
           </div>
       </footer>
-  
   <script src="navigation.js"></script>
   <script src="popup.js"></script>
 </body>
