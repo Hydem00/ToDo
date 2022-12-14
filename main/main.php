@@ -44,7 +44,7 @@ if(!$auth->isLogged()){
       <li><a href="#">Create Lists</a></li>
       <li><a href="#">Edit Lists</a></li>
       <li><a href="#">Show Profile</a></li>
-      <li><a href="#">Sign Out</a></li>
+      <li><a href="logout.php">Sign Out</a></li>
     </ul>
 </nav>
   <header>
