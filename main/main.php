@@ -56,7 +56,7 @@ if(!$auth->isLogged()){
       </div>
     </div>
     <div class="rightHeader">
-      <p class="name_account">Nazwa konta</p>
+      <p class="name_account"><?php echo $auth->getCurrentUser()["email"]; ?></p>
     </div>
   </header>
   <div class="wrap">
