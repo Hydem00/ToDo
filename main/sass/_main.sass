@@ -1,12 +1,49 @@
-main
-    height: 100vh
-    background-color: white
-    section.lists
-        height: 100%
-        width: 100%
-        div
-            margin: 20px auto
-            width: 90%
-            height: 20%
+div.wrap
+    main
+        background-color: #7c8da5
+        padding: 10px 0
+        border-radius: 20px
+        section.lists
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: space-around
+            div
+                flex-basis: 90%
+                height: 100px
+                margin: 10px 0
+                border-radius: 20px
+                background-color: #475b74
+                color: #e0e1dc
+
+@media (min-width: 414px) and (orientation: portrait)
+    div.wrap
+        main
+            section.lists
+                div
+                    height: 120px
+
+@media (min-width: 760px)
+    div.wrap
+        main
+            padding: 10px 10px
+            section.lists
+                div
+                    flex-basis: 49%
+                    height: 150px
+
+@media (min-width:1024px)
+    div.wrap
+        display: flex
+        flex-direction: column
+        margin-bottom: 100px
+        margin-left: 0
+        align-items: flex-end
+        padding-right: 10px
+        main
+            width: 79%
             border-radius: 20px
-            background-color: #E4E4E4
+            section.lists
+                div
+                    flex-basis: 48%
+                    height: 150px

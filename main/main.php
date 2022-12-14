@@ -38,6 +38,7 @@
     <div class="logo"></div>
 </nav>
 <nav class="menuDesktop">
+<div class="logo"></div>
     <ul>
       <li><a href="#">Display Lists</a></li>
       <li><a href="#">Create Lists</a></li>
@@ -65,8 +66,13 @@
         <div></div>
         <div></div>
         <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </section>
     </main>
+    </div>
     <footer id="footer">
           <div class="socials">
               <p class="contact">Contact</p>
@@ -87,7 +93,7 @@
               <p>&copy; All rights reserved</p>
           </div>
       </footer>
-  </div>
+  
   <script src="navigation.js"></script>
 </body>
 </html>
