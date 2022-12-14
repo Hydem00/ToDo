@@ -8,7 +8,7 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 
 if(!$auth->isLogged()){
   header('HTTP/1.0 401 Unauthorized');
-  header('Location: ../login/login.php');
+  header('Location: ../auth/login.php');
 }else{
   
 }
