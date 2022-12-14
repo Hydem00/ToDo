@@ -63,6 +63,21 @@
     <main>
       <section class="lists">
         <div></div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Creating List</p>
+          <form action="">
+            <label for="">Enter the title</label><input type="text">
+            <label for="">Enter description</label><input type="text">
+          </form>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque maiores ipsa, ratione dolores, corrupti odio aliquam, tempora earum quidem exercitationem laboriosam magnam omnis voluptate consectetur totam officiis ea! Itaque, recusandae.</p>
+        </div>
+
+        </div>
         <div></div>
         <div></div>
         <div></div>
@@ -95,5 +110,6 @@
       </footer>
   
   <script src="navigation.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
