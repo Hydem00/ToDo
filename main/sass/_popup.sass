@@ -1,5 +1,5 @@
 .modal
-    display: none
+    display: block
     position: fixed 
     left: 0
     top: 0
@@ -52,7 +52,19 @@
                 background-color: #f8f8f8
                 resize: none
             button
-                margin-top: 5%
+                margin-top: 20px
+                padding: 5px 10px
+                border-radius: 10px
+                background-color: #179CF0
+                color: white
+                border: 1px solid #179CF0
+                box-shadow: 0 0 0 2px white, 0 0 0 4px black
+                cursor: pointer
+                transition: 0.3s
+                &:hover
+                    background-color: #14130C
+                    border-color: transparent
+                    box-shadow: 0 0 0 5px black, 0 0 0 7px white
 
 @media (min-width:1024px) and (orientation:landscape)
     .modal
