@@ -58,11 +58,7 @@
       </div>
     </div>
     <div class="rightHeader">
-      <p class="name_account">
-      <i class="fa-regular fa-user"></i>hinca.tymek1@gmail.com
-        <!-- <?php 
-        // echo $auth->getCurrentUser()["email"]; ?> -->
-      </p>
+      <p class="name_account"><?php echo $auth->getCurrentUser()["email"]; ?></p>
     </div>
   </header>
   
@@ -84,7 +80,7 @@
           <form action="">
             <input type="text" placeholder = "Enter the title">
             <textarea placeholder = "Enter the description"></textarea>
-            <button>Create</button>
+            <button>Add List</button>
           </form>
         </div>
       </div>
