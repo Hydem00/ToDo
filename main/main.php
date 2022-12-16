@@ -58,6 +58,7 @@
       </div>
     </div>
     <div class="rightHeader">
+    <i class="fa-regular fa-user"></i>
       <p class="name_account"><?php echo $auth->getCurrentUser()["email"]; ?></p>
     </div>
   </header>
