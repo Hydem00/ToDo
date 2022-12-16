@@ -1,23 +1,22 @@
 var modal = document.getElementById("myModal");
-var addListSpan = document.querySelector("section.lists div.addList i");
+var addListDiv = document.querySelector("section.lists div.addList i");
 var closePopUp = document.getElementsByClassName("close")[0];
 
 const popup = () => {
     modal.style.display = "block";
-    addListSpan.classList.add("active");
+    addListDiv.classList.add("active");
 }
 
-addListSpan.addEventListener('click', popup);
+addListDiv.addEventListener('click', popup);
 
-// When the user clicks on <span> (x), close the modal
 closePopUp.addEventListener('click', function () {
     modal.style.display = "none";
+    addListDiv.classList.remove("active");
 })
 
-// When the user clicks anywhere outside of the modal, close it
 window.addEventListener('click', function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        addListSpan.classList.remove("active");
+        addListDiv.classList.remove("active");
     }
 })
