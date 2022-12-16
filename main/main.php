@@ -47,6 +47,7 @@
       <li><a href="#">Sign Out</a></li>
     </ul>
 </nav>
+
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -78,6 +79,7 @@
         </div>
 
         </div>
+        <div></div>
         <div></div>
         <div></div>
         <div></div>

@@ -85,7 +85,7 @@ nav.menuDesktop {
   }
   nav.menuDesktop {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 10%;
     margin-left: 4px;
     width: 20%;
@@ -94,7 +94,7 @@ nav.menuDesktop {
     transition: 0.5s;
   }
   nav.menuDesktop div.logo {
-    z-index: 1;
+    z-index: 2;
     position: relative;
     top: -50px;
     left: 50%;
@@ -222,6 +222,18 @@ div.rightHeader p {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background-color: transparent;
+  }
+  header div.leftHeader {
+    display: none;
+  }
   header div.leftHeader div.burger {
     display: none;
   }
@@ -277,10 +289,13 @@ div.wrap main section.lists div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     margin-bottom: 100px;
     margin-left: 0;
     -webkit-box-align: end;
