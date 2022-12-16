@@ -1,20 +1,20 @@
 <?php
 
-// require '../vendor/autoload.php';
-// require '../config.php';
+require '../vendor/autoload.php';
+require '../config.php';
 
-// $config = new \PHPAuth\Config($dbh);
-// $auth   = new \PHPAuth\Auth($dbh, $config);
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
 
-// if($auth->isLogged()){
+if($auth->isLogged()){
     
-//   $res = $auth->logout($auth->getCurrentSessionHash());
-//   var_dump($res);
-//   if($res){
-//     header('Location: ../auth/login.php');
-//   }
+  $res = $auth->logout($auth->getCurrentSessionHash());
+  var_dump($res);
+  if($res){
+    header('Location: ../auth/login.php');
+  }
 
-// }else{
-//     header('Location: ../auth/login.php');
-// }
+}else{
+    header('Location: ../auth/login.php');
+}
 ?>

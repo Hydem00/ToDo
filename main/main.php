@@ -1,17 +1,17 @@
 <?php
 
-// require '../vendor/autoload.php';
-// require '../config.php';
+require '../vendor/autoload.php';
+require '../config.php';
 
-// $config = new \PHPAuth\Config($dbh);
-// $auth   = new \PHPAuth\Auth($dbh, $config);
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
 
-// if(!$auth->isLogged()){
-//   header('HTTP/1.0 401 Unauthorized');
-//   header('Location: ../login/login.php');
-// }else{
+if(!$auth->isLogged()){
+  header('HTTP/1.0 401 Unauthorized');
+  header('Location: ../login/login.php');
+}else{
   
-// }
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@
       <p class="name_account">
         <i class="fa-regular fa-user"></i>bartekkalmar@gmail.com
         <?php
-        //  echo $auth->getCurrentUser()["email"]; 
+         echo $auth->getCurrentUser()["email"]; 
         ?>
       </p>
     </div>
