@@ -1,7 +1,11 @@
+$navSizeMobile: 40%
+$navSizeDesktop: 14%
+
 nav.menuMobile
     position: fixed
     top: 10%
     left: -50%
+    width: $navSizeMobile
     height: 90vh
     background-color: #1D2538
     // background-image: linear-gradient(0deg, rgba(255, 255, 0, 1) 1%, rgba(255, 105, 31, 1) 6%, rgba(200, 50, 50, 1) 12%, rgba(206, 42, 42, 1) 0%, rgba(105, 33, 33, 1) 19%, rgba(0, 0, 0, 1) 26%)
@@ -11,15 +15,17 @@ nav.menuMobile
         list-style-type: none
         li
             padding: 10px
+            width: 90%
+            margin: 0 auto
             text-align: center
             border-bottom: 1px solid white
             a
-                font-size: 1.2rem
+                font-size: 1.1rem
                 color: #e0e1dc
                 text-decoration: none
                 text-transform: uppercase
             &:nth-last-of-type(2)
-                margin-top: 70%
+                margin-top: 50%
     div.logo
         position: absolute
         width: 100px
@@ -28,6 +34,7 @@ nav.menuMobile
         left: 50%
         transform: translateX(-50%)
         background-image: url("../../images/logo_bez_bg100.png")
+        animation: logoAnimate100 2.5s steps(9) forwards
         z-index: 3
 nav.menuMobile.active
     left: 0
@@ -36,9 +43,8 @@ nav.menuMobile.active
 nav.menuDesktop
     display: none
 
-@media (min-width: 760px) and ( orientation: portrait  )
+@media (min-width: 760px) and ( orientation: portrait )
     nav.menuMobile
-        width: 35%
         ul
             margin-top: 170px
             li
@@ -58,7 +64,7 @@ nav.menuDesktop
         position: fixed
         top: 10%
         margin-left: 4px
-        width: 20%
+        width: $navSizeDesktop
         background-color: #1D2538
         transition: .5s
         div.logo
@@ -67,9 +73,10 @@ nav.menuDesktop
             top: -50px
             left: 50%
             transform: translateX(-50%)
-            height: 150px
-            width: 150px
-            background-image: url(../../images/logo_bez_bg150.png)
+            height: 100px
+            width: 100px
+            background-image: url(../../images/logo_bez_bg100.png)
+            animation: logoAnimate100 2.5s steps(9) forwards
             background-repeat: no-repeat
         ul
             list-style-type: none
