@@ -296,7 +296,6 @@ div.wrap main section.lists div {
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%;
     height: 150px;
-    background-color: #E4E4E4;
   }
   div.wrap .modal {
     display: none;
