@@ -23,31 +23,30 @@ div.wrap
                 &:hover
                     box-shadow: 0px 0px 5px 10px #2d3947
             div.addList
-                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
                 flex-basis: 90%
                 height: 50px
                 text-align: center
-                span
-                    position: absolute
-                    display: block
-                    top: 0
-                    left: 50%
-                    transform: translateX(-50%)
-                    width: 15vw
-                    height: 15vw
-                    font-size: 1.5rem
-                    line-height: 15vw
-                    border-radius: 50%                
-                    transition: .5s
-                    border: 2px solid white
-                    &:hover                
+                i
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 7vh
+                    height: 7vh
+                    border: 1px solid gray
+                    font-size: 2rem
+                    padding: 20px
+                    border-radius: 50%
+                    transition: 0.5s
+                    &:hover
                         background-color: royalblue
                     &.active
-                        transform: translateX(-50%) rotate(45deg)
+                        transform: translateX(0%) rotate(45deg)
                         color: black
                         border-color: black
                         background-color: royalblue
-                    
 
 @media (min-width: 414px) and (orientation: portrait)
     div.wrap
@@ -68,22 +67,47 @@ div.wrap
 @media (min-width:1024px)
     div.wrap
         display: flex
-        flex-direction: row
+        flex-direction: column
         justify-content: flex-end
-        margin-bottom: 100px
-        margin-left: 0
         align-items: flex-end
-        padding-right: 10px
+        margin-left: 5%
+        width: 95%
+        header
+            display: flex
+            flex-direction: row
         main
-            width: 85%
+            width: 100%
             border-radius: 20px
+            min-height: 83vh
             section.lists
+                display: flex
+                justify-content: flex-start
                 h1
                     font-size: 2.5rem
                     letter-spacing: 3px
                 div.list
-                    flex-basis: 48%
+                    display: flex
+
+                    flex-basis: 46%
                     height: 150px
+                    margin: 20px 2%
+                div.addList
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-basis: 46%
+                    height: 150px
+                    margin: 20px 2%
+                    text-align: center
+                    border-radius: 20px
+                    align-self: flex-start
+                    i
+                        font-size: 5rem
+                        border: 2px solid gray
+                        padding: 20px
+                        border-radius: 50%
+                        width: 124px
+                        height: 124px
 
         .modal
             display: none

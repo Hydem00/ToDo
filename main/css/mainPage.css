@@ -104,57 +104,102 @@ nav.menuDesktop {
     display: none;
   }
   nav.menuDesktop {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: fixed;
-    top: 10%;
-    margin-left: 4px;
-    width: 14%;
-    background-color: #1D2538;
+    top: 0;
+    left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 5%;
+    height: 100vh;
+    background: -webkit-gradient(linear, left bottom, left top, from(#000000), to(#000000));
+    background: linear-gradient(0deg, #000000, #000000);
     -webkit-transition: 0.5s;
     transition: 0.5s;
   }
-  nav.menuDesktop div.logo {
-    z-index: 2;
-    position: relative;
-    top: -50px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    height: 100px;
-    width: 100px;
-    background-image: url(../../images/logo_bez_bg100.png);
-    -webkit-animation: logoAnimate100 2.5s steps(9) forwards;
-            animation: logoAnimate100 2.5s steps(9) forwards;
-    background-repeat: no-repeat;
-  }
   nav.menuDesktop ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     list-style-type: none;
+    height: 100%;
   }
   nav.menuDesktop ul li {
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 15%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 2rem;
+  }
+  nav.menuDesktop ul li::after {
+    position: absolute;
+    content: "Display lists";
+    display: none;
+    top: 20%;
+    font-size: 0.7rem;
+    background-color: gray;
+    left: 75%;
+    padding: 5px;
     text-align: center;
-    border-bottom: 1px solid white;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    border-radius: 10px 10px 10px 0;
+    width: 50px;
   }
-  nav.menuDesktop ul li:hover {
-    border-bottom-color: olive;
-    color: yellowgreen;
+  nav.menuDesktop ul li:nth-child(2)::after {
+    content: "Add list";
   }
-  nav.menuDesktop ul li:hover a {
-    color: yellowgreen;
+  nav.menuDesktop ul li:nth-child(3)::after {
+    content: "Edit list";
+  }
+  nav.menuDesktop ul li:nth-child(4)::after {
+    content: "My profile";
+  }
+  nav.menuDesktop ul li:nth-child(5)::after {
+    content: "Sign out";
+  }
+  nav.menuDesktop ul li:nth-last-child(2) {
+    height: 25%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav.menuDesktop ul li:nth-last-child(2)::after {
+    top: 70%;
+  }
+  nav.menuDesktop ul li:hover::after {
+    display: block;
   }
   nav.menuDesktop ul li a {
     display: block;
-    font-size: 1.2rem;
     color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  nav.menuDesktop ul li:nth-last-of-type(2) {
-    margin-top: 70%;
   }
 }
 header {
@@ -250,16 +295,23 @@ div.rightHeader p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: relative;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     background-color: transparent;
+    width: 85%;
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
   }
   header div.leftHeader {
     display: none;
   }
   header div.leftHeader div.burger {
     display: none;
+  }
+  header div.rightHeader i {
+    padding-right: 20px;
   }
   header div.rightHeader p {
     font-size: 1.8rem;
@@ -304,34 +356,45 @@ div.wrap main section.lists div.list:hover {
           box-shadow: 0px 0px 5px 10px #2d3947;
 }
 div.wrap main section.lists div.addList {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
   height: 50px;
   text-align: center;
 }
-div.wrap main section.lists div.addList span {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 15vw;
-  height: 15vw;
-  font-size: 1.5rem;
-  line-height: 15vw;
+div.wrap main section.lists div.addList i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7vh;
+  height: 7vh;
+  border: 1px solid gray;
+  font-size: 2rem;
+  padding: 20px;
   border-radius: 50%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border: 2px solid white;
 }
-div.wrap main section.lists div.addList span:hover {
+div.wrap main section.lists div.addList i:hover {
   background-color: royalblue;
 }
-div.wrap main section.lists div.addList span.active {
-  -webkit-transform: translateX(-50%) rotate(45deg);
-          transform: translateX(-50%) rotate(45deg);
+div.wrap main section.lists div.addList i.active {
+  -webkit-transform: translateX(0%) rotate(45deg);
+          transform: translateX(0%) rotate(45deg);
   color: black;
   border-color: black;
   background-color: royalblue;
@@ -357,32 +420,80 @@ div.wrap main section.lists div.addList span.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-left: 5%;
+    width: 95%;
+  }
+  div.wrap header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    margin-bottom: 100px;
-    margin-left: 0;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    padding-right: 10px;
   }
   div.wrap main {
-    width: 85%;
+    width: 100%;
     border-radius: 20px;
+    min-height: 83vh;
+  }
+  div.wrap main section.lists {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   div.wrap main section.lists h1 {
     font-size: 2.5rem;
     letter-spacing: 3px;
   }
   div.wrap main section.lists div.list {
-    -ms-flex-preferred-size: 48%;
-        flex-basis: 48%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
     height: 150px;
+    margin: 20px 2%;
+  }
+  div.wrap main section.lists div.addList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
+    height: 150px;
+    margin: 20px 2%;
+    text-align: center;
+    border-radius: 20px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  div.wrap main section.lists div.addList i {
+    font-size: 5rem;
+    border: 2px solid gray;
+    padding: 20px;
+    border-radius: 50%;
+    width: 124px;
+    height: 124px;
   }
   div.wrap .modal {
     display: none;
@@ -513,6 +624,7 @@ footer {
   background-color: #1d2538;
   color: #e0e1dc;
   width: 100%;
+  height: 5vh;
 }
 footer div.socials {
   text-transform: uppercase;
@@ -525,7 +637,7 @@ footer div.socials p.contact {
 footer div.socials p.social {
   text-align: left;
   font-size: 1rem;
-  width: 65%;
+  width: 90%;
   margin: 0 auto 15px auto;
 }
 footer div.socials p.social i {
@@ -550,7 +662,6 @@ footer div.map {
 footer div.map p {
   text-align: center;
   font-size: 1.3rem;
-  padding: 20px 0;
   text-transform: uppercase;
 }
 footer div.map iframe {
@@ -665,21 +776,13 @@ footer div.copy p {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  footer div.socials {
-    width: 45%;
-    margin: 0 auto 15px auto;
-    font-size: 1.4rem;
-  }
-  footer div.map {
-    width: 45%;
-    margin-top: 0;
-  }
-  footer div.socials p.contact, footer div.map p {
+  footer div p {
     font-size: 3rem;
+    width: 100%;
   }
 }
 @media (min-width: 1280px) and (orientation: landscape) {
-  footer div.socials p.contact, footer div.map p {
+  footer.socials p.contact, footer.map p {
     font-size: 3.3rem;
   }
   footer {

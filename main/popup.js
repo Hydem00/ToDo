@@ -1,5 +1,5 @@
 var modal = document.getElementById("myModal");
-var addListSpan = document.querySelector("section.lists div.addList span");
+var addListSpan = document.querySelector("section.lists div.addList i");
 var closePopUp = document.getElementsByClassName("close")[0];
 
 const popup = () => {
