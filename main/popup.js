@@ -1,21 +1,16 @@
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var divs = document.querySelectorAll("section.lists div");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var addListSpan = document.querySelector("section.lists div.addList span");
+var closePopUp = document.getElementsByClassName("close")[0];
 
 const popup = () => {
     modal.style.display = "block";
+    addListSpan.classList.add("active");
 }
 
-divs.forEach(div => {
-    div.addEventListener('click', popup)
-})
+addListSpan.addEventListener('click', popup);
 
 // When the user clicks on <span> (x), close the modal
-span.addEventListener('click', function () {
+closePopUp.addEventListener('click', function () {
     modal.style.display = "none";
 })
 
@@ -23,5 +18,6 @@ span.addEventListener('click', function () {
 window.addEventListener('click', function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        addListSpan.classList.remove("active");
     }
 })

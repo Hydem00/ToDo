@@ -1,17 +1,17 @@
 <?php
 
-require '../vendor/autoload.php';
-require '../config.php';
+// require '../vendor/autoload.php';
+// require '../config.php';
 
-$config = new \PHPAuth\Config($dbh);
-$auth   = new \PHPAuth\Auth($dbh, $config);
+// $config = new \PHPAuth\Config($dbh);
+// $auth   = new \PHPAuth\Auth($dbh, $config);
 
-if(!$auth->isLogged()){
-  header('HTTP/1.0 401 Unauthorized');
-  header('Location: ../login/login.php');
-}else{
+// if(!$auth->isLogged()){
+//   header('HTTP/1.0 401 Unauthorized');
+//   header('Location: ../login/login.php');
+// }else{
   
-}
+// }
 ?>
 
 <!DOCTYPE html>
@@ -63,20 +63,16 @@ if(!$auth->isLogged()){
     <main>
       <section class="lists">
         <h1>Your Lists</h1>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="list"></div>
+        <div class="list"></div>
+        <div class="list"></div>
+        <div class="addList"><span><i class="fa-solid fa-plus"></i></span></div>
       </section>
       <div id="myModal" class="modal">
         <div class="modal-content">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
-          <form action="" id="addList">
+          <form action="">
             <input type="text" placeholder = "Enter the title">
             <textarea placeholder = "Enter the description"></textarea>
             <button>Create</button>
