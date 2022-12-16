@@ -59,7 +59,7 @@ if(!$auth->isLogged()){
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <i class="fa-regular fa-user"></i>bartekkalmar@gmail.com
+        <i class="fa-regular fa-user"></i>
         <?php
          echo $auth->getCurrentUser()["email"]; 
         ?>
