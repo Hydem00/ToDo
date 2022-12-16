@@ -44,9 +44,10 @@
       <li><a href="#">Create Lists</a></li>
       <li><a href="#">Edit Lists</a></li>
       <li><a href="#">Show Profile</a></li>
-      <li><a href="#">Sign Out</a></li>
+      <li><a href="logout.php">Sign Out</a></li>
     </ul>
 </nav>
+
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -56,7 +57,7 @@
       </div>
     </div>
     <div class="rightHeader">
-      <p class="name_account">Nazwa konta</p>
+      <p class="name_account"><?php echo $auth->getCurrentUser()["email"]; ?></p>
     </div>
   </header>
   <div class="wrap">
