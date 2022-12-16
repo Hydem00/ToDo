@@ -4,50 +4,15 @@ footer
   width: 100%
   height: 5vh
   div
-    &.socials
-      text-transform: uppercase
-      p
-        &.contact
-          font-size: 1.3rem
-          text-align: center
-          padding: 20px 0
-
-        &.social
-          text-align: left
-          font-size: 1rem
-          width: 90%
-          margin: 0 auto 15px auto
-
-          i
-            font-size: 1.3rem
-            padding-right: 10px
-            color: #179CF0
-            vertical-align: -4px
-    &.socials
-      width: 95%
-      margin: 10px auto 20px auto
-      border-top: 1px solid gray
-    &.map, &.copy
+    &.copy
       width: 95%
       margin: 0 auto 20px auto
       border-top: 1px solid gray
-
-    &.map
-      overflow: hidden
-      p
-        text-align: center
-        font-size: 1.3rem
-        // padding: 20px 0
-        text-transform: uppercase
-
-      iframe
-        display: block
-        margin: 10px auto
-
     &.copy p
       text-align: center
+      height: 100%
       font-size: 1rem
-      padding: 10px
+      padding-top: 10px
       text-transform: uppercase
 
 @media (min-width: 640px) and (orientation: landscape)
@@ -56,68 +21,16 @@ footer
     flex-direction: row
     flex-wrap: wrap
     padding-top: 10px
-    div
-      &.socials, &.map
-        flex-basis: 47%
 
-      &.socials p.social
-        width: 70%
-    div.map
-      margin-top: 10px
-      iframe
-        width: 250px
-        height: 150px
-
-@media (min-width: 896px) and (orientation: landscape)
-  footer div.socials p.social
-    width: 60%
-
-@media (min-width: 915px) and (orientation: landscape)
-  footer div
-    &.socials p.social, &.copy p
-      font-size: 1.3rem
-
-    &.socials p.contact, &.map p
-      font-size: 1.6rem
 
 @media (min-width: 760px) and (orientation: portrait)
   footer
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    div
-      &.socials, &.map
-        flex-basis: 47%
-        margin: 10px auto 20px auto
-      &.socials p.contact, &.map p
-        font-size: 2.3rem
-    div.socials
-      p.social
-        width: 95%
-        font-size: 1.8rem
-        i
-          font-size: 2rem
-    div.map
-      iframe
-        width: 350px
-        height: 250px
     div.copy
       p
         font-size: 2rem
-
-@media (min-width: 844px) and (orientation: landscape)
-  footer div.socials p.social
-    width: 80%
-
-@media (min-width: 918px)
-  footer div
-    &.map iframe
-      height: 250px
-      width: 350px
-
-    &.socials p.social
-      width: 80%
-      margin: 0 auto 15px auto
 
 @media (min-width: 1024px)
   footer
@@ -133,12 +46,6 @@ footer
 
 @media (min-width: 1280px) and (orientation: landscape)
   footer
-    div
-    &.socials p.contact, &.map p
-      font-size: 3.3rem
-
-  footer
-    max-width: 1600px
-    margin: 0 auto
-    div.map
-      margin-top: 0
+    div.copy
+      p
+        font-size: 1.5rem

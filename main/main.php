@@ -33,9 +33,9 @@
       <li><a href="#"><i class="fa-solid fa-plus"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-pen-to-square"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
-      <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+      <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
     </ul>
-    <div class="logo"></div>
+    <!-- <div class="logo"></div> -->
 </nav>
 <nav class="menuDesktop">
 <div class="logo">
@@ -58,16 +58,18 @@
       </div>
     </div>
     <div class="rightHeader">
-    <i class="fa-regular fa-user"></i>
-      <p class="name_account"><?php echo $auth->getCurrentUser()["email"]; ?></p>
+      <p class="name_account">
+        <i class="fa-regular fa-user"></i>bartekkalmar@gmail.com
+        <?php
+        //  echo $auth->getCurrentUser()["email"]; 
+        ?>
+      </p>
     </div>
   </header>
   
     <main>
       <section class="lists">
         <h1>Your Lists</h1>
-        <div class="list"></div>
-        <div class="list"></div>
         <div class="list"></div>
         <div class="list"></div>
         <div class="list"></div>

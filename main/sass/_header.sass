@@ -5,15 +5,15 @@ header
     display: flex
     width: 100%
     height: 10vh
-    background-color: #1d2538
+    background-color: black
     color: #e0e1dc
 div.leftHeader
-    flex-basis: 50%
+    flex-basis: 20%
     .burger
         position: relative
         top: 50%
-        transform: translateY(-50%)
-        left: 10px
+        left: 50%
+        transform: translate(-50%,-50%)
         width: 30px
         height: 30px
     span
@@ -42,17 +42,19 @@ div.leftHeader
             top: calc(50% - 5px)
             transform: rotate(-45deg)
 div.rightHeader
-    flex-basis: 50%
+    flex-basis: 80%
+    i
+        padding-right: 10px
     p
         text-align: right
-        margin-right: 10%
+        margin-right: 5px
         font-size: 1rem
         line-height: 10vh
 
 @media (min-width: 760px) and ( orientation: portrait  )
     div.rightHeader
         p
-            font-size: 1.7rem
+            font-size: 1.2rem
 
     div.leftHeader
         .burger
@@ -74,6 +76,6 @@ div.rightHeader
                 display: none
         div.rightHeader
             i
-                padding-right: 20px
+                padding-right: 10px
             p
-                font-size: 1.8rem
+                font-size: 1.5rem
