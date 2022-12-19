@@ -59,9 +59,9 @@ if(!$auth->isLogged()){
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <i class="fa-regular fa-user"></i>
+        <!-- <i class="fa-regular fa-user"></i> -->
         <?php
-         echo $auth->getCurrentUser()["email"]; 
+          echo $auth->getCurrentUser()["email"]; 
         ?>
       </p>
     </div>

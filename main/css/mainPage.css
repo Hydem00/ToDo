@@ -53,10 +53,9 @@ nav.menuMobile ul li {
   text-align: center;
 }
 nav.menuMobile ul li a {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #e0e1dc;
   text-decoration: none;
-  text-transform: uppercase;
 }
 nav.menuMobile ul li:nth-last-of-type(2) {
   margin-top: 100%;
@@ -159,46 +158,44 @@ nav.menuDesktop {
             align-items: center;
     font-size: 2rem;
   }
-  nav.menuDesktop ul li::after {
-    position: absolute;
-    content: "Display lists";
-    display: none;
-    top: 20%;
-    font-size: 0.7rem;
-    background-color: gray;
-    left: 75%;
-    padding: 5px;
-    text-align: center;
-    border-radius: 10px 10px 10px 0;
-    width: 50px;
-  }
-  nav.menuDesktop ul li:nth-child(2)::after {
-    content: "Add list";
-  }
-  nav.menuDesktop ul li:nth-child(3)::after {
-    content: "Edit list";
-  }
-  nav.menuDesktop ul li:nth-child(4)::after {
-    content: "My profile";
-  }
-  nav.menuDesktop ul li:nth-child(5)::after {
-    content: "Sign out";
-  }
   nav.menuDesktop ul li:nth-last-child(2) {
     height: 25%;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  nav.menuDesktop ul li:nth-last-child(2)::after {
-    top: 70%;
+  nav.menuDesktop ul li:nth-child(2) a::after {
+    content: "Add list";
   }
-  nav.menuDesktop ul li:hover::after {
-    display: block;
+  nav.menuDesktop ul li:nth-child(3) a::after {
+    content: "Edit list";
+  }
+  nav.menuDesktop ul li:nth-child(4) a::after {
+    content: "My Profile";
+  }
+  nav.menuDesktop ul li:nth-child(5) a::after {
+    content: "Sign out";
   }
   nav.menuDesktop ul li a {
+    position: relative;
     display: block;
     color: white;
+  }
+  nav.menuDesktop ul li a::after {
+    position: absolute;
+    content: "Display lists";
+    display: none;
+    top: -60%;
+    font-size: 0.8rem;
+    background-color: gray;
+    left: 90%;
+    white-space: nowrap;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px 10px 10px 0;
+  }
+  nav.menuDesktop ul li a:hover::after {
+    display: block;
   }
 }
 header {
@@ -274,7 +271,8 @@ div.rightHeader {
       flex-basis: 80%;
 }
 div.rightHeader i {
-  padding-right: 10px;
+  padding-right: 5px;
+  font-size: 1.3rem;
 }
 div.rightHeader p {
   text-align: right;
@@ -373,6 +371,7 @@ div.wrap main section.lists div.addList {
       flex-basis: 90%;
   height: 50px;
   text-align: center;
+  cursor: pointer;
 }
 div.wrap main section.lists div.addList i {
   display: -webkit-box;

@@ -20,10 +20,9 @@ nav.menuMobile
             margin: 0 auto
             text-align: center
             a
-                font-size: 1.5rem
+                font-size: 1.7rem
                 color: #e0e1dc
                 text-decoration: none
-                text-transform: uppercase
             &:nth-last-of-type(2)
                 margin-top: 100%
     div.logo
@@ -86,35 +85,41 @@ nav.menuDesktop
                 justify-content: center
                 align-items: center
                 font-size: 2rem
-                &::after
-                    position: absolute
-                    content: "Display lists"
-                    display: none
-                    top: 20%
-                    font-size: 0.7rem
-                    background-color: gray
-                    left: 75%
-                    padding: 5px
-                    text-align: center
-                    border-radius: 10px 10px 10px 0
-                    width: 50px
-                &:nth-child(2)::after
-                    content: "Add list"
-                &:nth-child(3)::after
-                    content: "Edit list"
-                &:nth-child(4)::after
-                    content: "My profile"
-                &:nth-child(5)::after
-                    content: "Sign out"
-
                 &:nth-last-child(2)
                     height: 25%
                     justify-content: flex-end
-                    &::after
-                        top: 70%
-
-                &:hover::after
-                    display: block
+                &:nth-child(2)
+                    a
+                        &::after
+                            content: "Add list"
+                &:nth-child(3)
+                    a
+                        &::after
+                            content: "Edit list"
+                &:nth-child(4)
+                    a
+                        &::after
+                            content: "My Profile"
+                &:nth-child(5)
+                    a
+                        &::after
+                            content: "Sign out"
                 a
+                    position: relative
                     display: block
                     color: white
+                    &::after
+                        position: absolute
+                        content: "Display lists"
+                        display: none
+                        top: -60%
+                        font-size: .8rem
+                        background-color: gray
+                        left: 90%
+                        white-space: nowrap
+                        padding: 5px
+                        text-align: center
+                        border-radius: 10px 10px 10px 0
+                    &:hover::after
+                        display: block
+                        
