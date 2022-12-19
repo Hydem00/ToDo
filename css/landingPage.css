@@ -577,11 +577,10 @@ main div.aboutUs p span, main div.offer p span {
 main div.aboutUs img {
   display: block;
   margin: 0 auto;
-  width: 40%;
+  width: 50%;
 }
 main div.offer img {
   display: block;
-  /* width: 100%; */
   margin: 0 auto 20px auto;
   width: 80%;
   height: 220px;
@@ -607,6 +606,9 @@ main div.offer img {
   }
   main div.aboutUs p {
     font-size: 0.9rem;
+  }
+  main div.aboutUs img {
+    width: 30%;
   }
   main div.offer p {
     font-size: 0.9rem;
