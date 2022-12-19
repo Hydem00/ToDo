@@ -8,6 +8,7 @@ header
     background-color: black
     color: #e0e1dc
 div.leftHeader
+    padding: 5px 0 0 10px
     flex-basis: 20%
     .burger
         position: relative
@@ -19,6 +20,7 @@ div.leftHeader
     span
         position: absolute
         width: 100%
+        text-align: center
         height: 5px
         background-color: #e0e1dc
         transition: transform .2s, top .2s .2s
@@ -52,16 +54,54 @@ div.rightHeader
         font-size: 1rem
         line-height: 10vh
 
-@media (min-width: 760px) and ( orientation: portrait  )
+@media (min-width: 360px) and (orientation: portrait)
+    div.rightHeader
+        padding-right: 10px
+
+@media (min-width: 390px) and (orientation: portrait)
     div.rightHeader
         p
             font-size: 1.2rem
 
+@media (min-width: 414px) and (orientation: portrait)
+    div.rightHeader
+        p
+            font-size: 1.3rem
+@media (min-width: 700px)
+div.leftHeader
+    flex-basis: 13%
+@media (min-width: 750px) and (orientation: portrait)
+    div.rightHeader
+        p
+            font-size: 1.7rem
+        i
+            font-size: 1.7rem
+
     div.leftHeader
+        flex-basis: 15%
         .burger
             height: 40px
             width: 40px
+        span
+            height: 8px
+            width: 50px
 
+@media (min-width: 820px) and (orientation: portrait)
+    div.rightHeader
+        padding-right: 20px
+        p
+            font-size: 1.8rem
+        i
+            font-size: 1.8rem
+
+@media (min-width: 900px) and (orientation: portrait)
+    div.leftHeader
+        .burger
+            height: 50px
+            width: 50px
+        span
+            height: 10px
+            width: 60px
 @media (min-width:1024px) and (orientation:landscape)
     header
         display: flex

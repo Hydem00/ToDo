@@ -59,7 +59,8 @@
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <!-- <i class="fa-regular fa-user"></i> -->
+        <i class="fa-regular fa-user"></i>
+        hinca.tymek1@gmail.com
         <?php
           // echo $auth->getCurrentUser()["email"]; 
         ?>
