@@ -15,7 +15,7 @@ nav.menuMobile
         margin-top: 60px
         list-style-type: none
         li
-            padding: 15px 10px
+            padding: 15px 0
             width: 100%
             margin: 0 auto
             text-align: center
@@ -25,16 +25,7 @@ nav.menuMobile
                 text-decoration: none
             &:nth-last-of-type(2)
                 margin-top: 100%
-    div.logo
-        position: absolute
-        width: 100px
-        height: 100px
-        top: 0
-        left: 50%
-        transform: translateX(-50%)
-        background-image: url("../../images/logo_bez_bg100.png")
-        animation: logoAnimate100 2.5s steps(9) forwards
-        z-index: 3
+                
 nav.menuMobile.active
     left: 0
     transition: .5s
@@ -42,17 +33,27 @@ nav.menuMobile.active
 nav.menuDesktop
     display: none
 
-@media (min-width: 760px) and ( orientation: portrait )
+@media (min-width: 390px) and (orientation: portrait)
+    nav.menuMobile
+        li
+            a
+                i
+                    font-size: 2.2rem
+
+@media (min-width: 470px) and (orientation: portrait)
+    nav.menuMobile
+        li
+            a
+                i
+                    font-size: 2.3rem
+
+@media (min-width: 760px) and (orientation: portrait)
     nav.menuMobile
         ul
             margin-top: 170px
             li
                 a
                     font-size: 2rem
-        div.logo
-            background-image: url(../../images/logo_bez_bg150.png)
-            width: 150px
-            height: 150px
 
 @media (min-width:1024px) and (orientation:landscape)
     nav.menuMobile
@@ -107,6 +108,7 @@ nav.menuDesktop
                 a
                     position: relative
                     display: block
+                    font-size: 2.5rem
                     color: white
                     &::after
                         position: absolute
