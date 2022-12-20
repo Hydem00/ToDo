@@ -1,4 +1,4 @@
-$navSizeMobile: 13%
+$navSizeMobile: 20%
 $navSizeDesktop: 5%
 
 nav.menuMobile
@@ -22,9 +22,9 @@ nav.menuMobile
             a
                 color: #e0e1dc
                 text-decoration: none
-                font-size: 1.3rem
+                font-size: 1.8rem
             &:nth-last-of-type(2)
-                margin-top: 100%
+                margin-top: 150%
 
 nav.menuMobile.active
     left: 0
@@ -33,36 +33,60 @@ nav.menuMobile.active
 nav.menuDesktop
     display: none
 
+@media (min-width: 320px) and (orientation: portrait)
+    nav.menuMobile
+        ul
+            li
+                a
+                    font-size: 1.7rem
+
 @media (min-width: 360px) and (orientation: portrait)
     nav.menuMobile
         ul
+            margin-top: 120%
             li
                 a
-                    font-size: 1.5rem
+                    font-size: 1.9rem
 
-@media (min-width: 393px) and (orientation: portrait)
+@media (min-width: 390px) and (orientation: portrait)
     nav.menuMobile
-        width: 13%
+        ul
+            margin-top: 150%
+            li
+                a
+                    font-size: 2.1rem
+
+@media (min-width: 412px) and (orientation: portrait)
+    nav.menuMobile
         ul
             li
                 a
-                    font-size: 1.8rem
+                    font-size: 2.2rem
 
-@media (min-width: 749px)
+@media (min-width: 500px) and (orientation: portrait)
+    nav.menuMobile
+        ul
+            margin-top: 100%
+            li
+                a
+                    font-size: 2.2rem
+
+@media (min-width: 750px)
     nav.menuMobile
         width: 13%
         ul
+            margin-top: 150%
             li
                 a
                     font-size: 2.8rem
 
 @media (min-width: 820px) and (orientation: portrait)
     nav.menuMobile
-        // width: 17%
         ul
+            margin-top: 200%
             li
                 a
-                    font-size: 2.8rem
+                    font-size: 3.5rem
 
 @media (min-width: 900px) and (orientation: portrait)
     nav.menuMobile
@@ -70,7 +94,7 @@ nav.menuDesktop
         ul
             li
                 a
-                    font-size: 3.2rem
+                    font-size: 3.5rem
 
 @media (min-width:1024px) and (orientation:landscape)
     nav.menuMobile

@@ -1,15 +1,19 @@
 div.wrap
+    min-height: 100vh
     main
         background-color: #1d2538
         padding: 10px 0
         border-radius: 20px
         section.lists
+            min-height: 80vh
             display: flex
             flex-direction: row
             flex-wrap: wrap
             justify-content: space-around
+            align-content: flex-start
             h1
                 font-size: 1.5rem
+                margin: 5px 0
                 width: 100%
                 text-align: center
                 letter-spacing: 2px
@@ -71,14 +75,9 @@ div.wrap
                     margin: 15px auto
 @media (min-width: 750px)
     div.wrap
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        align-items: flex-end
         main
             width: 100%
             border-radius: 20px
-            min-height: 83vh
             section.lists
                 display: flex
                 justify-content: space-between
@@ -96,21 +95,18 @@ div.wrap
                     flex-basis: 49%
                     height: 150px
                 div.addList
+                    align-self: center
+                    flex-basis: 49%
                     margin: 25px auto
 
 @media (min-width: 820px)
     div.wrap
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        align-items: flex-end
         header
             display: flex
             flex-direction: row
         main
             width: 100%
             border-radius: 20px
-            min-height: 83vh
             section.lists
                 display: flex
                 justify-content: space-between
@@ -132,7 +128,6 @@ div.wrap
         main
             width: 100%
             border-radius: 20px
-            min-height: 83vh
             section.lists
                 display: flex
                 justify-content: center

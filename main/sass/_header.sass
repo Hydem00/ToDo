@@ -8,120 +8,125 @@ header
     background-color: black
     color: #e0e1dc
 div.leftHeader
-    // padding: 5px 0 0 10px
-    flex-basis: 13%
+    position: relative
+    flex-basis: 20%
     .burger
-        position: relative
+        position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
-        width: 27px
-        height: 30px
+        width: 80%
+        height: 60%
     span
         position: absolute
-        width: 28px
-        height: 4px
-        text-align: center
+        width: 70%
+        height: 12%
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
         background-color: #e0e1dc
         transition: transform .2s, top .2s .2s
         &:nth-child(1)
-            top: 0
-            left: 0
+            top: 20%
         &:nth-child(2)
-            top: calc(50% - 5px)
-            left: 0
+            top: 50%
         &:nth-child(3)
-            top: calc(100% - 10px)
-            left: 0
+            top: 80%
     .burger.active span
         transition: top .2s, transform .2s .2s
         &:nth-child(1)
-            top: calc(50% - 5px)
-            transform: rotate(45deg)
+            top: 50%
+            transform: translate(-50%,-50%) rotate(45deg)
         &:nth-child(2)
             opacity: 0
         &:nth-child(3)
-            top: calc(50% - 5px)
-            transform: rotate(-45deg)
+            top: 50%
+            transform: translate(-50%,-50%) rotate(-45deg)
 div.rightHeader
     flex-basis: 80%
     i
         padding-right: 5px
-        font-size: 1.3rem
+        font-size: 1rem
     p
         text-align: right
         margin-right: 5px
         font-size: 1rem
         line-height: 10vh
 
+@media (min-width: 320px) and (orientation: portrait)
+    div.leftHeader
+        .burger
+            width: 60%
+            height: 60%
+
+    div.rightHeader
+        p,i
+            font-size: 1rem
+
 @media (min-width: 360px) and (orientation: portrait)
     div.leftHeader
         .burger
-            width: 27px
-        span
-            width: 30px
-            height: 4px
+            width: 70%
 
     div.rightHeader
         padding-right: 10px
+        p,i
+            font-size: 1.2rem
 
 @media (min-width: 390px) and (orientation: portrait)
     div.leftHeader
-        span
-            width: 32px
-            height: 4px
-    div.rightHeader
-        p
-            font-size: 1.2rem
+        .burger
+            height: 50%
 
 @media (min-width: 414px) and (orientation: portrait)
     div.rightHeader
-        p
-            font-size: 1.3rem
-@media (min-width: 700px)
-div.leftHeader
-    flex-basis: 13%
-@media (min-width: 750px) and (orientation: portrait)
-    div.rightHeader
-        p
-            font-size: 1.4rem
-        i
+        p,i
             font-size: 1.4rem
 
+@media (min-width: 500px) and (orientation: portrait)
+    div.leftHeader
+        .burger
+            width: 55%
+            height: 60%
+
+@media (min-width: 700px)
+    div.leftHeader
+        flex-basis: 13%
+    div.rightHeader
+        flex-basis: 87%
+
+@media (min-width: 750px) and (orientation: portrait)
     div.leftHeader
         padding: 0
-        flex-basis: 13%
-        .burger
-            height: 40px
-            width: 40px
-        span
-            height: 8px
-            width: 50px
+        .burger            
+            width: 70%
+            height: 50% 
+    div.rightHeader
+        padding-right: 20px
+        p,i
+            font-size: 1.9rem
 
 @media (min-width: 820px) and (orientation: portrait)
     div.leftHeader
-        padding: 0
-        flex-basis: 13%
+        .burger            
+            width: 70%
+            height: 50%
+
     div.rightHeader
         padding-right: 20px
-        p
-            font-size: 1.5rem
-        i
-            font-size: 1.5rem
+        p,i
+            font-size: 2rem
+        
 
 @media (min-width: 900px)
     div.leftHeader
         .burger
-            height: 50px
-            width: 50px
-        span
-            height: 10px
-            width: 60px
+            width: 80%
+            height: 60%
     div.rightHeader
-        p
+        p,i
             font-size: 2rem
-        i
-            font-size: 2rem
+
 @media (min-width:1024px) and (orientation:landscape)
     header
         display: flex
@@ -138,5 +143,5 @@ div.leftHeader
         div.rightHeader
             i
                 padding-right: 10px
-            p
+            p,i
                 font-size: 1.6rem
