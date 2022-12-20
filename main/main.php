@@ -59,7 +59,7 @@
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        bartekkalmar@gmail.com
+        bartekskalmar@gmail.com
         <?php
           // echo $auth->getCurrentUser()["email"]; 
         ?>
