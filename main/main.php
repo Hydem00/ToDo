@@ -59,8 +59,7 @@
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <i class="fa-regular fa-user"></i>
-        hinca.tymek1@gmail.com
+        bartekkalmar@gmail.com
         <?php
           // echo $auth->getCurrentUser()["email"]; 
         ?>
@@ -98,5 +97,6 @@
 </div>
   <script src="navigation.js"></script>
   <script src="popup.js"></script>
+  <script src="accountMail.js"></script>
 </body>
 </html>
