@@ -304,6 +304,8 @@ div.leftHeader .burger.active span:nth-child(3) {
 div.rightHeader {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
+  word-break: break-all;
+  overflow: hidden;
 }
 div.rightHeader i {
   padding-right: 5px;
@@ -311,7 +313,8 @@ div.rightHeader i {
 }
 div.rightHeader p {
   text-align: right;
-  margin-right: 5px;
+  margin-left: 30%;
+  padding-right: 10px;
   font-size: 1rem;
   line-height: 10vh;
 }
