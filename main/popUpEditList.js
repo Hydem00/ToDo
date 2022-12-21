@@ -1,6 +1,6 @@
 function popUpEdit() {
     const modalEdit = document.getElementById("popUpEditList");
-    const editListDivs = document.querySelectorAll("section.lists div.list div.editList button");
+    const editListDivs = document.querySelectorAll("section.lists div.list div.editList i");
     const editListBtn = document.querySelector(".popUpEdit button");
     const closePopUpEdit = document.querySelector(".popUpEdit .close");
 

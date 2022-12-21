@@ -29,14 +29,14 @@ async function getLists() {
     console.log(result);
     createListsElement(result);
 
-    const deleteBtns = document.querySelectorAll('main section.lists div.list div.removeList button');
+    const deleteBtns = document.querySelectorAll('main section.lists div.list div.removeList i');
     deleteBtns.forEach(deleteBtn => {
         deleteBtn.addEventListener('click', removeList);
     });
 
     popUpEdit();
 
-    const editBtns = document.querySelectorAll('main section.lists div.list div.editList button');
+    const editBtns = document.querySelectorAll('main section.lists div.list div.editList i');
     editBtns.forEach(editBtn => {
         editBtn.addEventListener('click', editList);
     })
@@ -101,24 +101,24 @@ async function removeList(e) {
     getLists();
 }
 
-// async function editList(e) {
-//     e.preventDefault();
-//     const idNumber = this.parentElement.parentElement.dataset.numberOfList;
-//     console.log(idNumber);
-//     const form = document.querySelector("div.popUpEdit div.modal-content form");
-//     const dataToSend = new FormData(form);
-//     dataToSend.append('json', JSON.stringify({
-//         listID: idNumber
-//     }));
-//     let odp = await fetch('functions/lists.php?action=edit', {
-//         method: 'POST',
-//         mode: 'cors',
-//         body: dataToSend
-//     });
-//     let dane = await odp.text();
-//     console.log('Success:', dane);
-//     // modalEdit.style.display = "none";
-//     document.querySelector("div.popUpEdit div.modal-content form input").value = "";
-//     document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
-//     getLists();
-// }
+async function editList(e) {
+    e.preventDefault();
+    const idNumber = this.parentElement.parentElement.dataset.numberOfList;
+    console.log(idNumber);
+    const form = document.querySelector("div.popUpEdit div.modal-content form");
+    const dataToSend = new FormData(form);
+    dataToSend.append('json', JSON.stringify({
+        listID: idNumber
+    }));
+    let odp = await fetch('functions/lists.php?action=edit', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let dane = await odp.text();
+    console.log('Success:', dane);
+    // modalEdit.style.display = "none";
+    document.querySelector("div.popUpEdit div.modal-content form input").value = "";
+    document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
+    getLists();
+}
