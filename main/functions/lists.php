@@ -1,6 +1,6 @@
 <?php
-require '../vendor/autoload.php';
-require '../config.php';
+require '../../vendor/autoload.php';
+require '../../config.php';
 
 $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
@@ -25,7 +25,7 @@ switch ($_GET["action"]) {
         editList();
         break;
     case "delete":
-        
+        deleteList();
         break;
     default:
         echo "Not selected action.";
@@ -90,7 +90,8 @@ function deleteList(){
     global $user_id;
     global $dbh;
     
-    $list_id = $_POST['list_id'];
+    $obj = json_decode($_POST["json"], false);
+    $list_id = $obj->listID;
 
     $stmt = $dbh->prepare('DELETE FROM listy WHERE id = :list_id');
 
@@ -100,5 +101,6 @@ function deleteList(){
 
     // Return the number of affected rows
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
+    // print($_POST);
 }
 ?>

@@ -1,17 +1,17 @@
 <?php
 
-// require '../vendor/autoload.php';
-// require '../config.php';
+require '../vendor/autoload.php';
+require '../config.php';
 
-// $config = new \PHPAuth\Config($dbh);
-// $auth   = new \PHPAuth\Auth($dbh, $config);
+$config = new \PHPAuth\Config($dbh);
+$auth   = new \PHPAuth\Auth($dbh, $config);
 
-// if(!$auth->isLogged()){
-//   header('HTTP/1.0 401 Unauthorized');
-//   header('Location: ../login/login.php');
-// }else{
+if(!$auth->isLogged()){
+  header('HTTP/1.0 401 Unauthorized');
+  header('Location: ../login/login.php');
+}else{
   
-// }
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,6 @@
       <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
       <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
     </ul>
-    <!-- <div class="logo"></div> -->
 </nav>
 <nav class="menuDesktop">
 <div class="logo">
@@ -59,9 +58,8 @@
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        bartekkalmar@gmail.com
         <?php
-          // echo $auth->getCurrentUser()["email"]; 
+          echo $auth->getCurrentUser()["email"]; 
         ?>
       </p>
     </div>
@@ -70,19 +68,15 @@
     <main>
       <section class="lists">
         <h1>Your Lists</h1>
-        <div class="list"></div>
-        <div class="list"></div>
-        <div class="list"></div>
-
         <div class="addList"><i class="fa-solid fa-plus"></i></div>
       </section>
       <div id="myModal" class="modal">
         <div class="modal-content">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
-          <form action="">
-            <input type="text" placeholder = "Enter the title">
-            <textarea placeholder = "Enter the description"></textarea>
+          <form method="POST">
+            <input type="text" name="list_name" placeholder = "Enter the title">
+            <textarea name="list_description" placeholder = "Enter the description"></textarea>
             <button>Add List</button>
           </form>
         </div>
@@ -97,6 +91,7 @@
 </div>
   <script src="navigation.js"></script>
   <script src="popup.js"></script>
+  <script src="fetch.js"></script>
   <script src="accountMail.js"></script>
 </body>
 </html>
