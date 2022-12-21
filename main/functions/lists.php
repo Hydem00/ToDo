@@ -83,7 +83,6 @@ function editList(){
 
     $stmt->execute();
     
-    // Return the number of affected rows
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
 }
 
@@ -100,7 +99,6 @@ function deleteList(){
 
     $stmt->execute();
 
-    // Return the number of affected rows
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
     // print($_POST);
 }
