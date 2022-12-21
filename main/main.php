@@ -70,14 +70,25 @@ if(!$auth->isLogged()){
         <h1>Your Lists</h1>
         <div class="addList"><i class="fa-solid fa-plus"></i></div>
       </section>
-      <div id="myModal" class="modal">
+      <div id="popUpAddList" class="modal popUpAdd">
         <div class="modal-content">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
-            <input type="text" name="list_name" placeholder = "Enter the title">
-            <textarea name="list_description" placeholder = "Enter the description"></textarea>
+            <input type="text" name="list_name" placeholder = "Enter the title" required>
+            <textarea name="list_description" placeholder = "Enter the description" required></textarea>
             <button>Add List</button>
+          </form>
+        </div>
+      </div>
+      <div id="popUpEditList" class="modal popUpEdit">
+        <div class="modal-content">
+          <h2>Edit List</h2>
+          <span class="close">&times;</span>
+          <form method="POST">
+            <input type="text" name="list_name" placeholder = "Enter the title" required>
+            <textarea name="list_description" placeholder = "Enter the description" required></textarea>
+            <button>Confirm Changes</button>
           </form>
         </div>
       </div>
@@ -90,8 +101,9 @@ if(!$auth->isLogged()){
       </footer>
 </div>
   <script src="navigation.js"></script>
-  <script src="popup.js"></script>
-  <script src="fetch.js"></script>
+  <script src="fetch.js"></script>  
+  <script src="popUpAddList.js"></script>
+  <script src="popUpEditList.js"></script>
   <script src="accountMail.js"></script>
 </body>
 </html>
