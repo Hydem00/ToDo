@@ -70,7 +70,9 @@ function editList(){
     global $user_id;
     global $dbh;
 
-    $list_id = $_POST['list_id'];
+    // $obj = json_decode($_POST["json"], false);
+    // $list_id = $obj->listID;
+
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];
 
@@ -102,6 +104,5 @@ function deleteList(){
 
     // Return the number of affected rows
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
-    // print($_POST);
 }
 ?>
