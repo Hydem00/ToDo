@@ -91,45 +91,83 @@ div.rightHeader
         .burger
             width: 55%
             height: 60%
+@media (min-width: 533px) and (orientation: landscape)
+    div.leftHeader
+        flex-basis: 10%
+        .burger
+            width: 55%
+            height: 60%
+    div.rightHeader
+        flex-basis: 90%
 
 @media (min-width: 700px)
     div.leftHeader
-        flex-basis: 13%
+        flex-basis: 10%
     div.rightHeader
-        flex-basis: 87%
+        flex-basis: 90%
 
 @media (min-width: 750px) and (orientation: portrait)
     div.leftHeader
+        flex-basis: 14%
         padding: 0
-        .burger            
+        .burger
             width: 70%
-            height: 50% 
+            height: 50%
     div.rightHeader
+        flex-basis: 86%
         padding-right: 20px
         p,i
             font-size: 1.9rem
 
 @media (min-width: 820px) and (orientation: portrait)
     div.leftHeader
-        .burger            
+        flex-basis: 13%
+        .burger
             width: 70%
             height: 50%
 
     div.rightHeader
         padding-right: 20px
+        flex-basis: 87%
         p,i
             font-size: 2rem
-        
+
+@media (min-width: 820px) and (orientation: landscape)
+    div.leftHeader
+        flex-basis: 10%
+        .burger
+            width: 50%
+            height: 60%
+    div.rightHeader
+        flex-basis: 90%
 
 @media (min-width: 900px)
     div.leftHeader
         .burger
-            width: 80%
+            width: 50%
             height: 60%
     div.rightHeader
         p,i
+            font-size: 1.3rem
+@media (min-width: 912px)
+    div.leftHeader
+        flex-basis: 13%
+        .burger
+            width: 70%
+            height: 60%
+    div.rightHeader
+        flex-basis: 87%
+        p,i
             font-size: 2rem
 
+@media (min-width: 914px) and (orientation: landscape)
+    div.leftHeader
+        flex-basis: 10%
+        .burger
+            width: 50%
+            height: 69%
+    div.rightHeader
+        flex-basis: 87%
 @media (min-width:1024px) and (orientation:landscape)
     header
         display: flex

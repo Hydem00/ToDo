@@ -99,10 +99,68 @@ nav.menuDesktop {
 }
 @media (min-width: 500px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 100%;
+    margin-top: 70%;
   }
   nav.menuMobile ul li a {
     font-size: 2.2rem;
+  }
+}
+@media (min-width: 533px) and (orientation: landscape) {
+  nav.menuMobile {
+    width: 10%;
+  }
+  nav.menuMobile ul {
+    margin-top: 0;
+  }
+  nav.menuMobile ul li a {
+    font-size: 1.3rem;
+  }
+  nav.menuMobile ul li:nth-last-of-type(2) {
+    margin-top: 20%;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  nav.menuMobile ul li a {
+    font-size: 1.5rem;
+  }
+  nav.menuMobile ul {
+    margin-top: 10px;
+  }
+  nav.menuMobile ul li:nth-last-of-type(2) {
+    margin-top: 20%;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) and (max-height: 280px) {
+  nav.menuMobile ul li a {
+    font-size: 1rem;
+  }
+  nav.menuMobile ul {
+    margin-top: 0;
+  }
+  nav.menuMobile ul li:nth-last-of-type(2) {
+    margin-top: 0;
+  }
+}
+@media (min-width: 720px) and (orientation: landscape) {
+  nav.menuMobile {
+    width: 10%;
+  }
+  nav.menuMobile ul {
+    margin-top: 30px;
+  }
+  nav.menuMobile ul li a {
+    font-size: 2rem;
+  }
+  nav.menuMobile ul li:nth-last-of-type(2) {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 730px) and (orientation: landscape) {
+  nav.menuMobile ul {
+    margin-top: 15px;
+  }
+  nav.menuMobile ul li a {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 750px) {
@@ -122,6 +180,25 @@ nav.menuDesktop {
   }
   nav.menuMobile ul li a {
     font-size: 3.5rem;
+  }
+}
+@media (min-width: 812px) and (orientation: landscape) {
+  nav.menuMobile {
+    width: 10%;
+  }
+  nav.menuMobile ul {
+    margin-top: 10px;
+  }
+  nav.menuMobile ul li a {
+    font-size: 1.6rem;
+  }
+  nav.menuMobile ul li:nth-last-of-type(2) {
+    margin-top: 40%;
+  }
+}
+@media (min-width: 844px) and (orientation: landscape) {
+  nav.menuMobile ul li a {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 900px) and (orientation: portrait) {
@@ -219,7 +296,7 @@ nav.menuDesktop {
     content: "Display lists";
     display: none;
     top: -60%;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     background-color: gray;
     left: 90%;
     white-space: nowrap;
@@ -355,18 +432,34 @@ div.rightHeader p {
     height: 60%;
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 533px) and (orientation: landscape) {
   div.leftHeader {
-    -ms-flex-preferred-size: 13%;
-        flex-basis: 13%;
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+  }
+  div.leftHeader .burger {
+    width: 55%;
+    height: 60%;
   }
   div.rightHeader {
-    -ms-flex-preferred-size: 87%;
-        flex-basis: 87%;
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+  }
+}
+@media (min-width: 700px) {
+  div.leftHeader {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+  }
+  div.rightHeader {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
   }
 }
 @media (min-width: 750px) and (orientation: portrait) {
   div.leftHeader {
+    -ms-flex-preferred-size: 14%;
+        flex-basis: 14%;
     padding: 0;
   }
   div.leftHeader .burger {
@@ -374,6 +467,8 @@ div.rightHeader p {
     height: 50%;
   }
   div.rightHeader {
+    -ms-flex-preferred-size: 86%;
+        flex-basis: 86%;
     padding-right: 20px;
   }
   div.rightHeader p, div.rightHeader i {
@@ -381,24 +476,75 @@ div.rightHeader p {
   }
 }
 @media (min-width: 820px) and (orientation: portrait) {
+  div.leftHeader {
+    -ms-flex-preferred-size: 13%;
+        flex-basis: 13%;
+  }
   div.leftHeader .burger {
     width: 70%;
     height: 50%;
   }
   div.rightHeader {
     padding-right: 20px;
+    -ms-flex-preferred-size: 87%;
+        flex-basis: 87%;
   }
   div.rightHeader p, div.rightHeader i {
     font-size: 2rem;
   }
 }
+@media (min-width: 820px) and (orientation: landscape) {
+  div.leftHeader {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+  }
+  div.leftHeader .burger {
+    width: 50%;
+    height: 60%;
+  }
+  div.rightHeader {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+  }
+}
 @media (min-width: 900px) {
   div.leftHeader .burger {
-    width: 80%;
+    width: 50%;
     height: 60%;
   }
   div.rightHeader p, div.rightHeader i {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 912px) {
+  div.leftHeader {
+    -ms-flex-preferred-size: 13%;
+        flex-basis: 13%;
+  }
+  div.leftHeader .burger {
+    width: 70%;
+    height: 60%;
+  }
+  div.rightHeader {
+    -ms-flex-preferred-size: 87%;
+        flex-basis: 87%;
+  }
+  div.rightHeader p, div.rightHeader i {
     font-size: 2rem;
+  }
+}
+@media (min-width: 914px) and (orientation: landscape) {
+  div.leftHeader {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+  }
+  div.leftHeader .burger {
+    width: 50%;
+    height: 69%;
+  }
+  div.rightHeader {
+    -ms-flex-preferred-size: 87%;
+        flex-basis: 87%;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
@@ -703,8 +849,8 @@ div.wrap main section.lists div.addList i.active {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 80%;
-  height: 40%;
+  width: 70%;
+  height: 35%;
   padding: 20px;
   background-color: #fefefe;
   border: 1px solid #888;
@@ -714,13 +860,16 @@ div.wrap main section.lists div.addList i.active {
   width: 100%;
   padding: 5px;
   text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 .modal .modal-content .close {
   position: absolute;
   top: 0;
   right: 5%;
   color: #aaa;
-  font-size: 28px;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 .modal .modal-content .close:hover,
@@ -737,8 +886,9 @@ div.wrap main section.lists div.addList i.active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -750,6 +900,8 @@ div.wrap main section.lists div.addList i.active {
   padding: 5px 20px;
   border: 2px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 .modal .modal-content form textarea {
   width: 100%;
@@ -760,6 +912,8 @@ div.wrap main section.lists div.addList i.active {
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 .modal .modal-content form button {
   margin-top: 5%;
@@ -773,6 +927,8 @@ div.wrap main section.lists div.addList i.active {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 .modal .modal-content form button:hover {
   background-color: #14130C;
@@ -781,11 +937,94 @@ div.wrap main section.lists div.addList i.active {
           box-shadow: 0 0 0 5px black, 0 0 0 7px white;
 }
 
+@media (min-width: 533px) and (orientation: landscape) {
+  .modal .modal-content {
+    width: 50%;
+    height: 70%;
+  }
+}
+@media (max-height: 580px) {
+  .modal .modal-content {
+    width: 33w0px;
+    height: 230px;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  .modal .modal-content {
+    width: 300px;
+    height: 250px;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .modal .modal-content form input {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form textarea {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 670px) and (orientation: portrait) {
+  .modal .modal-content {
+    width: 540px;
+    height: 370px;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .modal .modal-content form input {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  .modal .modal-content h2 {
+    font-size: 2rem;
+  }
+  .modal .modal-content form input {
+    font-size: 1.6rem;
+  }
+  .modal .modal-content form textarea {
+    font-size: 1.6rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 930px) and (orientation: landscape) {
+  .modal .modal-content {
+    width: 540px;
+    height: 370px;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .modal .modal-content form input {
+    font-size: 1.6rem;
+  }
+  .modal .modal-content form textarea {
+    font-size: 1.6rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.6rem;
+  }
+}
 @media (min-width: 1024px) and (orientation: landscape) {
   .modal .modal-content {
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 540px;
+    height: 370px;
     top: 50%;
     left: 52.5%;
     -webkit-transform: translate(-50%, -50%);
@@ -807,6 +1046,12 @@ div.wrap main section.lists div.addList i.active {
   }
   .modal .modal-content form input, .modal .modal-content form textarea, .modal .modal-content form button {
     font-size: 1.6rem;
+  }
+}
+@media (min-width: 1400px) and (orientation: landscape) {
+  .modal .modal-content {
+    width: 540px;
+    height: 370px;
   }
 }
 footer {

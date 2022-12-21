@@ -74,8 +74,9 @@ function editList(){
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];
 
-    $stmt = $dbh->prepare('UPDATE listy SET nazwa = :list_name, opis = :list_description WHERE id = :list_id');
-
+    $stmt = $dbh->prepare('UPDATE listy SET nazwa = :list_name, opis = :list_description WHERE id = :list_id AND user_id = :user_id');
+    
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':list_id', $list_id);
     $stmt->bindParam(':list_name', $list_name);
     $stmt->bindParam(':list_description', $list_description);
