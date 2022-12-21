@@ -90,7 +90,8 @@ function deleteList(){
     global $user_id;
     global $dbh;
     
-    $list_id = $_POST['list_id'];
+    $obj = json_decode($_POST["json"], false);
+    $list_id = $obj->listID;
 
     $stmt = $dbh->prepare('DELETE FROM listy WHERE id = :list_id');
 
@@ -99,5 +100,6 @@ function deleteList(){
     $stmt->execute();
 
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
+    // print($_POST);
 }
 ?>

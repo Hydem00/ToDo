@@ -1,6 +1,6 @@
-var modal = document.getElementById("myModal");
-var addListDiv = document.querySelector("section.lists div.addList i");
-var closePopUp = document.getElementsByClassName("close")[0];
+const modal = document.getElementById("myModal");
+const addListDiv = document.querySelector("section.lists div.addList i");
+const closePopUp = document.getElementsByClassName("close")[0];
 
 const popup = () => {
     modal.style.display = "block";
