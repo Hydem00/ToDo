@@ -40,7 +40,7 @@ nav.menuMobile {
   background-color: black;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  z-index: 1;
+  z-index: 2;
 }
 nav.menuMobile ul {
   margin-top: 60px;
@@ -319,6 +319,7 @@ header {
   height: 10vh;
   background-color: black;
   color: #e0e1dc;
+  z-index: 1;
 }
 
 div.leftHeader {
@@ -607,19 +608,72 @@ div.wrap main section.lists h1 {
   text-transform: uppercase;
 }
 div.wrap main section.lists div.list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
-  height: 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 100px;
   margin: 10px 0;
   border-radius: 20px;
   background-color: rgb(38, 62, 92);
   color: #e0e1dc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  z-index: 0;
 }
 div.wrap main section.lists div.list:hover {
   -webkit-box-shadow: 0px 0px 5px 10px #2d3947;
           box-shadow: 0px 0px 5px 10px #2d3947;
+}
+div.wrap main section.lists div.list h1 {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-family: monospace;
+  padding-top: 10px;
+  color: white;
+  text-shadow: 0 0 10px yellow;
+}
+div.wrap main section.lists div.list p {
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  margin: 0 auto;
+  font-family: monospace;
+  padding: 5px 0;
+  font-size: 0.8rem;
+}
+div.wrap main section.lists div.list div.editList {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+div.wrap main section.lists div.list div.editList i {
+  display: block;
+  font-size: 1.2rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+div.wrap main section.lists div.list div.editList i:hover {
+  color: yellow;
+}
+div.wrap main section.lists div.list div.removeList {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+div.wrap main section.lists div.list div.removeList i {
+  display: block;
+  font-size: 1.2rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+div.wrap main section.lists div.list div.removeList i:hover {
+  color: red;
 }
 div.wrap main section.lists div.addList {
   display: -webkit-box;
@@ -669,17 +723,11 @@ div.wrap main section.lists div.addList i.active {
 }
 
 @media (min-width: 390px) and (orientation: portrait) {
-  div.wrap main section.lists div.list {
-    height: 110px;
-  }
   div.wrap main section.lists div.addList {
     margin: 10px auto;
   }
 }
 @media (min-width: 414px) and (orientation: portrait) {
-  div.wrap main section.lists div.list {
-    height: 120px;
-  }
   div.wrap main section.lists div.addList {
     margin: 15px auto;
   }
@@ -713,7 +761,26 @@ div.wrap main section.lists div.addList i.active {
   div.wrap main section.lists div.list {
     -ms-flex-preferred-size: 49%;
         flex-basis: 49%;
-    height: 150px;
+  }
+  div.wrap main section.lists div.list h1 {
+    font-size: 1.6rem;
+  }
+  div.wrap main section.lists div.list p {
+    font-size: 1.2rem;
+  }
+  div.wrap main section.lists div.list div.editList {
+    top: 15px;
+    left: 15px;
+  }
+  div.wrap main section.lists div.list div.editList i {
+    font-size: 1.4rem;
+  }
+  div.wrap main section.lists div.list div.removeList {
+    top: 15px;
+    right: 15px;
+  }
+  div.wrap main section.lists div.list div.removeList i {
+    font-size: 1.4rem;
   }
   div.wrap main section.lists div.addList {
     -ms-flex-item-align: center;
@@ -759,9 +826,9 @@ div.wrap main section.lists div.addList i.active {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -785,9 +852,9 @@ div.wrap main section.lists div.addList i.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   div.wrap main section.lists h1 {
     font-size: 2.5rem;
@@ -797,9 +864,9 @@ div.wrap main section.lists div.addList i.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
-    height: 150px;
+    -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
+    min-height: 150px;
     margin: 20px 2%;
   }
   div.wrap main section.lists div.addList {
@@ -812,8 +879,8 @@ div.wrap main section.lists div.addList i.active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
+    -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
     height: 150px;
     margin: 20px 2%;
     text-align: center;

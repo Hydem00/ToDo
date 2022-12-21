@@ -19,15 +19,54 @@ div.wrap
                 letter-spacing: 2px
                 text-transform: uppercase
             div.list
+                position: relative
+                display: flex
                 flex-basis: 90%
-                height: 100px
+                flex-wrap: wrap
+                min-height: 100px
                 margin: 10px 0
                 border-radius: 20px
                 background-color: rgb(38, 62, 92)
                 color: #e0e1dc
                 transition: .5s
+                z-index: 0
                 &:hover
                     box-shadow: 0px 0px 5px 10px #2d3947
+                h1
+                    flex-basis: 70%
+                    margin: 0 auto
+                    font-size: 1.2rem
+                    font-family: monospace
+                    padding-top: 10px
+                    color: white
+                    text-shadow: 0 0 10px yellow
+                p
+                    flex-basis: 90%
+                    margin: 0 auto
+                    font-family: monospace
+                    padding: 5px 0
+                    font-size: 0.8rem
+                div.editList
+                    position: absolute
+                    top: 10px
+                    left: 15px
+                    i
+                        display: block
+                        font-size: 1.2rem
+                        transition: 0.3s
+                        &:hover
+                            color: yellow
+                div.removeList
+                    position: absolute
+                    top: 10px
+                    right: 15px
+                    i
+                        display: block
+                        font-size: 1.2rem
+                        transition: 0.3s
+                        &:hover
+                            color: red
+
             div.addList
                 display: flex
                 justify-content: center
@@ -60,8 +99,6 @@ div.wrap
     div.wrap
         main
             section.lists
-                div.list
-                    height: 110px
                 div.addList
                     margin: 10px auto
 
@@ -69,8 +106,6 @@ div.wrap
     div.wrap
         main
             section.lists
-                div.list
-                    height: 120px
                 div.addList
                     margin: 15px auto
 @media (min-width: 750px)
@@ -93,7 +128,23 @@ div.wrap
             section.lists
                 div.list
                     flex-basis: 49%
-                    height: 150px
+                    h1
+                        font-size: 1.6rem
+                    p
+                        font-size: 1.2rem
+                    div.editList
+                        top: 15px
+                        left: 15px
+                        i
+                            font-size: 1.4rem
+
+                    div.removeList
+                        top: 15px
+                        right: 15px
+                        i
+
+                            font-size: 1.4rem
+
                 div.addList
                     align-self: center
                     flex-basis: 49%
@@ -118,7 +169,7 @@ div.wrap
     div.wrap
         display: flex
         flex-direction: column
-        justify-content: flex-end
+        justify-content: flex-start
         align-items: flex-end
         margin-left: 5%
         width: 95%
@@ -130,20 +181,20 @@ div.wrap
             border-radius: 20px
             section.lists
                 display: flex
-                justify-content: center
+                justify-content: space-between
                 h1
                     font-size: 2.5rem
                     letter-spacing: 3px
                 div.list
                     display: flex
-                    flex-basis: 40%
-                    height: 150px
+                    flex-basis: 46%
+                    min-height: 150px
                     margin: 20px 2%
                 div.addList
                     display: flex
                     justify-content: center
                     align-items: center
-                    flex-basis: 40%
+                    flex-basis: 46%
                     height: 150px
                     margin: 20px 2%
                     text-align: center
