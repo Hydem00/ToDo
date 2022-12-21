@@ -58,14 +58,14 @@ function createListsElement(listData) {
 
         const divEdit = document.createElement("div");
         divEdit.classList.add("editList");
-        const buttonEdit = document.createElement("button");
-        buttonEdit.textContent = "Edit";
+        const buttonEdit = document.createElement("i");
+        buttonEdit.className = "fa-solid fa-pen";
         divEdit.appendChild(buttonEdit);
 
         const divRemove = document.createElement("div");
         divRemove.classList.add("removeList");
-        const buttonRemove = document.createElement("button");
-        buttonRemove.textContent = "Remove";
+        const buttonRemove = document.createElement("i");
+        buttonRemove.className = "fa-solid fa-trash";
         divRemove.appendChild(buttonRemove);
 
         divList.classList.add("list");
