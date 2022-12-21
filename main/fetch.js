@@ -1,11 +1,11 @@
 window.onload = function () {
     getLists();
-    document.querySelector('div.modal div.modal-content form button').addEventListener('click', addList);
+    document.querySelector('div.popUpAdd div.modal-content form button').addEventListener('click', addList);
 }
 
 async function addList(e) {
     e.preventDefault();
-    const form = document.querySelector("div.modal-content form");
+    const form = document.querySelector("div.popUpAdd div.modal-content form");
     const dataToSend = new FormData(form);
     let odp = await fetch('functions/lists.php?action=add', {
         method: 'POST',
@@ -14,9 +14,9 @@ async function addList(e) {
     });
     let dane = await odp.text();
     console.log('Success:', dane);
-    modal.style.display = "none";
-    document.querySelector("div.modal-content form input").value = "";
-    document.querySelector("div.modal-content form textarea").value = "";
+    modalAdd.style.display = "none";
+    document.querySelector("div.popUpAdd div.modal-content form input").value = "";
+    document.querySelector("div.popUpAdd div.modal-content form textarea").value = "";
     getLists();
 }
 
@@ -29,15 +29,24 @@ async function getLists() {
     console.log(result);
     createListsElement(result);
 
-    const editBtns = document.querySelectorAll('main section.lists div.list div.removeList button');
-    editBtns.forEach(editBtn => {
-        editBtn.addEventListener('click', removeList);
+    const deleteBtns = document.querySelectorAll('main section.lists div.list div.removeList button');
+    deleteBtns.forEach(deleteBtn => {
+        deleteBtn.addEventListener('click', removeList);
     });
+
+    popUpEdit();
+
+    const editBtns = document.querySelectorAll('main section.lists div.list div.editList button');
+    editBtns.forEach(editBtn => {
+        editBtn.addEventListener('click', editList);
+    })
+
 }
 
 function createListsElement(listData) {
+
     const listsSection = document.querySelector('main section.lists');
-    for (let i = 0; i < listData.length; i++) {
+    for (let i = 0; i < listData.length + 1; i++) {
         if (listsSection.contains(document.querySelector('div.list')))
             document.querySelector('div.list').remove();
     }
@@ -72,3 +81,44 @@ function createListsElement(listData) {
         listsSection.insertBefore(divList, listsSection.children[2]);
     }
 }
+
+async function removeList(e) {
+    e.preventDefault();
+    const idNumber = this.parentElement.parentElement.dataset.numberOfList;
+    const dataToSend = new FormData();
+    dataToSend.append('json', JSON.stringify({
+        listID: idNumber
+    }));
+    console.log(dataToSend);
+    let odp = await fetch('functions/lists.php?action=delete', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let dane = await odp.text();
+    console.log('Success:', dane);
+
+    getLists();
+}
+
+// async function editList(e) {
+//     e.preventDefault();
+//     const idNumber = this.parentElement.parentElement.dataset.numberOfList;
+//     console.log(idNumber);
+//     const form = document.querySelector("div.popUpEdit div.modal-content form");
+//     const dataToSend = new FormData(form);
+//     dataToSend.append('json', JSON.stringify({
+//         listID: idNumber
+//     }));
+//     let odp = await fetch('functions/lists.php?action=edit', {
+//         method: 'POST',
+//         mode: 'cors',
+//         body: dataToSend
+//     });
+//     let dane = await odp.text();
+//     console.log('Success:', dane);
+//     // modalEdit.style.display = "none";
+//     document.querySelector("div.popUpEdit div.modal-content form input").value = "";
+//     document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
+//     getLists();
+// }
