@@ -35,12 +35,6 @@ async function getLists() {
     });
 
     popUpEdit();
-
-    const editBtns = document.querySelectorAll('main section.lists div.list div.editList i');
-    editBtns.forEach(editBtn => {
-        editBtn.addEventListener('click', editList);
-    })
-
 }
 
 function createListsElement(listData) {
@@ -103,12 +97,10 @@ async function removeList(e) {
 
 async function editList(e) {
     e.preventDefault();
-    const idNumber = this.parentElement.parentElement.dataset.numberOfList;
-    console.log(idNumber);
     const form = document.querySelector("div.popUpEdit div.modal-content form");
     const dataToSend = new FormData(form);
     dataToSend.append('json', JSON.stringify({
-        listID: idNumber
+        listID: listID
     }));
     let odp = await fetch('functions/lists.php?action=edit', {
         method: 'POST',
@@ -117,7 +109,7 @@ async function editList(e) {
     });
     let dane = await odp.text();
     console.log('Success:', dane);
-    // modalEdit.style.display = "none";
+    modalEdit.style.display = "none";
     document.querySelector("div.popUpEdit div.modal-content form input").value = "";
     document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
     getLists();

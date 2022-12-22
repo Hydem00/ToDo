@@ -1,12 +1,19 @@
+let listID;
+const modalEdit = document.getElementById("popUpEditList");
+
 function popUpEdit() {
-    const modalEdit = document.getElementById("popUpEditList");
     const editListDivs = document.querySelectorAll("section.lists div.list div.editList i");
-    const editListBtn = document.querySelector(".popUpEdit button");
+    const editListBtns = document.querySelectorAll(".popUpEdit button");
     const closePopUpEdit = document.querySelector(".popUpEdit .close");
 
-    const popupEdit = () => {
+    function popupEdit() {
         modalEdit.style.display = "block";
+        listID = this.parentElement.parentElement.dataset.numberOfList;
     }
+
+    editListBtns.forEach(editListBtn => {
+        editListBtn.addEventListener('click', editList);
+    })
 
     editListDivs.forEach(editListDiv => {
         editListDiv.addEventListener('click', popupEdit);

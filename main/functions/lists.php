@@ -70,8 +70,8 @@ function editList(){
     global $user_id;
     global $dbh;
 
-    // $obj = json_decode($_POST["json"], false);
-    // $list_id = $obj->listID;
+    $obj = json_decode($_POST["json"], false);
+    $list_id = $obj->listID;
 
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];

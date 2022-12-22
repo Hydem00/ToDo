@@ -9,6 +9,9 @@ const popupAdd = () => {
 
 addListDiv.addEventListener('click', popupAdd);
 
+document.querySelector('nav.menuMobile li a.addList').addEventListener('click', popupAdd);
+document.querySelector('nav.menuDesktop li a.addList').addEventListener('click', popupAdd);
+
 closePopUpAdd.addEventListener('click', function () {
     modalAdd.style.display = "none";
     addListDiv.classList.remove("active");
