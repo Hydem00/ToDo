@@ -1,10 +1,9 @@
 window.onload = function () {
     getLists();
-    document.querySelector('div.popUpAdd div.modal-content form button').addEventListener('click', addList);
+    // document.querySelector('div.popUpAdd div.modal-content form button').addEventListener('click', addList);
 }
 
-async function addList(e) {
-    e.preventDefault();
+async function addList() {
     const form = document.querySelector("div.popUpAdd div.modal-content form");
     const dataToSend = new FormData(form);
     let odp = await fetch('functions/lists.php?action=add', {
@@ -14,9 +13,7 @@ async function addList(e) {
     });
     let dane = await odp.text();
     console.log('Success:', dane);
-    modalAdd.style.display = "none";
-    document.querySelector("div.popUpAdd div.modal-content form input").value = "";
-    document.querySelector("div.popUpAdd div.modal-content form textarea").value = "";
+
     getLists();
 }
 
@@ -29,12 +26,10 @@ async function getLists() {
     console.log(result);
     createListsElement(result);
 
-    const deleteBtns = document.querySelectorAll('main section.lists div.list div.removeList i');
-    deleteBtns.forEach(deleteBtn => {
-        deleteBtn.addEventListener('click', removeList);
-    });
-
     popUpEdit();
+    listPropertiesPopUp();
+    popUpRemove();
+
 }
 
 function createListsElement(listData) {
@@ -78,10 +73,10 @@ function createListsElement(listData) {
 
 async function removeList(e) {
     e.preventDefault();
-    const idNumber = this.parentElement.parentElement.dataset.numberOfList;
+    // const idNumber = this.parentElement.parentElement.dataset.numberOfList;
     const dataToSend = new FormData();
     dataToSend.append('json', JSON.stringify({
-        listID: idNumber
+        listID: listID
     }));
     console.log(dataToSend);
     let odp = await fetch('functions/lists.php?action=delete', {
@@ -95,8 +90,7 @@ async function removeList(e) {
     getLists();
 }
 
-async function editList(e) {
-    e.preventDefault();
+async function editList() {
     const form = document.querySelector("div.popUpEdit div.modal-content form");
     const dataToSend = new FormData(form);
     dataToSend.append('json', JSON.stringify({
