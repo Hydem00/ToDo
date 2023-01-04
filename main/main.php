@@ -73,8 +73,8 @@ if(!$auth->isLogged()){
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
-            <input type="text" name="list_name" placeholder = "Enter the title" required>
-            <textarea name="list_description" placeholder = "Enter the description" required></textarea>
+            <input type="text" maxlength="22" name="list_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="list_description" placeholder = "Enter the description"></textarea>
             <button>Add List</button>
           </form>
         </div>
@@ -84,10 +84,56 @@ if(!$auth->isLogged()){
           <h2>Edit List</h2>
           <span class="close">&times;</span>
           <form method="POST">
-            <input type="text" name="list_name" placeholder = "Enter the title" required>
-            <textarea name="list_description" placeholder = "Enter the description" required></textarea>
+            <input type="text" maxlength="22" name="list_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="list_description" placeholder = "Enter the description"></textarea>
             <button>Confirm Changes</button>
           </form>
+        </div>
+      </div>
+      <div id="popUpRemoveList" class="modal popUpRemove">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Remove List</h2>
+          <h3></h3>
+          <button>YES</button>
+          <button>NO</button>
+        </div>
+      </div>
+      <div id="popUpList" class="modal popUp">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2></h2>
+          <p></p>
+          <section class="menu">
+              <div class="addEvent">
+                <h2>Add Event</h2>
+                <form method="POST">
+                  <input type="text" maxlength="22" name="event_name" placeholder = "Enter the title" required>
+                  <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+                  <input type="date" name="event_date" placeholder = "Enter the date" required>
+                  <input type="time" name="event_time" placeholder = "Enter the time" required>
+                  <input type="number" name="event_priority" placeholder = "Priority 1 to 10" required>
+                  <input type="color" name="event_color">
+                  <button>Add event</button>
+                </form>
+              </div>
+              <!-- <div class="editEvent">
+                <h2>Edit Event</h2>
+                <form method="POST">
+                  <input type="text" maxlength="22" name="event_name" placeholder = "Enter the title" required>
+                  <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+                  <input type="date" name="event_date" placeholder = "Enter the date" required>
+                  <input type="time" name="event_time" placeholder = "Enter the time" required>
+                  <input type="number" name="event_priority" placeholder = "Priority 1 to 10" required>
+                  <input type="color" name="event_color">
+                  <button>Add event</button>
+                </form>
+              </div> -->
+            <div class="events">
+
+            </div>
+          </section>
+          
         </div>
       </div>
     </main>
@@ -101,7 +147,9 @@ if(!$auth->isLogged()){
   <script src="navigation.js"></script>
   <script src="fetch.js"></script>  
   <script src="popUpAddList.js"></script>
+  <script src="popUpList.js"></script>
   <script src="popUpEditList.js"></script>
+  <script src="popUpDeleteList.js"></script>
   <script src="accountMail.js"></script>
 </body>
 </html>
