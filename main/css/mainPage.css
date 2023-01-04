@@ -69,6 +69,7 @@ nav.menuMobile.active {
 
 nav.menuDesktop {
   display: none;
+  z-index: 2;
 }
 
 @media (min-width: 320px) and (orientation: portrait) {
@@ -624,6 +625,7 @@ div.wrap main section.lists div.list {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   z-index: 0;
+  cursor: pointer;
 }
 div.wrap main section.lists div.list:hover {
   -webkit-box-shadow: 0px 0px 5px 10px #2d3947;
@@ -646,6 +648,7 @@ div.wrap main section.lists div.list p {
   font-family: monospace;
   padding: 5px 0;
   font-size: 0.8rem;
+  word-break: break-all;
 }
 div.wrap main section.lists div.list div.editList {
   position: absolute;
@@ -689,7 +692,6 @@ div.wrap main section.lists div.addList {
       flex-basis: 90%;
   height: 50px;
   text-align: center;
-  cursor: pointer;
   margin: 0 auto;
 }
 div.wrap main section.lists div.addList i {
@@ -710,6 +712,7 @@ div.wrap main section.lists div.addList i {
   border-radius: 50%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
 }
 div.wrap main section.lists div.addList i:hover {
   background-color: royalblue;
@@ -897,6 +900,124 @@ div.wrap main section.lists div.addList i.active {
     height: 124px;
   }
 }
+#popUpList {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#popUpList .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  padding: 20px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 20px;
+}
+#popUpList .modal-content h2 {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+#popUpList .modal-content p {
+  word-wrap: break-word;
+}
+#popUpList .modal-content .close {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  color: #aaa;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+#popUpList .modal-content .close:hover,
+#popUpList .modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#popUpList .modal-content section.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#popUpList .modal-content section.menu form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  text-align: center;
+}
+#popUpList .modal-content section.menu form input {
+  width: 100%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+#popUpList .modal-content section.menu form textarea {
+  width: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+#popUpList .modal-content section.menu form button {
+  margin-top: 5%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+#popUpList .modal-content section.menu form button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -906,8 +1027,7 @@ div.wrap main section.lists div.addList i.active {
   height: 100%;
   color: black;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .modal .modal-content {
@@ -1012,7 +1132,7 @@ div.wrap main section.lists div.addList i.active {
 }
 @media (max-height: 580px) {
   .modal .modal-content {
-    width: 33w0px;
+    width: 330px;
     height: 230px;
   }
 }
