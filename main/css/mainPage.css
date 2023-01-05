@@ -959,6 +959,84 @@ div.wrap main section.lists div.addList i.active {
       -ms-flex-direction: row;
           flex-direction: row;
 }
+#popUpList .modal-content section.menu div.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#popUpList .modal-content section.menu div.events div.listEvent {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 100px;
+  margin: 10px 0;
+  border-radius: 20px;
+  background-color: rgb(38, 62, 92);
+  color: #e0e1dc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 0;
+  cursor: pointer;
+}
+#popUpList .modal-content section.menu div.events div.listEvent:hover {
+  -webkit-box-shadow: 0px 0px 5px 10px #2d3947;
+          box-shadow: 0px 0px 5px 10px #2d3947;
+}
+#popUpList .modal-content section.menu div.events div.listEvent h1 {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-family: monospace;
+  padding-top: 10px;
+  color: white;
+  text-shadow: 0 0 10px yellow;
+}
+#popUpList .modal-content section.menu div.events div.listEvent p {
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  margin: 0 auto;
+  font-family: monospace;
+  padding: 5px 0;
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
+  display: block;
+  font-size: 1.2rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i:hover {
+  color: yellow;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
+  display: block;
+  font-size: 1.2rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i:hover {
+  color: red;
+}
 #popUpList .modal-content section.menu form {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -11,7 +11,7 @@ async function addList() {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
+    // console.log('Success:', dane);
 
     getLists();
 }
@@ -22,7 +22,7 @@ async function getLists() {
         mode: 'cors',
     });
     const result = await response.json();
-    console.log(result);
+    // console.log(result);
     createListsElement(result);
 
     popUpEdit();
@@ -83,7 +83,7 @@ async function removeList(e) {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
+    // console.log('Success:', dane);
 
     getLists();
 }
@@ -100,15 +100,14 @@ async function editList() {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
+    // console.log('Success:', dane);
     modalEdit.style.display = "none";
     document.querySelector("div.popUpEdit div.modal-content form input").value = "";
     document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
     getLists();
 }
 
-async function addListEvent(e) {
-    e.preventDefault();
+async function addListEvent() {
     const form = document.querySelector("#popUpList div.modal-content section.menu div.addEvent form");
     const dataToSend = new FormData(form);
     dataToSend.append('json', JSON.stringify({
@@ -120,7 +119,7 @@ async function addListEvent(e) {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
+    // console.log('Success:', dane);
 
     getListsEvents();
 }
@@ -133,18 +132,13 @@ async function getListsEvents() {
         mode: 'cors',
     });
     let dane = await odp.json();
-    console.log('Success:', dane);
+    // console.log('Success:', dane);
     createEventsElements(dane);
 
 }
 
 function createEventsElements(eventData) {
-
     const listsEventsSection = document.querySelector('#popUpList div.modal-content section.menu div.events');
-    for (let i = 0; i < eventData.length + 1; i++) {
-        if (listsEventsSection.contains(document.querySelector('div.listEvent')))
-            document.querySelector('div.listEvent').remove();
-    }
 
     for (let i = 0; i < eventData.length; i++) {
         const divListEvent = document.createElement("div");
