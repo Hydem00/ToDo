@@ -95,11 +95,13 @@ function deleteList(){
     $obj = json_decode($_POST["json"], false);
     $list_id = $obj->listID;
 
-    $stmt = $dbh->prepare('DELETE FROM listy WHERE id = :list_id AND user_id = :user_id');
+    $stmt = $dbh->prepare('DELETE FROM wydarzenia WHERE lista_id = :list_id');
+    $stmt->bindParam(':list_id', $list_id);
+    $stmt->execute();
 
+    $stmt = $dbh->prepare('DELETE FROM listy WHERE id = :list_id AND user_id = :user_id');
     $stmt->bindParam(':list_id', $list_id);
     $stmt->bindParam(':user_id', $user_id);
-    
     $stmt->execute();
 
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
