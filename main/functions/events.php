@@ -119,7 +119,7 @@ function editEvent(){
         $event_color = $_POST['event_color'];
         $event_priority = $_POST['event_priority'];
 
-        $stmt = $dbh->prepare('UPDATE wydarzenia SET nazwa = :event_name, data = :event_date, data = :event_date, lokalizacja = :event_location, opis = :event_description, kolor = :event_color, priorytet = :event_priority WHERE id = :event_id');
+        $stmt = $dbh->prepare('UPDATE wydarzenia SET nazwa = :event_name, data = :event_date, czas = :event_time, lokalizacja = :event_location, opis = :event_description, kolor = :event_color, priorytet = :event_priority WHERE id = :event_id');
         $stmt->bindParam(':event_name', $event_name);
         $stmt->bindParam(':event_date', $event_date);
         $stmt->bindParam(':event_time', $event_time);
