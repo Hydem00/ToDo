@@ -113,7 +113,7 @@ if(!$auth->isLogged()){
                   <input type="text" name="event_location" placeholder = "Enter the location">
                   <input type="date" name="event_date" placeholder = "Enter the date">
                   <input type="time" name="event_time" placeholder = "Enter the time">
-                  <input type="number" name="event_priority" placeholder = "Priority 1 to 10">
+                  <input type="number" name="event_priority" placeholder = "Priority 1 to 5">
                   <input type="color" name="event_color">
                   <button>Add event</button>
                 </form>

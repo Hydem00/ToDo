@@ -47,7 +47,7 @@ function showEvents(){
     // print $list_id;
 
     if($list){
-        $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id');
+        $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet DESC');
         $stmt->bindParam(':list_id', $list_id);
         $stmt->execute();
     
