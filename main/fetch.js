@@ -122,44 +122,73 @@ async function addListEvent(e) {
     let dane = await odp.text();
     console.log('Success:', dane);
 
-    getLists();
+    getListsEvents();
 }
 
-function createListsEvents(eventData) {
+async function getListsEvents() {
+    let url = "functions/events.php?action=show";
+    url += "&" + "list_id" + "=" + '' + listID + '';
+    let odp = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+    });
+    let dane = await odp.json();
+    console.log('Success:', dane);
+    createEventsElements(dane);
 
-    const listsSection = document.querySelector('main section.lists');
-    for (let i = 0; i < listData.length + 1; i++) {
-        if (listsSection.contains(document.querySelector('div.list')))
-            document.querySelector('div.list').remove();
+}
+
+function createEventsElements(eventData) {
+
+    const listsEventsSection = document.querySelector('#popUpList div.modal-content section.menu div.events');
+    for (let i = 0; i < eventData.length + 1; i++) {
+        if (listsEventsSection.contains(document.querySelector('div.listEvent')))
+            document.querySelector('div.listEvent').remove();
     }
 
-    for (let i = 0; i < listData.length; i++) {
-        const divList = document.createElement("div");
+    for (let i = 0; i < eventData.length; i++) {
+        const divListEvent = document.createElement("div");
         const h1Title = document.createElement("h1");
         const pDescription = document.createElement("p");
+        const pLocation = document.createElement("p");
+        const pDate = document.createElement("p");
+        const pTime = document.createElement("p");
+        const pPriority = document.createElement("p");
+        const pColor = document.createElement("p");
 
-        const divEdit = document.createElement("div");
-        divEdit.classList.add("editList");
+        const divEventEdit = document.createElement("div");
+        divEventEdit.classList.add("editListEvent");
         const buttonEdit = document.createElement("i");
         buttonEdit.className = "fa-solid fa-pen";
-        divEdit.appendChild(buttonEdit);
+        divEventEdit.appendChild(buttonEdit);
 
-        const divRemove = document.createElement("div");
-        divRemove.classList.add("removeList");
+        const divEventRemove = document.createElement("div");
+        divEventRemove.classList.add("removeListEvent");
         const buttonRemove = document.createElement("i");
         buttonRemove.className = "fa-solid fa-trash";
-        divRemove.appendChild(buttonRemove);
+        divEventRemove.appendChild(buttonRemove);
 
-        divList.classList.add("list");
-        divList.dataset.numberOfList = listData[i].id;
+        divListEvent.classList.add("listEvent");
+        divListEvent.dataset.numberOfListEvent = eventData[i].id;
 
-        h1Title.textContent = listData[i].nazwa;
-        pDescription.textContent = listData[i].opis;
+        h1Title.textContent = eventData[i].nazwa;
+        pDescription.textContent = eventData[i].opis;
+        pLocation.textContent = eventData[i].lokalizacja;
+        pDate.textContent = eventData[i].data;
+        pTime.textContent = eventData[i].czas;
+        pPriority.textContent = eventData[i].priorytet;
+        pColor.textContent = eventData[i].kolor;
 
-        divList.appendChild(h1Title);
-        divList.appendChild(pDescription);
-        divList.appendChild(divEdit);
-        divList.appendChild(divRemove);
-        listsSection.insertBefore(divList, listsSection.children[2]);
+        divListEvent.appendChild(h1Title);
+        divListEvent.appendChild(pDescription);
+        divListEvent.appendChild(pLocation);
+        divListEvent.appendChild(pDate);
+        divListEvent.appendChild(pTime);
+        divListEvent.appendChild(pPriority);
+        divListEvent.appendChild(pColor);
+
+        divListEvent.appendChild(divEventEdit);
+        divListEvent.appendChild(divEventRemove);
+        listsEventsSection.insertBefore(divListEvent, listsEventsSection.children[2]);
     }
 }

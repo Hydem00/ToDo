@@ -36,13 +36,15 @@ function showEvents(){
     global $user_id;
     global $dbh;
 
-    $list_id = $_POST['list_id'];
+    $list_id = $_GET['list_id'];
     $stmt = $dbh->prepare('SELECT * FROM listy WHERE id = :list_id AND user_id = :user_id');
     $stmt->bindParam(':list_id', $list_id);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
     $list = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // print $list_id;
 
     if($list){
         $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id');

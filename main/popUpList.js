@@ -14,6 +14,7 @@ function listPropertiesPopUp() {
         listID = this.parentElement.dataset.numberOfList;
         listTitleProp.textContent = document.querySelector(`div.list[data-number-of-list='${listID}'] h1`).textContent;
         listDescriptionProp.textContent = document.querySelector(`div.list[data-number-of-list='${listID}'] p`).textContent;
+        getListsEvents();
         addEvent.addEventListener('click', addListEvent);
     }
 
