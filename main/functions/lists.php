@@ -98,7 +98,8 @@ function deleteList(){
     $stmt = $dbh->prepare('DELETE FROM listy WHERE id = :list_id AND user_id = :user_id');
 
     $stmt->bindParam(':list_id', $list_id);
-
+    $stmt->bindParam(':user_id', $user_id);
+    
     $stmt->execute();
 
     echo json_encode(array('rows_affected' => $stmt->rowCount()));
