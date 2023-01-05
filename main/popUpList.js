@@ -2,6 +2,7 @@ let listID;
 const modalList = document.getElementById("popUpList");
 const listTitleProp = document.querySelector('#popUpList div.modal-content h2');
 const listDescriptionProp = document.querySelector('#popUpList div.modal-content p');
+const addEvent = document.querySelector('#popUpList div.modal-content form button');
 
 function listPropertiesPopUp() {
 
@@ -13,6 +14,7 @@ function listPropertiesPopUp() {
         listID = this.parentElement.dataset.numberOfList;
         listTitleProp.textContent = document.querySelector(`div.list[data-number-of-list='${listID}'] h1`).textContent;
         listDescriptionProp.textContent = document.querySelector(`div.list[data-number-of-list='${listID}'] p`).textContent;
+        addEvent.addEventListener('click', addListEvent);
     }
 
     closePopUpList.addEventListener('click', function () {
