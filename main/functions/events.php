@@ -74,15 +74,17 @@ function addEvent(){
     if($list){
         $event_name = $_POST['event_name'];
         $event_date = $_POST['event_date'];
+        $event_time = $_POST['event_time'];
         $event_location = $_POST['event_location'];
         $event_description = $_POST['event_description'];
         $event_color = $_POST['event_color'];
         $event_priority = $_POST['event_priority'];
         
-        $stmt = $dbh->prepare('INSERT INTO wydarzenia (lista_id, nazwa, data, lokalizacja, opis, kolor, priorytet) VALUES (:list_id, :event_name, :event_date, :event_location, :event_description, :event_color, :event_priority)');
+        $stmt = $dbh->prepare('INSERT INTO wydarzenia (lista_id, nazwa, data, czas, lokalizacja, opis, kolor, priorytet) VALUES (:list_id, :event_name, :event_date, :event_time, :event_location, :event_description, :event_color, :event_priority)');
         $stmt->bindParam(':list_id', $list_id);
         $stmt->bindParam(':event_name', $event_name);
         $stmt->bindParam(':event_date', $event_date);
+        $stmt->bindParam(':event_time', $event_time);
         $stmt->bindParam(':event_location', $event_location);
         $stmt->bindParam(':event_description', $event_description);
         $stmt->bindParam(':event_color', $event_color);
@@ -111,14 +113,16 @@ function editEvent(){
     if($event){
         $event_name = $_POST['event_name'];
         $event_date = $_POST['event_date'];
+        $event_time = $_POST['event_time'];
         $event_location = $_POST['event_location'];
         $event_description = $_POST['event_description'];
         $event_color = $_POST['event_color'];
         $event_priority = $_POST['event_priority'];
 
-        $stmt = $dbh->prepare('UPDATE wydarzenia SET nazwa = :event_name, data = :event_date, lokalizacja = :event_location, opis = :event_description, kolor = :event_color, priorytet = :event_priority WHERE id = :event_id');
+        $stmt = $dbh->prepare('UPDATE wydarzenia SET nazwa = :event_name, data = :event_date, data = :event_date, lokalizacja = :event_location, opis = :event_description, kolor = :event_color, priorytet = :event_priority WHERE id = :event_id');
         $stmt->bindParam(':event_name', $event_name);
         $stmt->bindParam(':event_date', $event_date);
+        $stmt->bindParam(':event_time', $event_time);
         $stmt->bindParam(':event_location', $event_location);
         $stmt->bindParam(':event_description', $event_description);
         $stmt->bindParam(':event_color', $event_color);
