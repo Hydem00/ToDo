@@ -4,6 +4,20 @@ const listTitleProp = document.querySelector('#popUpList div.modal-content h2');
 const listDescriptionProp = document.querySelector('#popUpList div.modal-content p');
 const addEvent = document.querySelector('#popUpList div.modal-content form button');
 
+function clearEvents() {
+    const listsEventsSection = document.querySelector('#popUpList div.modal-content section.menu div.events');
+    let eventDetected = false;
+
+    do {
+        if (listsEventsSection.contains(document.querySelector('div.listEvent'))) {
+            document.querySelector('div.listEvent').remove();
+            eventDetected = true;
+        } else
+            eventDetected = false;
+    }
+    while (eventDetected)
+}
+
 function listPropertiesPopUp() {
 
     const listDivs = document.querySelectorAll("section.lists div.list h1, section.lists div.list p");
@@ -38,20 +52,6 @@ function listPropertiesPopUp() {
         listDescriptionProp.textContent = document.querySelector(`div.list[data-number-of-list='${listID}'] p`).textContent;
         getListsEvents();
         addEvent.addEventListener('click', addListEventValidation);
-    }
-
-    function clearEvents() {
-        const listsEventsSection = document.querySelector('#popUpList div.modal-content section.menu div.events');
-        let eventDetected = false;
-
-        do {
-            if (listsEventsSection.contains(document.querySelector('div.listEvent'))) {
-                document.querySelector('div.listEvent').remove();
-                eventDetected = true;
-            } else
-                eventDetected = false;
-        }
-        while (eventDetected)
     }
 
     closePopUpList.addEventListener('click', function () {
