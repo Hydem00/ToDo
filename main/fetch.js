@@ -134,7 +134,7 @@ async function getListsEvents() {
     let dane = await odp.json();
 
     clearEvents();
-    // console.log('Success:', dane);
+    console.log('Success:', dane);
     createEventsElements(dane);
 
 }
@@ -185,6 +185,7 @@ function createEventsElements(eventData) {
 
         divListEvent.appendChild(divEventEdit);
         divListEvent.appendChild(divEventRemove);
-        listsEventsSection.insertBefore(divListEvent, listsEventsSection.children[2]);
+        listsEventsSection.appendChild(divListEvent);
+        // listsEventsSection.insertBefore(divListEvent, listsEventsSection.children[2]);
     }
 }
