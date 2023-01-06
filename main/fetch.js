@@ -132,6 +132,7 @@ async function getListsEvents() {
         mode: 'cors',
     });
     let dane = await odp.json();
+
     clearEvents();
     // console.log('Success:', dane);
     createEventsElements(dane);
