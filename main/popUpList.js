@@ -32,7 +32,7 @@ function listPropertiesPopUp() {
 
     function addListEventValidation(e) {
 
-        if (eventTitle.value.length != 0) {
+        if (eventTitle.value.length != 0 && eventPriority.value > 0 && eventPriority <= 5) {
             e.preventDefault();
             addListEvent();
             eventTitle.value = "";
