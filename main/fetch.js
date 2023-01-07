@@ -176,13 +176,6 @@ function createEventsElements(eventData) {
         pLocation.innerHTML = "<i class='fa-solid fa-location-dot'></i> " + eventData[i].lokalizacja;
         pPriority.innerHTML = "<i class='fa-solid fa-star'></i> " + eventData[i].priorytet;
 
-        h1Title.textContent = eventData[i].nazwa;
-        pDescription.textContent = eventData[i].opis;
-        pLocation.textContent = eventData[i].lokalizacja;
-        pDate.textContent = eventData[i].data;
-        pTime.textContent = eventData[i].czas;
-        pPriority.textContent = eventData[i].priorytet;
-
         divListEvent.appendChild(h1Title);
         divListEvent.appendChild(pDescription);
         divListEvent.appendChild(pDate);
