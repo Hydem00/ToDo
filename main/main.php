@@ -131,7 +131,6 @@ if(!$auth->isLogged()){
                 </form>
               </div> -->
             <div class="events">
-
             </div>
           </section>
           

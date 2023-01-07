@@ -152,6 +152,9 @@ function createEventsElements(eventData) {
         const pPriority = document.createElement("p");
         const pColor = document.createElement("p");
 
+        const divColor = document.createElement("div");
+        divColor.classList.add("eventColor");
+
         const divEventEdit = document.createElement("div");
         divEventEdit.classList.add("editListEvent");
         const buttonEdit = document.createElement("i");
@@ -167,24 +170,27 @@ function createEventsElements(eventData) {
         divListEvent.classList.add("listEvent");
         divListEvent.dataset.numberOfListEvent = eventData[i].id;
 
-        h1Title.textContent = eventData[i].nazwa;
-        pDescription.textContent = eventData[i].opis;
-        pLocation.textContent = eventData[i].lokalizacja;
-        pDate.textContent = eventData[i].data;
-        pTime.textContent = eventData[i].czas;
-        pPriority.textContent = eventData[i].priorytet;
-        pColor.textContent = eventData[i].kolor;
+        h1Title.innerText = eventData[i].nazwa;
+        pDescription.innerHTML = "<i class='fa-solid fa-pen-nib'></i> " + eventData[i].opis;
+        pDate.innerHTML = "<i class='fa-solid fa-calendar-days'></i> " + eventData[i].data;
+        pTime.innerHTML = "<i class='fa-solid fa-clock'></i> " + eventData[i].czas;
+        pLocation.innerHTML = "<i class='fa-solid fa-location-dot'></i> " + eventData[i].lokalizacja;
+        pPriority.innerHTML = "<i class='fa-solid fa-star'></i> " + eventData[i].priorytet;
+        pColor.innerHTML = "<i class='fa-solid fa-palette'></i> " + eventData[i].kolor;
 
         divListEvent.appendChild(h1Title);
         divListEvent.appendChild(pDescription);
-        divListEvent.appendChild(pLocation);
         divListEvent.appendChild(pDate);
         divListEvent.appendChild(pTime);
+        divListEvent.appendChild(pLocation);
         divListEvent.appendChild(pPriority);
         divListEvent.appendChild(pColor);
 
+        divColor.style.backgroundColor = eventData[i].kolor;
+
         divListEvent.appendChild(divEventEdit);
         divListEvent.appendChild(divEventRemove);
+        divListEvent.appendChild(divColor);
         listsEventsSection.appendChild(divListEvent);
         // listsEventsSection.insertBefore(divListEvent, listsEventsSection.children[2]);
     }
