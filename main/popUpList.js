@@ -28,7 +28,6 @@ function listPropertiesPopUp() {
     const eventDate = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(3)');
     const eventTime = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(4)');
     const eventPriority = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(5)');
-    const eventColor = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(6)');
 
     function addListEventValidation(e) {
 
@@ -41,7 +40,6 @@ function listPropertiesPopUp() {
             eventDate.value = "";
             eventTime.value = "";
             eventPriority.value = "";
-            eventColor.value = "";
         }
     }
 
