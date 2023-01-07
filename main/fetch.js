@@ -150,7 +150,6 @@ function createEventsElements(eventData) {
         const pDate = document.createElement("p");
         const pTime = document.createElement("p");
         const pPriority = document.createElement("p");
-        const pColor = document.createElement("p");
 
         const divEventEdit = document.createElement("div");
         divEventEdit.classList.add("editListEvent");
@@ -173,7 +172,6 @@ function createEventsElements(eventData) {
         pDate.textContent = eventData[i].data;
         pTime.textContent = eventData[i].czas;
         pPriority.textContent = eventData[i].priorytet;
-        pColor.textContent = eventData[i].kolor;
 
         divListEvent.appendChild(h1Title);
         divListEvent.appendChild(pDescription);
@@ -181,7 +179,6 @@ function createEventsElements(eventData) {
         divListEvent.appendChild(pDate);
         divListEvent.appendChild(pTime);
         divListEvent.appendChild(pPriority);
-        divListEvent.appendChild(pColor);
 
         divListEvent.appendChild(divEventEdit);
         divListEvent.appendChild(divEventRemove);
