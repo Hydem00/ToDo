@@ -150,7 +150,6 @@ function createEventsElements(eventData) {
         const pDate = document.createElement("p");
         const pTime = document.createElement("p");
         const pPriority = document.createElement("p");
-        const pColor = document.createElement("p");
 
         const divColor = document.createElement("div");
         divColor.classList.add("eventColor");
@@ -176,7 +175,13 @@ function createEventsElements(eventData) {
         pTime.innerHTML = "<i class='fa-solid fa-clock'></i> " + eventData[i].czas;
         pLocation.innerHTML = "<i class='fa-solid fa-location-dot'></i> " + eventData[i].lokalizacja;
         pPriority.innerHTML = "<i class='fa-solid fa-star'></i> " + eventData[i].priorytet;
-        pColor.innerHTML = "<i class='fa-solid fa-palette'></i> " + eventData[i].kolor;
+
+        h1Title.textContent = eventData[i].nazwa;
+        pDescription.textContent = eventData[i].opis;
+        pLocation.textContent = eventData[i].lokalizacja;
+        pDate.textContent = eventData[i].data;
+        pTime.textContent = eventData[i].czas;
+        pPriority.textContent = eventData[i].priorytet;
 
         divListEvent.appendChild(h1Title);
         divListEvent.appendChild(pDescription);
@@ -184,7 +189,6 @@ function createEventsElements(eventData) {
         divListEvent.appendChild(pTime);
         divListEvent.appendChild(pLocation);
         divListEvent.appendChild(pPriority);
-        divListEvent.appendChild(pColor);
 
         divColor.style.backgroundColor = eventData[i].kolor;
 
