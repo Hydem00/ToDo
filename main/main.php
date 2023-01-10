@@ -95,6 +95,7 @@ if(!$auth->isLogged()){
           <span class="close">&times;</span>
           <h2>Remove List</h2>
           <h3></h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
           <button>YES</button>
           <button>NO</button>
         </div>

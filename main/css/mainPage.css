@@ -1046,6 +1046,7 @@ div.wrap main section.lists div.addList i.active {
   text-align: center;
 }
 #popUpList .modal-content section.menu div.events div.listEvent p {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1055,9 +1056,10 @@ div.wrap main section.lists div.addList i.active {
           flex-direction: column;
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
-  margin: 2px auto;
+  margin: 5px auto;
+  height: 40px;
   font-family: monospace;
-  padding: 5px 0;
+  padding: 30px 0;
   font-size: 0.8rem;
   word-break: break-all;
   text-shadow: none;
@@ -1070,10 +1072,14 @@ div.wrap main section.lists div.addList i.active {
           align-items: center;
 }
 #popUpList .modal-content section.menu div.events div.listEvent p i {
+  position: absolute;
+  top: 0;
   margin: 5px 0;
   text-shadow: 0 0 10px blue;
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
+  color: white;
+  font-size: 1rem;
 }
 #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent {
   position: absolute;
@@ -1085,6 +1091,7 @@ div.wrap main section.lists div.addList i.active {
   font-size: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  color: white;
 }
 #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i:hover {
   color: yellow;
@@ -1099,6 +1106,7 @@ div.wrap main section.lists div.addList i.active {
   font-size: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  color: white;
 }
 #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i:hover {
   color: red;
@@ -1184,17 +1192,28 @@ div.wrap main section.lists div.addList i.active {
   z-index: 1;
 }
 .modal .modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 70%;
-  height: 35%;
+  height: 50%;
   padding: 20px;
   background-color: #fefefe;
   border: 1px solid #888;
   border-radius: 20px;
+  text-align: center;
 }
 .modal .modal-content h2 {
   width: 100%;
@@ -1203,6 +1222,39 @@ div.wrap main section.lists div.addList i.active {
   text-transform: uppercase;
   font-size: 1rem;
   margin-bottom: 8px;
+}
+.modal .modal-content h3 {
+  font-size: 1rem;
+  margin-top: 20%;
+}
+.modal .modal-content i {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 2rem;
+  color: red;
+}
+.modal .modal-content button {
+  height: 25px;
+  width: 50px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  border-radius: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.modal .modal-content button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
 }
 .modal .modal-content .close {
   position: absolute;
@@ -1269,6 +1321,8 @@ div.wrap main section.lists div.addList i.active {
   transition: 0.3s;
   font-size: 1rem;
   margin-bottom: 15px;
+  width: 90px;
+  height: 45px;
 }
 .modal .modal-content form button:hover {
   background-color: #14130C;
@@ -1277,10 +1331,48 @@ div.wrap main section.lists div.addList i.active {
           box-shadow: 0 0 0 5px black, 0 0 0 7px white;
 }
 
+@media (min-width: 280px) and (orientation: portrait) {
+  .modal .modal-content {
+    height: 45%;
+    width: 70%;
+  }
+  .modal .modal-content .close {
+    font-size: 1.8rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 2.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1rem;
+    margin-top: 25%;
+  }
+  .modal .modal-content button {
+    font-size: 1rem;
+    height: 45px;
+    width: 80px;
+  }
+}
 @media (min-width: 320px) and (orientation: portrait) {
   #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
     width: 30%;
     height: 16%;
+  }
+  #popUpList .modal-content section.menu div.events div.listEvent p i {
+    margin-top: 10px;
+  }
+  .modal .modal-content {
+    height: 50%;
   }
 }
 @media (min-width: 360px) and (orientation: portrait) {
@@ -1288,11 +1380,39 @@ div.wrap main section.lists div.addList i.active {
     width: 27%;
     height: 16%;
   }
+  .modal .modal-content {
+    height: 45%;
+  }
+  .modal .modal-content button {
+    height: 30px;
+    width: 75px;
+  }
+  .modal .modal-content i {
+    top: 22%;
+  }
+  .modal .modal-content h3 {
+    margin-top: 30%;
+  }
+  .modal .modal-content form button {
+    width: 100px;
+    height: 35px;
+  }
 }
 @media (min-width: 375px) and (orientation: portrait) {
   #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
     width: 26%;
     height: 16%;
+  }
+  .modal .modal-content {
+    height: 45%;
+  }
+  .modal .modal-content h3 {
+    margin-top: 30%;
+  }
+}
+@media (min-width: 390px) and (orientation: portrait) {
+  .modal .modal-content {
+    height: 35%;
   }
 }
 @media (min-width: 411px) and (orientation: portrait) {
@@ -1300,12 +1420,14 @@ div.wrap main section.lists div.addList i.active {
     width: 23%;
     height: 16%;
   }
+  .modal .modal-content {
+    height: 40%;
+  }
+  .modal .modal-content h3 {
+    margin-top: 30%;
+  }
 }
 @media (min-width: 533px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 50%;
-    height: 70%;
-  }
   #popUpList .modal-content h2 {
     font-size: 1.3rem;
     width: 80%;
@@ -1351,37 +1473,74 @@ div.wrap main section.lists div.addList i.active {
   #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
     font-size: 1.2rem;
   }
+  .modal .modal-content {
+    height: 85%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 2.5rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.2rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.2rem;
+    margin-top: 20%;
+  }
+  .modal .modal-content button {
+    font-size: 1.2rem;
+    height: 45px;
+    width: 80px;
+  }
 }
 @media (min-width: 540px) and (orientation: portrait) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 18%;
     height: 17%;
   }
-}
-@media (max-height: 580px) {
   .modal .modal-content {
-    width: 330px;
-    height: 230px;
+    height: 40%;
+    width: 50%;
   }
-}
-@media (min-width: 640px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 300px;
-    height: 250px;
+  .modal .modal-content .close {
+    font-size: 2.5rem;
   }
   .modal .modal-content h2 {
     font-size: 1.2rem;
-    text-transform: uppercase;
   }
-  .modal .modal-content form input {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form textarea {
+  .modal .modal-content form input, .modal .modal-content form textarea {
     font-size: 1.2rem;
   }
   .modal .modal-content form button {
     font-size: 1.2rem;
+    width: 110px;
   }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.2rem;
+    margin-top: 25%;
+  }
+  .modal .modal-content button {
+    font-size: 1.2rem;
+    height: 45px;
+    width: 80px;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 23%;
     height: 17%;
@@ -1394,30 +1553,108 @@ div.wrap main section.lists div.addList i.active {
     -ms-flex-preferred-size: 80%;
         flex-basis: 80%;
   }
+  .modal .modal-content {
+    height: 80%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 2.5rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.2rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.2rem;
+    margin-top: 20%;
+  }
+  .modal .modal-content button {
+    font-size: 1.2rem;
+    height: 45px;
+    width: 80px;
+  }
+}
+@media (min-width: 653px) and (orientation: landscape) {
+  .modal .modal-content {
+    height: 85%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.2rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.1rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.1rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 2.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.1rem;
+    margin-top: 10%;
+  }
+  .modal .modal-content button {
+    font-size: 1.1rem;
+    height: 45px;
+    width: 80px;
+  }
 }
 @media (min-width: 667px) and (orientation: landscape) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 21%;
     height: 17%;
   }
+  .modal .modal-content h3 {
+    margin-top: 20%;
+  }
 }
-@media (min-width: 670px) and (orientation: landscape) {
+@media (min-width: 720px) and (orientation: landscape) {
   .modal .modal-content {
-    width: 540px;
-    height: 370px;
+    height: 60%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
   }
   .modal .modal-content h2 {
     font-size: 1.5rem;
-    text-transform: uppercase;
   }
-  .modal .modal-content form input {
-    font-size: 1.4rem;
-  }
-  .modal .modal-content form textarea {
+  .modal .modal-content form input, .modal .modal-content form textarea {
     font-size: 1.4rem;
   }
   .modal .modal-content form button {
     font-size: 1.4rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.1rem;
+    margin-top: 25%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 35px;
+    width: 85px;
   }
 }
 @media (min-width: 731px) and (orientation: landscape) {
@@ -1425,25 +1662,20 @@ div.wrap main section.lists div.addList i.active {
     width: 19%;
     height: 17%;
   }
+  .modal .modal-content {
+    height: 75%;
+  }
 }
 @media (min-width: 740px) and (orientation: landscape) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 19%;
     height: 17%;
   }
-}
-@media (min-width: 768px) and (orientation: portrait) {
-  .modal .modal-content h2 {
-    font-size: 2rem;
+  .modal .modal-content {
+    height: 75%;
   }
-  .modal .modal-content form input {
-    font-size: 1.6rem;
-  }
-  .modal .modal-content form textarea {
-    font-size: 1.6rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.6rem;
+  .modal .modal-content h3 {
+    margin-top: 15%;
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
@@ -1491,7 +1723,7 @@ div.wrap main section.lists div.addList i.active {
   #popUpList .modal-content section.menu div.events div.listEvent p {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
-    padding: 10px;
+    padding: 50px;
     font-size: 1.2rem;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p i {
@@ -1512,17 +1744,88 @@ div.wrap main section.lists div.addList i.active {
   #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i, #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
     font-size: 1.6rem;
   }
+  .modal .modal-content {
+    height: 45%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 25%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 45px;
+    width: 80px;
+  }
 }
 @media (min-width: 812px) and (orientation: landscape) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 17%;
     height: 17%;
   }
+  .modal .modal-content h3 {
+    margin-top: 15%;
+  }
 }
 @media (min-width: 812px) and (orientation: portrait) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 15%;
     height: 17%;
+  }
+}
+@media (min-width: 812px) and (orientation: portrait) {
+  .modal .modal-content {
+    height: 45%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+    width: 125px;
+    height: 45px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 25%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 45px;
+    width: 100px;
+  }
+}
+@media (min-width: 823px) and (orientation: landscape) {
+  .modal .modal-content {
+    height: 70%;
   }
 }
 @media (min-width: 844px) and (orientation: landscape) {
@@ -1543,52 +1846,21 @@ div.wrap main section.lists div.addList i.active {
     height: 17%;
   }
 }
+@media (min-width: 912px) and (orientation: portrait) {
+  .modal .modal-content {
+    height: 40%;
+    width: 50%;
+  }
+}
 @media (min-width: 930px) and (orientation: landscape) {
   .modal .modal-content {
-    width: 540px;
-    height: 370px;
+    height: 40%;
   }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-  }
-  .modal .modal-content form input {
-    font-size: 1.6rem;
-  }
-  .modal .modal-content form textarea {
-    font-size: 1.6rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.6rem;
+  .modal .modal-content h3 {
+    margin-top: 25%;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
-  .modal .modal-content {
-    position: absolute;
-    width: 540px;
-    height: 370px;
-    top: 50%;
-    left: 52.5%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .modal .modal-content .close {
-    font-size: 4rem;
-  }
-  .modal .modal-content form {
-    height: 80%;
-  }
-  .modal .modal-content form textarea {
-    height: 60%;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea, .modal .modal-content form button {
-    font-size: 1.6rem;
-  }
   #popUpList .modal-content section.menu div.addEvent {
     width: 55%;
   }
@@ -1610,16 +1882,90 @@ div.wrap main section.lists div.addList i.active {
   #popUpList .modal-content section.menu div.events div.listEvent p {
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
+    font-size: 1.4rem;
+  }
+  #popUpList .modal-content section.menu div.events div.listEvent p i {
+    font-size: 1.4rem;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
     -ms-flex-preferred-size: 80%;
         flex-basis: 80%;
+  }
+  #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
+    top: 10px;
+    left: -10px;
+    font-size: 1.5rem;
+  }
+  #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+  }
+  .modal .modal-content {
+    height: 50%;
+    width: 45%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 18%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 45px;
+    width: 80px;
   }
 }
 @media (min-width: 1180px) and (orientation: landscape) {
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 17%;
     height: 17%;
+  }
+  .modal .modal-content {
+    height: 45%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+    width: 110px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 18%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 45px;
+    width: 100px;
   }
 }
 @media (min-width: 1280px) and (orientation: landscape) {
@@ -1649,10 +1995,9 @@ div.wrap main section.lists div.addList i.active {
     margin-bottom: 20px;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p {
-    font-size: 1.3rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    height: 80px;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
     -ms-flex-preferred-size: 80%;
@@ -1660,6 +2005,37 @@ div.wrap main section.lists div.addList i.active {
   }
   #popUpList .modal-content section.menu div.events div.listEvent h1 {
     font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .modal .modal-content {
+    height: 50%;
+    width: 50%;
+  }
+  .modal .modal-content .close {
+    font-size: 3rem;
+  }
+  .modal .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  .modal .modal-content form input, .modal .modal-content form textarea {
+    font-size: 1.4rem;
+  }
+  .modal .modal-content form button {
+    font-size: 1.4rem;
+    width: 140px;
+  }
+  .modal .modal-content i {
+    top: 20%;
+    font-size: 3.5rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 18%;
+  }
+  .modal .modal-content button {
+    font-size: 1.4rem;
+    height: 45px;
+    width: 100px;
   }
 }
 @media (min-width: 1368px) and (orientation: landscape) {
@@ -1667,15 +2043,26 @@ div.wrap main section.lists div.addList i.active {
     width: 17%;
     height: 17%;
   }
+  .modal .modal-content h2 {
+    font-size: 2rem;
+  }
+  .modal .modal-content i {
+    font-size: 4rem;
+  }
+  .modal .modal-content h3 {
+    font-size: 1.9rem;
+  }
+  .modal .modal-content button {
+    font-size: 1.9rem;
+  }
 }
 @media (min-width: 1400px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 540px;
-    height: 370px;
-  }
   #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
     width: 67px;
     height: 60px;
+  }
+  .model .model-content {
+    width: 20%;
   }
 }
 footer {
