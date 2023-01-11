@@ -86,7 +86,7 @@ if(!$auth->isLogged()){
           <form method="POST">
             <input type="text" maxlength="22" name="list_name" placeholder = "Enter the title" required>
             <textarea maxlength="255" name="list_description" placeholder = "Enter the description"></textarea>
-            <button>Confirm Changes</button>
+            <button>Confirm</button>
           </form>
         </div>
       </div>

@@ -1057,9 +1057,11 @@ div.wrap main section.lists div.addList i.active {
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
   margin: 5px auto;
-  height: 40px;
+  height: 50px;
   font-family: monospace;
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 0.8rem;
   word-break: break-all;
   text-shadow: none;
@@ -1070,6 +1072,10 @@ div.wrap main section.lists div.addList i.active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+#popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
+  overflow: auto;
+  overflow-x: hidden;
 }
 #popUpList .modal-content section.menu div.events div.listEvent p i {
   position: absolute;
@@ -1846,6 +1852,14 @@ div.wrap main section.lists div.addList i.active {
     height: 17%;
   }
 }
+@media (min-width: 908px) {
+  .modal .modal-content {
+    height: 60%;
+  }
+  .modal .modal-content h3 {
+    margin-top: 40%;
+  }
+}
 @media (min-width: 912px) and (orientation: portrait) {
   .modal .modal-content {
     height: 40%;
@@ -1878,8 +1892,10 @@ div.wrap main section.lists div.addList i.active {
     -ms-flex-line-pack: center;
         align-content: center;
     margin-bottom: 20px;
+    padding-bottom: 20px;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p {
+    height: 121px;
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
     font-size: 1.4rem;
@@ -1997,7 +2013,6 @@ div.wrap main section.lists div.addList i.active {
   #popUpList .modal-content section.menu div.events div.listEvent p {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    height: 80px;
   }
   #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
     -ms-flex-preferred-size: 80%;
