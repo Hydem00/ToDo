@@ -1044,6 +1044,7 @@ div.wrap main section.lists div.addList i.active {
   color: white;
   text-shadow: 0 0 10px yellow;
   text-align: center;
+  word-break: break-all;
 }
 #popUpList .modal-content section.menu div.events div.listEvent p {
   position: relative;
