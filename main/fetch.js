@@ -119,7 +119,7 @@ async function addListEvent() {
         body: dataToSend
     });
     let dane = await odp.text();
-    // console.log('Success:', dane);
+    console.log('Success:', dane);
 
     getListsEvents();
 }

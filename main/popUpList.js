@@ -27,11 +27,11 @@ function listPropertiesPopUp() {
     const eventLocation = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(2)');
     const eventDate = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(3)');
     const eventTime = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(4)');
-    const eventPriority = document.querySelector('#popUpList div.modal-content div.addEvent form input:nth-of-type(5)');
+    const eventPriority = document.querySelector('#popUpList div.modal-content div.addEvent form select');
 
     function addListEventValidation(e) {
 
-        if (eventTitle.value.length != 0 && eventPriority.value > 0 && eventPriority.value <= 5) {
+        if (eventTitle.value.length != 0) {
             e.preventDefault();
             addListEvent();
             eventTitle.value = "";
@@ -39,7 +39,7 @@ function listPropertiesPopUp() {
             eventLocation.value = "";
             eventDate.value = "";
             eventTime.value = "";
-            eventPriority.value = "";
+            eventPriority.value = "1";
         }
     }
 

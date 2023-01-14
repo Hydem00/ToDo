@@ -114,7 +114,11 @@ if(!$auth->isLogged()){
                   <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
                   <input type="date" name="event_date" placeholder = "Enter the date">
                   <input type="time" name="event_time" placeholder = "Enter the time">
-                  <input type="number" min="1" max="5" name="event_priority" placeholder = "Priority 1 to 5" oninput="this.value = Math.round(this.value);" required>
+                  <select name="event_priority">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
                   <input type="color" name="event_color">
                   <button>Add event</button>
                 </form>
