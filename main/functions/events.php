@@ -82,6 +82,24 @@ function addEvent(){
         $event_color = $_POST['event_color'];
         $event_priority = $_POST['event_priority'];
         
+        if (empty($event_name)) {
+            echo json_encode(array("error"=>"Event name cannot be empty"));
+            exit;
+        } elseif (strlen($event_name) > 50) {
+            echo json_encode(array("error"=>"Event name cannot exceed 50 letters"));
+            exit;
+        }
+        
+        if (strlen($event_description) > 255) {
+            echo json_encode(array("error"=>"Event description cannot exceed 255 letters"));
+            exit;
+        }
+
+        if (strlen($event_location) > 50) {
+            echo json_encode(array("error"=>"Event location cannot exceed 50 letters"));
+            exit;
+        }
+
         $stmt = $dbh->prepare('INSERT INTO wydarzenia (lista_id, nazwa, data, czas, lokalizacja, opis, kolor, priorytet) VALUES (:list_id, :event_name, :event_date, :event_time, :event_location, :event_description, :event_color, :event_priority)');
         $stmt->bindParam(':list_id', $list_id);
         $stmt->bindParam(':event_name', $event_name);
