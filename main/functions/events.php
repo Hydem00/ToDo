@@ -138,6 +138,25 @@ function editEvent(){
         $event_description = $_POST['event_description'];
         $event_color = $_POST['event_color'];
         $event_priority = $_POST['event_priority'];
+        
+        if (empty($event_name)) {
+            echo json_encode(array("error"=>"Event name cannot be empty"));
+            exit;
+        } elseif (strlen($event_name) > 50) {
+            echo json_encode(array("error"=>"Event name cannot exceed 50 letters"));
+            exit;
+        }
+        
+        if (strlen($event_description) > 255) {
+            echo json_encode(array("error"=>"Event description cannot exceed 255 letters"));
+            exit;
+        }
+
+        if (strlen($event_location) > 50) {
+            echo json_encode(array("error"=>"Event location cannot exceed 50 letters"));
+            exit;
+        }
+
 
         $stmt = $dbh->prepare('UPDATE wydarzenia SET nazwa = :event_name, data = :event_date, czas = :event_time, lokalizacja = :event_location, opis = :event_description, kolor = :event_color, priorytet = :event_priority WHERE id = :event_id');
         $stmt->bindParam(':event_name', $event_name);
