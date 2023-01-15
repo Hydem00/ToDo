@@ -89,6 +89,19 @@ function editList(){
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];
 
+    if (empty($list_name)) {
+        echo json_encode(array("error"=>"List name cannot be empty"));
+        exit;
+    } elseif (strlen($list_name) > 50) {
+        echo json_encode(array("error"=>"List name cannot exceed 50 letters"));
+        exit;
+    }
+    
+    if (strlen($list_description) > 255) {
+        echo json_encode(array("error"=>"List description cannot exceed 255 letters"));
+        exit;
+    }
+
     $stmt = $dbh->prepare('UPDATE listy SET nazwa = :list_name, opis = :list_description WHERE id = :list_id AND user_id = :user_id');
     
     $stmt->bindParam(':user_id', $user_id);
