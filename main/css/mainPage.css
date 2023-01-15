@@ -637,6 +637,7 @@ div.wrap main section.lists div.list h1 {
   margin: 0 auto;
   font-size: 1.2rem;
   font-family: monospace;
+  word-break: break-word;
   padding-top: 10px;
   color: white;
   text-shadow: 0 0 10px yellow;

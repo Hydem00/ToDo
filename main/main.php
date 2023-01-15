@@ -73,7 +73,7 @@ if(!$auth->isLogged()){
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
-            <input type="text" maxlength="22" name="list_name" placeholder = "Enter the title" required>
+            <input type="text" maxlength="50" name="list_name" placeholder = "Enter the title" required>
             <textarea maxlength="255" name="list_description" placeholder = "Enter the description"></textarea>
             <button>Add List</button>
           </form>
@@ -84,7 +84,7 @@ if(!$auth->isLogged()){
           <h2>Edit List</h2>
           <span class="close">&times;</span>
           <form method="POST">
-            <input type="text" maxlength="22" name="list_name" placeholder = "Enter the title" required>
+            <input type="text" maxlength="50" name="list_name" placeholder = "Enter the title" required>
             <textarea maxlength="255" name="list_description" placeholder = "Enter the description"></textarea>
             <button>Confirm</button>
           </form>
@@ -109,7 +109,7 @@ if(!$auth->isLogged()){
               <div class="addEvent">
                 <h2>Add Event</h2>
                 <form method="POST">
-                  <input type="text" maxlength="22" name="event_name" placeholder = "Enter the title" required>
+                  <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
                   <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
                   <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
                   <input type="date" name="event_date" placeholder = "Enter the date">
@@ -126,7 +126,7 @@ if(!$auth->isLogged()){
               <!-- <div class="editEvent">
                 <h2>Edit Event</h2>
                 <form method="POST">
-                  <input type="text" maxlength="22" name="event_name" placeholder = "Enter the title" required>
+                  <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
                   <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
                   <input type="date" name="event_date" placeholder = "Enter the date" required>
                   <input type="time" name="event_time" placeholder = "Enter the time" required>
