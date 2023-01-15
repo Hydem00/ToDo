@@ -53,6 +53,19 @@ function addList(){
 
     $list_name = $_POST['list_name'];
     $list_description = $_POST['list_description'];
+
+    if (empty($list_name)) {
+        echo json_encode(array("error"=>"List name cannot be empty"));
+        exit;
+    } elseif (strlen($list_name) > 50) {
+        echo json_encode(array("error"=>"List name cannot exceed 50 letters"));
+        exit;
+    }
+    
+    if (strlen($list_description) > 255) {
+        echo json_encode(array("error"=>"List description cannot exceed 255 letters"));
+        exit;
+    }
     
     $stmt = $dbh->prepare('INSERT INTO listy (user_id, nazwa, opis) VALUES (:user_id, :list_name, :list_description)');
     
