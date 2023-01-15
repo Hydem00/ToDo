@@ -9,6 +9,7 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 if(!$auth->isLogged()){
     header('HTTP/1.0 401 Unauthorized');
     echo "Forbidden";
+    exit;
 }else{
     //echo json_encode($auth->getCurrentUser());
     $user_id = $auth->getCurrentUser()["id"];
