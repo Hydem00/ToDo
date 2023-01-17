@@ -161,57 +161,57 @@ function listPropertiesSection() {
         })
     });
 
-    // const deleteEvents = document.querySelectorAll('main section.menu div.events div.listEvent div.removeListEvent i');
+    const deleteEvents = document.querySelectorAll('main section.menu div.events div.listEvent div.removeListEvent i');
 
-    // const popUpRemoveEvent = document.querySelector("#popUpRemoveEvent");
+    const popUpRemoveEvent = document.querySelector("#popUpRemoveEvent");
 
-    // const removeInformation = document.querySelector('#popUpRemoveEvent div.modal-content h3');
+    const removeInformation = document.querySelector('#popUpRemoveEvent div.modal-content h3');
 
-    // const confirmationBtns = document.querySelectorAll("#popUpRemoveEvent div.modal-content button");
+    const confirmationBtns = document.querySelectorAll("#popUpRemoveEvent div.modal-content button");
 
-    // const closePopUpRemove = document.querySelector("#popUpRemoveEvent .close");
+    const closePopUpRemove = document.querySelector("#popUpRemoveEvent .close");
 
-    // const closeAddForm = document.querySelector('.addEvent .close');
-    // const closeEditForm = document.querySelector('.editEvent .close');
+    const closeAddForm = document.querySelector('.addEvent .close');
+    const closeEditForm = document.querySelector('.editEvent .close');
 
-    // deleteEvents.forEach(deleteEvent => {
-    //     deleteEvent.addEventListener('click', function () {
-    //         eventID = this.parentElement.parentElement.dataset.numberOfListEvent;
-    //         popUpRemoveEvent.style.display = "block";
+    deleteEvents.forEach(deleteEvent => {
+        deleteEvent.addEventListener('click', function () {
+            eventID = this.parentElement.parentElement.dataset.numberOfListEvent;
+            popUpRemoveEvent.style.display = "block";
 
-    //         eventsData.forEach(event => {
-    //             if (event.id === eventID) {
-    //                 removeInformation.textContent = `Are you sure you want to permamently delete event named '${event.nazwa}'?`;
-    //             }
-    //         });
+            eventsData.forEach(event => {
+                if (event.id === eventID) {
+                    removeInformation.textContent = `Are you sure you want to permamently delete event named '${event.nazwa}'?`;
+                }
+            });
 
-    //         confirmationBtns[0].addEventListener('click', removeListEvent);
-    //     });
-    // })
+            confirmationBtns[0].addEventListener('click', removeListEvent);
+        });
+    })
 
-    // confirmationBtns.forEach(btn => {
-    //     btn.addEventListener('click', () => {
-    //         popUpRemoveEvent.style.display = "none";
-    //     })
-    // })
+    confirmationBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            popUpRemoveEvent.style.display = "none";
+        })
+    })
 
-    // window.addEventListener('mousedown', function (event) {
-    //     if (event.target == popUpRemoveEvent) {
-    //         popUpRemoveEvent.style.display = "none";
-    //     }
-    // })
+    window.addEventListener('mousedown', function (event) {
+        if (event.target == popUpRemoveEvent) {
+            popUpRemoveEvent.style.display = "none";
+        }
+    })
 
-    // closePopUpRemove.addEventListener('click', function () {
-    //     popUpRemoveEvent.style.display = "none";
-    // })
+    closePopUpRemove.addEventListener('click', function () {
+        popUpRemoveEvent.style.display = "none";
+    })
 
-    // closeAddForm.addEventListener('click', () => {
-    //     addEventForm.style.display = "none";
-    //     addEventBtn.classList.remove('active');
-    //     btnActive = false;
-    // })
+    closeAddForm.addEventListener('click', () => {
+        addEventForm.style.display = "none";
+        addEventBtn.classList.remove('active');
+        btnActive = false;
+    })
 
-    // closeEditForm.addEventListener('click', () => {
-    //     editEventForm.style.display = "none";
-    // })
+    closeEditForm.addEventListener('click', () => {
+        editEventForm.style.display = "none";
+    })
 }
