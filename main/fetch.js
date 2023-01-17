@@ -1,3 +1,5 @@
+let eventsData;
+
 window.onload = function () {
     getLists();
 }
@@ -26,7 +28,9 @@ async function getLists() {
     createListsElement(result);
 
     popUpEdit();
-    listPropertiesPopUp();
+
+    listPropertiesSection();
+
     popUpRemove();
 
 }
@@ -108,7 +112,7 @@ async function editList() {
 }
 
 async function addListEvent() {
-    const form = document.querySelector("#popUpList div.modal-content section.menu div.addEvent form");
+    const form = document.querySelector("main section.menu div.addEvent form");
     const dataToSend = new FormData(form);
     dataToSend.append('json', JSON.stringify({
         listID: listID
@@ -131,16 +135,16 @@ async function getListsEvents() {
         method: 'GET',
         mode: 'cors',
     });
-    let dane = await odp.json();
+    eventsData = await odp.json();
 
     clearEvents();
-    console.log('Success:', dane);
-    createEventsElements(dane);
-
+    // console.log('Success:', eventsData);
+    createEventsElements(eventsData);
+    listPropertiesSection();
 }
 
 function createEventsElements(eventData) {
-    const listsEventsSection = document.querySelector('#popUpList div.modal-content section.menu div.events');
+    const listsEventsSection = document.querySelector('main section.menu div.events');
 
     for (let i = 0; i < eventData.length; i++) {
         const divListEvent = document.createElement("div");
@@ -192,3 +196,36 @@ function createEventsElements(eventData) {
         // listsEventsSection.insertBefore(divListEvent, listsEventsSection.children[2]);
     }
 }
+
+async function editListEvent() {
+    const form = document.querySelector("main section.menu div.editEvent form");
+    const dataToSend = new FormData(form);
+    dataToSend.append('json', JSON.stringify({
+        eventID: eventID
+    }));
+    let odp = await fetch('functions/events.php?action=edit', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let dane = await odp.text();
+    console.log('Success:', dane);
+
+    getListsEvents();
+}
+
+// async function removeListEvent() {
+//     const dataToSend = new FormData();
+//     dataToSend.append('json', JSON.stringify({
+//         eventID: eventID
+//     }));
+//     let odp = await fetch('functions/events.php?action=delete', {
+//         method: 'POST',
+//         mode: 'cors',
+//         body: dataToSend
+//     });
+//     eventsData = await odp.text();
+//     console.log('Success:', eventsData);
+
+//     getListsEvents();
+// }
