@@ -8,7 +8,7 @@ $auth   = new \PHPAuth\Auth($dbh, $config);
 
 if(!$auth->isLogged()){
   header('HTTP/1.0 401 Unauthorized');
-  header('Location: ../login/login.php');
+  header('Location: ../auth/login.php');
 }else{
   
 }
@@ -20,7 +20,7 @@ if(!$auth->isLogged()){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ToDo - Main</title>
   <link rel="shortcut icon" href="../images/Logo16.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/ff5fd0c0f4.js" crossorigin="anonymous"></script>
