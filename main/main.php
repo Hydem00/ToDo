@@ -64,9 +64,58 @@ if(!$auth->isLogged()){
   </header>
   
     <main>
+      <div class="chooseList">
+        <p>Click on the list you want to edit</p>
+      </div>
       <section class="lists">
         <h1>Your Lists</h1>
         <div class="addList"><i class="fa-solid fa-plus"></i></div>
+      </section>
+      <section class="menu">
+        <i class="fa-solid fa-arrow-up"></i>
+        <h2></h2>
+        <p></p>
+        <div class="addEvent">
+          <h2>Add Event</h2>
+          <span class="close">&times;</span>
+          <form method="POST">
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="date" name="event_date" placeholder = "Enter the date">
+            <input type="time" name="event_time" placeholder = "Enter the time">
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button>Add event</button>
+          </form>
+        </div>
+        <div class="editEvent">
+          <h2>Edit Event</h2>
+          <span class="close">&times;</span>
+          <form method="POST">
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="date" name="event_date" placeholder = "Enter the date">
+            <input type="time" name="event_time" placeholder = "Enter the time">
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button>Edit event</button>
+          </form>
+        </div>
+        <div class="events">
+          <div class="addEventBtn">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
         <div class="modal-content">
@@ -100,44 +149,20 @@ if(!$auth->isLogged()){
           <button>NO</button>
         </div>
       </div>
+      <div id="popUpRemoveEvent" class="modal popUpRemove">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Remove Event</h2>
+          <h3></h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <button>YES</button>
+          <button>NO</button>
+        </div>
+      </div>
       <div id="popUpList" class="modal popUp">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <h2></h2>
-          <p></p>
-          <section class="menu">
-              <div class="addEvent">
-                <h2>Add Event</h2>
-                <form method="POST">
-                  <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
-                  <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
-                  <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
-                  <input type="date" name="event_date" placeholder = "Enter the date">
-                  <input type="time" name="event_time" placeholder = "Enter the time">
-                  <select name="event_priority">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <input type="color" name="event_color">
-                  <button>Add event</button>
-                </form>
-              </div>
-              <!-- <div class="editEvent">
-                <h2>Edit Event</h2>
-                <form method="POST">
-                  <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
-                  <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
-                  <input type="date" name="event_date" placeholder = "Enter the date" required>
-                  <input type="time" name="event_time" placeholder = "Enter the time" required>
-                  <input type="number" name="event_priority" placeholder = "Priority 1 to 10" required>
-                  <input type="color" name="event_color">
-                  <button>Add event</button>
-                </form>
-              </div> -->
-            <div class="events">
-            </div>
-          </section>
+          
           
         </div>
       </div>
@@ -152,7 +177,7 @@ if(!$auth->isLogged()){
   <script src="navigation.js"></script>
   <script src="fetch.js"></script>  
   <script src="popUpAddList.js"></script>
-  <script src="popUpList.js"></script>
+  <script src="eventsSection.js"></script>
   <script src="popUpEditList.js"></script>
   <script src="popUpDeleteList.js"></script>
   <script src="accountMail.js"></script>

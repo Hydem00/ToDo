@@ -1,215 +1,3 @@
-#popUpList
-    display: none
-    position: fixed
-    left: 0
-    top: 0
-    width: 100%
-    height: 100%
-    color: black
-    overflow: auto
-    background-color: rgba(0,0,0,.75)
-    z-index: 1
-    .modal-content
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        width: 80%
-        height: 80%
-        padding: 20px
-        background-color: #1D2538
-        border: 1px solid #888
-        border-radius: 20px
-        overflow: scroll
-        overflow-x: hidden
-        h2
-            width: 80%
-            padding: 5px
-            text-align: center
-            text-transform: uppercase
-            font-size: 1rem
-            margin: 0 auto
-            margin-bottom: 8px
-            background-color: rgba(255, 255, 255, 0.1)
-            color: #179CF0
-            // box-shadow-top: 0 0 10px yellow
-            border: 2px solid gray
-            border-bottom: 4px solid gray
-            border-radius: 8px
-        p
-            word-wrap: break-word
-            text-align: center
-            font-size: 0.9rem
-            margin: 0 auto 8px
-            color: white
-            text-shadow: 0 0 10px yellow
-        .close
-            position: absolute
-            top: 0
-            right: 5%
-            color: #aaa
-            font-size: 2.5rem
-            font-weight: bold
-        .close:hover,
-        .close:focus
-            color: black
-            text-decoration: none
-            cursor: pointer
-        section.menu
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            justify-content: center
-            div.addEvent
-                width: 90%
-                border: 3px solid gray
-                border-radius: 8px
-                h2
-                    width: 100%
-                    border: none
-                    border-bottom: 4px solid gray
-            div.events
-                display: flex
-                flex-wrap: wrap
-                justify-content: center
-
-                div.listEvent
-                    position: relative
-                    display: flex
-                    flex-basis: 90%
-                    flex-wrap: wrap
-                    min-height: 100px
-                    margin: 10px 0
-                    border-radius: 20px
-                    background-color: rgb(38, 62, 92)
-                    color: #e0e1dc
-                    transition: .5s
-                    z-index: 0
-                    cursor: pointer
-                    overflow: hidden
-                    &:hover
-                        box-shadow: 0px 0px 5px 10px #2d3947
-
-                    div.eventColor
-                        position: absolute
-                        height: 10px
-                        width: 80%
-                        background-color: red
-                        transform: rotate(135deg)
-                        z-index: 1
-                        top: 90%
-                        right: -30%
-                        box-shadow: 0 0 10px yellow
-                    h1
-                        flex-basis: 70%
-                        margin: 0 auto
-                        font-size: 1.1rem
-                        font-family: monospace
-                        padding-top: 10px
-                        color: white
-                        text-shadow: 0 0 10px yellow
-                        text-align: center
-                        word-break: break-all
-                    p
-                        position: relative
-                        display: flex
-                        flex-direction: column
-                        flex-basis: 90%
-                        margin: 5px auto
-                        height: 50px
-                        font-family: monospace
-                        padding-top: 30px
-                        padding-left: 10px
-                        padding-right: 10px
-                        font-size: 0.8rem
-                        word-break: break-all
-                        text-shadow: none
-                        width: 100%
-                        justify-content: space-between
-                        align-items: center
-                    p
-                        &:nth-of-type(1)
-                            overflow: auto
-                            overflow-x: hidden
-
-                        i
-                            position: absolute
-                            top: 0
-                            margin: 5px 0
-                            text-shadow: 0 0 10px blue
-                            flex-basis: 10%
-                            color: white
-                            font-size: 1rem
-                    div.editListEvent
-                        position: absolute
-                        top: 10px
-                        left: 15px
-                        i
-                            display: block
-                            font-size: 1rem
-                            transition: 0.3s
-                            color: white
-                            &:hover
-                                color: yellow
-                    div.removeListEvent
-                        position: absolute
-                        top: 10px
-                        right: 15px
-                        i
-                            display: block
-                            font-size: 1rem
-                            transition: 0.3s
-                            color: white
-                            &:hover
-                                color: red
-            form
-                display: flex
-                flex-direction: column
-                justify-content: center
-                align-items: center
-                height: 90%
-                text-align: center
-                width: 95%
-                margin: 0 auto
-                input
-                    text-align: center
-                    width: 100%
-                    padding: 5px 20px
-                    border: 2px solid #ccc
-                    border-radius: 4px
-                    font-size: 1rem
-                    margin-bottom: 8px
-                    color: black
-                    &:nth-last-of-type(1)
-                        width: 27%
-                        height: 15%
-                textarea
-                    text-align: center
-                    width: 100%
-                    flex-basis: 50%
-                    padding: 5px 20px
-                    border: 2px solid #ccc
-                    border-radius: 4px
-                    background-color: #f8f8f8
-                    resize: none
-                    font-size: 1rem
-                    margin-bottom: 8px
-                button
-                    margin-top: 5%
-                    padding: 5px 10px
-                    border-radius: 10px
-                    background-color: #179CF0
-                    color: white
-                    border: 1px solid #179CF0
-                    box-shadow: 0 0 0 2px white, 0 0 0 4px black
-                    cursor: pointer
-                    transition: 0.3s
-                    font-size: 1rem
-                    margin-bottom: 15px
-                    &:hover
-                        background-color: #14130C
-                        border-color: transparent
-                        box-shadow: 0 0 0 5px black, 0 0 0 7px white
 .modal
     display: none
     position: fixed
@@ -350,33 +138,11 @@
                 width: 80px
 
 @media (min-width:320px) and (orientation:portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                form
-                    input
-                        &:nth-last-of-type(1)
-                            width: 30%
-                            height: 16%
-                div.events
-                    div.listEvent
-                        p
-                            i
-                                margin-top: 10px
-
     .modal
         .modal-content
             height: 50%
 
 @media (min-width:360px) and (orientation:portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                form
-                    input
-                        &:nth-last-of-type(1)
-                            width: 27%
-                            height: 16%
     .modal
         .modal-content
             height: 45%
@@ -393,15 +159,6 @@
                     height: 35px
 
 @media (min-width:375px) and (orientation:portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                form
-                    input
-                        &:nth-last-of-type(1)
-                            width: 26%
-                            height: 16%
-
     .modal
         .modal-content
             height: 45%
@@ -414,14 +171,6 @@
             height: 35%
 
 @media (min-width:411px) and (orientation:portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                form
-                    input
-                        &:nth-last-of-type(1)
-                            width: 23%
-                            height: 16%
     .modal
         .modal-content
             height: 40%
@@ -429,46 +178,6 @@
                 margin-top: 30%
 
 @media (min-width:533px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            h2
-                font-size: 1.3rem
-                width: 80%
-                margin-bottom: 10px
-            p
-                font-size: 1.1rem
-                padding: 10px 0
-            section.menu
-                width: 100%
-                margin: 0 auto
-                div.addEvent
-                    width: 80%
-                    form
-                        width: 70%
-                        margin: 0 auto
-                        padding-bottom: 10px
-                        input, textarea, button
-                            font-size: 0.9rem
-                        input
-                            &:nth-last-of-type(1)
-                                width: 27%
-                                height: 17%
-                div.events
-                    margin-top: 20px
-                    div.listEvent
-                        h1
-                            font-size: 1.5rem
-                        p
-                            font-size: 1rem
-                            text-shadow: none
-                            margin: 5px auto
-                        div.editListEvent
-                            i
-                                font-size: 1.2rem
-                        div.removeListEvent
-                            i
-                                font-size: 1.2rem
-
     .modal
         .modal-content
             height: 85%
@@ -495,15 +204,6 @@
                 width: 80px
 
 @media (min-width:540px) and (orientation:portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 18%
-                                height: 17%
     .modal
         .modal-content
             height: 40%
@@ -530,23 +230,6 @@
                 width: 80px
 
 @media (min-width:640px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 23%
-                                height: 17%
-                div.events
-                    div.listEvent
-                        p
-                            flex-basis: 45%
-                        p
-                            &:nth-of-type(1)
-                                flex-basis: 80%
-
     .modal
         .modal-content
             height: 80%
@@ -599,16 +282,6 @@
                 width: 80px
 
 @media (min-width:667px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 21%
-                                height: 17%
-
     .modal
         .modal-content
             h3
@@ -641,30 +314,10 @@
                 width: 85px
 
 @media (min-width:731px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 19%
-                                height: 17%
-
     .modal
         .modal-content
             height: 75%
 @media (min-width:740px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 19%
-                                height: 17%
-
     .modal
         .modal-content
             height: 75%
@@ -672,55 +325,6 @@
                 margin-top: 15%
 
 @media (min-width:768px) and (orientation: portrait)
-    #popUpList
-        .modal-content
-            h2
-                width: 90%
-                font-size: 1.6rem
-                margin: 20px auto
-            .close
-                right: 3%
-            p
-                font-size: 1.3rem
-                margin: 0 auto 20px
-            section.menu
-                div.addEvent
-                    h2
-                        margin: 0 auto 15px
-                form
-                    width: 80%
-                    padding-bottom: 20px
-                    input, textarea, button
-                        font-size: 1.3rem
-                        margin-bottom: 10px
-                    input
-                        &:nth-last-of-type(1)
-                            width: 14%
-                            height: 17%
-                div.events
-                    div.listEvent
-                        display: flex
-                        flex-direction: row
-                        justify-content: space-around
-                        align-items: center
-                        p
-                            flex-basis: 40%
-                            padding: 50px
-                            font-size: 1.2rem
-                            i
-                                font-size: 1.4rem
-                                margin-bottom: 10px
-                        p
-                            &:nth-of-type(1)
-                                flex-basis: 80%
-
-                        h1
-                            font-size: 1.6rem
-                            margin-bottom: 20px
-                        div.removeListEvent, div.editListEvent
-                            top: 15px
-                            i
-                                font-size: 1.6rem
     .modal
         .modal-content
             height: 45%
@@ -747,31 +351,10 @@
                 width: 80px
 
 @media (min-width:812px) and (orientation: landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 17%
-                                height: 17%
-
     .modal
         .modal-content
             h3
                 margin-top: 15%
-
-@media (min-width:812px) and (orientation: portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 15%
-                                height: 17%
 
 @media (min-width:812px) and (orientation: portrait)
     .modal
@@ -805,37 +388,6 @@
         .modal-content
             height: 70%
 
-@media (min-width:844px) and (orientation: landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 17%
-                                height: 17%
-@media (min-width:896px) and (orientation: landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 16%
-                                height: 17%
-@media (min-width:896px) and (orientation: portrait)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 13%
-                                height: 17%
-
 @media (min-width: 908px)
     .modal
         .modal-content
@@ -857,43 +409,6 @@
                 margin-top: 25%
 
 @media (min-width:1024px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    width: 55%
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 20%
-                                height: 17%
-                div.events
-                    justify-content: space-around
-                    div.listEvent
-                        flex-basis: 45%
-                        align-content: center
-                        margin-bottom: 20px
-                        padding-bottom: 20px
-                        p
-                            height: 121px
-                            flex-basis: 45%
-                            font-size: 1.4rem
-                            i
-                                font-size: 1.4rem
-                        p
-                            &:nth-of-type(1)
-                                flex-basis: 80%
-                        div.removeListEvent
-                            i
-                                top: 10px
-                                left: -10px
-                                font-size: 1.5rem
-                        div.editListEvent
-                            i
-                                top: 10px
-                                left: 10px
-                                font-size: 1.5rem
-
     .modal
         .modal-content
             height: 50%
@@ -920,16 +435,6 @@
                 width: 80px
 
 @media (min-width:1180px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 17%
-                                height: 17%
-
     .modal
         .modal-content
             height: 45%
@@ -956,38 +461,6 @@
                 width: 100px
 
 @media (min-width:1280px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            h2
-                font-size: 1.8rem
-            p
-                font-size: 1.5rem
-            section.menu
-                div.addEvent
-                    width: 55%
-                    form
-                        input, textarea, button
-                            font-size: 1.5rem
-                        input
-                            &:nth-last-of-type(1)
-                                width: 18%
-                                height: 17%
-                div.events
-                    justify-content: space-around
-                    div.listEvent
-                        flex-basis: 45%
-                        // align-content: center
-                        margin-bottom: 20px
-                        p
-                            font-size: 1.4rem
-                            margin-bottom: 10px
-                        p
-                            &:nth-of-type(1)
-                                flex-basis: 80%
-                        h1
-                            font-size: 1.8rem
-                            margin-bottom: 10px
-
     .modal
         .modal-content
             height: 50%
@@ -1014,16 +487,6 @@
                 width: 100px
 
 @media (min-width:1368px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 17%
-                                height: 17%
-
     .modal
         .modal-content
             h2
@@ -1034,17 +497,8 @@
                 font-size: 1.9rem
             button
                 font-size: 1.9rem
+                
 @media (min-width:1400px) and (orientation:landscape)
-    #popUpList
-        .modal-content
-            section.menu
-                div.addEvent
-                    form
-                        input
-                            &:nth-last-of-type(1)
-                                width: 67px
-                                height: 60px
-
     .model
         .model-content
             width: 20%

@@ -901,35 +901,35 @@ div.wrap main section.lists div.addList i.active {
     height: 124px;
   }
 }
-#popUpList {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: black;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1;
+div.wrap {
+  min-height: 100vh;
 }
-#popUpList .modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  padding: 20px;
-  background-color: #1D2538;
-  border: 1px solid #888;
+div.wrap main {
+  background-color: #1d2538;
+  padding: 10px 0;
   border-radius: 20px;
-  overflow: scroll;
-  overflow-x: hidden;
 }
-#popUpList .modal-content h2 {
-  width: 80%;
+div.wrap main section.menu {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+div.wrap main section.menu i.fa-arrow-up {
+  margin-left: 100px;
+  font-size: 3rem;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  cursor: pointer;
+}
+div.wrap main section.menu h2 {
+  width: 60%;
   padding: 5px;
   text-align: center;
   text-transform: uppercase;
@@ -942,7 +942,7 @@ div.wrap main section.lists div.addList i.active {
   border-bottom: 4px solid gray;
   border-radius: 8px;
 }
-#popUpList .modal-content p {
+div.wrap main section.menu p {
   word-wrap: break-word;
   text-align: center;
   font-size: 0.9rem;
@@ -950,45 +950,47 @@ div.wrap main section.lists div.addList i.active {
   color: white;
   text-shadow: 0 0 10px yellow;
 }
-#popUpList .modal-content .close {
-  position: absolute;
-  top: 0;
-  right: 5%;
-  color: #aaa;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-#popUpList .modal-content .close:hover,
-#popUpList .modal-content .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-#popUpList .modal-content section.menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
+div.wrap main section.menu div.addEvent {
+  display: none;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-#popUpList .modal-content section.menu div.addEvent {
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 90%;
   border: 3px solid gray;
   border-radius: 8px;
 }
-#popUpList .modal-content section.menu div.addEvent h2 {
+div.wrap main section.menu div.addEvent .close {
+  font-size: 3rem;
+  text-align: right;
+  cursor: pointer;
+}
+div.wrap main section.menu div.addEvent h2 {
   width: 100%;
   border: none;
   border-bottom: 4px solid gray;
 }
-#popUpList .modal-content section.menu div.events {
+div.wrap main section.menu div.editEvent {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  border: 3px solid gray;
+  border-radius: 8px;
+}
+div.wrap main section.menu div.editEvent .close {
+  font-size: 3rem;
+  text-align: right;
+  cursor: pointer;
+}
+div.wrap main section.menu div.editEvent h2 {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid gray;
+}
+div.wrap main section.menu div.events {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -998,7 +1000,53 @@ div.wrap main section.lists div.addList i.active {
       -ms-flex-pack: center;
           justify-content: center;
 }
-#popUpList .modal-content section.menu div.events div.listEvent {
+div.wrap main section.menu div.events div.addEventBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+div.wrap main section.menu div.events div.addEventBtn i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 7vh;
+  height: 7vh;
+  border: 1px solid gray;
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+div.wrap main section.menu div.events div.addEventBtn i:hover {
+  background-color: royalblue;
+}
+div.wrap main section.menu div.events div.addEventBtn i.active {
+  -webkit-transform: translateX(0%) rotate(45deg);
+          transform: translateX(0%) rotate(45deg);
+  color: black;
+  border-color: black;
+  background-color: royalblue;
+}
+div.wrap main section.menu div.events div.listEvent {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1018,11 +1066,11 @@ div.wrap main section.lists div.addList i.active {
   cursor: pointer;
   overflow: hidden;
 }
-#popUpList .modal-content section.menu div.events div.listEvent:hover {
+div.wrap main section.menu div.events div.listEvent:hover {
   -webkit-box-shadow: 0px 0px 5px 10px #2d3947;
           box-shadow: 0px 0px 5px 10px #2d3947;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.eventColor {
+div.wrap main section.menu div.events div.listEvent div.eventColor {
   position: absolute;
   height: 10px;
   width: 80%;
@@ -1035,7 +1083,7 @@ div.wrap main section.lists div.addList i.active {
   -webkit-box-shadow: 0 0 10px yellow;
           box-shadow: 0 0 10px yellow;
 }
-#popUpList .modal-content section.menu div.events div.listEvent h1 {
+div.wrap main section.menu div.events div.listEvent h1 {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
   margin: 0 auto;
@@ -1047,7 +1095,7 @@ div.wrap main section.lists div.addList i.active {
   text-align: center;
   word-break: break-all;
 }
-#popUpList .modal-content section.menu div.events div.listEvent p {
+div.wrap main section.menu div.events div.listEvent p {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1075,11 +1123,11 @@ div.wrap main section.lists div.addList i.active {
       -ms-flex-align: center;
           align-items: center;
 }
-#popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
+div.wrap main section.menu div.events div.listEvent p:nth-of-type(1) {
   overflow: auto;
   overflow-x: hidden;
 }
-#popUpList .modal-content section.menu div.events div.listEvent p i {
+div.wrap main section.menu div.events div.listEvent p i {
   position: absolute;
   top: 0;
   margin: 5px 0;
@@ -1089,37 +1137,37 @@ div.wrap main section.lists div.addList i.active {
   color: white;
   font-size: 1rem;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent {
+div.wrap main section.menu div.events div.listEvent div.editListEvent {
   position: absolute;
   top: 10px;
   left: 15px;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
+div.wrap main section.menu div.events div.listEvent div.editListEvent i {
   display: block;
   font-size: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: white;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i:hover {
+div.wrap main section.menu div.events div.listEvent div.editListEvent i:hover {
   color: yellow;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent {
+div.wrap main section.menu div.events div.listEvent div.removeListEvent {
   position: absolute;
   top: 10px;
   right: 15px;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
+div.wrap main section.menu div.events div.listEvent div.removeListEvent i {
   display: block;
   font-size: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: white;
 }
-#popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i:hover {
+div.wrap main section.menu div.events div.listEvent div.removeListEvent i:hover {
   color: red;
 }
-#popUpList .modal-content section.menu form {
+div.wrap main section.menu form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1138,7 +1186,7 @@ div.wrap main section.lists div.addList i.active {
   width: 95%;
   margin: 0 auto;
 }
-#popUpList .modal-content section.menu form input {
+div.wrap main section.menu form input {
   text-align: center;
   width: 100%;
   padding: 5px 20px;
@@ -1148,11 +1196,11 @@ div.wrap main section.lists div.addList i.active {
   margin-bottom: 8px;
   color: black;
 }
-#popUpList .modal-content section.menu form input:nth-last-of-type(1) {
+div.wrap main section.menu form input:nth-last-of-type(1) {
   width: 27%;
   height: 15%;
 }
-#popUpList .modal-content section.menu form textarea {
+div.wrap main section.menu form textarea {
   text-align: center;
   width: 100%;
   -ms-flex-preferred-size: 50%;
@@ -1165,7 +1213,7 @@ div.wrap main section.lists div.addList i.active {
   font-size: 1rem;
   margin-bottom: 8px;
 }
-#popUpList .modal-content section.menu form button {
+div.wrap main section.menu form button {
   margin-top: 5%;
   padding: 5px 10px;
   border-radius: 10px;
@@ -1180,11 +1228,330 @@ div.wrap main section.lists div.addList i.active {
   font-size: 1rem;
   margin-bottom: 15px;
 }
-#popUpList .modal-content section.menu form button:hover {
+div.wrap main section.menu form button:hover {
   background-color: #14130C;
   border-color: transparent;
   -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
           box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}
+
+@media (min-width: 320px) and (orientation: portrait) {
+  main section.menu form input:nth-last-of-type(1) {
+    width: 30%;
+    height: 16%;
+  }
+  main section.menu div.events div.listEvent p i {
+    margin-top: 10px;
+  }
+}
+@media (min-width: 360px) and (orientation: portrait) {
+  main section.menu form input:nth-last-of-type(1) {
+    width: 27%;
+    height: 16%;
+  }
+}
+@media (min-width: 375px) and (orientation: portrait) {
+  main section.menu form input:nth-last-of-type(1) {
+    width: 26%;
+    height: 16%;
+  }
+}
+@media (min-width: 411px) and (orientation: portrait) {
+  main section.menu form input:nth-last-of-type(1) {
+    width: 23%;
+    height: 16%;
+  }
+}
+@media (min-width: 533px) and (orientation: landscape) {
+  main section.menu {
+    width: 100%;
+    margin: 0 auto;
+  }
+  main section.menu div.addEvent {
+    width: 80%;
+  }
+  main section.menu div.addEvent form {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  main section.menu div.addEvent form input, main section.menu div.addEvent form textarea, main section.menu div.addEvent form button {
+    font-size: 0.9rem;
+  }
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 27%;
+    height: 17%;
+  }
+  main section.menu div.events {
+    margin-top: 20px;
+  }
+  main section.menu div.events div.listEvent h1 {
+    font-size: 1.5rem;
+  }
+  main section.menu div.events div.listEvent p {
+    font-size: 1rem;
+    text-shadow: none;
+    margin: 5px auto;
+  }
+  main section.menu div.events div.listEvent div.editListEvent i {
+    font-size: 1.2rem;
+  }
+  main section.menu div.events div.listEvent div.removeListEvent i {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 540px) and (orientation: portrait) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 18%;
+    height: 17%;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 23%;
+    height: 17%;
+  }
+  main section.menu div.events div.listEvent p {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
+  main section.menu div.events div.listEvent p:nth-of-type(1) {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+}
+@media (min-width: 667px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 21%;
+    height: 17%;
+  }
+}
+@media (min-width: 731px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 19%;
+    height: 17%;
+  }
+}
+@media (min-width: 740px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 19%;
+    height: 17%;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  main h2 {
+    width: 90%;
+    font-size: 1.6rem;
+    margin: 20px auto;
+  }
+  main p {
+    font-size: 1.3rem;
+    margin: 0 auto 20px;
+  }
+  main section.menu div.addEvent h2 {
+    margin: 0 auto 15px;
+  }
+  main section.menu form {
+    width: 80%;
+    padding-bottom: 20px;
+  }
+  main section.menu form input, main section.menu form textarea, main section.menu form button {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  main section.menu form input:nth-last-of-type(1) {
+    width: 14%;
+    height: 17%;
+  }
+  main section.menu div.events div.listEvent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.menu div.events div.listEvent p {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    padding: 50px;
+    font-size: 1.2rem;
+  }
+  main section.menu div.events div.listEvent p i {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  main section.menu div.events div.listEvent p:nth-of-type(1) {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  main section.menu div.events div.listEvent h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  main section.menu div.events div.listEvent div.removeListEvent, main section.menu div.events div.listEvent div.editListEvent {
+    top: 15px;
+  }
+  main section.menu div.events div.listEvent div.removeListEvent i, main section.menu div.events div.listEvent div.editListEvent i {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 812px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 17%;
+    height: 17%;
+  }
+}
+@media (min-width: 812px) and (orientation: portrait) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 15%;
+    height: 17%;
+  }
+}
+@media (min-width: 844px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 17%;
+    height: 17%;
+  }
+}
+@media (min-width: 896px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 16%;
+    height: 17%;
+  }
+}
+@media (min-width: 896px) and (orientation: portrait) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 13%;
+    height: 17%;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  main section.menu div.addEvent {
+    width: 55%;
+  }
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 20%;
+    height: 17%;
+  }
+  main section.menu div.events {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main section.menu div.events div.listEvent {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  main section.menu div.events div.listEvent p {
+    height: 121px;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    font-size: 1.4rem;
+  }
+  main section.menu div.events div.listEvent p i {
+    font-size: 1.4rem;
+  }
+  main section.menu div.events div.listEvent p:nth-of-type(1) {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  main section.menu div.events div.listEvent div.removeListEvent i {
+    top: 10px;
+    left: -10px;
+    font-size: 1.5rem;
+  }
+  main section.menu div.events div.listEvent div.editListEvent i {
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1180px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 17%;
+    height: 17%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  main h2 {
+    font-size: 1.8rem;
+  }
+  main p {
+    font-size: 1.5rem;
+  }
+  main section.menu div.addEvent {
+    width: 55%;
+  }
+  main section.menu div.addEvent form input, main section.menu div.addEvent form textarea, main section.menu div.addEvent form button {
+    font-size: 1.5rem;
+  }
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 18%;
+    height: 17%;
+  }
+  main section.menu div.events {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main section.menu div.events div.listEvent {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    margin-bottom: 20px;
+  }
+  main section.menu div.events div.listEvent p {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  main section.menu div.events div.listEvent p:nth-of-type(1) {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  main section.menu div.events div.listEvent h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1368px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 17%;
+    height: 17%;
+  }
+}
+@media (min-width: 1400px) and (orientation: landscape) {
+  main section.menu div.addEvent form input:nth-last-of-type(1) {
+    width: 67px;
+    height: 60px;
+  }
+}
+div.chooseList {
+  position: fixed;
+  width: 100%;
+  top: -50%;
+  left: 3%;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  text-align: center;
+  border-left: 100px solid black;
+  border-right: 100px solid black;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+div.chooseList p {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
 }
 
 .modal {
@@ -1372,22 +1739,11 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 320px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
-    width: 30%;
-    height: 16%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p i {
-    margin-top: 10px;
-  }
   .modal .modal-content {
     height: 50%;
   }
 }
 @media (min-width: 360px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
-    width: 27%;
-    height: 16%;
-  }
   .modal .modal-content {
     height: 45%;
   }
@@ -1407,10 +1763,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 375px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
-    width: 26%;
-    height: 16%;
-  }
   .modal .modal-content {
     height: 45%;
   }
@@ -1424,10 +1776,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 411px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
-    width: 23%;
-    height: 16%;
-  }
   .modal .modal-content {
     height: 40%;
   }
@@ -1436,51 +1784,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 533px) and (orientation: landscape) {
-  #popUpList .modal-content h2 {
-    font-size: 1.3rem;
-    width: 80%;
-    margin-bottom: 10px;
-  }
-  #popUpList .modal-content p {
-    font-size: 1.1rem;
-    padding: 10px 0;
-  }
-  #popUpList .modal-content section.menu {
-    width: 100%;
-    margin: 0 auto;
-  }
-  #popUpList .modal-content section.menu div.addEvent {
-    width: 80%;
-  }
-  #popUpList .modal-content section.menu div.addEvent form {
-    width: 70%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-  }
-  #popUpList .modal-content section.menu div.addEvent form input, #popUpList .modal-content section.menu div.addEvent form textarea, #popUpList .modal-content section.menu div.addEvent form button {
-    font-size: 0.9rem;
-  }
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 27%;
-    height: 17%;
-  }
-  #popUpList .modal-content section.menu div.events {
-    margin-top: 20px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent h1 {
-    font-size: 1.5rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p {
-    font-size: 1rem;
-    text-shadow: none;
-    margin: 5px auto;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
-    font-size: 1.2rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
-    font-size: 1.2rem;
-  }
   .modal .modal-content {
     height: 85%;
     width: 50%;
@@ -1513,10 +1816,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 540px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 18%;
-    height: 17%;
-  }
   .modal .modal-content {
     height: 40%;
     width: 50%;
@@ -1549,18 +1848,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 640px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 23%;
-    height: 17%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
-  }
   .modal .modal-content {
     height: 80%;
     width: 50%;
@@ -1625,10 +1912,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 667px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 21%;
-    height: 17%;
-  }
   .modal .modal-content h3 {
     margin-top: 20%;
   }
@@ -1666,19 +1949,11 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 731px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 19%;
-    height: 17%;
-  }
   .modal .modal-content {
     height: 75%;
   }
 }
 @media (min-width: 740px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 19%;
-    height: 17%;
-  }
   .modal .modal-content {
     height: 75%;
   }
@@ -1687,71 +1962,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
-  #popUpList .modal-content h2 {
-    width: 90%;
-    font-size: 1.6rem;
-    margin: 20px auto;
-  }
-  #popUpList .modal-content .close {
-    right: 3%;
-  }
-  #popUpList .modal-content p {
-    font-size: 1.3rem;
-    margin: 0 auto 20px;
-  }
-  #popUpList .modal-content section.menu div.addEvent h2 {
-    margin: 0 auto 15px;
-  }
-  #popUpList .modal-content section.menu form {
-    width: 80%;
-    padding-bottom: 20px;
-  }
-  #popUpList .modal-content section.menu form input, #popUpList .modal-content section.menu form textarea, #popUpList .modal-content section.menu form button {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-  #popUpList .modal-content section.menu form input:nth-last-of-type(1) {
-    width: 14%;
-    height: 17%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
-    padding: 50px;
-    font-size: 1.2rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p i {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent h1 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent, #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent {
-    top: 15px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i, #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
-    font-size: 1.6rem;
-  }
   .modal .modal-content {
     height: 45%;
     width: 50%;
@@ -1784,18 +1994,8 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 812px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 17%;
-    height: 17%;
-  }
   .modal .modal-content h3 {
     margin-top: 15%;
-  }
-}
-@media (min-width: 812px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 15%;
-    height: 17%;
   }
 }
 @media (min-width: 812px) and (orientation: portrait) {
@@ -1836,24 +2036,6 @@ div.wrap main section.lists div.addList i.active {
     height: 70%;
   }
 }
-@media (min-width: 844px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 17%;
-    height: 17%;
-  }
-}
-@media (min-width: 896px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 16%;
-    height: 17%;
-  }
-}
-@media (min-width: 896px) and (orientation: portrait) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 13%;
-    height: 17%;
-  }
-}
 @media (min-width: 908px) {
   .modal .modal-content {
     height: 60%;
@@ -1877,48 +2059,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent {
-    width: 55%;
-  }
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 20%;
-    height: 17%;
-  }
-  #popUpList .modal-content section.menu div.events {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p {
-    height: 121px;
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-    font-size: 1.4rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p i {
-    font-size: 1.4rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.removeListEvent i {
-    top: 10px;
-    left: -10px;
-    font-size: 1.5rem;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent div.editListEvent i {
-    top: 10px;
-    left: 10px;
-    font-size: 1.5rem;
-  }
   .modal .modal-content {
     height: 50%;
     width: 45%;
@@ -1951,10 +2091,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 1180px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 17%;
-    height: 17%;
-  }
   .modal .modal-content {
     height: 45%;
     width: 50%;
@@ -1987,43 +2123,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 1280px) and (orientation: landscape) {
-  #popUpList .modal-content h2 {
-    font-size: 1.8rem;
-  }
-  #popUpList .modal-content p {
-    font-size: 1.5rem;
-  }
-  #popUpList .modal-content section.menu div.addEvent {
-    width: 55%;
-  }
-  #popUpList .modal-content section.menu div.addEvent form input, #popUpList .modal-content section.menu div.addEvent form textarea, #popUpList .modal-content section.menu div.addEvent form button {
-    font-size: 1.5rem;
-  }
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 18%;
-    height: 17%;
-  }
-  #popUpList .modal-content section.menu div.events {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-    margin-bottom: 20px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent p:nth-of-type(1) {
-    -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
-  }
-  #popUpList .modal-content section.menu div.events div.listEvent h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
   .modal .modal-content {
     height: 50%;
     width: 50%;
@@ -2056,10 +2155,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 1368px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 17%;
-    height: 17%;
-  }
   .modal .modal-content h2 {
     font-size: 2rem;
   }
@@ -2074,10 +2169,6 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 @media (min-width: 1400px) and (orientation: landscape) {
-  #popUpList .modal-content section.menu div.addEvent form input:nth-last-of-type(1) {
-    width: 67px;
-    height: 60px;
-  }
   .model .model-content {
     width: 20%;
   }

@@ -123,7 +123,9 @@ function editEvent(){
     global $user_id;
     global $dbh;
 
-    $event_id = $_POST['event_id'];
+    $obj = json_decode($_POST["json"], false);
+    $event_id = $obj->eventID;
+
     $stmt = $dbh->prepare('SELECT * FROM listy INNER JOIN wydarzenia ON listy.id = wydarzenia.lista_id WHERE wydarzenia.id = :event_id AND listy.user_id = :user_id');
     $stmt->bindParam(':event_id', $event_id);
     $stmt->bindParam(':user_id', $user_id);
@@ -178,7 +180,9 @@ function deleteEvent(){
     global $user_id;
     global $dbh;
 
-    $event_id = $_POST['event_id'];
+    $obj = json_decode($_POST["json"], false);
+    $event_id = $obj->eventID;
+     
     $stmt = $dbh->prepare('SELECT * FROM listy INNER JOIN wydarzenia ON listy.id = wydarzenia.lista_id WHERE wydarzenia.id = :event_id AND listy.user_id = :user_id');
     $stmt->bindParam(':event_id', $event_id);
     $stmt->bindParam(':user_id', $user_id);

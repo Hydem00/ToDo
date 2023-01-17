@@ -1,0 +1,252 @@
+div.wrap {
+  min-height: 100vh;
+}
+div.wrap main {
+  background-color: #1d2538;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+div.wrap main section.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+div.wrap main section.menu h2 {
+  width: 80%;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #179CF0;
+  border: 2px solid gray;
+  border-bottom: 4px solid gray;
+  border-radius: 8px;
+}
+div.wrap main section.menu p {
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0 auto 8px;
+  color: white;
+  text-shadow: 0 0 10px yellow;
+}
+div.wrap main section.menu div.addEvent {
+  width: 90%;
+  border: 3px solid gray;
+  border-radius: 8px;
+}
+div.wrap main section.menu div.addEvent h2 {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid gray;
+}
+div.wrap main section.menu div.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+div.wrap main section.menu div.events div.listEvent {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 100px;
+  margin: 10px 0;
+  border-radius: 20px;
+  background-color: rgb(38, 62, 92);
+  color: #e0e1dc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+div.wrap main section.menu div.events div.listEvent:hover {
+  -webkit-box-shadow: 0px 0px 5px 10px #2d3947;
+          box-shadow: 0px 0px 5px 10px #2d3947;
+}
+div.wrap main section.menu div.events div.listEvent div.eventColor {
+  position: absolute;
+  height: 10px;
+  width: 80%;
+  background-color: red;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  z-index: 1;
+  top: 90%;
+  right: -30%;
+  -webkit-box-shadow: 0 0 10px yellow;
+          box-shadow: 0 0 10px yellow;
+}
+div.wrap main section.menu div.events div.listEvent h1 {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-family: monospace;
+  padding-top: 10px;
+  color: white;
+  text-shadow: 0 0 10px yellow;
+  text-align: center;
+  word-break: break-all;
+}
+div.wrap main section.menu div.events div.listEvent p {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  margin: 5px auto;
+  height: 50px;
+  font-family: monospace;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.8rem;
+  word-break: break-all;
+  text-shadow: none;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+div.wrap main section.menu div.events div.listEvent p:nth-of-type(1) {
+  overflow: auto;
+  overflow-x: hidden;
+}
+div.wrap main section.menu div.events div.listEvent p i {
+  position: absolute;
+  top: 0;
+  margin: 5px 0;
+  text-shadow: 0 0 10px blue;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  color: white;
+  font-size: 1rem;
+}
+div.wrap main section.menu div.events div.listEvent div.editListEvent {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+div.wrap main section.menu div.events div.listEvent div.editListEvent i {
+  display: block;
+  font-size: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
+}
+div.wrap main section.menu div.events div.listEvent div.editListEvent i:hover {
+  color: yellow;
+}
+div.wrap main section.menu div.events div.listEvent div.removeListEvent {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+div.wrap main section.menu div.events div.listEvent div.removeListEvent i {
+  display: block;
+  font-size: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
+}
+div.wrap main section.menu div.events div.listEvent div.removeListEvent i:hover {
+  color: red;
+}
+div.wrap main section.menu form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+}
+div.wrap main section.menu form input {
+  text-align: center;
+  width: 100%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: black;
+}
+div.wrap main section.menu form input:nth-last-of-type(1) {
+  width: 27%;
+  height: 15%;
+}
+div.wrap main section.menu form textarea {
+  text-align: center;
+  width: 100%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+div.wrap main section.menu form button {
+  margin-top: 5%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+div.wrap main section.menu form button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}/*# sourceMappingURL=eventSection.css.map */
