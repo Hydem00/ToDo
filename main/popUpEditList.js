@@ -1,3 +1,4 @@
+let choosingIsActive = false;
 const modalEdit = document.getElementById("popUpEditList");
 const listTitleEdit = document.querySelector('#popUpEditList div.modal-content form input');
 const listDescriptionEdit = document.querySelector('#popUpEditList div.modal-content form textarea');
@@ -39,4 +40,41 @@ function popUpEdit() {
     }
 
     document.querySelector('div.popUpEdit div.modal-content form button').addEventListener('click', editListValidation);
+
+    const editListBtnNav = document.querySelectorAll('nav.menuDesktop li:nth-child(3) i, nav.menuMobile ul li:nth-child(3) i');
+    const divChooseList = document.querySelector('div.chooseList');
+    const listsToChoose = document.querySelectorAll("section.lists div.list");
+
+    const popUpEditFunctionality = function () {
+        listID = this.dataset.numberOfList;
+        divChooseList.style.top = '-50%';
+
+        modalEdit.style.display = "block";
+        listTitleEdit.value = document.querySelector(`div.list[data-number-of-list='${listID}'] h1`).textContent;
+        listDescriptionEdit.value = document.querySelector(`div.list[data-number-of-list='${listID}'] p`).textContent;
+
+        document.querySelector('div.popUpEdit div.modal-content form button').addEventListener('click', editListValidation);
+
+        choosingIsActive = false;
+
+        this.removeEventListener('click', popUpEditFunctionality);
+    }
+
+    editListBtnNav.forEach(editListBtn => {
+        editListBtn.addEventListener('click', () => {
+            choosingIsActive = true;
+            divChooseList.style.top = '0';
+            listsToChoose.forEach((listToChoose) => {
+                listToChoose.addEventListener('click', popUpEditFunctionality);
+
+                document.querySelector('section.lists').addEventListener('click', function exitChoosing() {
+                    divChooseList.style.top = '-50%';
+                    listToChoose.removeEventListener('click', popUpEditFunctionality);
+                    choosingIsActive = false;
+                })
+            })
+        })
+    })
+
+
 }
