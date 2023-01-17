@@ -214,18 +214,18 @@ async function editListEvent() {
     getListsEvents();
 }
 
-// async function removeListEvent() {
-//     const dataToSend = new FormData();
-//     dataToSend.append('json', JSON.stringify({
-//         eventID: eventID
-//     }));
-//     let odp = await fetch('functions/events.php?action=delete', {
-//         method: 'POST',
-//         mode: 'cors',
-//         body: dataToSend
-//     });
-//     eventsData = await odp.text();
-//     console.log('Success:', eventsData);
+async function removeListEvent() {
+    const dataToSend = new FormData();
+    dataToSend.append('json', JSON.stringify({
+        eventID: eventID
+    }));
+    let odp = await fetch('functions/events.php?action=delete', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    eventsData = await odp.text();
+    console.log('Success:', eventsData);
 
-//     getListsEvents();
-// }
+    getListsEvents();
+}
