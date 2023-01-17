@@ -71,6 +71,10 @@ function deleteUser(){
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
+    $stmt = $dbh->prepare('DELETE FROM informacje WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+
     $pass = $_POST['password'];
     $response = $auth->deleteUser($user_id, $pass);
 
