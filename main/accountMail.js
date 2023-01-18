@@ -12,7 +12,6 @@ function profileInfoHeader(profileData) {
     img.src = profileData.img;
     divRightHeader.insertBefore(img, divRightHeader.children[0]);
 
-    console.log(profileData.info.nick);
     if (profileData.info.nick === undefined) {
         accountMail.textContent = changedText;
     } else {
