@@ -1533,6 +1533,27 @@ div.wrap main section.menu form button:hover {
     height: 60px;
   }
 }
+main section.profile {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
 div.chooseList {
   position: fixed;
   width: 100%;
