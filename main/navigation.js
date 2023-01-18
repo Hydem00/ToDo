@@ -16,3 +16,12 @@ main.addEventListener('click', () => {
         flag = false;
     }
 })
+
+const navBtns = document.querySelectorAll('nav.menuMobile ul li');
+
+navBtns.forEach(navBtn => {
+    navBtn.addEventListener('click', () => {
+        nav.classList.remove("active");
+        burger.classList.remove("active");
+    })
+}) 
