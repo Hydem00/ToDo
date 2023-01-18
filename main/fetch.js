@@ -270,6 +270,8 @@ async function changeEmail() {
         document.querySelector('main section.profile div.changeEmail form input:nth-of-type(1)').value = '';
         document.querySelector('main section.profile div.changeEmail form input:nth-of-type(2)').value = '';
     }
+
+    getProfileInformations();
 }
 
 async function deleteAccount() {
@@ -308,6 +310,8 @@ async function updateInformations() {
     if (!addInformationResponse.error) {
         document.querySelector('main section.profile div.additionalInformations form input').value = '';
     }
+
+    getProfileInformations();
 }
 
 async function getProfileInformations() {
@@ -324,7 +328,13 @@ async function getProfileInformations() {
 }
 
 function createProfileElements(profileData) {
-    const profileInfoDiv = document.querySelector('main section.profile div.profileInfo');
+    const profileSection = document.querySelector('main section.profile');
+
+    if (profileSection.contains(document.querySelector('div.profileInfo')))
+        document.querySelector('div.profileInfo').remove();
+
+    const profileInfoDiv = document.createElement('div');
+    profileInfoDiv.classList.add('profileInfo');
 
     const profileImg = document.createElement('img');
     profileImg.classList.add('profileImg');
@@ -342,4 +352,6 @@ function createProfileElements(profileData) {
     profileInfoDiv.appendChild(profileImg);
     profileInfoDiv.appendChild(nick);
     profileInfoDiv.appendChild(email);
+
+    profileSection.insertBefore(profileInfoDiv, profileSection.children[0]);
 }

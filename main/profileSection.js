@@ -45,7 +45,7 @@ addInformationsBtn.addEventListener('click', (e) => {
     updateInformations();
 })
 
-const chooseProfileOptionBtns = document.querySelectorAll('main section.profile button');
+const chooseProfileOptionBtns = document.querySelectorAll('main section.profile div.profileButtons button');
 const changePasswordForm = document.querySelector('main section.profile div.changePassword');
 const changeEmailForm = document.querySelector('main section.profile div.changeEmail');
 const deleteAccountForm = document.querySelector('main section.profile div.deleteAccount');
@@ -58,6 +58,7 @@ chooseProfileOptionBtns.forEach((chooseProfileOptionBtn, iterator) => {
         profileDivForms.forEach(profileDivForm => {
             profileDivForm.style.display = "none";
         })
+        console.log(iterator);
         profileDivForms[iterator].style.display = "flex";
     })
 })
