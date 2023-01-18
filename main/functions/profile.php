@@ -14,6 +14,9 @@ if(!$auth->isLogged()){
 }
 
 switch ($_GET["action"]) {
+    case "showProfile":
+        showProfile();
+        break;
     case "changePassword":
         changePassword();
         break;
@@ -29,6 +32,23 @@ switch ($_GET["action"]) {
     default:
         echo "Not selected action.";
         break;
+}
+
+function showProfile(){
+    global $user_id;
+    global $dbh;
+    global $auth;
+
+    $user = $auth->getCurrentUser();
+    $user["hash"] = md5(strtolower(trim($user["email"])));
+    $user["img"] = "https://www.gravatar.com/avatar/". $user["hash"] ."?d=mp";
+
+    $stmt = $dbh->prepare('SELECT * FROM informacje WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+    $user["info"] = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    echo json_encode($user);
 }
 
 function changePassword(){
