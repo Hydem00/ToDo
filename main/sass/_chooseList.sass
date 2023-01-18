@@ -2,15 +2,55 @@ div.chooseList
     position: fixed
     width: 100%
     top: -50%
-    left: 3%
+    left: 0
+    margin-top: 125px
     transform: translateY(-100px)
     text-align: center
     border-left: 60px solid black
     border-right: 60px solid black
     border-top: 60px solid transparent
-    border-bottom: 100px solid transparent
+    border-bottom: 60px solid transparent
     transition: .3s
     p
         width: 100%
         background-color: rgba(0,0,0,.5)
-        font-size: 1.5rem
+        font-size: 1.2rem
+        padding: 6px 0
+
+@media (min-width: 466px) and (orientation: portrait)
+    div.chooseList
+        position: fixed
+        width: 100%
+        top: -50%
+        left: 0
+        margin-top: 125px
+        transform: translateY(-100px)
+        text-align: center
+        border-left: 60px solid black
+        border-right: 60px solid black
+        border-top: 60px solid transparent
+        border-bottom: 60px solid transparent
+        transition: .3s
+        p
+            width: 100%
+            background-color: rgba(0,0,0,.5)
+            font-size: 1.5rem
+
+@media (min-width: 1024px) and (orientation: landscape)
+    div.chooseList
+        position: fixed
+        width: 100%
+        top: -50%
+        left: 3.5%
+        transform: translateY(-100px)
+        text-align: center
+        border-left: 100px solid black
+        border-right: 100px solid black
+        border-top: 100px solid transparent
+        border-bottom: 100px solid transparent
+        transition: .3s
+        margin-top: 0
+        p
+            width: 100%
+            background-color: rgba(0,0,0,.5)
+            font-size: 1.5rem

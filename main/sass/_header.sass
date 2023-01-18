@@ -52,11 +52,22 @@ div.rightHeader
         font-size: 1rem
     p
         text-align: right
-        margin-left: 30%
         padding-right: 10px
         font-size: 1rem
         line-height: 10vh
 
+@media (min-width: 280px) and (orientation: portrait)
+    div.rightHeader
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        p,i
+            font-size: 1rem
+            margin-left: 10px
+        img
+            border-radius: 50%
+            margin: 10px 0
+            box-shadow: 0 0 10px yellow
 @media (min-width: 320px) and (orientation: portrait)
     div.leftHeader
         .burger
@@ -64,8 +75,16 @@ div.rightHeader
             height: 60%
 
     div.rightHeader
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
         p,i
             font-size: 1rem
+            margin-left: 10px
+        img
+            border-radius: 50%
+            margin: 10px 0
+            box-shadow: 0 0 10px yellow
 
 @media (min-width: 360px) and (orientation: portrait)
     div.leftHeader
@@ -76,16 +95,19 @@ div.rightHeader
         padding-right: 10px
         p,i
             font-size: 1.2rem
+            margin-left: 15px
 
 @media (min-width: 390px) and (orientation: portrait)
     div.leftHeader
         .burger
             height: 50%
 
-@media (min-width: 414px) and (orientation: portrait)
+@media (min-width: 411px) and (orientation: portrait)
     div.rightHeader
         p,i
             font-size: 1.4rem
+        img
+            margin: 10px 0
 
 @media (min-width: 500px) and (orientation: portrait)
     div.leftHeader
@@ -99,7 +121,16 @@ div.rightHeader
             width: 55%
             height: 60%
     div.rightHeader
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
         flex-basis: 90%
+        p
+            margin-left: 10px
+        img
+            margin: 2px 0
+            border-radius: 50%
+            box-shadow: 0 0 10px yellow
 
 @media (min-width: 700px)
     div.leftHeader
@@ -141,6 +172,8 @@ div.rightHeader
             height: 60%
     div.rightHeader
         flex-basis: 90%
+        img
+            margin: 5px 0
 
 @media (min-width: 900px)
     div.leftHeader
@@ -187,3 +220,5 @@ div.rightHeader
                 padding-right: 10px
             p,i
                 font-size: 1.6rem
+            img
+                margin: 10px 0

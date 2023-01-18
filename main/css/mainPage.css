@@ -392,19 +392,61 @@ div.rightHeader i {
 }
 div.rightHeader p {
   text-align: right;
-  margin-left: 30%;
   padding-right: 10px;
   font-size: 1rem;
   line-height: 10vh;
 }
 
+@media (min-width: 280px) and (orientation: portrait) {
+  div.rightHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  div.rightHeader p, div.rightHeader i {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  div.rightHeader img {
+    border-radius: 50%;
+    margin: 10px 0;
+    -webkit-box-shadow: 0 0 10px yellow;
+            box-shadow: 0 0 10px yellow;
+  }
+}
 @media (min-width: 320px) and (orientation: portrait) {
   div.leftHeader .burger {
     width: 60%;
     height: 60%;
   }
+  div.rightHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
   div.rightHeader p, div.rightHeader i {
     font-size: 1rem;
+    margin-left: 10px;
+  }
+  div.rightHeader img {
+    border-radius: 50%;
+    margin: 10px 0;
+    -webkit-box-shadow: 0 0 10px yellow;
+            box-shadow: 0 0 10px yellow;
   }
 }
 @media (min-width: 360px) and (orientation: portrait) {
@@ -416,6 +458,7 @@ div.rightHeader p {
   }
   div.rightHeader p, div.rightHeader i {
     font-size: 1.2rem;
+    margin-left: 15px;
   }
 }
 @media (min-width: 390px) and (orientation: portrait) {
@@ -423,9 +466,12 @@ div.rightHeader p {
     height: 50%;
   }
 }
-@media (min-width: 414px) and (orientation: portrait) {
+@media (min-width: 411px) and (orientation: portrait) {
   div.rightHeader p, div.rightHeader i {
     font-size: 1.4rem;
+  }
+  div.rightHeader img {
+    margin: 10px 0;
   }
 }
 @media (min-width: 500px) and (orientation: portrait) {
@@ -444,8 +490,27 @@ div.rightHeader p {
     height: 60%;
   }
   div.rightHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -ms-flex-preferred-size: 90%;
         flex-basis: 90%;
+  }
+  div.rightHeader p {
+    margin-left: 10px;
+  }
+  div.rightHeader img {
+    margin: 2px 0;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px yellow;
+            box-shadow: 0 0 10px yellow;
   }
 }
 @media (min-width: 700px) {
@@ -507,6 +572,9 @@ div.rightHeader p {
   div.rightHeader {
     -ms-flex-preferred-size: 90%;
         flex-basis: 90%;
+  }
+  div.rightHeader img {
+    margin: 5px 0;
   }
 }
 @media (min-width: 900px) {
@@ -575,6 +643,9 @@ div.rightHeader p {
   header div.rightHeader p, header div.rightHeader i {
     font-size: 1.6rem;
   }
+  header div.rightHeader img {
+    margin: 10px 0;
+  }
 }
 div.wrap {
   min-height: 100vh;
@@ -583,6 +654,7 @@ div.wrap main {
   background-color: #1d2538;
   padding: 10px 0;
   border-radius: 20px;
+  min-height: 80vh;
 }
 div.wrap main section.lists {
   min-height: 80vh;
@@ -603,6 +675,7 @@ div.wrap main section.lists {
 div.wrap main section.lists h1 {
   font-size: 1.5rem;
   margin: 5px 0;
+  margin-top: 30px;
   width: 100%;
   text-align: center;
   letter-spacing: 2px;
@@ -944,7 +1017,6 @@ div.wrap main section.menu h2 {
   text-transform: uppercase;
   font-size: 1rem;
   color: #179CF0;
-  border-bottom: 2px solid #179CF0;
   border-radius: 10px;
   width: 56%;
   padding: 0 0 5px 0;
@@ -1006,6 +1078,9 @@ div.wrap main section.menu div.addEvent form input, div.wrap main section.menu d
   color: gray;
   -ms-flex-preferred-size: 95%;
       flex-basis: 95%;
+}
+div.wrap main section.menu div.addEvent form input:focus, div.wrap main section.menu div.addEvent form select:focus, div.wrap main section.menu div.addEvent form textarea:focus, div.wrap main section.menu div.editEvent form input:focus, div.wrap main section.menu div.editEvent form select:focus, div.wrap main section.menu div.editEvent form textarea:focus {
+  color: black;
 }
 div.wrap main section.menu div.addEvent form input[placeholder], div.wrap main section.menu div.addEvent form textarea[placeholder], div.wrap main section.menu div.editEvent form input[placeholder], div.wrap main section.menu div.editEvent form textarea[placeholder] {
   text-align: left;
@@ -1804,49 +1879,382 @@ div.wrap main section.menu form button:hover {
 }
 main section.profile {
   display: none;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-main section.profile button {
-  height: 5vh;
-}
 main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
   display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-top: 1px solid gray;
+}
+main section.profile div.changePassword h2, main section.profile div.changeEmail h2, main section.profile div.deleteAccount h2, main section.profile div.additionalInformations h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+main section.profile div.changePassword form, main section.profile div.changeEmail form, main section.profile div.deleteAccount form, main section.profile div.additionalInformations form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 90%;
+  margin: 0 auto;
+  width: 70%;
+}
+main section.profile div.changePassword form input, main section.profile div.changePassword form button, main section.profile div.changeEmail form input, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form input, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form input, main section.profile div.additionalInformations form button {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+main section.profile div.changePassword form button, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form button {
+  text-transform: uppercase;
+  padding: 10px 5px;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  border-radius: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main section.profile div.changePassword form button:hover, main section.profile div.changeEmail form button:hover, main section.profile div.deleteAccount form button:hover, main section.profile div.additionalInformations form button:hover {
+  background-color: #179CF0;
+  color: white;
+}
+main section.profile div.profileInfo {
+  padding-left: 10px;
+}
+main section.profile div.profileInfo img {
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px yellow;
+          box-shadow: 0 0 10px yellow;
+}
+main section.profile div.profileInfo p {
+  font-size: 1rem;
+  margin: 2px 0;
+}
+main section.profile div.profileButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+main section.profile div.profileButtons button {
+  text-transform: uppercase;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  margin: 10px 0;
+  color: black;
+  background-color: #179CF0;
+  border: 2px solid black;
+  padding: 10px 5px;
+  border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+main section.profile div.profileButtons button a {
+  text-decoration: none;
+  color: black;
+}
+main section.profile div.profileButtons button:hover {
+  background-color: white;
 }
 
+@media (min-width: 375px) and (orientation: portrait) {
+  main section.profile div.changePassword form, main section.profile div.changeEmail form, main section.profile div.deleteAccount form, main section.profile div.additionalInformations form {
+    width: 60%;
+  }
+}
+@media (min-width: 700px) and (orientation: landscape) {
+  main section.profile {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  main section.profile {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  main section.profile div.profileInfo {
+    padding-left: 15px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  main section.profile div.profileInfo img {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+  }
+  main section.profile div.profileInfo p {
+    font-size: 1.5rem;
+  }
+  main section.profile div.profileInfo p:nth-last-of-type(1) {
+    margin-bottom: 20px;
+  }
+  main section.profile div.profileButtons {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    margin-left: 15px;
+  }
+  main section.profile div.profileButtons button {
+    font-size: 1.5rem;
+    padding: 15px 5px;
+  }
+  main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    border: none;
+  }
+  main section.profile div.changePassword h2, main section.profile div.changeEmail h2, main section.profile div.deleteAccount h2, main section.profile div.additionalInformations h2 {
+    font-size: 1.7rem;
+  }
+  main section.profile div.changePassword form, main section.profile div.changeEmail form, main section.profile div.deleteAccount form, main section.profile div.additionalInformations form {
+    width: 80%;
+  }
+  main section.profile div.changePassword form input, main section.profile div.changeEmail form input, main section.profile div.deleteAccount form input, main section.profile div.additionalInformations form input {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  main section.profile div.changePassword form button, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form button {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  main section.profile {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  main section.profile div.profileInfo {
+    padding-left: 15px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  main section.profile div.profileInfo img {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+  }
+  main section.profile div.profileInfo p {
+    font-size: 1.3rem;
+  }
+  main section.profile div.profileInfo p:nth-last-of-type(1) {
+    margin-bottom: 20px;
+  }
+  main section.profile div.profileButtons {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    margin-left: 15px;
+  }
+  main section.profile div.profileButtons button {
+    font-size: 1.3rem;
+    padding: 15px 5px;
+  }
+  main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    border: none;
+  }
+  main section.profile div.changePassword h2, main section.profile div.changeEmail h2, main section.profile div.deleteAccount h2, main section.profile div.additionalInformations h2 {
+    font-size: 1.4rem;
+  }
+  main section.profile div.changePassword form, main section.profile div.changeEmail form, main section.profile div.deleteAccount form, main section.profile div.additionalInformations form {
+    width: 80%;
+  }
+  main section.profile div.changePassword form input, main section.profile div.changeEmail form input, main section.profile div.deleteAccount form input, main section.profile div.additionalInformations form input {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  main section.profile div.changePassword form button, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form button {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  main section.profile {
+    width: 90%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0 auto;
+  }
+  main section.profile div.profileInfo {
+    padding-left: 15px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  main section.profile div.profileInfo img {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+  }
+  main section.profile div.profileInfo p {
+    font-size: 1.5rem;
+  }
+  main section.profile div.profileInfo p:nth-last-of-type(1) {
+    margin-bottom: 20px;
+  }
+  main section.profile div.profileButtons {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    margin-left: 15px;
+  }
+  main section.profile div.profileButtons button {
+    font-size: 1.5rem;
+    padding: 15px 5px;
+  }
+  main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    border: none;
+  }
+  main section.profile div.changePassword h2, main section.profile div.changeEmail h2, main section.profile div.deleteAccount h2, main section.profile div.additionalInformations h2 {
+    font-size: 1.7rem;
+  }
+  main section.profile div.changePassword form, main section.profile div.changeEmail form, main section.profile div.deleteAccount form, main section.profile div.additionalInformations form {
+    width: 80%;
+  }
+  main section.profile div.changePassword form input, main section.profile div.changeEmail form input, main section.profile div.deleteAccount form input, main section.profile div.additionalInformations form input {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  main section.profile div.changePassword form button, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form button {
+    font-size: 1.5rem;
+  }
+}
 div.chooseList {
   position: fixed;
   width: 100%;
   top: -50%;
-  left: 3%;
+  left: 0;
+  margin-top: 125px;
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
   text-align: center;
   border-left: 60px solid black;
   border-right: 60px solid black;
   border-top: 60px solid transparent;
-  border-bottom: 100px solid transparent;
+  border-bottom: 60px solid transparent;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 div.chooseList p {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  padding: 6px 0;
 }
 
+@media (min-width: 466px) and (orientation: portrait) {
+  div.chooseList {
+    position: fixed;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    margin-top: 125px;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    text-align: center;
+    border-left: 60px solid black;
+    border-right: 60px solid black;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.chooseList p {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  div.chooseList {
+    position: fixed;
+    width: 100%;
+    top: -50%;
+    left: 3.5%;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    text-align: center;
+    border-left: 100px solid black;
+    border-right: 100px solid black;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-top: 0;
+  }
+  div.chooseList p {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+  }
+}
 .modal {
   display: none;
   position: fixed;

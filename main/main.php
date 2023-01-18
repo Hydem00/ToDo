@@ -122,6 +122,7 @@ if(!$auth->isLogged()){
           <button>Change Email</button>        
           <button>Delete Account</button>
           <button>Set/Change Your Nick</button>
+          <button><a href="https://pl.gravatar.com/" target="blank">Change your Gravatar</a></button>
         </div>
         
         <div class="changePassword">
