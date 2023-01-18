@@ -2,6 +2,7 @@ let eventsData;
 
 window.onload = function () {
     getLists();
+    getProfileInformations();
 }
 
 async function addList() {
@@ -307,4 +308,38 @@ async function updateInformations() {
     if (!addInformationResponse.error) {
         document.querySelector('main section.profile div.additionalInformations form input').value = '';
     }
+}
+
+async function getProfileInformations() {
+
+    let odp = await fetch('functions/profile.php?action=showProfile', {
+        method: 'GET',
+        mode: 'cors',
+    });
+
+    profileInfo = await odp.json();
+    console.log('Success:', profileInfo);
+    createProfileElements(profileInfo);
+    profileInfoHeader(profileInfo);
+}
+
+function createProfileElements(profileData) {
+    const profileInfoDiv = document.querySelector('main section.profile div.profileInfo');
+
+    const profileImg = document.createElement('img');
+    profileImg.classList.add('profileImg');
+
+    const nick = document.createElement('p');
+    nick.classList.add('nick');
+
+    const email = document.createElement('p');
+    email.classList.add('email');
+
+    profileImg.src = profileData.img;
+    nick.textContent = `Nick: ${profileData.info.nick}`;
+    email.textContent = `Email: ${profileData.email}`;
+
+    profileInfoDiv.appendChild(profileImg);
+    profileInfoDiv.appendChild(nick);
+    profileInfoDiv.appendChild(email);
 }

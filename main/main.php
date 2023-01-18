@@ -56,9 +56,6 @@ if(!$auth->isLogged()){
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <?php
-          echo $auth->getCurrentUser()["email"]; 
-        ?>
       </p>
     </div>
   </header>
@@ -117,7 +114,9 @@ if(!$auth->isLogged()){
           </div>
         </div>
       </section>
-      <section class="profile">        
+      <section class="profile">    
+        <div class="profileInfo">
+        </div>    
         <button>Change Password</button>        
         <button>Change Email</button>        
         <button>Delete Account</button>
@@ -217,11 +216,12 @@ if(!$auth->isLogged()){
 </div>
   <script src="navigation.js"></script>
   <script src="fetch.js"></script>  
+  <script src="accountMail.js"></script>
   <script src="profileSection.js"></script>
   <script src="popUpAddList.js"></script>
   <script src="eventsSection.js"></script>
   <script src="popUpEditList.js"></script>
   <script src="popUpDeleteList.js"></script>
-  <script src="accountMail.js"></script>
+
 </body>
 </html>

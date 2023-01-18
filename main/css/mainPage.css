@@ -1545,6 +1545,9 @@ main section.profile {
       -ms-flex-pack: center;
           justify-content: center;
 }
+main section.profile button {
+  height: 5vh;
+}
 main section.profile div.changePassword, main section.profile div.changeEmail, main section.profile div.deleteAccount, main section.profile div.additionalInformations {
   display: none;
   -webkit-box-orient: vertical;
