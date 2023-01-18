@@ -14,10 +14,8 @@ function profileInfoHeader(profileData) {
 
     console.log(profileData.info.nick);
     if (profileData.info.nick === undefined) {
-        console.log("WTF");
         accountMail.textContent = changedText;
     } else {
-        console.log("ES");
         accountMail.innerHTML = profileData.info.nick;
     }
 }

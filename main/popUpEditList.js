@@ -34,7 +34,6 @@ function popUpEdit() {
 
         if (listTitleEdit.value.length != 0) {
             e.preventDefault();
-            console.log(listID);
             editList();
         }
     }

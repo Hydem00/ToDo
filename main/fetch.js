@@ -14,7 +14,6 @@ async function addList() {
         body: dataToSend
     });
     let dane = await odp.text();
-    // console.log('Success:', dane);
 
     getLists();
 }
@@ -25,7 +24,6 @@ async function getLists() {
         mode: 'cors',
     });
     const result = await response.json();
-    // console.log(result);
     createListsElement(result);
 
     popUpEdit();
@@ -81,14 +79,12 @@ async function removeList(e) {
     dataToSend.append('json', JSON.stringify({
         listID: listID
     }));
-    console.log(dataToSend);
     let odp = await fetch('functions/lists.php?action=delete', {
         method: 'POST',
         mode: 'cors',
         body: dataToSend
     });
     let dane = await odp.text();
-    // console.log('Success:', dane);
 
     getLists();
 }
@@ -105,7 +101,6 @@ async function editList() {
         body: dataToSend
     });
     let dane = await odp.text();
-    // console.log('Success:', dane);
     modalEdit.style.display = "none";
     document.querySelector("div.popUpEdit div.modal-content form input").value = "";
     document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
@@ -124,7 +119,6 @@ async function addListEvent() {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
 
     getListsEvents();
 }
@@ -139,7 +133,6 @@ async function getListsEvents() {
     eventsData = await odp.json();
 
     clearEvents();
-    // console.log('Success:', eventsData);
     createEventsElements(eventsData);
     listPropertiesSection();
 }
@@ -210,7 +203,6 @@ async function editListEvent() {
         body: dataToSend
     });
     let dane = await odp.text();
-    console.log('Success:', dane);
 
     getListsEvents();
 }
@@ -226,7 +218,6 @@ async function removeListEvent() {
         body: dataToSend
     });
     eventsData = await odp.json();
-    console.log('Success:', eventsData);
 
     getListsEvents();
 }
@@ -240,7 +231,6 @@ async function changePassword() {
         body: dataToSend
     });
     let changePasswordResponse = await odp.json();
-    console.log('Success:', changePasswordResponse);
 
     const changePasswordMessage = document.querySelector('main section.profile div.changePassword p');
     changePasswordMessage.textContent = changePasswordResponse.message;
@@ -261,7 +251,6 @@ async function changeEmail() {
         body: dataToSend
     });
     let changeEmailResponse = await odp.json();
-    console.log('Success:', changeEmailResponse);
 
     const changeEmailMessage = document.querySelector('main section.profile div.changeEmail p');
     changeEmailMessage.textContent = changeEmailResponse.message;
@@ -283,7 +272,6 @@ async function deleteAccount() {
         body: dataToSend
     });
     let deleteAccountResponse = await odp.json();
-    console.log('Success:', deleteAccountResponse);
 
     const deleteAccountMessage = document.querySelector('main section.profile div.deleteAccount p');
     deleteAccountMessage.textContent = deleteAccountResponse.message;
@@ -302,7 +290,6 @@ async function updateInformations() {
         body: dataToSend
     });
     let addInformationResponse = await odp.json();
-    console.log('Success:', addInformationResponse);
 
     const addInformationMessage = document.querySelector('main section.profile div.additionalInformations p');
     addInformationMessage.textContent = addInformationResponse.message;
@@ -322,7 +309,7 @@ async function getProfileInformations() {
     });
 
     profileInfo = await odp.json();
-    console.log('Success:', profileInfo);
+
     createProfileElements(profileInfo);
     profileInfoHeader(profileInfo);
 }

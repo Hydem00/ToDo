@@ -40,7 +40,6 @@ function validation(e) {
     if (!(password.value == "") && !(cpassword.value == "")) {
         window.addEventListener('input', validateInputs);
         flag = validateInputs();
-        console.log(flag);
 
         if (!flag)
             e.preventDefault();

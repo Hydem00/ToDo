@@ -136,7 +136,6 @@ function listPropertiesSection() {
     editEvents.forEach(editEvent => {
         editEvent.addEventListener('click', function () {
             eventID = this.parentElement.parentElement.dataset.numberOfListEvent;
-            console.log(eventID);
             addEventForm.style.display = "none";
             editEventForm.style.display = "flex";
             btnActive = false;

@@ -58,7 +58,12 @@ chooseProfileOptionBtns.forEach((chooseProfileOptionBtn, iterator) => {
         profileDivForms.forEach(profileDivForm => {
             profileDivForm.style.display = "none";
         })
-        console.log(iterator);
+
         profileDivForms[iterator].style.display = "flex";
+
+        window.scrollTo({
+            top: profileDivForms[iterator].offsetTop,
+            behavior: 'smooth'
+        });
     })
 })
