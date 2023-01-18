@@ -1,7 +1,7 @@
 const profileSection = document.querySelector('main section.profile');
 const sectionMenu = document.querySelector('main section.menu');
 const navProfileBtns = document.querySelectorAll('nav.menuMobile ul li:nth-of-type(4) a, nav.menuDesktop ul li:nth-of-type(4) a');
-const navBtns = document.querySelectorAll('nav.menuDesktop ul li:nth-of-type(1) a, nav.menuDesktop ul li:nth-of-type(2) a,nav.menuDesktop ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(1) a, nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(3) a');
+const navBtnsProf = document.querySelectorAll('nav.menuDesktop ul li:nth-of-type(1) a, nav.menuDesktop ul li:nth-of-type(2) a,nav.menuDesktop ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(1) a, nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(3) a');
 
 navProfileBtns.forEach(navProfileBtn => {
     navProfileBtn.addEventListener('click', () => {
@@ -11,7 +11,7 @@ navProfileBtns.forEach(navProfileBtn => {
     })
 })
 
-navBtns.forEach(navBtn => {
+navBtnsProf.forEach(navBtn => {
     navBtn.addEventListener('click', () => {
         profileSection.style.display = "none";
     })
