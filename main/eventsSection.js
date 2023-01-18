@@ -71,13 +71,15 @@ function listPropertiesSection() {
 
     let btnActive = false;
 
+
     addEventBtn.addEventListener('click', () => {
         if (!btnActive) {
+            const addEventFormPosition = document.querySelector('div.addEvent').offsetTop;
             addEventForm.style.display = "flex";
             addEventBtn.classList.add('active');
             editEventForm.style.display = "none";
             window.scrollTo({
-                top: 0,
+                top: addEventFormPosition,
                 behavior: 'smooth'
             });
             btnActive = true;
@@ -152,8 +154,10 @@ function listPropertiesSection() {
                 }
             });
 
+            const editEventFormPosition = document.querySelector('div.editEvent').offsetTop;
+
             window.scrollTo({
-                top: 0,
+                top: editEventFormPosition,
                 behavior: 'smooth'
             });
 
@@ -180,7 +184,7 @@ function listPropertiesSection() {
             popUpRemoveEvent.style.display = "block";
 
             eventsData.forEach(event => {
-                if (event.id === eventID) {
+                if (event.id == eventID) {
                     removeInformation.textContent = `Are you sure you want to permamently delete event named '${event.nazwa}'?`;
                 }
             });
