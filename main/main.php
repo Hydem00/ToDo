@@ -117,10 +117,13 @@ if(!$auth->isLogged()){
       <section class="profile">    
         <div class="profileInfo">
         </div>    
-        <button>Change Password</button>        
-        <button>Change Email</button>        
-        <button>Delete Account</button>
-        <button>Set/Change Your Nick</button>
+        <div class="profileButtons">
+          <button>Change Password</button>        
+          <button>Change Email</button>        
+          <button>Delete Account</button>
+          <button>Set/Change Your Nick</button>
+        </div>
+        
         <div class="changePassword">
           <h2>Change Your Password</h2>
           <form method="POST">
