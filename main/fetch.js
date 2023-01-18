@@ -290,21 +290,21 @@ async function deleteAccount() {
     }
 }
 
-// async function updateInformations() {
-//     const addInformationsForm = document.querySelector('main section.profile div.additionalInformations form');
-//     const dataToSend = new FormData(addInformationsForm);
-//     let odp = await fetch('functions/profile.php?action=updateInformations', {
-//         method: 'POST',
-//         mode: 'cors',
-//         body: dataToSend
-//     });
-//     let addInformationResponse = await odp.json();
-//     console.log('Success:', addInformationResponse);
+async function updateInformations() {
+    const addInformationsForm = document.querySelector('main section.profile div.additionalInformations form');
+    const dataToSend = new FormData(addInformationsForm);
+    let odp = await fetch('functions/profile.php?action=updateInformations', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let addInformationResponse = await odp.json();
+    console.log('Success:', addInformationResponse);
 
-//     const addInformationMessage = document.querySelector('main section.profile div.additionalInformations p');
-//     addInformationMessage.textContent = addInformationResponse.message;
+    const addInformationMessage = document.querySelector('main section.profile div.additionalInformations p');
+    addInformationMessage.textContent = addInformationResponse.message;
 
-//     if (!addInformationResponse.error) {
-//         document.querySelector('main section.profile div.additionalInformations form input').value = '';
-//     }
-// }
+    if (!addInformationResponse.error) {
+        document.querySelector('main section.profile div.additionalInformations form input').value = '';
+    }
+}
