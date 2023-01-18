@@ -143,7 +143,7 @@ function listPropertiesSection() {
             addEventBtn.classList.remove('active');
 
             eventsData.forEach(event => {
-                if (event.id === eventID) {
+                if (event.id == eventID) {
                     eventTitleEdit.value = event.nazwa;
                     eventDescriptionEdit.value = event.opis;
                     eventLocationEdit.value = event.lokalizacja;
