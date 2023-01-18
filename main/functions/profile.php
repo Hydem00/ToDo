@@ -1,21 +1,22 @@
 <?php
-require '../../vendor/autoload.php';
 require '../../config.php';
+require '../../vendor/autoload.php';
 
 $config = new \PHPAuth\Config($dbh);
 $auth   = new \PHPAuth\Auth($dbh, $config);
-
 
 if(!$auth->isLogged()){
     header('HTTP/1.0 401 Unauthorized');
     echo "Forbidden";
     exit;
 }else{
-    //echo json_encode($auth->getCurrentUser());
     $user_id = $auth->getCurrentUser()["id"];
 }
 
 switch ($_GET["action"]) {
+    case "showProfile":
+        showProfile();
+        break;
     case "changePassword":
         changePassword();
         break;
@@ -25,14 +26,35 @@ switch ($_GET["action"]) {
     case "deleteUser":
         deleteUser();
         break;
+    case "updateInformations":
+        updateInformations();
+        break;
     default:
         echo "Not selected action.";
         break;
 }
 
+function showProfile(){
+    global $user_id;
+    global $dbh;
+    global $auth;
+
+    $user = $auth->getCurrentUser();
+    $user["hash"] = md5(strtolower(trim($user["email"])));
+    $user["img"] = "https://www.gravatar.com/avatar/". $user["hash"] ."?d=mp";
+
+    $stmt = $dbh->prepare('SELECT * FROM informacje WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+    $user["info"] = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    echo json_encode($user);
+}
+
 function changePassword(){
     global $user_id;
     global $dbh;
+    global $auth;
 
     $currpass = $_POST['currpass'];
     $newpass = $_POST['newpass'];
@@ -46,6 +68,7 @@ function changePassword(){
 function changeEmail(){
     global $user_id;
     global $dbh;
+    global $auth;
 
     $email = $_POST['email'];
     $pass = $_POST['password'];
@@ -58,6 +81,7 @@ function changeEmail(){
 function deleteUser(){
     global $user_id;
     global $dbh;
+    global $auth;
 
     $stmt = $dbh->prepare('DELETE FROM wydarzenia WHERE lista_id IN (SELECT id FROM listy WHERE user_id = :user_id)');
     $stmt->bindParam(':user_id', $user_id);
@@ -67,9 +91,27 @@ function deleteUser(){
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
+    $stmt = $dbh->prepare('DELETE FROM informacje WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+
     $pass = $_POST['password'];
     $response = $auth->deleteUser($user_id, $pass);
 
     echo json_encode($response);
+}
+
+function updateInformations(){
+    global $user_id;
+    global $dbh;
+    global $auth;
+    
+    $nick = $_POST['nick'];
+    $stmt = $dbh->prepare('INSERT INTO informacje(user_id, nick) VALUES (:user_id, :nick) ON DUPLICATE KEY UPDATE nick=:nick');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':nick', $nick);
+    $stmt->execute();
+
+    echo json_encode(array('id' => $dbh->lastInsertId()));
 }
 ?>

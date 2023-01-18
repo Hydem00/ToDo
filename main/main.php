@@ -56,9 +56,6 @@ if(!$auth->isLogged()){
     </div>
     <div class="rightHeader">
       <p class="name_account">
-        <?php
-          echo $auth->getCurrentUser()["email"]; 
-        ?>
       </p>
     </div>
   </header>
@@ -115,6 +112,52 @@ if(!$auth->isLogged()){
           <div class="addEventBtn">
             <i class="fa-solid fa-plus"></i>
           </div>
+        </div>
+      </section>
+      <section class="profile">    
+        <div class="profileInfo">
+        </div>    
+        <div class="profileButtons">
+          <button>Change Password</button>        
+          <button>Change Email</button>        
+          <button>Delete Account</button>
+          <button>Set/Change Your Nick</button>
+        </div>
+        
+        <div class="changePassword">
+          <h2>Change Your Password</h2>
+          <form method="POST">
+            <input type="password" name="currpass" placeholder="Enter Current Password">
+            <input type="password" name="newpass" placeholder="Enter New Password">
+            <input type="password" name="repeatnewpass" placeholder="Repeat New Password">
+            <button>Set New Password</button>
+          </form>
+          <p></p>
+        </div>
+        <div class="changeEmail">
+          <h2>Change Your Email</h2>
+          <form method="POST">
+            <input type="email" name="email" placeholder="Enter New Email">
+            <input type="password" name="password" placeholder="Enter Your Password">
+            <button>Set New Email</button>
+          </form>
+          <p></p>
+        </div>
+        <div class="deleteAccount">
+          <h2>Delete your Account</h2>
+          <form method="POST">
+            <input type="password" name="password" placeholder="Enter Your Password">
+            <button>Delete your account</button>
+          </form>
+          <p></p>
+        </div>
+        <div class="additionalInformations">
+          <h2>Set/Change Your Nickname</h2>
+          <form method="POST">
+            <input type="text" name="nick" placeholder="Enter New Nickname">
+            <button>Add informations</button>
+          </form>
+          <p></p>
         </div>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
@@ -176,10 +219,12 @@ if(!$auth->isLogged()){
 </div>
   <script src="navigation.js"></script>
   <script src="fetch.js"></script>  
+  <script src="accountMail.js"></script>
+  <script src="profileSection.js"></script>
   <script src="popUpAddList.js"></script>
   <script src="eventsSection.js"></script>
   <script src="popUpEditList.js"></script>
   <script src="popUpDeleteList.js"></script>
-  <script src="accountMail.js"></script>
+
 </body>
 </html>

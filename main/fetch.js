@@ -2,6 +2,7 @@ let eventsData;
 
 window.onload = function () {
     getLists();
+    getProfileInformations();
 }
 
 async function addList() {
@@ -224,8 +225,121 @@ async function removeListEvent() {
         mode: 'cors',
         body: dataToSend
     });
-    eventsData = await odp.text();
+    eventsData = await odp.json();
     console.log('Success:', eventsData);
 
     getListsEvents();
+}
+
+async function changePassword() {
+    const changePasswordForm = document.querySelector('main section.profile div.changePassword form');
+    const dataToSend = new FormData(changePasswordForm);
+    let odp = await fetch('functions/profile.php?action=changePassword', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let changePasswordResponse = await odp.json();
+    console.log('Success:', changePasswordResponse);
+
+    const changePasswordMessage = document.querySelector('main section.profile div.changePassword p');
+    changePasswordMessage.textContent = changePasswordResponse.message;
+
+    if (!changePasswordResponse.error) {
+        document.querySelector('main section.profile div.changePassword form input:nth-of-type(1)').value = '';
+        document.querySelector('main section.profile div.changePassword form input:nth-of-type(2)').value = '';
+        document.querySelector('main section.profile div.changePassword form input:nth-of-type(3)').value = '';
+    }
+}
+
+async function changeEmail() {
+    const changeEmailForm = document.querySelector('main section.profile div.changeEmail form');
+    const dataToSend = new FormData(changeEmailForm);
+    let odp = await fetch('functions/profile.php?action=changeEmail', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let changeEmailResponse = await odp.json();
+    console.log('Success:', changeEmailResponse);
+
+    const changeEmailMessage = document.querySelector('main section.profile div.changeEmail p');
+    changeEmailMessage.textContent = changeEmailResponse.message;
+
+    if (!changeEmailResponse.error) {
+        document.querySelector('main section.profile div.changeEmail form input:nth-of-type(1)').value = '';
+        document.querySelector('main section.profile div.changeEmail form input:nth-of-type(2)').value = '';
+    }
+}
+
+async function deleteAccount() {
+    const deleteAccountForm = document.querySelector('main section.profile div.deleteAccount form');
+    const dataToSend = new FormData(deleteAccountForm);
+    let odp = await fetch('functions/profile.php?action=deleteUser', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let deleteAccountResponse = await odp.json();
+    console.log('Success:', deleteAccountResponse);
+
+    const deleteAccountMessage = document.querySelector('main section.profile div.deleteAccount p');
+    deleteAccountMessage.textContent = deleteAccountResponse.message;
+
+    if (!deleteAccountResponse.error) {
+        document.querySelector('main section.profile div.deleteAccount form input').value = '';
+    }
+}
+
+async function updateInformations() {
+    const addInformationsForm = document.querySelector('main section.profile div.additionalInformations form');
+    const dataToSend = new FormData(addInformationsForm);
+    let odp = await fetch('functions/profile.php?action=updateInformations', {
+        method: 'POST',
+        mode: 'cors',
+        body: dataToSend
+    });
+    let addInformationResponse = await odp.json();
+    console.log('Success:', addInformationResponse);
+
+    const addInformationMessage = document.querySelector('main section.profile div.additionalInformations p');
+    addInformationMessage.textContent = addInformationResponse.message;
+
+    if (!addInformationResponse.error) {
+        document.querySelector('main section.profile div.additionalInformations form input').value = '';
+    }
+}
+
+async function getProfileInformations() {
+
+    let odp = await fetch('functions/profile.php?action=showProfile', {
+        method: 'GET',
+        mode: 'cors',
+    });
+
+    profileInfo = await odp.json();
+    console.log('Success:', profileInfo);
+    createProfileElements(profileInfo);
+    profileInfoHeader(profileInfo);
+}
+
+function createProfileElements(profileData) {
+    const profileInfoDiv = document.querySelector('main section.profile div.profileInfo');
+
+    const profileImg = document.createElement('img');
+    profileImg.classList.add('profileImg');
+
+    const nick = document.createElement('p');
+    nick.classList.add('nick');
+
+    const email = document.createElement('p');
+    email.classList.add('email');
+
+    profileImg.src = profileData.img;
+    nick.textContent = `Nick: ${profileData.info.nick}`;
+    email.textContent = `Email: ${profileData.email}`;
+
+    profileInfoDiv.appendChild(profileImg);
+    profileInfoDiv.appendChild(nick);
+    profileInfoDiv.appendChild(email);
 }
