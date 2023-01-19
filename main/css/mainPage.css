@@ -2191,45 +2191,278 @@ div.chooseList {
   width: 100%;
   top: -50%;
   left: 0;
-  margin-top: 125px;
+  margin-top: 100px;
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
   text-align: center;
-  border-left: 60px solid black;
-  border-right: 60px solid black;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  border-left: 45px solid black;
+  border-right: 45px solid black;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 div.chooseList p {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   padding: 6px 0;
 }
 
-@media (min-width: 466px) and (orientation: portrait) {
+@media (min-width: 280px) and (orientation: portrait) {
   div.chooseList {
-    position: fixed;
-    width: 100%;
-    top: -50%;
-    left: 0;
-    margin-top: 125px;
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
-    text-align: center;
-    border-left: 60px solid black;
-    border-right: 60px solid black;
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    margin-top: 18vh;
   }
   div.chooseList p {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 320px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 19vh;
+  }
+  div.chooseList p {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 360px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 18vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 360px) and (min-height: 740px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 17vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 375px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 375px) and (min-height: 667px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 18vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 375px) and (min-height: 800px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 390px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 411px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 16.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 414px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 533px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 24.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 375px) and (min-height: 471px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 20.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 540px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 17vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 22vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 653px) and (min-height: 280px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 27.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 667px) and (min-height: 375px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 23.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 720px) and (min-height: 540px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 19.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 731px) and (min-height: 411px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 22.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 15vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 794px) and (min-height: 793px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 16.5vh;
+  }
+  div.chooseList p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 820px) and (orientation: portrait) {
+  div.chooseList {
+    margin-top: 14vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 22vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (min-height: 460px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 20vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (min-height: 557px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 19vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (min-height: 617px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 18vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (min-height: 688px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 17vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 844px) and (min-height: 787px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 896px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 22vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 956px) and (min-height: 467px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 20vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 956px) and (min-height: 600px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 18vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 956px) and (min-height: 680px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 17vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 956px) and (min-height: 800px) and (orientation: landscape) {
+  div.chooseList {
+    margin-top: 16vh;
+  }
+  div.chooseList p {
+    font-size: 2rem;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
