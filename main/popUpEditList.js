@@ -59,17 +59,22 @@ function popUpEdit() {
         this.removeEventListener('click', popUpEditFunctionality);
     }
 
+    const exitChoosingElements = document.querySelectorAll('section.lists, nav.menuMobile ul li:nth-of-type(1) a,nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(4), nav.menuDesktop ul li:nth-of-type(1) a,nav.menuDesktop ul li:nth-of-type(2) a, nav.menuDesktop ul li:nth-of-type(4)');
+
     editListBtnNav.forEach(editListBtn => {
         editListBtn.addEventListener('click', () => {
             choosingIsActive = true;
             divChooseList.style.top = '0';
+
             listsToChoose.forEach((listToChoose) => {
                 listToChoose.addEventListener('click', popUpEditFunctionality);
 
-                document.querySelector('section.lists').addEventListener('click', function exitChoosing() {
-                    divChooseList.style.top = '-50%';
-                    listToChoose.removeEventListener('click', popUpEditFunctionality);
-                    choosingIsActive = false;
+                exitChoosingElements.forEach(exitElement=>{
+                    exitElement.addEventListener('click', function exitChoosing() {
+                        divChooseList.style.top = '-50%';
+                        listToChoose.removeEventListener('click', popUpEditFunctionality);
+                        choosingIsActive = false;
+                    })
                 })
             })
         })
