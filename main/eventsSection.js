@@ -44,7 +44,7 @@ function listPropertiesSection() {
     const eventColorEdit = document.querySelector('main section.menu div.editEvent form input[type="color"]');
 
     function addListEventValidation(e) {
-        if (eventTitleAdd.value.length != 0) {
+        if (eventTitleAdd.value.length != 0 && eventDateAdd.value.length != 0 && eventTimeAdd.value.length != 0) {
             e.preventDefault();
             addListEvent();
             eventTitleAdd.value = "";
@@ -117,7 +117,7 @@ function listPropertiesSection() {
 
     function editEventValidation(e) {
 
-        if (eventTitleEdit.value.length != 0) {
+        if (eventTitleEdit.value.length != 0 && eventDateEdit.value.length != 0 && eventTimeEdit.value.length != 0) {
             e.preventDefault();
             editListEvent();
             eventTitleEdit.value = "";

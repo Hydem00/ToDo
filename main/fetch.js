@@ -1,8 +1,13 @@
-let eventsData;
+let eventsData, loginStatus;
 
 window.onload = function () {
     getLists();
     getProfileInformations();
+    getLoginStatus();
+
+    if (loginStatus) {
+        window.location.reload();
+    }
 }
 
 async function addList() {
@@ -278,7 +283,10 @@ async function deleteAccount() {
 
     if (!deleteAccountResponse.error) {
         document.querySelector('main section.profile div.deleteAccount form input').value = '';
+        window.location.reload();
     }
+
+
 }
 
 async function updateInformations() {
@@ -341,4 +349,15 @@ function createProfileElements(profileData) {
     profileInfoDiv.appendChild(email);
 
     profileSection.insertBefore(profileInfoDiv, profileSection.children[0]);
+}
+
+async function getLoginStatus() {
+
+    let response = await fetch('functions/check.php', {
+        method: 'GET',
+        mode: 'cors',
+    });
+
+    loginStatus = await response.json();
+    console.log(loginStatus);
 }
