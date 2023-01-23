@@ -34,7 +34,6 @@ changeEmailBtn.addEventListener('click', (e) => {
 const deleteAccountBtn = document.querySelector('main section.profile div.deleteAccount form button');
 
 deleteAccountBtn.addEventListener('click', (e) => {
-    e.preventDefault();
     deleteAccount();
 })
 
