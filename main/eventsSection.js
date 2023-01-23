@@ -131,6 +131,7 @@ function listPropertiesSection() {
         }
     }
 
+
     const editEvents = document.querySelectorAll('main section.menu div.events div.listEvent div.editListEvent i');
 
     editEvents.forEach(editEvent => {
