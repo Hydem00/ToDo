@@ -79,8 +79,8 @@ if(!$auth->isLogged()){
             <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
             <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
             <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
-            <input type="date" name="event_date" placeholder = "Enter the date">
-            <input type="time" name="event_time" placeholder = "Enter the time">
+            <input type="date" name="event_date" placeholder = "Enter the date" required>
+            <input type="time" name="event_time" placeholder = "Enter the time" required>
             <select name="event_priority">
               <option value="1" selected>1</option>
               <option value="2">2</option>
@@ -155,7 +155,7 @@ if(!$auth->isLogged()){
         <div class="additionalInformations">
           <h2>Set/Change Your Nickname</h2>
           <form method="POST">
-            <input type="text" name="nick" placeholder="Enter New Nickname">
+            <input type="text" maxlength="15" name="nick" placeholder="Enter New Nickname">
             <button>Add informations</button>
           </form>
           <p></p>
