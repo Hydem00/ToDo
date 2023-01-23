@@ -117,7 +117,7 @@ function listPropertiesSection() {
 
     function editEventValidation(e) {
 
-        if (eventTitleEdit.value.length != 0) {
+        if (eventTitleEdit.value.length != 0 && eventDateEdit.value.length != 0 && eventTimeEdit.value.length != 0) {
             e.preventDefault();
             editListEvent();
             eventTitleEdit.value = "";
