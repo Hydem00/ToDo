@@ -137,7 +137,7 @@ addInformationsBtn.addEventListener('click', (e) => {
     }
 })
 
-const chooseProfileOptionBtns = document.querySelectorAll('main section.profile div.profileButtons button');
+const chooseProfileOptionBtns = document.querySelectorAll('main section.profile div.profileButtons button:nth-of-type(1),main section.profile div.profileButtons button:nth-of-type(2),main section.profile div.profileButtons button:nth-of-type(3),main section.profile div.profileButtons button:nth-of-type(4)');
 const changePasswordForm = document.querySelector('main section.profile div.changePassword');
 const changeEmailForm = document.querySelector('main section.profile div.changeEmail');
 const deleteAccountForm = document.querySelector('main section.profile div.deleteAccount');
