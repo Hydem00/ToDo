@@ -17,32 +17,124 @@ navBtnsProf.forEach(navBtn => {
     })
 })
 
+const changePasswordCPassword = document.querySelector('main section.profile div.changePassword form input#currentPassword');
+const changePasswordNewPassword = document.querySelector('main section.profile div.changePassword form input#newPassword');
+const changePasswordRPassword = document.querySelector('main section.profile div.changePassword form input#repeatNewPassword');
 const changePasswordBtn = document.querySelector('main section.profile div.changePassword form button');
 
-changePasswordBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    changePassword();
-})
+const p = document.querySelector('div.informationText p');
 
+const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
+
+const changePasswordMessage = document.querySelector('main section.profile div.changePassword p');
+
+let passwordsOK = false;
+
+const validatePasswordInputs = () => {
+    if (changePasswordNewPassword.value.match(passwordValidation)) {
+        passwordsOK = true;
+        // document.querySelector('input#password').classList.remove("warning");
+        changePasswordMessage.innerHTML = "";
+        if (changePasswordNewPassword.value === changePasswordRPassword.value) {
+            passwordsOK = true;
+            // document.querySelector('input#cpassword').classList.remove("warning");
+            changePasswordMessage.innerHTML = "";
+        } else {
+            passwordsOK = false;
+            changePasswordMessage.innerHTML = "Passwords are not the same!"
+            // document.querySelector('input#cpassword').classList.add("warning");
+        }
+    } else {
+        passwordsOK = false;
+        changePasswordMessage.innerHTML = "Your password is not safe. Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters."
+        // document.querySelector('input#password').classList.add("warning");
+    }
+
+    return passwordsOK;
+}
+
+function validationPasswordChange(e) {
+
+    if (changePasswordCPassword.value.length != 0 && changePasswordNewPassword.value.length != 0 && changePasswordRPassword.value.length != 0) {
+        e.preventDefault();
+        window.addEventListener('input', validatePasswordInputs);
+        passwordsOK = validatePasswordInputs();
+
+        if (passwordsOK) {
+            changePassword();
+            changePasswordCPassword.value = '';
+            changePasswordNewPassword.value = '';
+            changePasswordRPassword.value = '';
+        }
+
+    }
+
+}
+
+changePasswordBtn.addEventListener('click', validationPasswordChange);
+
+const changeEmailEmail = document.querySelector('main section.profile div.changeEmail form input#email');
+const changeEmailPassword = document.querySelector('main section.profile div.changeEmail form input#password');
 const changeEmailBtn = document.querySelector('main section.profile div.changeEmail form button');
 
-changeEmailBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    changeEmail();
-})
+const emailValidation = /^(?=.{7,100})[\w]{3,}[@]{1}[\w\.]{1,}[.]{1}[\w]{1,}$/gm;
 
+const changeEmailMessage = document.querySelector('main section.profile div.changeEmail p');
+
+let emailOK = false;
+
+const validateEmailInput = () => {
+    if (changeEmailEmail.value.match(emailValidation)) {
+        emailOK = true;
+        // document.querySelector('input#email').classList.remove("warning");
+        changeEmailMessage.innerHTML = "";
+    } else {
+        emailOK = false;
+        changeEmailMessage.innerHTML = "Provided e-mail is invalid!";
+        // document.querySelector('input#email').classList.add("warning");
+    }
+    return emailOK;
+}
+
+function validationEmailChange(e) {
+
+    if (changeEmailEmail.value.length != 0 && changeEmailPassword.value.length != 0) {
+        e.preventDefault();
+        window.addEventListener('input', validateEmailInput);
+        emailOK = validateEmailInput();
+
+        if (emailOK) {
+            changeEmail();
+            changeEmailEmail.value = '';
+            changeEmailPassword.value = '';
+        }
+
+    }
+
+}
+
+changeEmailBtn.addEventListener('click', validationEmailChange);
+
+const deleteAccountPassword = document.querySelector('main section.profile div.deleteAccount form input');
 const deleteAccountBtn = document.querySelector('main section.profile div.deleteAccount form button');
 
 deleteAccountBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    deleteAccount();
+    if (deleteAccountPassword.value.length != 0) {
+        e.preventDefault();
+        deleteAccount();
+        deleteAccountPassword.value = '';
+    }
 })
 
+const nick = document.querySelector('main section.profile div.additionalInformations form input');
 const addInformationsBtn = document.querySelector('main section.profile div.additionalInformations form button');
 
 addInformationsBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    updateInformations();
+    if (nick.value.length != 0) {
+        e.preventDefault();
+        updateInformations();
+        nick.value = '';
+    }
 })
 
 const chooseProfileOptionBtns = document.querySelectorAll('main section.profile div.profileButtons button');

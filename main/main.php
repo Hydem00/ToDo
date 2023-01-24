@@ -128,9 +128,9 @@ if(!$auth->isLogged()){
         <div class="changePassword">
           <h2>Change Your Password</h2>
           <form method="POST">
-            <input type="password" name="currpass" placeholder="Enter Current Password">
-            <input type="password" name="newpass" placeholder="Enter New Password">
-            <input type="password" name="repeatnewpass" placeholder="Repeat New Password">
+            <input type="password" id="currentPassword" name="currpass" placeholder="Enter Current Password" required>
+            <input type="password" id="newPassword" name="newpass" placeholder="Enter New Password" required>
+            <input type="password" id="repeatNewPassword" name="repeatnewpass" placeholder="Repeat New Password" required>
             <button>Set New Password</button>
           </form>
           <p></p>
@@ -138,8 +138,8 @@ if(!$auth->isLogged()){
         <div class="changeEmail">
           <h2>Change Your Email</h2>
           <form method="POST">
-            <input type="email" name="email" placeholder="Enter New Email">
-            <input type="password" name="password" placeholder="Enter Your Password">
+            <input type="email" id="email" name="email" placeholder="Enter New Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
             <button>Set New Email</button>
           </form>
           <p></p>
@@ -147,7 +147,7 @@ if(!$auth->isLogged()){
         <div class="deleteAccount">
           <h2>Delete your Account</h2>
           <form method="POST">
-            <input type="password" name="password" placeholder="Enter Your Password">
+            <input type="password" name="password" placeholder="Enter Your Password" required>
             <button>Delete your account</button>
           </form>
           <p></p>
@@ -155,7 +155,7 @@ if(!$auth->isLogged()){
         <div class="additionalInformations">
           <h2>Set/Change Your Nickname</h2>
           <form method="POST">
-            <input type="text" maxlength="15" name="nick" placeholder="Enter New Nickname">
+            <input type="text" maxlength="15" name="nick" placeholder="Enter New Nickname" required>
             <button>Add informations</button>
           </form>
           <p></p>

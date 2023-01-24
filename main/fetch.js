@@ -289,11 +289,12 @@ async function deleteAccount() {
     let deleteAccountResponse = await odp.json();
 
     const deleteAccountMessage = document.querySelector('main section.profile div.deleteAccount p');
-    deleteAccountMessage.textContent = deleteAccountResponse.message;
 
     if (!deleteAccountResponse.error) {
         document.querySelector('main section.profile div.deleteAccount form input').value = '';
         window.location.reload();
+    } else {
+        deleteAccountMessage.textContent = deleteAccountResponse.message;
     }
 
 
@@ -369,5 +370,5 @@ async function getLoginStatus() {
     });
 
     loginStatus = await response.json();
-    console.log(loginStatus);
+    // console.log(loginStatus);
 }
