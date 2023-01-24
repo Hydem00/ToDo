@@ -1,6 +1,6 @@
 const inputSubmit = document.querySelector('form input#submit');
 const email = document.querySelector('#email');
-const emailValidation = /^(?=.{7,100})[\w]{3,}[@]{1}[\w\.]{1,}[.]{1}[\w]{1,}$/gm;
+const emailValidation = /^(?=.{7,100})[\w\.\-]{3,}[@]{1}[\w\.\-]{1,}[.]{1}[\w]{1,}$/gm;
 
 let flag = false;
 

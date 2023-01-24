@@ -77,7 +77,7 @@ const changeEmailEmail = document.querySelector('main section.profile div.change
 const changeEmailPassword = document.querySelector('main section.profile div.changeEmail form input#password');
 const changeEmailBtn = document.querySelector('main section.profile div.changeEmail form button');
 
-const emailValidation = /^(?=.{7,100})[\w]{3,}[@]{1}[\w\.]{1,}[.]{1}[\w]{1,}$/gm;
+const emailValidation = /^(?=.{7,100})[\w\.\-]{3,}[@]{1}[\w\.\-]{1,}[.]{1}[\w]{1,}$/gm;
 
 const changeEmailMessage = document.querySelector('main section.profile div.changeEmail p');
 
