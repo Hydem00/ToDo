@@ -61,24 +61,29 @@ function popUpEdit() {
 
     const exitChoosingElements = document.querySelectorAll('section.lists, nav.menuMobile ul li:nth-of-type(1) a,nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(4), nav.menuDesktop ul li:nth-of-type(1) a,nav.menuDesktop ul li:nth-of-type(2) a, nav.menuDesktop ul li:nth-of-type(4)');
 
-    editListBtnNav.forEach(editListBtn => {
-        editListBtn.addEventListener('click', () => {
-            choosingIsActive = true;
-            divChooseList.style.top = '0';
+    const listsSection = document.querySelector('main section.lists');
 
-            listsToChoose.forEach((listToChoose) => {
-                listToChoose.addEventListener('click', popUpEditFunctionality);
+    if (listsSection.contains(document.querySelector('div.list'))) {
+        editListBtnNav.forEach(editListBtn => {
+            editListBtn.addEventListener('click', () => {
+                choosingIsActive = true;
+                divChooseList.style.top = '0';
 
-                exitChoosingElements.forEach(exitElement=>{
-                    exitElement.addEventListener('click', function exitChoosing() {
-                        divChooseList.style.top = '-50%';
-                        listToChoose.removeEventListener('click', popUpEditFunctionality);
-                        choosingIsActive = false;
+                listsToChoose.forEach((listToChoose) => {
+                    listToChoose.addEventListener('click', popUpEditFunctionality);
+
+                    exitChoosingElements.forEach(exitElement => {
+                        exitElement.addEventListener('click', function exitChoosing() {
+                            divChooseList.style.top = '-50%';
+                            listToChoose.removeEventListener('click', popUpEditFunctionality);
+                            choosingIsActive = false;
+                        })
                     })
                 })
             })
         })
-    })
+    }
+
 
 
 }
