@@ -10,6 +10,16 @@ window.onload = function () {
     }
 }
 
+function preventBack() {
+    window.history.forward();
+}
+
+setTimeout("preventBack()", 0);
+
+window.onunload = function () {
+    null
+};
+
 async function addList() {
     const form = document.querySelector("div.popUpAdd div.modal-content form");
     const dataToSend = new FormData(form);
