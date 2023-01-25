@@ -45,7 +45,10 @@ if(!$auth->isLogged()){
       <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
     </ul>
 </nav>
-<div class="wrap">
+<div class="wrap"> 
+  <div class="chooseList">
+    <p>Click on the list you want to edit</p>
+  </div>
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -61,9 +64,7 @@ if(!$auth->isLogged()){
   </header>
   
     <main>
-      <div class="chooseList">
-        <p>Click on the list you want to edit</p>
-      </div>
+     
       <section class="lists">
         <h1>Your Lists</h1>
         <div class="addList"><i class="fa-solid fa-plus"></i></div>
