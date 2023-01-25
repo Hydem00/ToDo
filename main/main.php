@@ -61,7 +61,7 @@ if(!$auth->isLogged()){
   </header>
   
     <main>
-      <div class="chooseList">
+    <div class="chooseList">
         <p>Click on the list you want to edit</p>
       </div>
       <section class="lists">

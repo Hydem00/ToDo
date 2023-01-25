@@ -177,7 +177,7 @@ nav.menuDesktop {
 }
 @media (min-width: 820px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 200%;
+    margin-top: 130%;
   }
   nav.menuMobile ul li a {
     font-size: 3.5rem;
@@ -187,9 +187,6 @@ nav.menuDesktop {
   nav.menuMobile {
     width: 10%;
   }
-  nav.menuMobile ul {
-    margin-top: 10px;
-  }
   nav.menuMobile ul li a {
     font-size: 1.6rem;
   }
@@ -198,6 +195,14 @@ nav.menuDesktop {
   }
 }
 @media (min-width: 844px) and (orientation: landscape) {
+  nav.menuMobile ul li a {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 800px) and (orientation: landscape) and (max-height: 650px) {
+  nav.menuMobile ul {
+    margin-top: 20%;
+  }
   nav.menuMobile ul li a {
     font-size: 1.5rem;
   }
@@ -1667,9 +1672,11 @@ div.wrap main section.menu form button:hover {
 @media (min-width: 896px) and (orientation: landscape) {
   div.wrap main section.menu h2 {
     width: 75%;
+    font-size: 2rem;
   }
   div.wrap main section.menu p {
     width: 90%;
+    font-size: 1.7rem;
   }
   div.wrap main section.menu div.events div.listEvent {
     max-width: 700px;
@@ -1774,7 +1781,7 @@ div.wrap main section.menu form button:hover {
   }
   div.wrap main section.menu div.events div.addEventBtn {
     font-size: 4rem;
-    margin: 20px 0;
+    margin: 50px 0;
   }
   div.wrap main section.menu div.events div.addEventBtn i {
     height: 12vh;
@@ -1937,6 +1944,12 @@ main section.profile div.changePassword form button:hover, main section.profile 
   background-color: #179CF0;
   color: white;
 }
+main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.8rem;
+}
 main section.profile div.profileInfo {
   padding-left: 10px;
 }
@@ -1989,10 +2002,18 @@ main section.profile div.profileButtons button:hover {
     width: 60%;
   }
 }
+@media (min-width: 400px) and (orientation: portrait) {
+  main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 700px) and (orientation: landscape) {
   main section.profile {
     width: 85%;
     margin: 0 auto;
+  }
+  main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
@@ -2852,7 +2873,7 @@ div.chooseList p {
 @media (min-width: 720px) and (orientation: landscape) {
   .modal .modal-content {
     width: 50%;
-    height: 85%;
+    height: 65%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -2970,7 +2991,7 @@ div.chooseList p {
 @media (min-width: 912px) and (orientation: portrait) {
   .modal .modal-content {
     height: 40%;
-    width: 50%;
+    width: 65%;
   }
 }
 @media (min-width: 930px) and (orientation: landscape) {
@@ -2992,7 +3013,7 @@ div.chooseList p {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 70%;
+    height: 50%;
     width: 45%;
   }
   .modal .modal-content .close {
