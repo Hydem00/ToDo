@@ -46,9 +46,7 @@ if(!$auth->isLogged()){
     </ul>
 </nav>
 <div class="wrap"> 
-  <div class="chooseList">
-    <p>Click on the list you want to edit</p>
-  </div>
+  
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -62,7 +60,9 @@ if(!$auth->isLogged()){
       </p>
     </div>
   </header>
-  
+  <div class="chooseList">
+    <p>Click on the list you want to edit</p>
+  </div>
     <main>
      
       <section class="lists">
