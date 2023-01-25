@@ -46,7 +46,7 @@ function popUpEdit() {
 
     const popUpEditFunctionality = function () {
         listID = this.dataset.numberOfList;
-        divChooseList.style.top = '-50%';
+        divChooseList.style.display = "none";
 
         modalEdit.style.display = "block";
         listTitleEdit.value = document.querySelector(`div.list[data-number-of-list='${listID}'] h1`).textContent;
@@ -67,14 +67,14 @@ function popUpEdit() {
         editListBtnNav.forEach(editListBtn => {
             editListBtn.addEventListener('click', () => {
                 choosingIsActive = true;
-                divChooseList.style.top = '0';
+                divChooseList.style.display = "flex";
 
                 listsToChoose.forEach((listToChoose) => {
                     listToChoose.addEventListener('click', popUpEditFunctionality);
 
                     exitChoosingElements.forEach(exitElement => {
                         exitElement.addEventListener('click', function exitChoosing() {
-                            divChooseList.style.top = '-50%';
+                            divChooseList.style.display = "none";
                             listToChoose.removeEventListener('click', popUpEditFunctionality);
                             choosingIsActive = false;
                         })
