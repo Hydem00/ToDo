@@ -76,7 +76,7 @@ if(!$auth->isLogged()){
       <section class="calendar">
         <div id="calendar">
         </div>
-      </section>
+      </section> 
       <section class="menu">
         <i class="fa-solid fa-arrow-up"></i>
         <h2></h2>
