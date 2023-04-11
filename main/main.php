@@ -31,7 +31,7 @@ if(!$auth->isLogged()){
 <body>
 <nav class="menuMobile">
     <ul>
-      <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
       <li><a href="#"><i class="fa-solid fa-clipboard-list"></i></a></li>
       <li><a href="#" class="addList"><i class="fa-solid fa-plus"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-pen-to-square"></i></a></li>
@@ -41,7 +41,7 @@ if(!$auth->isLogged()){
 </nav>
 <nav class="menuDesktop">
     <ul>
-      <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
       <li><a href="#"><i class="fa-solid fa-clipboard-list"></i></a></li>
       <li><a href="#" class="addList"><i class="fa-solid fa-plus"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-pen-to-square"></i></a></li>
