@@ -25,10 +25,13 @@ if(!$auth->isLogged()){
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/ff5fd0c0f4.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/mainPage.css">
+  <script src="dist/index.global.js"></script>
+  <script src="dist/generateCalendar.js"></script>
 </head>
 <body>
 <nav class="menuMobile">
     <ul>
+      <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
       <li><a href="#"><i class="fa-solid fa-clipboard-list"></i></a></li>
       <li><a href="#" class="addList"><i class="fa-solid fa-plus"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-pen-to-square"></i></a></li>
@@ -38,6 +41,7 @@ if(!$auth->isLogged()){
 </nav>
 <nav class="menuDesktop">
     <ul>
+      <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
       <li><a href="#"><i class="fa-solid fa-clipboard-list"></i></a></li>
       <li><a href="#" class="addList"><i class="fa-solid fa-plus"></i></a></li>
       <li><a href="#"><i class="fa-regular fa-pen-to-square"></i></a></li>
@@ -68,6 +72,10 @@ if(!$auth->isLogged()){
       <section class="lists">
         <h1>Your Lists</h1>
         <div class="addList"><i class="fa-solid fa-plus"></i></div>
+      </section>
+      <section class="calendar">
+        <div id="calendar">
+        </div>
       </section>
       <section class="menu">
         <i class="fa-solid fa-arrow-up"></i>
@@ -207,8 +215,6 @@ if(!$auth->isLogged()){
       <div id="popUpList" class="modal popUp">
         <div class="modal-content">
           <span class="close">&times;</span>
-          
-          
         </div>
       </div>
     </main>
@@ -219,14 +225,15 @@ if(!$auth->isLogged()){
           </div>
       </footer>
 </div>
-  <script src="navigation.js"></script>
-  <script src="fetch.js"></script>  
-  <script src="accountMail.js"></script>
-  <script src="profileSection.js"></script>
-  <script src="popUpAddList.js"></script>
-  <script src="eventsSection.js"></script>
-  <script src="popUpEditList.js"></script>
-  <script src="popUpDeleteList.js"></script>
+  <script src="./js/navigation.js"></script>
+  <script src="./js/fetch.js"></script>  
+  <script src="./js/calendarSection.js"></script>
+  <script src="./js/accountMail.js"></script>
+  <script src="./js/profileSection.js"></script>
+  <script src="./js/popUpAddList.js"></script>
+  <script src="./js/eventsSection.js"></script>
+  <script src="./js/popUpEditList.js"></script>
+  <script src="./js/popUpDeleteList.js"></script>
 
 </body>
 </html>
