@@ -691,10 +691,11 @@ div.wrap main section.calendar #calendar {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
 }
+div.wrap main section.calendar #calendar div.fc-toolbar-chunk:nth-child(1) {
+  display: none;
+}
 div.wrap main section.calendar #calendar div.fc-toolbar-chunk:nth-child(2) {
   margin: 0 auto;
-  -webkit-transform: translateX(-25%);
-          transform: translateX(-25%);
 }
 div.wrap main section.calendar #calendar div.fc-toolbar-chunk:nth-child(2) h2 {
   font-size: 2rem;
