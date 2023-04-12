@@ -1,14 +1,4 @@
-let eventsData, loginStatus;
-
-window.onload = function () {
-  getLists();
-  getProfileInformations();
-  getLoginStatus();
-
-  if (loginStatus) {
-    window.location.reload();
-  }
-};
+let eventsData;
 
 function preventBack() {
   window.history.forward();
@@ -209,6 +199,64 @@ function createEventsElements(eventData) {
     divListEvent.appendChild(divEventRemove);
     divListEvent.appendChild(divColor);
     listsEventsSection.appendChild(divListEvent);
+  }
+}
+
+async function getListsAndEvents() {
+  let url = "functions/events.php?action=showAll";
+  let odp = await fetch(url, {
+    method: "GET",
+    mode: "cors",
+  });
+  eventsData = await odp.json();
+
+  // console.log(eventsData);
+  clearEvents();
+  createEventsElementsCalendar(eventsData);
+}
+
+function createEventsElementsCalendar(eventData) {
+  for (let i = 0; i < eventData.length; i++) {
+    const divListEvent = document.createElement("div");
+    const h1ListTitle = document.createElement("h1");
+    const h1EventTitle = document.createElement("h1");
+    const pTime = document.createElement("p");
+
+    const divColor = document.createElement("div");
+    divColor.classList.add("eventColorCalendar");
+
+    const divEventEdit = document.createElement("div");
+    divEventEdit.classList.add("editListEventCalendar");
+    const buttonEdit = document.createElement("i");
+    buttonEdit.className = "fa-solid fa-pen";
+    divEventEdit.appendChild(buttonEdit);
+
+    const divEventRemove = document.createElement("div");
+    divEventRemove.classList.add("removeListEventCalendar");
+    const buttonRemove = document.createElement("i");
+    buttonRemove.className = "fa-solid fa-trash";
+    divEventRemove.appendChild(buttonRemove);
+
+    divListEvent.classList.add("listEventCalendar");
+    divListEvent.dataset.numberOfListEvent = eventData[i].id;
+
+    h1ListTitle.innerText = eventData[i].nazwa_listy;
+    h1EventTitle.innerText = eventData[i].nazwa_wydarzenia;
+    pTime.innerHTML = eventData[i].czas;
+
+    divListEvent.appendChild(h1ListTitle);
+    divListEvent.appendChild(pTime);
+    divListEvent.appendChild(h1EventTitle);
+
+    divColor.style.backgroundColor = eventData[i].kolor;
+
+    divListEvent.appendChild(divEventEdit);
+    divListEvent.appendChild(divEventRemove);
+    divListEvent.appendChild(divColor);
+
+    document
+      .querySelector(`td.fc-day[data-date='${eventData[i].data}'] .fc-daygrid-day-events`)
+      .appendChild(divListEvent);
   }
 }
 
