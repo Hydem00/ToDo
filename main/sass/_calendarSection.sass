@@ -1,9 +1,241 @@
-td
+@media (min-width: 500px)
+    td
     div.fc-daygrid-day-frame
         // height: 100%
         div.fc-daygrid-day-events
-            height: 100%
+            // height: 100%
+            height: 100px
+            overflow: auto
+            overflow-x: hidden
+            padding-left: 2px
+            &::-webkit-scrollbar
+                width: 8px
+            &::-webkit-scrollbar-thumb
+                background-color: rgba(39, 168, 177, 0.5)
+                border-radius: 20px
+                opacity: 0.5
             div.listEventCalendar
+                display: flex
+                position: relative
+                justify-content: space-between
+                flex-wrap: wrap
                 width: 100%
-                height: 10%
-                background-color: black
+                // height: 10%
+                background-color: rgba(0, 0, 0, 0.5)
+                border-radius: 20px
+                border: 1px solid gray
+                padding: 3px
+                margin-bottom: 10px
+                h1
+                    &:nth-of-type(1)
+                        flex-basis: 100%
+                        margin: 2px
+                        color: yellow
+                        overflow: hidden
+                        text-overflow: ellipsis
+                p
+                    font-size: 0.6rem
+                    flex-basis: 80%
+                    margin: 1px
+                h1
+                    &:nth-of-type(2)
+                        flex-basis: 85%
+                        margin: 1px
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        font-size: 0.6rem
+                div
+                    flex-basis: 30% 
+                    text-align: center
+                    border-radius: 20px
+                    margin-bottom: 2px
+                div
+                    &:nth-of-type(1)
+                        i.fa-pen
+                            font-size: 0.6rem
+                            cursor: pointer
+                            &:hover
+                                color: yellow
+                                transition: 0.3s   
+                    &:nth-of-type(3)
+                        i.fa-trash
+                            font-size: 0.6rem
+                            cursor: pointer
+                            &:hover
+                                color: red
+                                transition: 0.3s 
+    div.wrap
+        main
+            section.calendar
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: space-around
+                align-content: flex-start
+            h1
+                font-size: 0.8rem
+                margin: 5px 0
+                margin-top: 30px
+                width: 100%
+                text-align: center
+                letter-spacing: 2px
+                text-transform: uppercase
+
+        #calendar
+                max-width: 1100px
+                margin: 0 auto
+                font-family: Arial, Helvetica Neue, Helvetica, sans-serif
+                font-size: 14px
+                div.fc-toolbar-chunk:nth-child(1)
+                    display: none
+                div.fc-toolbar-chunk:nth-child(2)
+                    margin: 0 auto
+                    h2
+                        font-size: 2rem
+                div.fc-toolbar-chunk:last-child
+                    display: none
+
+@media (min-width: 800px)
+    td
+    div.fc-daygrid-day-frame
+        // height: 100%
+        div.fc-daygrid-day-events
+            // height: 100%
+            height: 100px
+            overflow: auto
+            overflow-x: hidden
+            padding-left: 2px
+            &::-webkit-scrollbar
+                width: 8px
+            &::-webkit-scrollbar-thumb
+                background-color: rgba(39, 168, 177, 0.5)
+                border-radius: 20px
+                opacity: 0.5
+            div.listEventCalendar
+                display: flex
+                position: relative
+                justify-content: space-between
+                flex-wrap: wrap
+                width: 100%
+                // height: 10%
+                background-color: rgba(0, 0, 0, 0.5)
+                border-radius: 20px
+                border: 1px solid gray
+                padding: 3px
+                margin-bottom: 10px
+                h1
+                    &:nth-of-type(1)
+                        flex-basis: 100%
+                        margin: 2px
+                        color: yellow
+                        overflow: hidden
+                        text-overflow: ellipsis
+                p
+                    font-size: 0.8rem
+                h1
+                    &:nth-of-type(2)
+                        flex-basis: 85%
+                        font-size: 0.8rem
+                div
+                    flex-basis: 30% 
+                div
+                    &:nth-of-type(1)
+                        i.fa-pen
+                            font-size: 0.8rem
+
+                    &:nth-of-type(3)
+                        i.fa-trash
+                            font-size: 0.8rem
+
+
+@media (min-width: 1024px) and (orientation: landscape)
+    td
+    div.fc-daygrid-day-frame
+        // height: 100%
+        div.fc-daygrid-day-events
+            // height: 100%
+            height: 100px
+            overflow: auto
+            overflow-x: hidden
+            padding-left: 2px
+            &::-webkit-scrollbar
+                width: 8px
+            &::-webkit-scrollbar-thumb
+                background-color: rgba(39, 168, 177, 0.5)
+                border-radius: 20px
+                opacity: 0.5
+            div.listEventCalendar
+                display: flex
+                position: relative
+                justify-content: space-between
+                flex-wrap: wrap
+                width: 100%
+                // height: 10%
+                background-color: rgba(0, 0, 0, 0.5)
+                border-radius: 20px
+                border: 1px solid gray
+                padding: 3px
+                margin-bottom: 10px
+                h1
+                    &:nth-of-type(1)
+                        flex-basis: 100%
+                        margin: 2px
+                        color: yellow
+                        overflow: hidden
+                        text-overflow: ellipsis
+                p
+                    font-size: 0.8rem
+                    flex-basis: 30%
+                    margin: 1px
+                h1
+                    &:nth-of-type(2)
+                        flex-basis: 50%
+                        margin: 1px
+                        overflow: hidden
+                        text-overflow: ellipsis
+                div
+                    flex-basis: 30% 
+                    text-align: center
+                    border-radius: 20px
+                    margin-bottom: 2px
+                div
+                    &:nth-of-type(1)
+                        i.fa-pen
+                            cursor: pointer
+                            &:hover
+                                color: yellow
+                                transition: 0.3s   
+                    &:nth-of-type(3)
+                        i.fa-trash
+                            cursor: pointer
+                            &:hover
+                                color: red
+                                transition: 0.3s  
+    div.wrap
+        main
+            section.calendar
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: space-around
+                align-content: flex-start
+            h1
+                font-size: 0.8rem
+                margin: 5px 0
+                margin-top: 30px
+                width: 100%
+                text-align: center
+                letter-spacing: 2px
+                text-transform: uppercase
+
+        #calendar
+                max-width: 1100px
+                margin: 0 auto
+                font-family: Arial, Helvetica Neue, Helvetica, sans-serif
+                font-size: 14px
+                div.fc-toolbar-chunk:nth-child(1)
+                    display: none
+                div.fc-toolbar-chunk:nth-child(2)
+                    margin: 0 auto
+                    h2
+                        font-size: 2rem
+                div.fc-toolbar-chunk:last-child
+                    display: none

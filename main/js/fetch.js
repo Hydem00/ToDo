@@ -41,7 +41,8 @@ async function getLists() {
 function createListsElement(listData) {
   const listsSection = document.querySelector("main section.lists");
   for (let i = 0; i < listData.length + 1; i++) {
-    if (listsSection.contains(document.querySelector("div.list"))) document.querySelector("div.list").remove();
+    if (listsSection.contains(document.querySelector("div.list")))
+      document.querySelector("div.list").remove();
   }
 
   for (let i = 0; i < listData.length; i++) {
@@ -110,8 +111,11 @@ async function editList() {
   });
   let dane = await odp.text();
   modalEdit.style.display = "none";
-  document.querySelector("div.popUpEdit div.modal-content form input").value = "";
-  document.querySelector("div.popUpEdit div.modal-content form textarea").value = "";
+  document.querySelector("div.popUpEdit div.modal-content form input").value =
+    "";
+  document.querySelector(
+    "div.popUpEdit div.modal-content form textarea"
+  ).value = "";
   getLists();
 }
 
@@ -150,7 +154,9 @@ async function getListsEvents() {
 }
 
 function createEventsElements(eventData) {
-  const listsEventsSection = document.querySelector("main section.menu div.events");
+  const listsEventsSection = document.querySelector(
+    "main section.menu div.events"
+  );
 
   for (let i = 0; i < eventData.length; i++) {
     const divListEvent = document.createElement("div");
@@ -180,11 +186,15 @@ function createEventsElements(eventData) {
     divListEvent.dataset.numberOfListEvent = eventData[i].id;
 
     h1Title.innerText = eventData[i].nazwa;
-    pDescription.innerHTML = "<i class='fa-solid fa-pen-nib'></i> " + eventData[i].opis;
-    pDate.innerHTML = "<i class='fa-solid fa-calendar-days'></i> " + eventData[i].data;
+    pDescription.innerHTML =
+      "<i class='fa-solid fa-pen-nib'></i> " + eventData[i].opis;
+    pDate.innerHTML =
+      "<i class='fa-solid fa-calendar-days'></i> " + eventData[i].data;
     pTime.innerHTML = "<i class='fa-solid fa-clock'></i> " + eventData[i].czas;
-    pLocation.innerHTML = "<i class='fa-solid fa-location-dot'></i> " + eventData[i].lokalizacja;
-    pPriority.innerHTML = "<i class='fa-solid fa-star'></i> " + eventData[i].priorytet;
+    pLocation.innerHTML =
+      "<i class='fa-solid fa-location-dot'></i> " + eventData[i].lokalizacja;
+    pPriority.innerHTML =
+      "<i class='fa-solid fa-star'></i> " + eventData[i].priorytet;
 
     divListEvent.appendChild(h1Title);
     divListEvent.appendChild(pDescription);
@@ -251,11 +261,13 @@ function createEventsElementsCalendar(eventData) {
     divColor.style.backgroundColor = eventData[i].kolor;
 
     divListEvent.appendChild(divEventEdit);
-    divListEvent.appendChild(divEventRemove);
     divListEvent.appendChild(divColor);
+    divListEvent.appendChild(divEventRemove);
 
     document
-      .querySelector(`td.fc-day[data-date='${eventData[i].data}'] .fc-daygrid-day-events`)
+      .querySelector(
+        `td.fc-day[data-date='${eventData[i].data}'] .fc-daygrid-day-events`
+      )
       .appendChild(divListEvent);
   }
 }
@@ -298,7 +310,9 @@ async function removeListEvent() {
 }
 
 async function changePassword() {
-  const changePasswordForm = document.querySelector("main section.profile div.changePassword form");
+  const changePasswordForm = document.querySelector(
+    "main section.profile div.changePassword form"
+  );
   const dataToSend = new FormData(changePasswordForm);
   let odp = await fetch("functions/profile.php?action=changePassword", {
     method: "POST",
@@ -307,18 +321,28 @@ async function changePassword() {
   });
   let changePasswordResponse = await odp.json();
 
-  const changePasswordMessage = document.querySelector("main section.profile div.changePassword p");
+  const changePasswordMessage = document.querySelector(
+    "main section.profile div.changePassword p"
+  );
   changePasswordMessage.textContent = changePasswordResponse.message;
 
   if (!changePasswordResponse.error) {
-    document.querySelector("main section.profile div.changePassword form input:nth-of-type(1)").value = "";
-    document.querySelector("main section.profile div.changePassword form input:nth-of-type(2)").value = "";
-    document.querySelector("main section.profile div.changePassword form input:nth-of-type(3)").value = "";
+    document.querySelector(
+      "main section.profile div.changePassword form input:nth-of-type(1)"
+    ).value = "";
+    document.querySelector(
+      "main section.profile div.changePassword form input:nth-of-type(2)"
+    ).value = "";
+    document.querySelector(
+      "main section.profile div.changePassword form input:nth-of-type(3)"
+    ).value = "";
   }
 }
 
 async function changeEmail() {
-  const changeEmailForm = document.querySelector("main section.profile div.changeEmail form");
+  const changeEmailForm = document.querySelector(
+    "main section.profile div.changeEmail form"
+  );
   const dataToSend = new FormData(changeEmailForm);
   let odp = await fetch("functions/profile.php?action=changeEmail", {
     method: "POST",
@@ -327,19 +351,27 @@ async function changeEmail() {
   });
   let changeEmailResponse = await odp.json();
 
-  const changeEmailMessage = document.querySelector("main section.profile div.changeEmail p");
+  const changeEmailMessage = document.querySelector(
+    "main section.profile div.changeEmail p"
+  );
   changeEmailMessage.textContent = changeEmailResponse.message;
 
   if (!changeEmailResponse.error) {
-    document.querySelector("main section.profile div.changeEmail form input:nth-of-type(1)").value = "";
-    document.querySelector("main section.profile div.changeEmail form input:nth-of-type(2)").value = "";
+    document.querySelector(
+      "main section.profile div.changeEmail form input:nth-of-type(1)"
+    ).value = "";
+    document.querySelector(
+      "main section.profile div.changeEmail form input:nth-of-type(2)"
+    ).value = "";
   }
 
   getProfileInformations();
 }
 
 async function deleteAccount() {
-  const deleteAccountForm = document.querySelector("main section.profile div.deleteAccount form");
+  const deleteAccountForm = document.querySelector(
+    "main section.profile div.deleteAccount form"
+  );
   const dataToSend = new FormData(deleteAccountForm);
   let odp = await fetch("functions/profile.php?action=deleteUser", {
     method: "POST",
@@ -348,10 +380,14 @@ async function deleteAccount() {
   });
   let deleteAccountResponse = await odp.json();
 
-  const deleteAccountMessage = document.querySelector("main section.profile div.deleteAccount p");
+  const deleteAccountMessage = document.querySelector(
+    "main section.profile div.deleteAccount p"
+  );
 
   if (!deleteAccountResponse.error) {
-    document.querySelector("main section.profile div.deleteAccount form input").value = "";
+    document.querySelector(
+      "main section.profile div.deleteAccount form input"
+    ).value = "";
     window.location.reload();
   } else {
     deleteAccountMessage.textContent = deleteAccountResponse.message;
@@ -359,7 +395,9 @@ async function deleteAccount() {
 }
 
 async function updateInformations() {
-  const addInformationsForm = document.querySelector("main section.profile div.additionalInformations form");
+  const addInformationsForm = document.querySelector(
+    "main section.profile div.additionalInformations form"
+  );
   const dataToSend = new FormData(addInformationsForm);
   let odp = await fetch("functions/profile.php?action=updateInformations", {
     method: "POST",
@@ -368,11 +406,15 @@ async function updateInformations() {
   });
   let addInformationResponse = await odp.json();
 
-  const addInformationMessage = document.querySelector("main section.profile div.additionalInformations p");
+  const addInformationMessage = document.querySelector(
+    "main section.profile div.additionalInformations p"
+  );
   addInformationMessage.textContent = addInformationResponse.message;
 
   if (!addInformationResponse.error) {
-    document.querySelector("main section.profile div.additionalInformations form input").value = "";
+    document.querySelector(
+      "main section.profile div.additionalInformations form input"
+    ).value = "";
   }
 
   getProfileInformations();
