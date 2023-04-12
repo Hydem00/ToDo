@@ -1016,6 +1016,15 @@ div.wrap main section.lists div.addList i.active {
     height: 124px;
   }
 }
+td div.fc-daygrid-day-frame div.fc-daygrid-day-events {
+  height: 100%;
+}
+td div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar {
+  width: 100%;
+  height: 10%;
+  background-color: black;
+}
+
 div.wrap {
   min-height: 100vh;
 }
