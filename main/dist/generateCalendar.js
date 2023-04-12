@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function renderCalendar() {
   var calendarEl = document.getElementById("calendar");
 
   const now = new Date();
@@ -74,4 +74,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   calendar.render();
-});
+}
