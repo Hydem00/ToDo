@@ -7,9 +7,24 @@ const displayListsNavBtns = document.querySelectorAll(
 const listsSection = document.querySelector("section.lists");
 const calendarSection = document.querySelector("section.calendar");
 
+function clearCalendar() {
+  const calendarListsEvents = document.querySelector("main section.calendar");
+  let eventDetected = false;
+
+  do {
+    if (calendarListsEvents.contains(document.querySelector("div.listEventCalendar"))) {
+      document.querySelector("div.listEventCalendar").remove();
+      eventDetected = true;
+    } else eventDetected = false;
+  } while (eventDetected);
+}
+
 function changeLayer() {
   listsSection.style.display = "none";
   calendarSection.style.display = "block";
+  renderCalendar();
+  clearCalendar();
+  getListsAndEvents();
 }
 
 calendarNavBtns.forEach((calendarNavBtn) => {
