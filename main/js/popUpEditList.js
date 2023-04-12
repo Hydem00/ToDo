@@ -60,7 +60,7 @@ function popUpEdit() {
   };
 
   const exitChoosingElements = document.querySelectorAll(
-    "section.lists, nav.menuMobile ul li:nth-of-type(2) a,nav.menuMobile ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(5), nav.menuDesktop ul li:nth-of-type(2) a,nav.menuDesktop ul li:nth-of-type(3) a, nav.menuDesktop ul li:nth-of-type(5)"
+    "section.lists, nav.menuMobile ul li:nth-of-type(1) a, section.lists, nav.menuMobile ul li:nth-of-type(2) a,nav.menuMobile ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(5), nav.menuDesktop ul li:nth-of-type(1), nav.menuDesktop ul li:nth-of-type(2) a,nav.menuDesktop ul li:nth-of-type(3) a, nav.menuDesktop ul li:nth-of-type(5)"
   );
 
   const listsSection = document.querySelector("main section.lists");
