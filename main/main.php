@@ -226,6 +226,7 @@ if(!$auth->isLogged()){
       </footer>
 </div>
   <script src="./js/navigation.js"></script>
+  <script src="./js/windowOnLoad.js"></script>
   <script src="./js/fetch.js"></script>  
   <script src="./js/calendarSection.js"></script>
   <script src="./js/accountMail.js"></script>
