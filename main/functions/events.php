@@ -16,6 +16,9 @@ if(!$auth->isLogged()){
 }
 
 switch ($_GET["action"]) {
+    case "showAll":
+        showEventsAndLists();
+        break;
     case "show":
         showEvents();
         break;
@@ -31,6 +34,19 @@ switch ($_GET["action"]) {
     default:
         echo "Not selected action.";
         break;
+}
+
+function showEventsAndLists(){
+    global $user_id;
+    global $dbh;
+
+    $stmt = $dbh->prepare('SELECT listy.nazwa AS nazwa_listy, wydarzenia.id, wydarzenia.data, wydarzenia.nazwa AS nazwa_wydarzenia, wydarzenia.czas FROM listy INNER JOIN wydarzenia ON listy.id=wydarzenia.lista_id WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+
+    $listsEvents = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($listsEvents);
 }
 
 function showEvents(){
