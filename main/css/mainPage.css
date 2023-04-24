@@ -1096,9 +1096,6 @@ div.wrap main section.lists div.addList i.active {
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
   }
-  div.wrap #calendar div.fc-toolbar-chunk:nth-child(1) {
-    display: none;
-  }
   div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
     margin: 0 auto;
   }
@@ -1219,9 +1216,6 @@ div.wrap main section.lists div.addList i.active {
     margin: 0 auto;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
-  }
-  div.wrap #calendar div.fc-toolbar-chunk:nth-child(1) {
-    display: none;
   }
   div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
     margin: 0 auto;
@@ -1394,9 +1388,6 @@ div.wrap main section.lists div.addList i.active {
     margin: 0 auto;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
-  }
-  div.wrap #calendar div.fc-toolbar-chunk:nth-child(1) {
-    display: none;
   }
   div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
     margin: 0 auto;

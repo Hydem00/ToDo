@@ -6,6 +6,7 @@ window.onload = function () {
   getLoginStatus();
   renderCalendar();
   getListsAndEvents();
+  changeMonth();
 
   if (loginStatus) {
     window.location.reload();
