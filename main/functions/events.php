@@ -40,7 +40,7 @@ function showEventsAndLists(){
     global $user_id;
     global $dbh;
 
-    $stmt = $dbh->prepare('SELECT listy.nazwa AS nazwa_listy, wydarzenia.id, wydarzenia.data, wydarzenia.nazwa AS nazwa_wydarzenia, wydarzenia.czas, wydarzenia.kolor FROM listy INNER JOIN wydarzenia ON listy.id=wydarzenia.lista_id WHERE user_id = :user_id');
+    $stmt = $dbh->prepare('SELECT listy.nazwa AS nazwa_listy, wydarzenia.id, wydarzenia.data, wydarzenia.nazwa AS nazwa_wydarzenia, wydarzenia.czas, wydarzenia.kolor FROM listy INNER JOIN wydarzenia ON listy.id=wydarzenia.lista_id WHERE user_id = :user_id ORDER BY czas ASC;') ;
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
