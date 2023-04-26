@@ -22,6 +22,9 @@ switch ($_GET["action"]) {
     case "show":
         showEvents();
         break;
+    case "showDetails":
+        showDetails();
+        break;    
     case "add":
         addEvent();
         break;
@@ -47,6 +50,20 @@ function showEventsAndLists(){
     $listsEvents = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($listsEvents);
+}
+
+function showDetails(){
+    global $user_id;
+    global $dbh;
+
+    $event_id = $_GET['event_id'];
+    $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :event_id ORDER BY priorytet DESC');
+    $stmt->bindParam(':event_id', $event_id);
+    $stmt->execute();
+
+    $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($events);
 }
 
 function showEvents(){
