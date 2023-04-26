@@ -307,16 +307,9 @@ function renderDetailsToPopUp(eventDetails) {
   }
 
   const divEventDetails = document.createElement('div');
-  const h1ListTitle = document.createElement('h1');
-  const pListDescription = document.createElement('p');
 
-  const h1EventTitle = document.createElement('h1');
-  const pEventTime = document.createElement('p');
-  const pEventDescription = document.createElement('p');
-  const pEventLocalization = document.createElement('p');
-  const pEventPriority = document.createElement('p');
-  const divEventColor = document.createElement('div');
-  divEventColor.classList.add('eventColorCalendar');
+  const divHeader = document.createElement('div');
+  divHeader.classList.add('eventDetailsHeader');
 
   const divEventEdit = document.createElement('div');
   divEventEdit.classList.add('editListEventCalendar');
@@ -324,11 +317,33 @@ function renderDetailsToPopUp(eventDetails) {
   buttonEdit.className = 'fa-solid fa-pen';
   divEventEdit.appendChild(buttonEdit);
 
+  const h1PopUpInfo = document.createElement('h2');
+  h1PopUpInfo.innerText = 'Event Properties';
+
   const divEventRemove = document.createElement('div');
   divEventRemove.classList.add('removeListEventCalendar');
   const buttonRemove = document.createElement('i');
   buttonRemove.className = 'fa-solid fa-trash';
   divEventRemove.appendChild(buttonRemove);
+
+  divHeader.appendChild(divEventEdit);
+  divHeader.appendChild(h1PopUpInfo);
+  divHeader.appendChild(divEventRemove);
+
+  const divListInfo = document.createElement('div');
+  divListInfo.classList.add('listInfo');
+  const h1ListTitle = document.createElement('h1');
+  const pListDescription = document.createElement('p');
+
+  const divEventInfo = document.createElement('div');
+  divEventInfo.classList.add('eventInfo');
+  const h1EventTitle = document.createElement('h1');
+  const pEventTime = document.createElement('p');
+  const pEventDescription = document.createElement('p');
+  const pEventLocalization = document.createElement('p');
+  const pEventPriority = document.createElement('p');
+  const divEventColor = document.createElement('div');
+  divEventColor.classList.add('eventColorCalendar');
 
   divEventDetails.classList.add('eventDetails');
 
@@ -342,7 +357,7 @@ function renderDetailsToPopUp(eventDetails) {
 
   h1EventTitle.innerText = eventDetails[0].nazwa;
 
-  if (eventDetails[0].opis) {
+  if (eventDetails[0].opis == '') {
     pEventDescription.innerText = '...';
   } else {
     pEventDescription.innerText = eventDetails[0].opis;
@@ -358,20 +373,22 @@ function renderDetailsToPopUp(eventDetails) {
 
   pEventPriority.innerHTML = eventDetails[0].priorytet;
 
-  divEventDetails.appendChild(divEventEdit);
-  divEventDetails.appendChild(divEventRemove);
+  divListInfo.appendChild(h1ListTitle);
+  divListInfo.appendChild(pListDescription);
 
-  divEventDetails.appendChild(h1ListTitle);
-  divEventDetails.appendChild(pListDescription);
-  divEventDetails.appendChild(h1EventTitle);
-  divEventDetails.appendChild(pEventDescription);
-  divEventDetails.appendChild(pEventTime);
-  divEventDetails.appendChild(pEventLocalization);
-  divEventDetails.appendChild(pEventPriority);
+  divEventInfo.appendChild(h1EventTitle);
+  divEventInfo.appendChild(pEventDescription);
+  divEventInfo.appendChild(pEventTime);
+  divEventInfo.appendChild(pEventLocalization);
+  divEventInfo.appendChild(pEventPriority);
 
   divEventColor.style.backgroundColor = eventDetails[0].kolor;
 
-  divEventDetails.appendChild(divEventColor);
+  divEventInfo.appendChild(divEventColor);
+
+  divEventDetails.appendChild(divHeader);
+  divEventDetails.appendChild(divListInfo);
+  divEventDetails.appendChild(divEventInfo);
 
   popUp.appendChild(divEventDetails);
 }

@@ -215,7 +215,7 @@ if(!$auth->isLogged()){
       <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <h2>Event Properties</h2>
+          
         </div>
       </div>
       <div id="popUpList" class="modal popUp">
