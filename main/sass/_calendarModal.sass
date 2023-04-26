@@ -1,0 +1,143 @@
+main
+    div.modal-content
+        div.eventDetails
+            background-color: rgb(38, 62, 92)
+            border-radius: 20px
+            overflow: auto
+            overflow-x: hidden
+            height: 300px
+            &::-webkit-scrollbar
+                width: 8px
+            &::-webkit-scrollbar-thumb
+                background-color: rgba(255, 255, 255, 0.5)
+                border-radius: 20px
+                opacity: 0.5
+            div.eventDetailsHeader
+                margin-top: 10px
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                align-items: center
+                h2
+                    flex-basis: 30%
+                    color: white
+                div.editListEventCalendar
+                    flex-basis: 20%
+                    i
+                         position: static
+                         transform: translate(0)
+                         font-size: 1.5rem
+                         color: yellow
+                         cursor: pointer
+                         transition: 0.3s
+                         &:hover
+                            color: black
+                            text-shadow: 0 0 5px white
+                div.removeListEventCalendar
+                    flex-basis: 20%
+                    i
+                         position: static
+                         transform: translate(0)
+                         font-size: 1.5rem
+                         cursor: pointer
+                         transition: 0.3s
+                         &:hover
+                            color: black
+                            text-shadow: 0 0 5px white
+            div.listInfo
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: 0 3px
+                h1
+                    text-shadow: 0 0 10px yellow
+                    color: white
+                    word-break: break-all
+                    margin: 10px 0
+                    font-size: 1rem
+                p
+                    word-break: break-all
+                    color: rgb(205 197 197)
+                    font-size: 0.7rem
+            div.eventInfo
+                border-top: 2px solid gray
+                margin-top: 10px
+                padding: 0 3px
+                h1
+                    text-shadow: 0 0 10px yellow
+                    color: white
+                    word-break: break-all
+                    margin: 10px 0
+                    font-size: 1rem
+                p
+                    word-break: break-all
+                    color: rgb(205 197 197)
+                    font-size: 0.7rem
+                    margin-bottom: 5px
+
+@media (min-width: 400px) and (orientation: portrait) 
+    main
+        div.modal-content
+            div.eventDetails
+                height: auto
+@media (orientation: landscape)
+    main
+        div.modal-content
+            div.eventDetails
+                height: 200px
+
+@media (min-width: 560px) and (orientation: landscape)
+    main
+        div.modal-content
+            margin-top: 20px
+            div.eventDetails
+                height: auto
+
+@media (min-width: 600px) and (orientation: portrait) 
+    main
+        div.modal-content
+            div.eventDetails
+                div.eventDetailsHeader
+                    h2
+                        font-size: 1.5rem
+                    div.removeListEventCalendar
+                        i
+                            font-size: 2rem
+                    div.editListEventCalendar
+                        i
+                            font-size: 2rem
+                div.listInfo
+                    h1
+                        font-size: 1.4rem
+                    p
+                        font-size: 1rem
+                div.eventInfo
+                    h1
+                        font-size: 1.4rem
+                    p
+                        font-size: 1rem
+
+@media (min-width: 667px) and (orientation: landscape)
+   main
+        div.modal-content
+            div.eventDetails
+                div.eventDetailsHeader
+                    h2
+                        font-size: 1.5rem
+                    div.removeListEventCalendar
+                        i
+                            font-size: 2rem
+                    div.editListEventCalendar
+                        i
+                            font-size: 2rem
+                div.listInfo
+                    h1
+                        font-size: 1.4rem
+                    p
+                        font-size: 1rem
+                div.eventInfo
+                    h1
+                        font-size: 1.4rem
+                    p
+                        font-size: 1rem
