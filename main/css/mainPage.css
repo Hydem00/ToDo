@@ -43,7 +43,6 @@ nav.menuMobile {
   z-index: 2;
 }
 nav.menuMobile ul {
-  margin-top: 60px;
   list-style-type: none;
 }
 nav.menuMobile ul li {
@@ -79,7 +78,7 @@ nav.menuDesktop {
 }
 @media (min-width: 360px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 120%;
+    margin-top: 80%;
   }
   nav.menuMobile ul li a {
     font-size: 1.9rem;
@@ -100,7 +99,7 @@ nav.menuDesktop {
 }
 @media (min-width: 500px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 70%;
+    margin-top: 40%;
   }
   nav.menuMobile ul li a {
     font-size: 2.2rem;
@@ -114,7 +113,7 @@ nav.menuDesktop {
     margin-top: 0;
   }
   nav.menuMobile ul li a {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
   nav.menuMobile ul li:nth-last-of-type(2) {
     margin-top: 20%;
@@ -122,7 +121,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   nav.menuMobile ul {
     margin-top: 10px;
@@ -133,7 +132,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) and (max-height: 280px) {
   nav.menuMobile ul li a {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
   nav.menuMobile ul {
     margin-top: 0;
@@ -161,7 +160,7 @@ nav.menuDesktop {
     margin-top: 15px;
   }
   nav.menuMobile ul li a {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 750px) {
@@ -196,7 +195,7 @@ nav.menuDesktop {
 }
 @media (min-width: 844px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 800px) and (orientation: landscape) and (max-height: 650px) {
@@ -204,7 +203,7 @@ nav.menuDesktop {
     margin-top: 20%;
   }
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 900px) and (orientation: portrait) {
