@@ -1105,6 +1105,9 @@ div.wrap main section.lists div.addList i.active {
   div.wrap #calendar div.fc-toolbar-chunk:last-child {
     display: none;
   }
+  div.fc-daygrid-bg-harness {
+    z-index: -1;
+  }
 }
 @media (min-width: 500px) {
   div.fc-daygrid-day-frame div.fc-daygrid-day-events {
