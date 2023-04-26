@@ -212,6 +212,12 @@ if(!$auth->isLogged()){
           <button>NO</button>
         </div>
       </div>
+      <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Event Properties</h2>
+        </div>
+      </div>
       <div id="popUpList" class="modal popUp">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -235,6 +241,7 @@ if(!$auth->isLogged()){
   <script src="./js/eventsSection.js"></script>
   <script src="./js/popUpEditList.js"></script>
   <script src="./js/popUpDeleteList.js"></script>
+  <script src="./js/popUpEventProperties.js"></script>
 
 </body>
 </html>
