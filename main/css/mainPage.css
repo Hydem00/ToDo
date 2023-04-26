@@ -43,7 +43,6 @@ nav.menuMobile {
   z-index: 2;
 }
 nav.menuMobile ul {
-  margin-top: 60px;
   list-style-type: none;
 }
 nav.menuMobile ul li {
@@ -79,7 +78,7 @@ nav.menuDesktop {
 }
 @media (min-width: 360px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 120%;
+    margin-top: 80%;
   }
   nav.menuMobile ul li a {
     font-size: 1.9rem;
@@ -100,7 +99,7 @@ nav.menuDesktop {
 }
 @media (min-width: 500px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 70%;
+    margin-top: 40%;
   }
   nav.menuMobile ul li a {
     font-size: 2.2rem;
@@ -114,7 +113,7 @@ nav.menuDesktop {
     margin-top: 0;
   }
   nav.menuMobile ul li a {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
   nav.menuMobile ul li:nth-last-of-type(2) {
     margin-top: 20%;
@@ -122,7 +121,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   nav.menuMobile ul {
     margin-top: 10px;
@@ -133,7 +132,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) and (max-height: 280px) {
   nav.menuMobile ul li a {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
   nav.menuMobile ul {
     margin-top: 0;
@@ -161,7 +160,7 @@ nav.menuDesktop {
     margin-top: 15px;
   }
   nav.menuMobile ul li a {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 750px) {
@@ -196,7 +195,7 @@ nav.menuDesktop {
 }
 @media (min-width: 844px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 800px) and (orientation: landscape) and (max-height: 650px) {
@@ -204,7 +203,7 @@ nav.menuDesktop {
     margin-top: 20%;
   }
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 900px) and (orientation: portrait) {
@@ -1008,6 +1007,12 @@ div.wrap main section.lists div.addList i.active {
     border: 1px solid gray;
     padding: 3px;
     margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar:hover {
+    background-color: rgb(61, 87, 119);
   }
   div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(1) {
     -ms-flex-preferred-size: 100%;
@@ -1400,6 +1405,187 @@ div.wrap main section.lists div.addList i.active {
   }
   div.wrap #calendar div.fc-toolbar-chunk:last-child {
     display: none;
+  }
+}
+main div.modal-content div.eventDetails {
+  background-color: rgb(38, 62, 92);
+  border-radius: 20px;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 300px;
+}
+main div.modal-content div.eventDetails::-webkit-scrollbar {
+  width: 8px;
+}
+main div.modal-content div.eventDetails::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  opacity: 0.5;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  color: white;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+  position: static;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  font-size: 1.5rem;
+  color: yellow;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i:hover {
+  color: black;
+  text-shadow: 0 0 5px white;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+  position: static;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i:hover {
+  color: black;
+  text-shadow: 0 0 5px white;
+}
+main div.modal-content div.eventDetails div.listInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3px;
+}
+main div.modal-content div.eventDetails div.listInfo h1 {
+  text-shadow: 0 0 10px yellow;
+  color: white;
+  word-break: break-all;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+main div.modal-content div.eventDetails div.listInfo p {
+  word-break: break-all;
+  color: rgb(205, 197, 197);
+  font-size: 0.7rem;
+}
+main div.modal-content div.eventDetails div.eventInfo {
+  border-top: 2px solid gray;
+  margin-top: 10px;
+  padding: 0 3px;
+}
+main div.modal-content div.eventDetails div.eventInfo h1 {
+  text-shadow: 0 0 10px yellow;
+  color: white;
+  word-break: break-all;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+main div.modal-content div.eventDetails div.eventInfo p {
+  word-break: break-all;
+  color: rgb(205, 197, 197);
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  main div.modal-content div.eventDetails {
+    height: auto;
+  }
+}
+@media (orientation: landscape) {
+  main div.modal-content div.eventDetails {
+    height: 200px;
+  }
+}
+@media (min-width: 560px) and (orientation: landscape) {
+  main div.modal-content {
+    margin-top: 20px;
+  }
+  main div.modal-content div.eventDetails {
+    height: auto;
+  }
+}
+@media (min-width: 600px) and (orientation: portrait) {
+  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.5rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo p {
+    font-size: 1rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 667px) and (orientation: landscape) {
+  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.5rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo p {
+    font-size: 1rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo p {
+    font-size: 1rem;
   }
 }
 div.wrap {
@@ -2686,7 +2872,7 @@ div.chooseList p {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 70%;
+  width: 85%;
   padding: 20px;
   background-color: #fefefe;
   border: 1px solid #888;
@@ -2699,7 +2885,6 @@ div.chooseList p {
   text-align: center;
   text-transform: uppercase;
   font-size: 1rem;
-  margin-bottom: 8px;
 }
 .modal .modal-content h3 {
   font-size: 1rem;
@@ -2738,11 +2923,12 @@ div.chooseList p {
 }
 .modal .modal-content .close {
   position: absolute;
-  top: 0;
-  right: 5%;
-  color: #aaa;
+  top: -2%;
+  right: 2%;
+  color: black;
   font-size: 2.5rem;
   font-weight: bold;
+  text-shadow: 0 0 5px blue;
 }
 .modal .modal-content .close:hover,
 .modal .modal-content .close:focus {
@@ -2815,7 +3001,6 @@ div.chooseList p {
   .modal .modal-content {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 50%;
   }
   .modal .modal-content button {
     height: 30px;
@@ -2982,7 +3167,6 @@ div.chooseList p {
 @media (min-width: 653px) and (orientation: landscape) {
   .modal .modal-content {
     width: 50%;
-    height: 95%;
   }
   .modal .modal-content .close {
     font-size: 3rem;
