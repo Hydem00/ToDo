@@ -147,7 +147,7 @@ async function getListsEvents() {
   });
   eventsData = await odp.json();
 
-  console.log(eventsData);
+  // console.log(eventsData);
   clearEvents();
   createEventsElements(eventsData);
   listPropertiesSection();
@@ -292,7 +292,7 @@ async function getEventDetails(event_id) {
   });
   eventDetails = await odp.json();
 
-  console.log(eventDetails);
+  // console.log(eventDetails);
 
   renderDetailsToPopUp(eventDetails);
 }
