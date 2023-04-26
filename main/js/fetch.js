@@ -223,6 +223,7 @@ async function getListsAndEvents() {
   // console.log(eventsData);
   // clearEvents();
   createEventsElementsCalendar(eventsData);
+  popUpEventProperties();
 }
 
 function createEventsElementsCalendar(eventData) {
@@ -264,7 +265,7 @@ function createEventsElementsCalendar(eventData) {
     divListEvent.appendChild(divColor);
     divListEvent.appendChild(divEventRemove);
 
-    console.log(eventData[i].data);
+    // console.log(eventData[i].data);
     if (
       document.querySelector(
         `td.fc-day[data-date='${eventData[i].data}'] .fc-daygrid-day-events`
@@ -280,6 +281,99 @@ function createEventsElementsCalendar(eventData) {
       )
       .appendChild(divListEvent);
   }
+}
+
+async function getEventDetails(event_id) {
+  let url = 'functions/events.php?action=showDetails';
+  url += '&' + 'event_id' + '=' + '' + event_id + '';
+  let odp = await fetch(url, {
+    method: 'GET',
+    mode: 'cors',
+  });
+  eventDetails = await odp.json();
+
+  console.log(eventDetails);
+
+  renderDetailsToPopUp(eventDetails);
+}
+
+function renderDetailsToPopUp(eventDetails) {
+  const popUp = document.querySelector(
+    '#popUpCalendarEventProperties .modal-content'
+  );
+
+  if (popUp.contains(document.querySelector('div.eventDetails'))) {
+    document.querySelector('div.eventDetails').remove();
+  }
+
+  const divEventDetails = document.createElement('div');
+  const h1ListTitle = document.createElement('h1');
+  const pListDescription = document.createElement('p');
+
+  const h1EventTitle = document.createElement('h1');
+  const pEventTime = document.createElement('p');
+  const pEventDescription = document.createElement('p');
+  const pEventLocalization = document.createElement('p');
+  const pEventPriority = document.createElement('p');
+  const divEventColor = document.createElement('div');
+  divEventColor.classList.add('eventColorCalendar');
+
+  const divEventEdit = document.createElement('div');
+  divEventEdit.classList.add('editListEventCalendar');
+  const buttonEdit = document.createElement('i');
+  buttonEdit.className = 'fa-solid fa-pen';
+  divEventEdit.appendChild(buttonEdit);
+
+  const divEventRemove = document.createElement('div');
+  divEventRemove.classList.add('removeListEventCalendar');
+  const buttonRemove = document.createElement('i');
+  buttonRemove.className = 'fa-solid fa-trash';
+  divEventRemove.appendChild(buttonRemove);
+
+  divEventDetails.classList.add('eventDetails');
+
+  h1ListTitle.innerText = eventDetails[0].lista_nazwa;
+
+  if (eventDetails[0].lista_opis == '') {
+    pListDescription.innerText = '...';
+  } else {
+    pListDescription.innerText = eventDetails[0].lista_opis;
+  }
+
+  h1EventTitle.innerText = eventDetails[0].nazwa;
+
+  if (eventDetails[0].opis) {
+    pEventDescription.innerText = '...';
+  } else {
+    pEventDescription.innerText = eventDetails[0].opis;
+  }
+
+  pEventTime.innerHTML = eventDetails[0].czas;
+
+  if (eventDetails[0].lokalizacja == '') {
+    pEventLocalization.innerHTML = '...';
+  } else {
+    pEventLocalization.innerHTML = eventDetails[0].lokalizacja;
+  }
+
+  pEventPriority.innerHTML = eventDetails[0].priorytet;
+
+  divEventDetails.appendChild(divEventEdit);
+  divEventDetails.appendChild(divEventRemove);
+
+  divEventDetails.appendChild(h1ListTitle);
+  divEventDetails.appendChild(pListDescription);
+  divEventDetails.appendChild(h1EventTitle);
+  divEventDetails.appendChild(pEventDescription);
+  divEventDetails.appendChild(pEventTime);
+  divEventDetails.appendChild(pEventLocalization);
+  divEventDetails.appendChild(pEventPriority);
+
+  divEventColor.style.backgroundColor = eventDetails[0].kolor;
+
+  divEventDetails.appendChild(divEventColor);
+
+  popUp.appendChild(divEventDetails);
 }
 
 async function editListEvent() {
