@@ -57,8 +57,10 @@ function showDetails(){
     global $dbh;
 
     $event_id = $_GET['event_id'];
-    $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :event_id ORDER BY priorytet DESC');
+    $stmt = $dbh->prepare('SELECT wydarzenia.id, wydarzenia.lista_id, wydarzenia.nazwa, wydarzenia.data, wydarzenia.czas, wydarzenia.lokalizacja, wydarzenia.opis, wydarzenia.kolor, wydarzenia.priorytet, listy.user_id, listy.nazwa as lista_nazwa, listy.opis as lista_opis FROM wydarzenia JOIN listy ON wydarzenia.lista_id = listy.id WHERE wydarzenia.id = :event_id AND listy.user_id = :user_id');
+
     $stmt->bindParam(':event_id', $event_id);
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
     $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
