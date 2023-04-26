@@ -22,6 +22,9 @@ switch ($_GET["action"]) {
     case "show":
         showEvents();
         break;
+    case "showDetails":
+        showDetails();
+        break;    
     case "add":
         addEvent();
         break;
@@ -40,13 +43,29 @@ function showEventsAndLists(){
     global $user_id;
     global $dbh;
 
-    $stmt = $dbh->prepare('SELECT listy.nazwa AS nazwa_listy, wydarzenia.id, wydarzenia.data, wydarzenia.nazwa AS nazwa_wydarzenia, wydarzenia.czas, wydarzenia.kolor FROM listy INNER JOIN wydarzenia ON listy.id=wydarzenia.lista_id WHERE user_id = :user_id');
+    $stmt = $dbh->prepare('SELECT listy.nazwa AS nazwa_listy, wydarzenia.id, wydarzenia.data, wydarzenia.nazwa AS nazwa_wydarzenia, wydarzenia.czas, wydarzenia.kolor FROM listy INNER JOIN wydarzenia ON listy.id=wydarzenia.lista_id WHERE user_id = :user_id ORDER BY czas ASC;') ;
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
 
     $listsEvents = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($listsEvents);
+}
+
+function showDetails(){
+    global $user_id;
+    global $dbh;
+
+    $event_id = $_GET['event_id'];
+    $stmt = $dbh->prepare('SELECT wydarzenia.id, wydarzenia.lista_id, wydarzenia.nazwa, wydarzenia.data, wydarzenia.czas, wydarzenia.lokalizacja, wydarzenia.opis, wydarzenia.kolor, wydarzenia.priorytet, listy.user_id, listy.nazwa as lista_nazwa, listy.opis as lista_opis FROM wydarzenia JOIN listy ON wydarzenia.lista_id = listy.id WHERE wydarzenia.id = :event_id AND listy.user_id = :user_id');
+
+    $stmt->bindParam(':event_id', $event_id);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+
+    $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($events);
 }
 
 function showEvents(){
