@@ -1523,6 +1523,12 @@ main div.modal-content div.eventDetails div.eventInfo p {
   font-size: 0.7rem;
   margin-bottom: 5px;
 }
+main div.modal-content div.eventDetails div.eventInfo div.eventColorCalendar {
+  width: 80%;
+  height: 20px;
+  border-radius: 20px;
+  margin: 0 auto 5px auto;
+}
 
 @media (min-width: 400px) and (orientation: portrait) {
   main div.modal-content div.eventDetails {
