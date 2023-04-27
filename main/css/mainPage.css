@@ -43,7 +43,6 @@ nav.menuMobile {
   z-index: 2;
 }
 nav.menuMobile ul {
-  margin-top: 60px;
   list-style-type: none;
 }
 nav.menuMobile ul li {
@@ -79,7 +78,7 @@ nav.menuDesktop {
 }
 @media (min-width: 360px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 120%;
+    margin-top: 80%;
   }
   nav.menuMobile ul li a {
     font-size: 1.9rem;
@@ -100,7 +99,7 @@ nav.menuDesktop {
 }
 @media (min-width: 500px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 70%;
+    margin-top: 40%;
   }
   nav.menuMobile ul li a {
     font-size: 2.2rem;
@@ -114,7 +113,7 @@ nav.menuDesktop {
     margin-top: 0;
   }
   nav.menuMobile ul li a {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
   nav.menuMobile ul li:nth-last-of-type(2) {
     margin-top: 20%;
@@ -122,7 +121,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   nav.menuMobile ul {
     margin-top: 10px;
@@ -133,7 +132,7 @@ nav.menuDesktop {
 }
 @media (min-width: 640px) and (orientation: landscape) and (max-height: 280px) {
   nav.menuMobile ul li a {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
   nav.menuMobile ul {
     margin-top: 0;
@@ -161,7 +160,7 @@ nav.menuDesktop {
     margin-top: 15px;
   }
   nav.menuMobile ul li a {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 750px) {
@@ -177,7 +176,7 @@ nav.menuDesktop {
 }
 @media (min-width: 820px) and (orientation: portrait) {
   nav.menuMobile ul {
-    margin-top: 200%;
+    margin-top: 130%;
   }
   nav.menuMobile ul li a {
     font-size: 3.5rem;
@@ -186,9 +185,6 @@ nav.menuDesktop {
 @media (min-width: 812px) and (orientation: landscape) {
   nav.menuMobile {
     width: 10%;
-  }
-  nav.menuMobile ul {
-    margin-top: 10px;
   }
   nav.menuMobile ul li a {
     font-size: 1.6rem;
@@ -199,7 +195,15 @@ nav.menuDesktop {
 }
 @media (min-width: 844px) and (orientation: landscape) {
   nav.menuMobile ul li a {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 800px) and (orientation: landscape) and (max-height: 650px) {
+  nav.menuMobile ul {
+    margin-top: 20%;
+  }
+  nav.menuMobile ul li a {
+    font-size: 1rem;
   }
 }
 @media (min-width: 900px) and (orientation: portrait) {
@@ -274,16 +278,19 @@ nav.menuDesktop {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  nav.menuDesktop ul li:nth-child(2) a::after {
-    content: "Add list";
+  nav.menuDesktop ul li:nth-child(1) a::after {
+    content: "Display Calendar";
   }
   nav.menuDesktop ul li:nth-child(3) a::after {
-    content: "Edit list";
+    content: "Add list";
   }
   nav.menuDesktop ul li:nth-child(4) a::after {
-    content: "My Profile";
+    content: "Edit list";
   }
   nav.menuDesktop ul li:nth-child(5) a::after {
+    content: "My Profile";
+  }
+  nav.menuDesktop ul li:nth-child(6) a::after {
     content: "Sign out";
   }
   nav.menuDesktop ul li a {
@@ -320,7 +327,7 @@ header {
   height: 10vh;
   background-color: black;
   color: #e0e1dc;
-  z-index: 1;
+  z-index: 2;
 }
 
 div.leftHeader {
@@ -658,9 +665,7 @@ div.wrap main {
 }
 div.wrap main section.lists {
   min-height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -815,9 +820,6 @@ div.wrap main section.lists div.addList i.active {
     border-radius: 20px;
   }
   div.wrap main section.lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -882,9 +884,6 @@ div.wrap main section.lists div.addList i.active {
     border-radius: 20px;
   }
   div.wrap main section.lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -932,9 +931,6 @@ div.wrap main section.lists div.addList i.active {
     border-radius: 20px;
   }
   div.wrap main section.lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -947,10 +943,10 @@ div.wrap main section.lists div.addList i.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-preferred-size: 46%;
-        flex-basis: 46%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
     min-height: 150px;
-    margin: 20px 2%;
+    margin: 20px 5%;
   }
   div.wrap main section.lists div.addList {
     display: -webkit-box;
@@ -962,10 +958,10 @@ div.wrap main section.lists div.addList i.active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-flex-preferred-size: 46%;
-        flex-basis: 46%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
     height: 150px;
-    margin: 20px 2%;
+    margin: 20px 5%;
     text-align: center;
     border-radius: 20px;
     -ms-flex-item-align: start;
@@ -978,6 +974,624 @@ div.wrap main section.lists div.addList i.active {
     border-radius: 50%;
     width: 124px;
     height: 124px;
+  }
+}
+@media (min-width: 300px) {
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events {
+    height: 100px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-left: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar {
+    width: 8px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 168, 177, 0.5);
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(38, 62, 92);
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar:hover {
+    background-color: rgb(61, 87, 119);
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(1) {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 2px auto;
+    color: yellow;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar p {
+    font-size: 0.6rem;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    margin: 1px auto;
+    text-align: center;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(2) {
+    -ms-flex-preferred-size: 85%;
+        flex-basis: 85%;
+    margin: 1px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.6rem;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div.eventColorCalendar {
+    display: block;
+    width: 30px;
+    height: 20px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen {
+    font-size: 0.6rem;
+    cursor: pointer;
+    display: none;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen:hover {
+    color: yellow;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash {
+    font-size: 0.6rem;
+    cursor: pointer;
+    display: none;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash:hover {
+    color: red;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.wrap main {
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+  div.wrap main section.calendar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    width: 200%;
+  }
+  div.wrap main h1 {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  div.wrap #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
+    margin: 0 auto;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) h2 {
+    font-size: 2rem;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:last-child {
+    display: none;
+  }
+  div.fc-daygrid-bg-harness {
+    z-index: -1;
+  }
+}
+@media (min-width: 500px) {
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events {
+    height: 100px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-left: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar {
+    width: 8px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 168, 177, 0.5);
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(38, 62, 92);
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(1) {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 2px auto;
+    color: yellow;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar p {
+    font-size: 0.6rem;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    margin: 1px auto;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(2) {
+    -ms-flex-preferred-size: 85%;
+        flex-basis: 85%;
+    margin: 1px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.6rem;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen {
+    font-size: 0.6rem;
+    cursor: pointer;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen:hover {
+    color: yellow;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash {
+    font-size: 0.6rem;
+    cursor: pointer;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash:hover {
+    color: red;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.wrap main {
+    overflow: hidden;
+    width: 100%;
+  }
+  div.wrap main section.calendar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    width: 100%;
+  }
+  div.wrap main h1 {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  div.wrap #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
+    margin: 0 auto;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) h2 {
+    font-size: 2rem;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:last-child {
+    display: none;
+  }
+}
+@media (min-width: 800px) {
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events {
+    height: 100px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-left: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar {
+    width: 8px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 168, 177, 0.5);
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(38, 62, 92);
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(1) {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 2px auto;
+    color: yellow;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar p {
+    font-size: 0.8rem;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(2) {
+    -ms-flex-preferred-size: 85%;
+        flex-basis: 85%;
+    font-size: 0.8rem;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen {
+    font-size: 0.8rem;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events {
+    height: 100px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-left: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar {
+    width: 8px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 168, 177, 0.5);
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(38, 62, 92);
+    border-radius: 20px;
+    border: 1px solid gray;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(1) {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 2px auto;
+    color: yellow;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar p {
+    font-size: 0.8rem;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    margin: 1px auto;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar h1:nth-of-type(2) {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    margin: 1px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 2px;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen {
+    cursor: pointer;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(1) i.fa-pen:hover {
+    color: yellow;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash {
+    cursor: pointer;
+  }
+  div.fc-daygrid-day-frame div.fc-daygrid-day-events div.listEventCalendar div:nth-of-type(3) i.fa-trash:hover {
+    color: red;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  div.wrap main section.calendar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  div.wrap main h1 {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  div.wrap #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) {
+    margin: 0 auto;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:nth-child(2) h2 {
+    font-size: 2rem;
+  }
+  div.wrap #calendar div.fc-toolbar-chunk:last-child {
+    display: none;
+  }
+}
+main div.modal-content div.eventDetails {
+  background-color: rgb(38, 62, 92);
+  border-radius: 20px;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 300px;
+}
+main div.modal-content div.eventDetails::-webkit-scrollbar {
+  width: 8px;
+}
+main div.modal-content div.eventDetails::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  opacity: 0.5;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  color: white;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+  position: static;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  font-size: 1.5rem;
+  color: yellow;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i:hover {
+  color: black;
+  text-shadow: 0 0 5px white;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+  position: static;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i:hover {
+  color: black;
+  text-shadow: 0 0 5px white;
+}
+main div.modal-content div.eventDetails div.listInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3px;
+}
+main div.modal-content div.eventDetails div.listInfo h1 {
+  text-shadow: 0 0 10px yellow;
+  color: white;
+  word-break: break-all;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+main div.modal-content div.eventDetails div.listInfo p {
+  word-break: break-all;
+  color: rgb(205, 197, 197);
+  font-size: 0.7rem;
+}
+main div.modal-content div.eventDetails div.eventInfo {
+  border-top: 2px solid gray;
+  margin-top: 10px;
+  padding: 0 3px;
+}
+main div.modal-content div.eventDetails div.eventInfo h1 {
+  text-shadow: 0 0 10px yellow;
+  color: white;
+  word-break: break-all;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+main div.modal-content div.eventDetails div.eventInfo p {
+  word-break: break-all;
+  color: rgb(205, 197, 197);
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+}
+main div.modal-content div.eventDetails div.eventInfo div.eventColorCalendar {
+  width: 80%;
+  height: 20px;
+  border-radius: 20px;
+  margin: 0 auto 5px auto;
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  main div.modal-content div.eventDetails {
+    height: auto;
+  }
+}
+@media (orientation: landscape) {
+  main div.modal-content div.eventDetails {
+    height: 200px;
+  }
+}
+@media (min-width: 560px) and (orientation: landscape) {
+  main div.modal-content {
+    margin-top: 20px;
+  }
+  main div.modal-content div.eventDetails {
+    height: auto;
+  }
+}
+@media (min-width: 600px) and (orientation: portrait) {
+  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.5rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo p {
+    font-size: 1rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 667px) and (orientation: landscape) {
+  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.5rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 2rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.listInfo p {
+    font-size: 1rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo h1 {
+    font-size: 1.4rem;
+  }
+  main div.modal-content div.eventDetails div.eventInfo p {
+    font-size: 1rem;
   }
 }
 div.wrap {
@@ -1667,9 +2281,11 @@ div.wrap main section.menu form button:hover {
 @media (min-width: 896px) and (orientation: landscape) {
   div.wrap main section.menu h2 {
     width: 75%;
+    font-size: 2rem;
   }
   div.wrap main section.menu p {
     width: 90%;
+    font-size: 1.7rem;
   }
   div.wrap main section.menu div.events div.listEvent {
     max-width: 700px;
@@ -1774,7 +2390,7 @@ div.wrap main section.menu form button:hover {
   }
   div.wrap main section.menu div.events div.addEventBtn {
     font-size: 4rem;
-    margin: 20px 0;
+    margin: 50px 0;
   }
   div.wrap main section.menu div.events div.addEventBtn i {
     height: 12vh;
@@ -1937,6 +2553,12 @@ main section.profile div.changePassword form button:hover, main section.profile 
   background-color: #179CF0;
   color: white;
 }
+main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.8rem;
+}
 main section.profile div.profileInfo {
   padding-left: 10px;
 }
@@ -1989,10 +2611,18 @@ main section.profile div.profileButtons button:hover {
     width: 60%;
   }
 }
+@media (min-width: 400px) and (orientation: portrait) {
+  main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 700px) and (orientation: landscape) {
   main section.profile {
     width: 85%;
     margin: 0 auto;
+  }
+  main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
@@ -2187,305 +2817,37 @@ main section.profile div.profileButtons button:hover {
   }
 }
 div.chooseList {
-  position: fixed;
+  display: none;
   width: 100%;
-  top: -50%;
-  left: 0;
-  margin-top: 100px;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
   text-align: center;
-  border-left: 45px solid black;
-  border-right: 45px solid black;
-  border-top: 45px solid transparent;
-  border-bottom: 45px solid transparent;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 div.chooseList p {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
-  padding: 6px 0;
 }
 
-@media (min-width: 280px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 18vh;
-  }
-  div.chooseList p {
-    font-size: 0.8rem;
-  }
-}
-@media (min-width: 320px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 19vh;
-  }
-  div.chooseList p {
-    font-size: 0.9rem;
-  }
-}
-@media (min-width: 360px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 18vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 360px) and (min-height: 740px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 17vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 375px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 375px) and (min-height: 667px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 18vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 375px) and (min-height: 800px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 390px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 1.2rem;
-  }
-}
-@media (min-width: 411px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 16.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 414px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 533px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 24.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 375px) and (min-height: 471px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 20.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 540px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 17vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 640px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 22vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 653px) and (min-height: 280px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 27.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 667px) and (min-height: 375px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 23.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 720px) and (min-height: 540px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 19.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 731px) and (min-height: 411px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 22.5vh;
-  }
-  div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 768px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 15vh;
-  }
+@media (min-width: 740px) and (orientation: portrait) {
   div.chooseList p {
     font-size: 2rem;
   }
 }
-@media (min-width: 794px) and (min-height: 793px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 16.5vh;
-  }
+@media (min-width: 740px) and (orientation: landscape) {
   div.chooseList p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 820px) and (orientation: portrait) {
-  div.chooseList {
-    margin-top: 14vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 22vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (min-height: 460px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 20vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (min-height: 557px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 19vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (min-height: 617px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 18vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (min-height: 688px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 17vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 844px) and (min-height: 787px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 896px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 22vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 956px) and (min-height: 467px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 20vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 956px) and (min-height: 600px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 18vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 956px) and (min-height: 680px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 17vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 956px) and (min-height: 800px) and (orientation: landscape) {
-  div.chooseList {
-    margin-top: 16vh;
-  }
-  div.chooseList p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
   div.chooseList {
-    position: fixed;
-    width: 100%;
-    top: -50%;
-    left: 3.5%;
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
-    text-align: center;
-    border-left: 100px solid black;
-    border-right: 100px solid black;
-    border-top: 100px solid transparent;
-    border-bottom: 100px solid transparent;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    margin-top: 0;
+    border-radius: 20px;
+    width: 90%;
+    margin: 10px auto 0 auto;
   }
   div.chooseList p {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 .modal {
@@ -2516,7 +2878,7 @@ div.chooseList p {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 70%;
+  width: 85%;
   padding: 20px;
   background-color: #fefefe;
   border: 1px solid #888;
@@ -2529,7 +2891,6 @@ div.chooseList p {
   text-align: center;
   text-transform: uppercase;
   font-size: 1rem;
-  margin-bottom: 8px;
 }
 .modal .modal-content h3 {
   font-size: 1rem;
@@ -2568,11 +2929,12 @@ div.chooseList p {
 }
 .modal .modal-content .close {
   position: absolute;
-  top: 0;
-  right: 5%;
-  color: #aaa;
+  top: -2%;
+  right: 2%;
+  color: black;
   font-size: 2.5rem;
   font-weight: bold;
+  text-shadow: 0 0 5px blue;
 }
 .modal .modal-content .close:hover,
 .modal .modal-content .close:focus {
@@ -2645,7 +3007,6 @@ div.chooseList p {
   .modal .modal-content {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 50%;
   }
   .modal .modal-content button {
     height: 30px;
@@ -2812,7 +3173,6 @@ div.chooseList p {
 @media (min-width: 653px) and (orientation: landscape) {
   .modal .modal-content {
     width: 50%;
-    height: 95%;
   }
   .modal .modal-content .close {
     font-size: 3rem;
@@ -2852,7 +3212,7 @@ div.chooseList p {
 @media (min-width: 720px) and (orientation: landscape) {
   .modal .modal-content {
     width: 50%;
-    height: 85%;
+    height: 65%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -2970,7 +3330,7 @@ div.chooseList p {
 @media (min-width: 912px) and (orientation: portrait) {
   .modal .modal-content {
     height: 40%;
-    width: 50%;
+    width: 65%;
   }
 }
 @media (min-width: 930px) and (orientation: landscape) {
@@ -2992,7 +3352,7 @@ div.chooseList p {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 70%;
+    height: 50%;
     width: 45%;
   }
   .modal .modal-content .close {
