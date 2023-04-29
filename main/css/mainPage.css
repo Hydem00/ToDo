@@ -1407,77 +1407,11 @@ div.wrap main section.lists div.addList i.active {
     display: none;
   }
 }
-main div.modal-content div.eventDetails {
-  background-color: rgb(38, 62, 92);
-  border-radius: 20px;
-  overflow: auto;
-  overflow-x: hidden;
-  height: 300px;
+main div.modal div.modal-content {
+  padding: 30px 0 30px 0;
+  overflow: hidden;
 }
-main div.modal-content div.eventDetails::-webkit-scrollbar {
-  width: 8px;
-}
-main div.modal-content div.eventDetails::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  opacity: 0.5;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader {
-  margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
-  color: white;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
-  position: static;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-  font-size: 1.5rem;
-  color: yellow;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i:hover {
-  color: black;
-  text-shadow: 0 0 5px white;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
-  position: static;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-  font-size: 1.5rem;
-  cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i:hover {
-  color: black;
-  text-shadow: 0 0 5px white;
-}
-main div.modal-content div.eventDetails div.listInfo {
+main div.modal div.modal-content div.eventDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1485,113 +1419,272 @@ main div.modal-content div.eventDetails div.listInfo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  max-height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: #1d2538;
+}
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 3px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px 0 10px 0;
+  border-bottom: 2px dashed white;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color: #1d2538;
 }
-main div.modal-content div.eventDetails div.listInfo h1 {
-  text-shadow: 0 0 10px yellow;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar {
+  position: relative;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+  position: static;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  font-size: 1.4rem;
+  color: yellow;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i:hover {
   color: white;
-  word-break: break-all;
-  margin: 10px 0;
-  font-size: 1rem;
 }
-main div.modal-content div.eventDetails div.listInfo p {
-  word-break: break-all;
-  color: rgb(205, 197, 197);
-  font-size: 0.7rem;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
-main div.modal-content div.eventDetails div.eventInfo {
-  border-top: 2px solid gray;
-  margin-top: 10px;
-  padding: 0 3px;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+  position: static;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  font-size: 1.4rem;
+  color: red;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
-main div.modal-content div.eventDetails div.eventInfo h1 {
-  text-shadow: 0 0 10px yellow;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i:hover {
   color: white;
-  word-break: break-all;
-  margin: 10px 0;
-  font-size: 1rem;
 }
-main div.modal-content div.eventDetails div.eventInfo p {
-  word-break: break-all;
-  color: rgb(205, 197, 197);
-  font-size: 0.7rem;
-  margin-bottom: 5px;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+  padding: 0;
+  color: white;
 }
-main div.modal-content div.eventDetails div.eventInfo div.eventColorCalendar {
-  width: 80%;
+main div.modal div.modal-content div.eventDetails div.listInfo {
+  margin-top: 40px;
+  background-image: url(../../images/yourL.png);
+  background-position: left center;
+  background-size: cover;
+}
+main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+  padding: 10px 40px 10px 40px;
+  height: 200px;
+  border-bottom: 2px dashed white;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  overflow-x: hidden;
+}
+main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
+  word-break: break-all;
+  text-shadow: 0 0 10px yellow;
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  color: white;
+}
+main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
+  word-break: break-all;
+  font-size: 0.8rem;
+  color: white;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo {
+  background-image: url(../../images/yourE.png);
+  background-position: left center;
+  background-size: cover;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 40px 10px 40px;
+  height: 200px;
+  border-bottom: 2px dashed white;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  overflow-x: hidden;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
+  word-break: break-all;
+  text-shadow: 0 0 10px yellow;
+  font-size: 1.2rem;
+  margin: 10px 0 10px 0;
+  color: white;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
+  word-break: break-all;
+  font-size: 0.8rem;
+  color: white;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 10px;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p:nth-of-type(2) {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p:nth-of-type(3) {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p:nth-of-type(4) {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
   height: 20px;
-  border-radius: 20px;
-  margin: 0 auto 5px auto;
+  border-radius: 50%;
 }
 
-@media (min-width: 400px) and (orientation: portrait) {
-  main div.modal-content div.eventDetails {
-    height: auto;
+@media (min-width: 500px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    height: 85%;
+    width: 60%;
   }
 }
-@media (orientation: landscape) {
-  main div.modal-content div.eventDetails {
-    height: 200px;
+@media (min-width: 600px) and (orientation: landscape) {
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 250px;
+    padding: 10px 50px 10px 50px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 250px;
+    padding: 10px 50px 10px 50px;
   }
 }
-@media (min-width: 560px) and (orientation: landscape) {
-  main div.modal-content {
-    margin-top: 20px;
+@media (min-width: 700px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    height: 80%;
   }
-  main div.modal-content div.eventDetails {
-    height: auto;
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 350px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 250px;
+    padding: 10px 50px 10px 50px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 250px;
+    padding: 10px 50px 10px 50px;
   }
 }
-@media (min-width: 600px) and (orientation: portrait) {
-  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+@media (min-width: 800px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    padding: 40px 0px 40px 0px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 350px;
+    padding: 10px 70px 10px 70px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 350px;
+    padding: 10px 70px 10px 70px;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    padding: 40px 0px 40px 0px;
+  }
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 550px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+    height: 60px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 1.8rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 1.8rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.8rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 450px;
+    padding: 30px 100px 10px 100px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
+    font-size: 1.8rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
     font-size: 1.5rem;
   }
-  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
-    font-size: 2rem;
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 450px;
+    padding: 10px 100px 10px 100px;
   }
-  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
-    font-size: 2rem;
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
+    font-size: 1.8rem;
   }
-  main div.modal-content div.eventDetails div.listInfo h1 {
-    font-size: 1.4rem;
-  }
-  main div.modal-content div.eventDetails div.listInfo p {
-    font-size: 1rem;
-  }
-  main div.modal-content div.eventDetails div.eventInfo h1 {
-    font-size: 1.4rem;
-  }
-  main div.modal-content div.eventDetails div.eventInfo p {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 667px) and (orientation: landscape) {
-  main div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
     font-size: 1.5rem;
   }
-  main div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
-    font-size: 2rem;
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+    height: 40px;
   }
-  main div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
-    font-size: 2rem;
+}
+@media (min-width: 1300px) and (orientation: landscape) {
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 650px;
   }
-  main div.modal-content div.eventDetails div.listInfo h1 {
-    font-size: 1.4rem;
+}
+@media (min-width: 1400px) and (orientation: landscape) {
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 650px;
   }
-  main div.modal-content div.eventDetails div.listInfo p {
-    font-size: 1rem;
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 550px;
   }
-  main div.modal-content div.eventDetails div.eventInfo h1 {
-    font-size: 1.4rem;
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 550px;
   }
-  main div.modal-content div.eventDetails div.eventInfo p {
-    font-size: 1rem;
+}
+@media (min-width: 1700px) and (orientation: landscape) {
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 650px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    height: 650px;
+    padding: 10px 120px 10px 120px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    height: 650px;
+    padding: 10px 120px 10px 120px;
   }
 }
 div.wrap {
