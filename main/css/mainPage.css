@@ -3352,7 +3352,7 @@ div.chooseList p {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 50%;
+    height: auto;
     width: 45%;
   }
   .modal .modal-content .close {
