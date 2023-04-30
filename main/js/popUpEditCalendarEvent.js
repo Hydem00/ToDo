@@ -63,6 +63,9 @@ function popUpEventEdit(prevPopUp, event_id, event) {
           eventPriorityEdit.value = '1';
           eventColorEdit.value = '#000000';
           modalEditEvent.style.display = 'none';
+          document
+            .querySelector('.popUpEditEventCalendar div.editEvent form button')
+            .removeEventListener('click', editEventValidation);
         }
       }
     }
