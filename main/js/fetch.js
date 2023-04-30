@@ -1,4 +1,4 @@
-let eventsData;
+let eventsData, eventDetails;
 
 function preventBack() {
   window.history.forward();
@@ -412,6 +412,29 @@ async function editListEvent() {
   getListsEvents();
 }
 
+async function editListEventCalendar() {
+  const form = document.querySelector(
+    '.popUpEditEventCalendar div.editEvent form'
+  );
+  const dataToSend = new FormData(form);
+  dataToSend.append(
+    'json',
+    JSON.stringify({
+      eventID: eventID,
+    })
+  );
+  let odp = await fetch('functions/events.php?action=edit', {
+    method: 'POST',
+    mode: 'cors',
+    body: dataToSend,
+  });
+  let dane = await odp.text();
+
+  getListsEvents();
+  clearCalendar();
+  getListsAndEvents();
+}
+
 async function removeListEvent() {
   const dataToSend = new FormData();
   dataToSend.append(
@@ -428,6 +451,8 @@ async function removeListEvent() {
   eventsData = await odp.json();
 
   getListsEvents();
+  clearCalendar();
+  getListsAndEvents();
 }
 
 async function changePassword() {

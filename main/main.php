@@ -228,7 +228,28 @@ if(!$auth->isLogged()){
           <button>NO</button>
         </div>
       </div>
-      
+      <div id="popUpEditCalendarEvent" class="modal popUpEditEventCalendar">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="editEvent">
+          <h2>Edit Event</h2>
+          <form method="POST">
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="date" name="event_date" placeholder = "Enter the date" required>
+            <input type="time" name="event_time" placeholder = "Enter the time" required>
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button>Edit event</button>
+          </form>
+        </div>
+        </div>
+      </div>
       <div id="popUpList" class="modal popUp">
         <div class="modal-content">
           <span class="close">&times;</span>

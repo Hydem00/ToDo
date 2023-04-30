@@ -30,6 +30,11 @@ function popUpEventProperties() {
         this.dataset.numberOfListEvent,
         calendarEvent.childNodes[2].textContent
       );
+      popUpEventEdit(
+        modalDisplayEvent,
+        this.dataset.numberOfListEvent,
+        calendarEvent
+      );
     })
   );
 }
