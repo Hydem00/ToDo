@@ -218,6 +218,17 @@ if(!$auth->isLogged()){
           
         </div>
       </div>
+      <div id="popUpRemoveCalendarEvent" class="modal popUpRemoveEventCalendar">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Remove Event</h2>
+          <h3></h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <button>YES</button>
+          <button>NO</button>
+        </div>
+      </div>
+      
       <div id="popUpList" class="modal popUp">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -242,6 +253,7 @@ if(!$auth->isLogged()){
   <script src="./js/popUpEditList.js"></script>
   <script src="./js/popUpDeleteList.js"></script>
   <script src="./js/popUpEventProperties.js"></script>
-
+  <script src="./js/popUpRemoveCalendarEvent.js"></script>
+  <script src="./js/popUpEditCalendarEvent.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ function popUpEventProperties() {
   );
   const calendarEvents = document.querySelectorAll('div.listEventCalendar');
 
-  const popUpProperties = () => {
+  const popUpVisible = () => {
     modalDisplayEvent.style.display = 'block';
   };
 
@@ -22,9 +22,14 @@ function popUpEventProperties() {
   });
 
   calendarEvents.forEach((calendarEvent) =>
-    calendarEvent.addEventListener('click', function () {
-      popUpProperties();
-      getEventDetails(this.dataset.numberOfListEvent);
+    calendarEvent.addEventListener('click', async function () {
+      popUpVisible();
+      await getEventDetails(this.dataset.numberOfListEvent);
+      popUpEventRemove(
+        modalDisplayEvent,
+        this.dataset.numberOfListEvent,
+        calendarEvent.childNodes[2].textContent
+      );
     })
   );
 }
