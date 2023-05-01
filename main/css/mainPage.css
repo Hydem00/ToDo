@@ -1726,6 +1726,7 @@ main div.popUpEditEventCalendar div.modal-content div.editEvent form input {
       flex-basis: 100%;
   padding: 5px;
   height: 33px;
+  margin-bottom: 10px;
 }
 main div.popUpEditEventCalendar div.modal-content div.editEvent form input:nth-of-type(5) {
   -ms-flex-preferred-size: 45%;
@@ -1748,6 +1749,7 @@ main div.popUpEditEventCalendar div.modal-content div.editEvent form select {
       flex-basis: 45%;
   height: 33px;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 main div.popUpEditEventCalendar div.modal-content div.editEvent form button {
   -ms-flex-preferred-size: 60%;
