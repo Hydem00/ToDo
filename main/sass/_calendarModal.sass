@@ -93,6 +93,9 @@ main
                             color: white
                             flex-basis: 100%
                         p
+                            display: flex
+                            flex-direction: column-reverse
+                            align-items: center
                             word-break: break-all
                             font-size: 0.8rem
                             color: white
@@ -104,10 +107,33 @@ main
                                 flex-basis: 40%
                             &:nth-of-type(4)
                                 flex-basis: 40%
+                            i
+                                display: block
+                                position: static
+                                font-size: 1rem
+                                color: white
+                                text-shadow: 0 0 10px blue
+                                transform: translate(0)
+                                padding-bottom: 5px
                         div
+                            display: flex
+                            position: relative
+                            flex-direction: column-reverse
+                            align-items: center
                             flex-basis: 40%
-                            height: 20px
+                            height: 40px
                             border-radius: 50%
+                            i
+                                display: block
+                                position: absolute
+                                top: 50%
+                                left: 50%
+                                transform: translate(0)
+                                transform: translate(-50%, -50%)
+                                font-size: 1rem
+                                color: white
+                                text-shadow: 0 0 10px blue
+                                padding-bottom: 5px
 
 @media (min-width: 500px) and (orientation: landscape)
     main

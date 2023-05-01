@@ -1561,6 +1561,16 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
       flex-basis: 100%;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   word-break: break-all;
   font-size: 0.8rem;
   color: white;
@@ -1580,11 +1590,46 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p i {
+  display: block;
+  position: static;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 10px blue;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  padding-bottom: 5px;
+}
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
-  height: 20px;
+  height: 40px;
   border-radius: 50%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 10px blue;
+  padding-bottom: 5px;
 }
 
 @media (min-width: 500px) and (orientation: landscape) {

@@ -343,12 +343,34 @@ function renderDetailsToPopUp(eventDetails) {
 
   const divEventInfoBackground = document.createElement("div");
   divEventInfoBackground.classList.add("eventInfoBackground");
+
   const h1EventTitle = document.createElement("h1");
+
   const pEventTime = document.createElement("p");
+  const pCzas = document.createElement("i");
+  pCzas.classList.add("fa-solid", "fa-clock");
+  // pCzas.textContent = "Time";
+
   const pEventDescription = document.createElement("p");
+  const pOpis = document.createElement("i");
+  pOpis.classList.add("fa-solid", "fa-pen-nib");
+  // pOpis.textContent = "Description";
+
   const pEventLocalization = document.createElement("p");
+  const pLokalizacja = document.createElement("i");
+  pLokalizacja.classList.add("fa-solid", "fa-location-dot");
+  // pLokalizacja.textContent = "Location";
+
   const pEventPriority = document.createElement("p");
+  const pPriorytet = document.createElement("i");
+  pPriorytet.classList.add("fa-solid", "fa-star");
+  // pPriorytet.textContent = "Priority";
+
   const divEventColor = document.createElement("div");
+  const pKolor = document.createElement("i");
+  pKolor.classList.add("fa-solid", "fa-palette");
+  // pKolor.textContent = "Color";
+
   divEventColor.classList.add("eventColorCalendar");
 
   divEventDetails.classList.add("eventDetails");
@@ -384,13 +406,24 @@ function renderDetailsToPopUp(eventDetails) {
   divListInfo.appendChild(divListInfoBackground);
 
   divEventInfoBackground.appendChild(h1EventTitle);
+  pEventDescription.appendChild(pOpis);
   divEventInfoBackground.appendChild(pEventDescription);
+
+  // divEventInfoBackground.appendChild(pCzas);
+  pEventTime.appendChild(pCzas);
   divEventInfoBackground.appendChild(pEventTime);
+
+  // divEventInfoBackground.appendChild(pLokalizacja);
+  pEventLocalization.appendChild(pLokalizacja);
   divEventInfoBackground.appendChild(pEventLocalization);
+
+  // divEventInfoBackground.appendChild(pPriorytet);
+  pEventPriority.appendChild(pPriorytet);
   divEventInfoBackground.appendChild(pEventPriority);
 
   divEventColor.style.backgroundColor = eventDetails[0].kolor;
-
+  // divEventInfoBackground.appendChild(pKolor);
+  divEventColor.appendChild(pKolor);
   divEventInfoBackground.appendChild(divEventColor);
 
   divEventInfo.appendChild(divEventInfoBackground);
@@ -423,18 +456,18 @@ async function editListEvent() {
 
 async function editListEventCalendar() {
   const form = document.querySelector(
-    '.popUpEditEventCalendar div.editEvent form'
+    ".popUpEditEventCalendar div.editEvent form"
   );
   const dataToSend = new FormData(form);
   dataToSend.append(
-    'json',
+    "json",
     JSON.stringify({
       eventID: eventID,
     })
   );
-  let odp = await fetch('functions/events.php?action=edit', {
-    method: 'POST',
-    mode: 'cors',
+  let odp = await fetch("functions/events.php?action=edit", {
+    method: "POST",
+    mode: "cors",
     body: dataToSend,
   });
   let dane = await odp.text();
