@@ -1,12 +1,13 @@
 main
     div.modal
         div.modal-content
-            padding: 30px 0 30px 0
+            padding: 30px 5px 30px 5px
             overflow: hidden
+            height: 400px
             div.eventDetails
                 display: flex
                 flex-direction: column
-                max-height: 300px
+                // max-height: 300px
                 overflow: auto
                 overflow-x: hidden
                 background-color: #1d2538
@@ -18,7 +19,7 @@ main
                     padding: 10px 0 10px 0
                     border-bottom: 2px dashed white
                     position: fixed
-                    width: 100%
+                    width: 95%
                     height: 40px
                     background-color: #1d2538
                     div.editListEventCalendar
@@ -112,7 +113,7 @@ main
     main
         div.modal
             div.modal-content
-                height: 85%
+                height: 80%
                 width: 60%
 
 @media (min-width: 600px) and (orientation: landscape)
@@ -120,50 +121,32 @@ main
         div.modal
             div.modal-content
                 div.eventDetails
-                    div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
                     div.listInfo
                         div.listInfoBackground
                             height: 250px
                             padding: 10px 50px 10px 50px
-                            h1
-                            p
                     div.eventInfo
                         div.eventInfoBackground
                             height: 250px
                             padding: 10px 50px 10px 50px 
-                            h1
-                            p
+
 
 @media (min-width: 700px) and (orientation: landscape)
     main
         div.modal
             div.modal-content
-                height: 80%
+                // height: 80%
                 div.eventDetails
                     max-height: 350px
-                    div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
                     div.listInfo
                         div.listInfoBackground
                             height: 250px
                             padding: 10px 50px 10px 50px
-                            h1
-                            p
                     div.eventInfo
                         div.eventInfoBackground
                             height: 250px
                             padding: 10px 50px 10px 50px 
-                            h1
-                            p
+
 
 @media (min-width: 800px) and (orientation: landscape)
     main
@@ -172,33 +155,29 @@ main
                 padding: 40px 0px 40px 0px
                 div.eventDetails
                     div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
+                        width: 100%
                     div.listInfo
                         div.listInfoBackground
                             height: 350px
                             padding: 10px 70px 10px 70px
-                            h1
-                            p
                     div.eventInfo
                         div.eventInfoBackground
                             height: 350px
                             padding: 10px 70px 10px 70px 
-                            h1
-                            p
 
+@media (min-width: 926px) and (orientation: landscape)
+    main
+        div.modal
+            div.modal-content
+                height: 400px
+            
 @media (min-width: 1024px) and (orientation: landscape)
     main
         div.modal
             div.modal-content
-                padding: 40px 0px 40px 0px
                 div.eventDetails
-                    max-height: 550px
                     div.eventDetailsHeader
-                        height: 60px
+                        width: 98%
                         div.editListEventCalendar
                             i
                                 font-size: 1.8rem
@@ -208,16 +187,24 @@ main
                         h2
                             font-size: 1.8rem
                     div.listInfo
+                        background-position: left center
+                        background-size: 60%
+                        background-attachment: fixed
+                        background-repeat: no-repeat
                         div.listInfoBackground
-                            height: 450px
+                            height: 250px
                             padding: 30px 100px 10px 100px
                             h1
                                 font-size: 1.8rem
                             p
                                 font-size: 1.5rem
                     div.eventInfo
+                        background-position: left center
+                        background-size: 60%
+                        background-attachment: fixed
+                        background-repeat: no-repeat
                         div.eventInfoBackground
-                            height: 450px
+                            height: 250px
                             padding: 10px 100px 10px 100px 
                             h1
                                 font-size: 1.8rem
@@ -230,67 +217,10 @@ main
     main
         div.modal
             div.modal-content
+                height: 500px
+                width: 700px
+                padding-left: 5px
+                padding-right: 5px
                 div.eventDetails
                     max-height: 650px
-                    div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
-                    div.listInfo
-                        div.listInfoBackground
-                            h1
-                            p
-                    div.eventInfo
-                        div.eventInfoBackground
-                            h1
-                            p
-
-@media (min-width: 1400px) and (orientation: landscape)
-    main
-        div.modal
-            div.modal-content
-                div.eventDetails
-                    max-height: 650px
-                    div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
-                    div.listInfo
-                        div.listInfoBackground
-                            height: 550px
-                            h1
-                            p
-                    div.eventInfo
-                        div.eventInfoBackground
-                            height: 550px
-                            h1
-                            p
-                        
-@media (min-width: 1700px) and (orientation: landscape)
-    main
-        div.modal
-            div.modal-content
-                div.eventDetails
-                    max-height: 650px
-                    div.eventDetailsHeader
-                        div.editListEventCalendar
-                            i
-                        div.removeListEventCalendar
-                            i
-                        h2
-                    div.listInfo
-                        div.listInfoBackground
-                            height: 650px
-                            padding: 10px 120px 10px 120px 
-                            h1
-                            p
-                    div.eventInfo
-                        div.eventInfoBackground
-                            height: 650px
-                            padding: 10px 120px 10px 120px 
-                            h1
-                            p
+                   
