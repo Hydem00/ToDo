@@ -1110,6 +1110,23 @@ div.wrap main section.lists div.addList i.active {
   div.wrap #calendar div.fc-toolbar-chunk:last-child {
     display: none;
   }
+  div.wrap #calendar div.fc-header-toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  div.wrap #calendar div.fc-header-toolbar div.fc-toolbar-chunk:nth-of-type(2) {
+    margin: 0 0 0 30%;
+  }
   div.fc-daygrid-bg-harness {
     z-index: -1;
   }
@@ -1408,8 +1425,9 @@ div.wrap main section.lists div.addList i.active {
   }
 }
 main div.modal div.modal-content {
-  padding: 30px 0 30px 0;
+  padding: 30px 5px 30px 5px;
   overflow: hidden;
+  height: 400px;
 }
 main div.modal div.modal-content div.eventDetails {
   display: -webkit-box;
@@ -1419,7 +1437,6 @@ main div.modal div.modal-content div.eventDetails {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-height: 300px;
   overflow: auto;
   overflow-x: hidden;
   background-color: #1d2538;
@@ -1440,7 +1457,7 @@ main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
   padding: 10px 0 10px 0;
   border-bottom: 2px dashed white;
   position: fixed;
-  width: 100%;
+  width: 95%;
   height: 40px;
   background-color: #1d2538;
 }
@@ -1544,6 +1561,16 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
       flex-basis: 100%;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   word-break: break-all;
   font-size: 0.8rem;
   color: white;
@@ -1563,16 +1590,51 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p i {
+  display: block;
+  position: static;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 10px blue;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  padding-bottom: 5px;
+}
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
-  height: 20px;
+  height: 40px;
   border-radius: 50%;
+}
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 10px blue;
+  padding-bottom: 5px;
 }
 
 @media (min-width: 500px) and (orientation: landscape) {
   main div.modal div.modal-content {
-    height: 85%;
+    height: 80%;
     width: 60%;
   }
 }
@@ -1587,9 +1649,6 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   }
 }
 @media (min-width: 700px) and (orientation: landscape) {
-  main div.modal div.modal-content {
-    height: 80%;
-  }
   main div.modal div.modal-content div.eventDetails {
     max-height: 350px;
   }
@@ -1606,6 +1665,9 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   main div.modal div.modal-content {
     padding: 40px 0px 40px 0px;
   }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+    width: 100%;
+  }
   main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
     height: 350px;
     padding: 10px 70px 10px 70px;
@@ -1615,15 +1677,14 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
     padding: 10px 70px 10px 70px;
   }
 }
-@media (min-width: 1024px) and (orientation: landscape) {
+@media (min-width: 926px) and (orientation: landscape) {
   main div.modal div.modal-content {
-    padding: 40px 0px 40px 0px;
+    height: 400px;
   }
-  main div.modal div.modal-content div.eventDetails {
-    max-height: 550px;
-  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
   main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
-    height: 60px;
+    width: 98%;
   }
   main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
     font-size: 1.8rem;
@@ -1634,8 +1695,14 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
     font-size: 1.8rem;
   }
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-position: left center;
+    background-size: 60%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
   main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 450px;
+    height: 250px;
     padding: 30px 100px 10px 100px;
   }
   main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
@@ -1644,8 +1711,14 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
     font-size: 1.5rem;
   }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-position: left center;
+    background-size: 60%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
   main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 450px;
+    height: 250px;
     padding: 10px 100px 10px 100px;
   }
   main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
@@ -1659,32 +1732,86 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   }
 }
 @media (min-width: 1300px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    height: 500px;
+    width: 700px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   main div.modal div.modal-content div.eventDetails {
     max-height: 650px;
   }
 }
-@media (min-width: 1400px) and (orientation: landscape) {
-  main div.modal div.modal-content div.eventDetails {
-    max-height: 650px;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 550px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 550px;
-  }
+main div.popUpEditEventCalendar div.modal-content div.editEvent {
+  padding: 0 20px;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: #1d2538;
 }
-@media (min-width: 1700px) and (orientation: landscape) {
-  main div.modal div.modal-content div.eventDetails {
-    max-height: 650px;
+main div.popUpEditEventCalendar div.modal-content div.editEvent h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form input {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 5px;
+  height: 33px;
+  margin-bottom: 10px;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form input:nth-of-type(5) {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form input:nth-of-type(6) {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  left: 50%;
+  border-radius: 50%;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form textarea {
+  padding: 5px;
+  margin-bottom: 10px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form select {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  height: 33px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+main div.popUpEditEventCalendar div.modal-content div.editEvent form button {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  main div.popUpEditEventCalendar div.modal-content {
+    height: 470px;
   }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 650px;
-    padding: 10px 120px 10px 120px;
+  main div.popUpEditEventCalendar div.modal-content div.editEvent {
+    padding: 0 150px;
   }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 650px;
-    padding: 10px 120px 10px 120px;
+  main div.popUpEditEventCalendar div.modal-content div.editEvent form select {
+    font-size: 1.4rem;
   }
 }
 div.wrap {
@@ -2556,8 +2683,8 @@ div.wrap main section.menu form button:hover {
     height: 10%;
   }
   div.wrap main section.menu div.editEvent form button, div.wrap main section.menu div.addEvent form button {
-    -ms-flex-preferred-size: 74%;
-        flex-basis: 74%;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
   }
 }
 @media (min-width: 1400px) and (orientation: landscape) {
@@ -2993,7 +3120,7 @@ div.chooseList p {
 }
 .modal .modal-content i {
   position: absolute;
-  top: 17%;
+  top: 23%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -3520,6 +3647,7 @@ div.chooseList p {
   }
   .modal .modal-content form input, .modal .modal-content form textarea {
     font-size: 1.4rem;
+    margin: 0 10px;
   }
   .modal .modal-content form button {
     font-size: 1.4rem;
