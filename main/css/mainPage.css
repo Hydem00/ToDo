@@ -1424,12 +1424,19 @@ div.wrap main section.lists div.addList i.active {
     display: none;
   }
 }
-main div.modal div.modal-content {
-  padding: 30px 5px 30px 5px;
-  overflow: hidden;
-  height: 400px;
+main div.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
-main div.modal div.modal-content div.eventDetails {
+main div.modal div.modal-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1437,11 +1444,54 @@ main div.modal div.modal-content div.eventDetails {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80vw;
+  min-height: 30vh;
+  max-height: 80vh;
+  padding: 30px 10px;
+  background-color: #fefefe;
+  border: 2px solid gray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+main div.modal div.modal-content .close {
+  position: absolute;
+  top: -4%;
+  right: 2%;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px blue;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+main div.modal div.modal-content .close .close:hover,
+main div.modal div.modal-content .close .close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+main div.modal div.modal-content div.eventDetails {
+  max-height: 270px;
   overflow: auto;
   overflow-x: hidden;
-  background-color: #1d2538;
 }
 main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+  position: fixed;
+  top: 26px;
+  left: 50%;
+  width: 95%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1449,116 +1499,97 @@ main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 10px 0 10px 0;
-  border-bottom: 2px dashed white;
-  position: fixed;
-  width: 95%;
-  height: 40px;
-  background-color: #1d2538;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 20px;
+  z-index: 1;
 }
-main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar {
-  position: relative;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
 }
 main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
-  position: static;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: yellow;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i:hover {
   color: white;
-}
-main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  text-shadow: 0 0 5px black;
 }
 main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
-  position: static;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: red;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i:hover {
   color: white;
-}
-main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
-  padding: 0;
-  color: white;
+  text-shadow: 0 0 5px black;
 }
 main div.modal div.modal-content div.eventDetails div.listInfo {
-  margin-top: 40px;
+  margin-top: 70px;
   background-image: url(../../images/yourL.png);
   background-position: left center;
-  background-size: cover;
+  background-size: 150%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
 }
 main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-  padding: 10px 40px 10px 40px;
-  height: 200px;
-  border-bottom: 2px dashed white;
+  padding: 10px 10px 10px 40px;
+  min-height: 200px;
+  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.1);
-  overflow: auto;
-  overflow-x: hidden;
 }
 main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
   word-break: break-all;
-  text-shadow: 0 0 10px yellow;
-  font-size: 1.2rem;
-  margin: 0 0 10px 0;
-  color: white;
+  color: black;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  margin: 0;
 }
 main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
   word-break: break-all;
-  font-size: 0.8rem;
-  color: white;
+  font-size: 1.1rem;
+  color: black;
+  padding: 2px 10px;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo {
+  margin-top: 10px;
   background-image: url(../../images/yourE.png);
   background-position: left center;
-  background-size: cover;
+  background-size: 150%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px 40px 10px 40px;
-  height: 200px;
-  border-bottom: 2px dashed white;
+  padding: 10px 10px 10px 40px;
+  min-height: 200px;
+  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.1);
-  overflow: auto;
-  overflow-x: hidden;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
+  margin: 0;
   word-break: break-all;
-  text-shadow: 0 0 10px yellow;
-  font-size: 1.2rem;
-  margin: 10px 0 10px 0;
-  color: white;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  color: black;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 2px 5px;
 }
 main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
   display: -webkit-box;
@@ -1572,8 +1603,9 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
       -ms-flex-align: center;
           align-items: center;
   word-break: break-all;
-  font-size: 0.8rem;
-  color: white;
+  font-size: 1.1rem;
+  color: black;
+  padding: 2px 10px;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   margin-bottom: 10px;
@@ -1600,7 +1632,7 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
           transform: translate(0);
   padding-bottom: 5px;
 }
-main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div.eventColorCalendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1612,12 +1644,13 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  width: 30%;
+  margin: 0 auto;
   height: 40px;
   border-radius: 50%;
+  border: 2px solid black;
 }
-main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div i {
+main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div.eventColorCalendar i {
   display: block;
   position: absolute;
   top: 50%;
@@ -1631,128 +1664,55 @@ main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBac
   text-shadow: 0 0 10px blue;
   padding-bottom: 5px;
 }
-
-@media (min-width: 500px) and (orientation: landscape) {
-  main div.modal div.modal-content {
-    height: 80%;
-    width: 60%;
-  }
+main div.modal div.editModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80vw;
+  padding: 30px 10px;
+  background-color: #fefefe;
+  border: 2px solid gray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-@media (min-width: 600px) and (orientation: landscape) {
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 250px;
-    padding: 10px 50px 10px 50px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 250px;
-    padding: 10px 50px 10px 50px;
-  }
+main div.modal div.editModal h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
 }
-@media (min-width: 700px) and (orientation: landscape) {
-  main div.modal div.modal-content div.eventDetails {
-    max-height: 350px;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 250px;
-    padding: 10px 50px 10px 50px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 250px;
-    padding: 10px 50px 10px 50px;
-  }
+main div.modal div.editModal .close {
+  position: absolute;
+  top: -2%;
+  right: 2%;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px blue;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
 }
-@media (min-width: 800px) and (orientation: landscape) {
-  main div.modal div.modal-content {
-    padding: 40px 0px 40px 0px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
-    width: 100%;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 350px;
-    padding: 10px 70px 10px 70px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 350px;
-    padding: 10px 70px 10px 70px;
-  }
-}
-@media (min-width: 926px) and (orientation: landscape) {
-  main div.modal div.modal-content {
-    height: 400px;
-  }
-}
-@media (min-width: 1024px) and (orientation: landscape) {
-  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
-    width: 98%;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
-    font-size: 1.8rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
-    font-size: 1.8rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
-    font-size: 1.8rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo {
-    background-position: left center;
-    background-size: 60%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
-    height: 250px;
-    padding: 30px 100px 10px 100px;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
-    font-size: 1.8rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
-    font-size: 1.5rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo {
-    background-position: left center;
-    background-size: 60%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
-    height: 250px;
-    padding: 10px 100px 10px 100px;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
-    font-size: 1.8rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
-    font-size: 1.5rem;
-  }
-  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
-    height: 40px;
-  }
-}
-@media (min-width: 1300px) and (orientation: landscape) {
-  main div.modal div.modal-content {
-    height: 500px;
-    width: 700px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  main div.modal div.modal-content div.eventDetails {
-    max-height: 650px;
-  }
-}
-main div.popUpEditEventCalendar div.modal-content div.editEvent {
-  padding: 0 20px;
-  overflow: auto;
-  overflow-x: hidden;
-  background-color: #1d2538;
-}
-main div.popUpEditEventCalendar div.modal-content div.editEvent h2 {
+main div.modal div.editModal .close .close:hover,
+main div.modal div.editModal .close .close:focus {
   color: white;
-  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
 }
-main div.popUpEditEventCalendar div.modal-content div.editEvent form {
+main div.modal div.editModal form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1760,58 +1720,540 @@ main div.popUpEditEventCalendar div.modal-content div.editEvent form {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  text-align: center;
 }
-main div.popUpEditEventCalendar div.modal-content div.editEvent form input {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  padding: 5px;
-  height: 33px;
+main div.modal div.editModal form input {
+  width: 100%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
-main div.popUpEditEventCalendar div.modal-content div.editEvent form input:nth-of-type(5) {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+main div.modal div.editModal form input:nth-of-type(5) {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
 }
-main div.popUpEditEventCalendar div.modal-content div.editEvent form input:nth-of-type(6) {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+main div.modal div.editModal form textarea {
+  width: 100%;
+  padding: 5px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+main div.modal div.editModal form select {
+  display: block;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  margin-bottom: 5px;
+}
+main div.modal div.editModal form button {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1.4rem;
+}
+main div.modal div.editModal form button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}
+main div.modal div.removeModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80vw;
+  min-height: 30vh;
+  padding: 30px 10px;
+  background-color: #fefefe;
+  border: 2px solid gray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-main div.popUpEditEventCalendar div.modal-content div.editEvent form textarea {
-  padding: 5px;
-  margin-bottom: 10px;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-main div.popUpEditEventCalendar div.modal-content div.editEvent form select {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
-  height: 33px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-main div.popUpEditEventCalendar div.modal-content div.editEvent form button {
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+main div.modal div.removeModal h2 {
   text-transform: uppercase;
+  font-size: 2rem;
   margin-bottom: 10px;
+  text-align: center;
+}
+main div.modal div.removeModal .close {
+  position: absolute;
+  top: -4%;
+  right: 2%;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px blue;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+main div.modal div.removeModal .close .close:hover,
+main div.modal div.removeModal .close .close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+main div.modal div.removeModal h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+main div.modal div.removeModal i {
+  color: red;
+  text-shadow: 0 0 4px yellow;
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+main div.modal div.removeModal button {
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+main div.modal div.removeModal button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
-  main div.popUpEditEventCalendar div.modal-content {
-    height: 470px;
+@media (min-width: 400px) and (orientation: portrait) {
+  main div.modal div.modal-content div.eventDetails {
+    width: 100%;
   }
-  main div.popUpEditEventCalendar div.modal-content div.editEvent {
-    padding: 0 150px;
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+    width: 94%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
-  main div.popUpEditEventCalendar div.modal-content div.editEvent form select {
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-size: 120%;
+    margin-top: 60px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-size: 120%;
+  }
+}
+@media (min-width: 420px) and (orientation: landscape) {
+  main div.modal div.removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    max-height: 250px;
+    padding-top: 30px;
+  }
+  main div.modal div.editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    padding-top: 30px;
+  }
+  main div.modal div.editModal .close {
+    top: -2%;
+    font-size: 2.5rem;
+  }
+  main div.modal div.editModal h2 {
+    font-size: 1.8rem;
+  }
+  main div.modal div.editModal form input, main div.modal div.editModal form textarea {
+    font-size: 1rem;
+  }
+  main div.modal div.editModal form input {
+    margin-bottom: 10px;
+  }
+  main div.modal div.editModal form button {
+    font-size: 1.2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 500px) and (orientation: portrait) {
+  main div.modal div.modal-content div.eventDetails {
+    max-height: 100%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-size: 100%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-size: 100%;
+  }
+  main div.modal div.editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    padding-top: 50px;
+  }
+  main div.modal div.editModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.editModal h2 {
+    font-size: 2.5rem;
+  }
+  main div.modal div.editModal form input, main div.modal div.editModal form textarea {
     font-size: 1.4rem;
+  }
+  main div.modal div.editModal form input:nth-of-type(4) {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  main div.modal div.editModal form input:nth-of-type(5) {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+  }
+  main div.modal div.editModal form select {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  main div.modal div.editModal form button {
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
+  main div.modal div.removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 30vh;
+    padding-top: 50px;
+  }
+  main div.modal div.removeModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.removeModal h2 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+  main div.modal div.removeModal i {
+    font-size: 3rem;
+  }
+  main div.modal div.removeModal h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+  main div.modal div.removeModal button {
+    font-size: 1.8rem;
+    margin-top: 35px;
+  }
+}
+@media (min-width: 600px) and (orientation: portrait) {
+  main div.modal div.editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    padding-top: 50px;
+  }
+  main div.modal div.editModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.editModal h2 {
+    font-size: 2.5rem;
+  }
+  main div.modal div.editModal form input, main div.modal div.editModal form textarea {
+    font-size: 1.4rem;
+  }
+  main div.modal div.editModal form input:nth-of-type(4) {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  main div.modal div.editModal form input:nth-of-type(5) {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+  }
+  main div.modal div.editModal form select {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  main div.modal div.editModal form button {
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-size: 80%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-size: 80%;
+  }
+  main div.modal div.modal-content .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 720px) and (orientation: portrait) {
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-size: 80%;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    min-height: 300px;
+    padding: 30px 100px 10px 100px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
+    font-size: 2rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
+    font-size: 1.6rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p i {
+    font-size: 1.6rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-size: 80%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    min-height: 300px;
+    padding: 30px 100px 10px 100px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
+    font-size: 2rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
+    font-size: 1.6rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p i {
+    font-size: 1.6rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div.eventColorCalendar {
+    height: 50px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div.eventColorCalendar i {
+    font-size: 1.6rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 930px) and (orientation: landscape) {
+  main div.modal div.modal-content div.eventDetails {
+    width: 100%;
+    max-height: 100%;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-size: 60%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-size: 60%;
+  }
+  main div.modal div.editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    padding-top: 50px;
+  }
+  main div.modal div.editModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.editModal h2 {
+    font-size: 2.5rem;
+  }
+  main div.modal div.editModal form input, main div.modal div.editModal form textarea {
+    font-size: 1.4rem;
+  }
+  main div.modal div.editModal form input:nth-of-type(4) {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  main div.modal div.editModal form input:nth-of-type(5) {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+  }
+  main div.modal div.editModal form select {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  main div.modal div.editModal form button {
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
+  main div.modal div.removeModal {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  main div.modal div.modal-content {
+    width: 50vw;
+  }
+  main div.modal div.modal-content .close {
+    top: -2%;
+    right: 1%;
+  }
+  main div.modal div.modal-content div.eventDetails {
+    width: 100%;
+    max-height: 100%;
+  }
+  main div.modal div.modal-content div.eventDetails::-webkit-scrollbar {
+    width: 8px;
+  }
+  main div.modal div.modal-content div.eventDetails::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 168, 177, 0.5);
+    border-radius: 20px;
+    opacity: 0.5;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 98%;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.editListEventCalendar i {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader div.removeListEventCalendar i {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventDetailsHeader h2 {
+    font-size: 1.8rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo {
+    background-position: left center;
+    background-size: 70%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 300px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground {
+    min-height: 300px;
+    padding: 30px 100px 10px 100px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  main div.modal div.modal-content div.eventDetails div.listInfo div.listInfoBackground p {
+    font-size: 1.5rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo {
+    background-position: left center;
+    background-size: 70%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground {
+    padding: 30px 100px 10px 100px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground p {
+    font-size: 1.5rem;
+  }
+  main div.modal div.modal-content div.eventDetails div.eventInfo div.eventInfoBackground div {
+    height: 40px;
+  }
+  main div.modal div.removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 50vh;
+    padding-top: 70px;
+  }
+  main div.modal div.removeModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.removeModal h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+  main div.modal div.removeModal h3 {
+    font-size: 1.8rem;
+  }
+  main div.modal div.removeModal i {
+    top: 10px;
+    font-size: 2.8rem;
+  }
+  main div.modal div.removeModal button {
+    margin-top: 30px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+  }
+  main div.modal div.editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    padding-top: 50px;
+  }
+  main div.modal div.editModal .close {
+    top: -2%;
+    font-size: 3.5rem;
+  }
+  main div.modal div.editModal h2 {
+    font-size: 3rem;
+  }
+  main div.modal div.editModal form input, main div.modal div.editModal form textarea {
+    font-size: 1.6rem;
+  }
+  main div.modal div.editModal form input {
+    margin-bottom: 20px;
+  }
+  main div.modal div.editModal form button {
+    font-size: 2.4rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
   }
 }
 div.wrap {
@@ -3082,7 +3524,7 @@ div.chooseList p {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
-.modal .modal-content {
+.modal .editModal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3090,79 +3532,48 @@ div.chooseList p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 85%;
-  padding: 20px;
+  width: 80vw;
+  min-height: 30vh;
+  padding: 30px 10px;
   background-color: #fefefe;
-  border: 1px solid #888;
-  border-radius: 20px;
-  text-align: center;
+  border: 2px solid gray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-.modal .modal-content h2 {
-  width: 100%;
-  padding: 5px;
-  text-align: center;
+.modal .editModal h2 {
   text-transform: uppercase;
-  font-size: 1rem;
-}
-.modal .modal-content h3 {
-  font-size: 1rem;
-  margin-top: 20%;
-  word-break: break-all;
-  text-align: left;
-}
-.modal .modal-content i {
-  position: absolute;
-  top: 23%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   font-size: 2rem;
-  color: red;
+  margin-bottom: 10px;
+  text-align: center;
 }
-.modal .modal-content button {
-  height: 25px;
-  width: 50px;
-  margin: 0 auto;
-  margin-top: 15px;
-  background-color: #179CF0;
-  color: white;
-  border: 1px solid #179CF0;
-  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
-          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
-  border-radius: 20px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.modal .modal-content button:hover {
-  background-color: #14130C;
-  border-color: transparent;
-  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
-          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
-}
-.modal .modal-content .close {
+.modal .editModal .close {
   position: absolute;
-  top: -2%;
+  top: -4%;
   right: 2%;
   color: black;
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 0 0 5px blue;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
 }
-.modal .modal-content .close:hover,
-.modal .modal-content .close:focus {
-  color: black;
+.modal .editModal .close .close:hover,
+.modal .editModal .close .close:focus {
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
-.modal .modal-content form {
+.modal .editModal form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3179,28 +3590,25 @@ div.chooseList p {
   height: 90%;
   text-align: center;
 }
-.modal .modal-content form input {
+.modal .editModal form input {
   width: 100%;
   padding: 5px 20px;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.modal .modal-content form textarea {
+.modal .editModal form textarea {
   width: 100%;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
   padding: 5px 20px;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
   font-size: 1rem;
-  margin-bottom: 8px;
 }
-.modal .modal-content form button {
-  margin-top: 5%;
+.modal .editModal form button {
+  margin-top: 20px;
   padding: 5px 10px;
   border-radius: 10px;
   background-color: #179CF0;
@@ -3211,487 +3619,232 @@ div.chooseList p {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  width: 90px;
-  height: 35px;
+  font-size: 1.4rem;
 }
-.modal .modal-content form button:hover {
+.modal .editModal form button:hover {
+  background-color: #14130C;
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+          box-shadow: 0 0 0 5px black, 0 0 0 7px white;
+}
+.modal .removeModal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80vw;
+  min-height: 30vh;
+  padding: 30px 10px;
+  background-color: #fefefe;
+  border: 2px solid gray;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.modal .removeModal h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.modal .removeModal .close {
+  position: absolute;
+  top: -4%;
+  right: 2%;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px blue;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.modal .removeModal .close .close:hover,
+.modal .removeModal .close .close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .removeModal h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+.modal .removeModal i {
+  color: red;
+  text-shadow: 0 0 4px yellow;
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+.modal .removeModal button {
+  background-color: #179CF0;
+  color: white;
+  border: 1px solid #179CF0;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+.modal .removeModal button:hover {
   background-color: #14130C;
   border-color: transparent;
   -webkit-box-shadow: 0 0 0 5px black, 0 0 0 7px white;
           box-shadow: 0 0 0 5px black, 0 0 0 7px white;
 }
 
-@media (min-width: 360px) and (orientation: portrait) {
-  .modal .modal-content {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+@media (min-width: 500px) and (orientation: portrait) {
+  .modal .editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 30vh;
+    padding-top: 50px;
   }
-  .modal .modal-content button {
-    height: 30px;
-    width: 75px;
-  }
-  .modal .modal-content i {
-    top: 19%;
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h3 {
-    margin-top: 20%;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.1rem;
-  }
-  .modal .modal-content form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .modal .modal-content form button {
-    width: 100px;
-    height: 35px;
-  }
-}
-@media (min-width: 375px) and (orientation: portrait) {
-  .modal .modal-content h3 {
-    margin-top: 30%;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content i {
-    top: 22%;
-  }
-}
-@media (min-width: 390px) and (orientation: portrait) {
-  .modal .modal-content i {
-    font-size: 3.2rem;
-    top: 20%;
-  }
-  .modal .modal-content button {
-    height: 35px;
-    width: 90px;
-  }
-}
-@media (min-width: 411px) and (orientation: portrait) {
-  .modal .modal-content h3 {
-    margin-top: 30%;
-    font-size: 1.3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal .modal-content i {
-    font-size: 3.5rem;
-    top: 19%;
-  }
-  .modal .modal-content button {
-    height: 35px;
-    width: 90px;
-  }
-}
-@media (min-width: 533px) and (orientation: landscape) {
-  .modal .modal-content .close {
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.2rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 19%;
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.1rem;
-    margin-top: 10%;
-  }
-  .modal .modal-content button {
-    font-size: 1.1rem;
-    height: 35px;
-    width: 80px;
-  }
-}
-@media (min-width: 540px) and (orientation: portrait) {
-  .modal .modal-content {
-    width: 50%;
-  }
-  .modal .modal-content .close {
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.2rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 17%;
-    font-size: 3rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.2rem;
-    margin-top: 25%;
-  }
-  .modal .modal-content button {
-    font-size: 1.2rem;
-    height: 45px;
-    width: 80px;
-  }
-}
-@media (min-width: 568px) and (orientation: landscape) {
-  .modal .modal-content {
-    height: 85%;
-  }
-}
-@media (min-width: 640px) and (orientation: landscape) {
-  .modal .modal-content {
-    height: 85%;
-    width: 50%;
-  }
-  .modal .modal-content .close {
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.2rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 19%;
-    font-size: 3rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.2rem;
-    margin-top: 20%;
-  }
-  .modal .modal-content button {
-    font-size: 1.2rem;
-    height: 45px;
-    width: 80px;
-  }
-}
-@media (min-width: 653px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 50%;
-  }
-  .modal .modal-content .close {
-    font-size: 3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.2rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.1rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.1rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 19%;
-    font-size: 2.5rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.1rem;
-    margin-top: 10%;
-  }
-  .modal .modal-content button {
-    font-size: 1.1rem;
-    height: 45px;
-    width: 80px;
-  }
-}
-@media (min-width: 667px) and (orientation: landscape) {
-  .modal .modal-content h3 {
-    margin-top: 20%;
-  }
-  .modal .modal-content button {
-    height: 40px;
-  }
-}
-@media (min-width: 720px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 50%;
-    height: 65%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  .modal .modal-content .close {
-    font-size: 3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.4rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 20%;
+  .modal .editModal .close {
+    top: -2%;
     font-size: 3.5rem;
   }
-  .modal .modal-content h3 {
-    font-size: 1.1rem;
-    margin-top: 25%;
+  .modal .editModal h2 {
+    font-size: 2.5rem;
   }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 35px;
-    width: 85px;
-  }
-}
-@media (min-width: 740px) and (orientation: landscape) {
-  .modal .modal-content h3 {
-    margin-top: 15%;
-  }
-}
-@media (min-width: 768px) and (orientation: portrait) {
-  .modal .modal-content {
-    height: 45%;
-    width: 50%;
-  }
-  .modal .modal-content .close {
-    font-size: 3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
+  .modal .editModal form input, .modal .editModal form textarea {
     font-size: 1.4rem;
   }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 110px;
+  .modal .editModal form input {
+    margin-bottom: 20px;
   }
-  .modal .modal-content i {
-    top: 19%;
+  .modal .editModal form button {
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
+  .modal .removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 30vh;
+    padding-top: 50px;
+  }
+  .modal .removeModal .close {
+    top: -2%;
     font-size: 3.5rem;
   }
-  .modal .modal-content h3 {
-    font-size: 1.4rem;
-    margin-top: 25%;
+  .modal .removeModal h2 {
+    font-size: 2.5rem;
   }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 45px;
-    width: 80px;
-  }
-}
-@media (min-width: 812px) and (orientation: landscape) {
-  .modal .modal-content {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  .modal .modal-content h3 {
-    margin-top: 15%;
-  }
-}
-@media (min-width: 812px) and (orientation: portrait) {
-  .modal .modal-content {
-    height: 45%;
-    width: 50%;
-  }
-  .modal .modal-content .close {
+  .modal .removeModal i {
     font-size: 3rem;
   }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
+  .modal .removeModal h3 {
+    font-size: 1.8rem;
   }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.4rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 125px;
-    height: 45px;
-  }
-  .modal .modal-content i {
-    top: 20%;
-    font-size: 3.5rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.4rem;
-    margin-top: 25%;
-  }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 45px;
-    width: 100px;
+  .modal .removeModal button {
+    font-size: 1.8rem;
   }
 }
-@media (min-width: 908px) {
-  .modal .modal-content h3 {
-    margin-top: 20%;
+@media (min-width: 420px) and (orientation: landscape) {
+  .modal .editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    max-height: 50%;
+    padding-top: 30px;
   }
-}
-@media (min-width: 912px) and (orientation: portrait) {
-  .modal .modal-content {
-    height: 40%;
-    width: 65%;
+  .modal .editModal .close {
+    top: -2%;
+    font-size: 2.5rem;
   }
-}
-@media (min-width: 930px) and (orientation: landscape) {
-  .modal .modal-content {
-    height: 40%;
+  .modal .editModal h2 {
+    font-size: 1.8rem;
   }
-  .modal .modal-content h3 {
-    margin-top: 25%;
+  .modal .editModal form input, .modal .editModal form textarea {
+    font-size: 1rem;
+  }
+  .modal .editModal form input {
+    margin-bottom: 10px;
+  }
+  .modal .editModal form button {
+    font-size: 1.2rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+  }
+  .modal .removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    max-height: 250px;
+    padding-top: 30px;
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
-  .modal .modal-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    height: auto;
-    width: 45%;
+  .modal .editModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 50vh;
+    padding-top: 50px;
   }
-  .modal .modal-content .close {
-    font-size: 3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.4rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 18%;
-    font-size: 4.5rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.4rem;
-    margin-top: 18%;
-  }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 45px;
-    width: 90px;
-  }
-}
-@media (min-width: 1180px) and (orientation: landscape) {
-  .modal .modal-content {
-    height: 45%;
-    width: 50%;
-  }
-  .modal .modal-content .close {
-    font-size: 3rem;
-  }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
-  }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.4rem;
-  }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 110px;
-  }
-  .modal .modal-content i {
-    top: 20%;
+  .modal .editModal .close {
+    top: -2%;
     font-size: 3.5rem;
   }
-  .modal .modal-content h3 {
-    font-size: 1.4rem;
-    margin-top: 18%;
-  }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 45px;
-    width: 100px;
-  }
-}
-@media (min-width: 1280px) and (orientation: landscape) {
-  .modal .modal-content {
-    height: 50%;
-    width: 50%;
-  }
-  .modal .modal-content .close {
+  .modal .editModal h2 {
     font-size: 3rem;
   }
-  .modal .modal-content h2 {
-    font-size: 1.5rem;
+  .modal .editModal form input, .modal .editModal form textarea {
+    font-size: 1.6rem;
   }
-  .modal .modal-content form input, .modal .modal-content form textarea {
-    font-size: 1.4rem;
-    margin: 0 10px;
+  .modal .editModal form input {
+    margin-bottom: 20px;
   }
-  .modal .modal-content form button {
-    font-size: 1.4rem;
-    width: 140px;
-    height: 45px;
+  .modal .editModal form button {
+    font-size: 2.4rem;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 30px;
   }
-  .modal .modal-content i {
-    top: 23%;
+  .modal .removeModal {
+    max-width: 30vw;
+    min-width: 435px;
+    min-height: 50vh;
+    padding-top: 70px;
+  }
+  .modal .removeModal .close {
+    top: -2%;
     font-size: 3.5rem;
   }
-  .modal .modal-content h3 {
-    font-size: 1.4rem;
-    margin-top: 18%;
+  .modal .removeModal h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
   }
-  .modal .modal-content button {
-    font-size: 1.4rem;
-    height: 45px;
-    width: 100px;
+  .modal .removeModal h3 {
+    font-size: 1.8rem;
   }
-}
-@media (min-width: 1368px) and (orientation: landscape) {
-  .modal .modal-content h2 {
+  .modal .removeModal i {
+    top: 10px;
+    font-size: 2.8rem;
+  }
+  .modal .removeModal button {
+    margin-top: 30px;
+    padding: 5px 10px;
+    border-radius: 20px;
     font-size: 2rem;
-  }
-  .modal .modal-content i {
-    font-size: 4rem;
-  }
-  .modal .modal-content h3 {
-    font-size: 1.9rem;
-  }
-  .modal .modal-content button {
-    font-size: 1.9rem;
-  }
-}
-@media (min-width: 1400px) and (orientation: landscape) {
-  .modal .modal-content {
-    width: 35%;
-  }
-  .modal .modal-content button {
-    width: 120px;
-    height: 50px;
-  }
-  .modal .modal-content i {
-    top: 19%;
   }
 }
 footer {
