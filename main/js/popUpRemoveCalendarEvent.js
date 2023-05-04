@@ -23,16 +23,21 @@ function popUpEventRemove(prevPopUp, event_id, event_name) {
 
     eventID = event_id;
 
-    confirmationBtns.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        if (index == 0) {
-          removeListEvent();
-          modalRemoveEvent.style.display = 'none';
-        } else {
-          modalRemoveEvent.style.display = 'none';
-        }
-      });
-    });
+    function removeListEventAction() {
+      removeListEvent();
+      modalRemoveEvent.style.display = 'none';
+      confirmationBtns[0].removeEventListener('click', removeListEventAction);
+      confirmationBtns[1].removeEventListener('click', modalHidden);
+    }
+
+    function modalHidden() {
+      modalRemoveEvent.style.display = 'none';
+      confirmationBtns[0].removeEventListener('click', removeListEventAction);
+      confirmationBtns[1].removeEventListener('click', modalHidden);
+    }
+
+    confirmationBtns[0].addEventListener('click', removeListEventAction);
+    confirmationBtns[1].addEventListener('click', modalHidden);
   }
 
   removeEventBtn.addEventListener('click', removeEvent);
