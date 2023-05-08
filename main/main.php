@@ -182,7 +182,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpEditList" class="modal popUpEdit">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <h2>Edit List</h2>
           <span class="close">&times;</span>
           <form method="POST">
@@ -193,7 +193,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpRemoveList" class="modal popUpRemove">
-        <div class="modal-content">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
           <h2>Remove List</h2>
           <h3></h3>
@@ -203,7 +203,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpRemoveEvent" class="modal popUpRemove">
-        <div class="modal-content">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
           <h2>Remove Event</h2>
           <h3></h3>
@@ -219,7 +219,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpRemoveCalendarEvent" class="modal popUpRemoveEventCalendar">
-        <div class="modal-content">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
           <h2>Remove Event</h2>
           <h3></h3>
@@ -229,7 +229,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpEditCalendarEvent" class="modal popUpEditEventCalendar">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <span class="close">&times;</span>
           <div class="editEvent">
           <h2>Edit Event</h2>
