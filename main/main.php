@@ -171,7 +171,7 @@ if(!$auth->isLogged()){
         </div>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
