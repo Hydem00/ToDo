@@ -346,7 +346,7 @@ async function getEventDetails(event_id) {
   });
   eventDetails = await odp.json();
 
-  // console.log(eventDetails);
+  console.log(eventDetails);
 
   renderDetailsToPopUp(eventDetails);
 }
@@ -400,6 +400,10 @@ function renderDetailsToPopUp(eventDetails) {
 
   const h1EventTitle = document.createElement('h1');
 
+  const pEventData = document.createElement('p');
+  const pData = document.createElement('i');
+  pData.classList.add('fa-solid', 'fa-calendar-days');
+
   const pEventTime = document.createElement('p');
   const pCzas = document.createElement('i');
   pCzas.classList.add('fa-solid', 'fa-clock');
@@ -445,6 +449,7 @@ function renderDetailsToPopUp(eventDetails) {
     pEventDescription.innerText = eventDetails[0].opis;
   }
 
+  pEventData.innerHTML = eventDetails[0].data;
   pEventTime.innerHTML = eventDetails[0].czas;
 
   if (eventDetails[0].lokalizacja == '') {
@@ -462,6 +467,9 @@ function renderDetailsToPopUp(eventDetails) {
   divEventInfoBackground.appendChild(h1EventTitle);
   pEventDescription.appendChild(pOpis);
   divEventInfoBackground.appendChild(pEventDescription);
+
+  pEventData.appendChild(pData);
+  divEventInfoBackground.appendChild(pEventData);
 
   // divEventInfoBackground.appendChild(pCzas);
   pEventTime.appendChild(pCzas);
