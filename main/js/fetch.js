@@ -346,7 +346,7 @@ async function getEventDetails(event_id) {
   });
   eventDetails = await odp.json();
 
-  console.log(eventDetails);
+  // console.log(eventDetails);
 
   renderDetailsToPopUp(eventDetails);
 }
