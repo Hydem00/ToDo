@@ -23,11 +23,13 @@ function popUpEventRemove(prevPopUp, event_id, event_name) {
 
     eventID = event_id;
 
-    function removeListEventAction() {
-      removeListEvent();
+    async function removeListEventAction() {
+      await removeListEvent();
       modalRemoveEvent.style.display = 'none';
       confirmationBtns[0].removeEventListener('click', removeListEventAction);
       confirmationBtns[1].removeEventListener('click', modalHidden);
+      await addEventBtnsRender();
+      popUpAddEvent();
     }
 
     function modalHidden() {

@@ -43,7 +43,7 @@ function popUpEventEdit(prevPopUp, event_id, event) {
     eventPriorityEdit.value = eventDetails[0].priorytet;
     eventColorEdit.value = eventDetails[0].kolor;
 
-    function editEventValidation(e) {
+    async function editEventValidation(e) {
       if (
         eventTitleEdit.value.length != 0 &&
         eventDateEdit.value.length != 0 &&
@@ -54,7 +54,7 @@ function popUpEventEdit(prevPopUp, event_id, event) {
           `Are you sure to edit this event named ${eventDetails[0].nazwa}?`
         );
         if (isExecuted) {
-          editListEventCalendar();
+          await editListEventCalendar();
           eventTitleEdit.value = '';
           eventDescriptionEdit.value = '';
           eventLocationEdit.value = '';
@@ -66,6 +66,9 @@ function popUpEventEdit(prevPopUp, event_id, event) {
           document
             .querySelector('.popUpEditEventCalendar div.editEvent form button')
             .removeEventListener('click', editEventValidation);
+
+          await addEventBtnsRender();
+          popUpAddEvent();
         }
       }
     }
