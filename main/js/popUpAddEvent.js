@@ -45,6 +45,35 @@ function popUpAddEvent() {
     }
   }
 
+  function clearForm() {
+    const eventTitleAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form input:nth-of-type(1)'
+    );
+    const eventDescriptionAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form textarea'
+    );
+    const eventLocationAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form input:nth-of-type(2)'
+    );
+    const eventTimeAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form input:nth-of-type(3)'
+    );
+    const eventPriorityAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form select'
+    );
+    const eventColorAdd = document.querySelector(
+      '#popUpAddEvent div.addEvent form input[type="color"]'
+    );
+
+    eventTitleAdd.value = '';
+    eventDescriptionAdd.value = '';
+    eventLocationAdd.value = '';
+    eventTimeAdd.value = '';
+    eventPriorityAdd.value = '1';
+    eventColorAdd.value = '#000000';
+    modalDisplayEvent.style.display = 'none';
+  }
+
   async function popUpVisible() {
     chosenDate = this.parentNode.parentNode.parentNode.dataset.date;
     modalDisplayEvent.style.display = 'block';
@@ -57,11 +86,13 @@ function popUpAddEvent() {
 
   closePopUpEventProperties.addEventListener('click', function () {
     modalDisplayEvent.style.display = 'none';
+    clearForm();
   });
 
   window.addEventListener('mousedown', function (event) {
     if (event.target == modalDisplayEvent) {
       modalDisplayEvent.style.display = 'none';
+      clearForm();
     }
   });
 
