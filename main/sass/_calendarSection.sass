@@ -1,5 +1,18 @@
+.fc-daygrid-day-top
+    justify-content: space-between
+    div.addEventBtnPopUp
+        i 
+            display: none
+            font-size: 1.4rem
+            padding: 2px 5px
+            cursor: pointer
+
+.fc-daygrid-day-frame:hover
+    div.addEventBtnPopUp
+        i 
+            display: block
+    
 @media (min-width: 300px)
-    td
     div.fc-daygrid-day-frame
         // height: 100%
         div.fc-daygrid-day-events
@@ -120,7 +133,6 @@
         z-index: -1
         
 @media (min-width: 500px)
-    td
     div.fc-daygrid-day-frame
         // height: 100%
         div.fc-daygrid-day-events
@@ -219,7 +231,6 @@
                     display: none
 
 @media (min-width: 800px)
-    td
     div.fc-daygrid-day-frame
         // height: 100%
         div.fc-daygrid-day-events
@@ -272,7 +283,6 @@
 
 
 @media (min-width: 1024px) and (orientation: landscape)
-    td
     div.fc-daygrid-day-frame
         // height: 100%
         div.fc-daygrid-day-events

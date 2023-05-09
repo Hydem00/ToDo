@@ -976,6 +976,22 @@ div.wrap main section.lists div.addList i.active {
     height: 124px;
   }
 }
+.fc-daygrid-day-top {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.fc-daygrid-day-top div.addEventBtnPopUp i {
+  display: none;
+  font-size: 1.4rem;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.fc-daygrid-day-frame:hover div.addEventBtnPopUp i {
+  display: block;
+}
+
 @media (min-width: 300px) {
   div.fc-daygrid-day-frame div.fc-daygrid-day-events {
     height: 100px;
