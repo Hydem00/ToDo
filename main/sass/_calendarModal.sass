@@ -1,5 +1,50 @@
 main
     div.modal
+        div.addModal
+            h2
+                text-transform: uppercase
+                font-size: 2rem
+                margin-bottom: 10px
+                text-align: center
+            form
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                p
+                    font-size: 1rem
+                select, input, textarea
+                    width: 100%
+                    height: 33px
+                    margin: 2px 0
+                    padding: 5px
+                textarea
+                    height: 50px
+                    resize: none
+                    overflow-y: auto
+                select
+                    &:nth-of-type(2)
+                        flex-basis: 30%
+                input
+                    &:nth-of-type(3)
+                        flex-basis: 30%
+                    &:nth-of-type(4)
+                        flex-basis: 30%
+                button
+                    margin: 0 auto
+                    margin-top: 20px
+                    padding: 5px 10px
+                    border-radius: 10px
+                    background-color: #179CF0
+                    color: white
+                    border: 1px solid #179CF0
+                    box-shadow: 0 0 0 2px white, 0 0 0 4px black
+                    cursor: pointer
+                    transition: 0.3s
+                    font-size: 1.4rem
+                    &:hover
+                        background-color: #14130C
+                        border-color: transparent
+                        box-shadow: 0 0 0 5px black, 0 0 0 7px white
         display: none
         position: fixed
         left: 0
@@ -19,8 +64,8 @@ main
             left: 50%
             transform: translate(-50%,-50%)
             width: 80vw
-            min-height: 30vh
-            max-height: 80vh
+            // min-height: 50%
+            max-height: 400px
             padding: 30px 10px
             background-color: #fefefe
             border: 2px solid gray
@@ -338,7 +383,7 @@ main
             div.removeModal
                 max-width: 30vw
                 min-width: 435px
-                max-height: 250px
+                // max-height: 250px
                 padding-top: 30px
             div.editModal
                 max-width: 30vw
@@ -374,6 +419,8 @@ main
                         background-size: 100%
                     div.eventInfo
                         background-size: 100%
+            div.addModal
+                width: 400px
             div.editModal
                 max-width: 30vw
                 min-width: 435px
@@ -421,7 +468,13 @@ main
                 button
                     font-size: 1.8rem
                     margin-top: 35px
-
+@media (min-width: 500px) and (orientation: landscape)
+    main
+        div.modal
+            div.addModal
+                height: 80vh
+                overflow-y: scroll
+                width: 350px
 @media (min-width: 600px) and (orientation: portrait)
     main
         div.modal
@@ -643,6 +696,10 @@ main
                         border-radius: 20px
                         padding: 10px 30px
                         margin-top: 30px
+            div.addModal
+                height: 80vh
+                overflow-y: auto
+                width: 350px
 // @media (min-width: 1300px) and (orientation: landscape)
 //     main
 //         div.modal

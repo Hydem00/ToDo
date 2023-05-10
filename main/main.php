@@ -251,12 +251,12 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpAddEvent" class="modal popUpAddEvent">
-        <div class="modal-content">
+        <div class="modal-content addModal">
           <span class="close">&times;</span>
           <div class="addEvent">
           <h2>Add Event</h2>
           <form method="POST">
-            <h2>Select the list you want to add an event to.</h2>
+            <p>Select the list you want to add an event to</p>
             <select name="" id="chosen_list">
             </select>
             <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
