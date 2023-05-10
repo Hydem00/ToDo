@@ -1,36 +1,70 @@
-const navBurger = document.querySelector('nav.mobile div.burger');
-const navMobile = document.querySelector('nav.mobile');
+const navBurger = document.querySelector("nav.mobile div.burger");
+const navMobile = document.querySelector("nav.mobile");
 
-const navLiElementsDesktop = document.querySelectorAll('nav.desktop li[data-nav]');
+const navLiElementsDesktop = document.querySelectorAll(
+  "nav.desktop li[data-nav]"
+);
 
-const navLiElementsMobile = document.querySelectorAll('nav.mobile li[data-nav]');
+const navLiElementsMobile = document.querySelectorAll(
+  "nav.mobile li[data-nav]"
+);
 
 navLiElementsDesktop.forEach((liElement) => {
-    liElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        const navDesktopHeight = document.querySelector('nav.desktop').clientHeight;
-        const navTo = liElement.dataset.nav;
+  liElement.addEventListener("click", (e) => {
+    e.preventDefault();
+    const navDesktopHeight = document.querySelector("nav.desktop").clientHeight;
+    const navTo = liElement.dataset.nav;
 
-        window.scrollTo(0, (document.querySelector(navTo).offsetTop) - (navDesktopHeight));
-    })
-})
+    window.scrollTo(
+      0,
+      document.querySelector(navTo).offsetTop - navDesktopHeight
+    );
+  });
+});
 
 navLiElementsMobile.forEach((liElement) => {
-    liElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        const navMobileHeight = document.querySelector('nav.mobile').clientHeight;
-        const navTo = liElement.dataset.nav;
+  liElement.addEventListener("click", (e) => {
+    e.preventDefault();
+    const navMobileHeight = document.querySelector("nav.mobile").clientHeight;
+    const navTo = liElement.dataset.nav;
 
-        window.scrollTo(0, (document.querySelector(navTo).offsetTop) - (navMobileHeight));
+    window.scrollTo(
+      0,
+      document.querySelector(navTo).offsetTop - navMobileHeight
+    );
 
-        navMobile.classList.toggle('active');
-        navBurger.classList.toggle('active');
-    });
-})
+    navMobile.classList.toggle("active");
+    navBurger.classList.toggle("active");
+  });
+});
 
 const navRollOut = () => {
-    navBurger.classList.toggle('active');
-    navMobile.classList.toggle('active');
-}
+  navBurger.classList.toggle("active");
+  navMobile.classList.toggle("active");
+};
 
-navBurger.addEventListener('click', navRollOut);
+navBurger.addEventListener("click", navRollOut);
+
+// ANIMACJE OFFER
+const offerDiv = document.getElementById("offer");
+const offerChildDivs = offerDiv.querySelectorAll("div.offer div");
+
+offerChildDivs.forEach((div, index) => {
+  if (index % 2 !== 0) {
+    div.classList.remove("slide-out-right");
+    div.classList.add("slide-in-left");
+  } else {
+    div.classList.remove("slide-out-left");
+    div.classList.add("slide-in-left");
+  }
+});
+
+window.addEventListener("scroll", () => {
+  offerChildDivs.forEach((div) => {
+    const divTop = div.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (divTop <= windowHeight / 2) {
+      div.classList.add("slide-in");
+    }
+  });
+});

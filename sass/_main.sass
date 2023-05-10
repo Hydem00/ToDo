@@ -62,14 +62,27 @@ main
       padding-bottom: 20px
 
     &.offer
+      overflow: hidden
       width: 95%
       border-top: 1px solid gray
       color: white
       padding-bottom: 20px
-
       div
+        display: flex
         align-items: center
         justify-content: space-between
+        &.slide-out-left
+          transform: translateX(-200%)
+        &.left
+          transform: translateX(-200%)
+        &.right
+          transform: translateX(200%)
+        &.slide-out-right
+          transform: translateX(200%)
+        &.slide-in
+          animation: slide-in-left 1s forwards
+        &.slide-in-right
+          animation: slide-in-right 1s forwards
 
     &.aboutUs h1, &.offer h1
       font-size: 1.3rem
@@ -97,6 +110,19 @@ main
       width: 80%
       height: 220px
 
+@keyframes slide-in-left
+  0%
+    transform: translateX(-200%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+@keyframes slide-in-right
+  0%
+    transform: translateX(200%)
+  100%
+    transform: translateX(0)
+    
 @media (min-width: 360px) and (orientation: portrait)
   main
     div.banner h1
