@@ -63,15 +63,20 @@ window.addEventListener('scroll', () => {
   offerChildDivs.forEach((div, index) => {
     const divTop = div.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
-    if (divTop / 2 <= windowHeight / 2 && index % 2 == 0) {
+    if (divTop <= windowHeight / 2 && index % 2 == 0) {
+      div.classList.remove('slide-out-right');
       div.classList.add('slide-in-right');
     } else if (divTop <= windowHeight / 2 && index % 2 == 1) {
+      div.classList.remove('slide-out-left');
       div.classList.add('slide-in-left');
     } else {
-      div.classList.remove('slide-in-right');
-      div.classList.remove('slide-in-left');
-      div.classList.add('slide-out-right');
-      div.classList.add('slide-out-left');
+      if (index % 2 == 0) {
+        div.classList.remove('slide-in-right');
+        div.classList.add('slide-out-right');
+      } else {
+        div.classList.remove('slide-in-left');
+        div.classList.add('slide-out-left');
+      }
     }
   });
 });
