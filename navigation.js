@@ -88,9 +88,12 @@ let isAnimating = false;
 const animateLogo = () => {
   const windowHeight = window.innerHeight;
   const logoTop = logo.getBoundingClientRect().top;
+
   if (!isAnimating && logoTop <= windowHeight / 2) {
     isAnimating = true;
+    logo.style.opacity = 1;
     logo.classList.add("animate-logo");
+    logo.classList.remove("animate-logo-reverse");
     logo.addEventListener(
       "animationend",
       () => {
@@ -98,6 +101,11 @@ const animateLogo = () => {
       },
       { once: true }
     );
+  } else if (isAnimating && logoTop > windowHeight / 2) {
+    isAnimating = false;
+    logo.style.opacity = 0;
+    logo.classList.remove("animate-logo");
+    logo.classList.add("animate-logo-reverse");
   }
 };
 
