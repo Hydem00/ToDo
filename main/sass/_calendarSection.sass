@@ -2,10 +2,12 @@
     justify-content: space-between
     div.addEventBtnPopUp
         i 
-            display: none
-            font-size: 1.4rem
+            display: block
+            font-size: 1rem
             padding: 2px 5px
             cursor: pointer
+            &:hover
+                color: lime
 
 .fc-daygrid-day-frame:hover
     div.addEventBtnPopUp
@@ -281,7 +283,12 @@
                         i.fa-trash
                             font-size: 0.8rem
 
-
+@media (min-width: 1024px) and (orientation: landscape)
+    .fc-daygrid-day-top
+        justify-content: space-between
+        div.addEventBtnPopUp
+            i 
+                display: none
 @media (min-width: 1024px) and (orientation: landscape)
     div.fc-daygrid-day-frame
         // height: 100%
