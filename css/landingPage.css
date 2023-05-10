@@ -547,18 +547,46 @@ main div.aboutUs {
   padding-bottom: 20px;
 }
 main div.offer {
+  overflow: hidden;
   width: 95%;
   border-top: 1px solid gray;
   color: white;
   padding-bottom: 20px;
 }
 main div.offer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+main div.offer div.slide-out-left {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+main div.offer div.left {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+main div.offer div.right {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+main div.offer div.slide-out-right {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+main div.offer div.slide-in {
+  -webkit-animation: slide-in-left 1s forwards;
+          animation: slide-in-left 1s forwards;
+}
+main div.offer div.slide-in-right {
+  -webkit-animation: slide-in-right 1s forwards;
+          animation: slide-in-right 1s forwards;
 }
 main div.aboutUs h1, main div.offer h1 {
   font-size: 1.3rem;
@@ -586,6 +614,51 @@ main div.offer img {
   height: 220px;
 }
 
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
 @media (min-width: 360px) and (orientation: portrait) {
   main div.banner h1 {
     font-size: 1.4rem;
