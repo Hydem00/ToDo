@@ -48,7 +48,6 @@ async function clearCalendar() {
 async function changeLayer() {
   listsSection.style.display = 'none';
   calendarSection.style.display = 'block';
-  renderCalendar();
   await clearCalendar();
   await getListsAndEvents();
   await addEventBtnsRender();

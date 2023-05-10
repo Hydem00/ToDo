@@ -5,8 +5,8 @@ window.onload = async function () {
   getProfileInformations();
   getLoginStatus();
   renderCalendar();
-  await getListsAndEvents();
-  await addEventBtnsRender();
+  getListsAndEvents();
+  addEventBtnsRender();
   popUpAddEvent();
   changeMonth();
 
