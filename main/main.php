@@ -171,7 +171,7 @@ if(!$auth->isLogged()){
         </div>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
@@ -250,9 +250,28 @@ if(!$auth->isLogged()){
         </div>
         </div>
       </div>
-      <div id="popUpList" class="modal popUp">
+      <div id="popUpAddEvent" class="modal popUpAddEvent">
         <div class="modal-content">
           <span class="close">&times;</span>
+          <div class="addEvent">
+          <h2>Add Event</h2>
+          <form method="POST">
+            <h2>Select the list you want to add an event to.</h2>
+            <select name="" id="chosen_list">
+            </select>
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="time" name="event_time" placeholder = "Enter the time" required>
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button id="addEventBtnPopUp">Add event</button>
+          </form>
+        </div>
         </div>
       </div>
     </main>
@@ -276,5 +295,6 @@ if(!$auth->isLogged()){
   <script src="./js/popUpEventProperties.js"></script>
   <script src="./js/popUpRemoveCalendarEvent.js"></script>
   <script src="./js/popUpEditCalendarEvent.js"></script>
+  <script src="./js/popUpAddEvent.js"></script>
 </body>
 </html>

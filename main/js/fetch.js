@@ -76,6 +76,37 @@ function createListsElement(listData) {
   }
 }
 
+async function getListsToAddEventPopUp() {
+  let response = await fetch('functions/lists.php?action=show', {
+    method: 'GET',
+    mode: 'cors',
+  });
+  const result = await response.json();
+
+  addEventSelectFunctionality(result);
+}
+
+function addEventSelectFunctionality(listsData) {
+  let childOptionDetected = false;
+  const chosenList = document.getElementById('chosen_list');
+
+  do {
+    if (chosenList.contains(document.querySelector('#chosen_list option'))) {
+      chosenList.remove(document.querySelector('#chosen_list option'));
+      childOptionDetected = true;
+    } else {
+      childOptionDetected = false;
+    }
+  } while (childOptionDetected);
+
+  listsData.forEach((listData) => {
+    const option = document.createElement('option');
+    option.textContent = listData.nazwa;
+    option.dataset.listId = listData.id;
+    chosenList.appendChild(option);
+  });
+}
+
 async function removeList(e) {
   e.preventDefault();
   const dataToSend = new FormData();
@@ -136,6 +167,29 @@ async function addListEvent() {
   let dane = await odp.text();
 
   getListsEvents();
+}
+
+async function addListEventPopUp(listId, chosenDate) {
+  const form = document.querySelector('#popUpAddEvent div.addEvent form');
+  const dataToSend = new FormData(form);
+  dataToSend.append(
+    'json',
+    JSON.stringify({
+      listID: listId,
+      chosenDate: chosenDate,
+    })
+  );
+  let odp = await fetch('functions/events.php?action=add', {
+    method: 'POST',
+    mode: 'cors',
+    body: dataToSend,
+  });
+  let dane = await odp.text();
+
+  await clearCalendar();
+  await addEventBtnsRender();
+  popUpAddEvent();
+  await getListsAndEvents();
 }
 
 async function getListsEvents() {
@@ -220,7 +274,7 @@ async function getListsAndEvents() {
   });
   eventsData = await odp.json();
 
-  console.log(eventsData);
+  // console.log(eventsData);
   // clearEvents();
   createEventsElementsCalendar(eventsData);
   popUpEventProperties();
@@ -346,6 +400,10 @@ function renderDetailsToPopUp(eventDetails) {
 
   const h1EventTitle = document.createElement('h1');
 
+  const pEventData = document.createElement('p');
+  const pData = document.createElement('i');
+  pData.classList.add('fa-solid', 'fa-calendar-days');
+
   const pEventTime = document.createElement('p');
   const pCzas = document.createElement('i');
   pCzas.classList.add('fa-solid', 'fa-clock');
@@ -391,6 +449,7 @@ function renderDetailsToPopUp(eventDetails) {
     pEventDescription.innerText = eventDetails[0].opis;
   }
 
+  pEventData.innerHTML = eventDetails[0].data;
   pEventTime.innerHTML = eventDetails[0].czas;
 
   if (eventDetails[0].lokalizacja == '') {
@@ -408,6 +467,9 @@ function renderDetailsToPopUp(eventDetails) {
   divEventInfoBackground.appendChild(h1EventTitle);
   pEventDescription.appendChild(pOpis);
   divEventInfoBackground.appendChild(pEventDescription);
+
+  pEventData.appendChild(pData);
+  divEventInfoBackground.appendChild(pEventData);
 
   // divEventInfoBackground.appendChild(pCzas);
   pEventTime.appendChild(pCzas);
@@ -473,7 +535,7 @@ async function editListEventCalendar() {
   let dane = await odp.text();
 
   getListsEvents();
-  clearCalendar();
+  await clearCalendar();
   getListsAndEvents();
 }
 
@@ -493,7 +555,7 @@ async function removeListEvent() {
   eventsData = await odp.json();
 
   getListsEvents();
-  clearCalendar();
+  await clearCalendar();
   getListsAndEvents();
 }
 

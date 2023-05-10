@@ -7,9 +7,20 @@ const displayListsNavBtns = document.querySelectorAll(
 const listsSection = document.querySelector('section.lists');
 const calendarSection = document.querySelector('section.calendar');
 
-function clearCalendar() {
+function addEventBtnsRender() {
+  const days = document.querySelectorAll('.fc-daygrid-day-top');
+  days.forEach((day) => {
+    const divAddEvent = document.createElement('div');
+    divAddEvent.classList.add('addEventBtnPopUp');
+    divAddEvent.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+    day.appendChild(divAddEvent);
+  });
+}
+
+async function clearCalendar() {
   const calendarListsEvents = document.querySelector('main section.calendar');
   let eventDetected = false;
+  let btnDetected = false;
 
   do {
     if (
@@ -21,14 +32,27 @@ function clearCalendar() {
       eventDetected = true;
     } else eventDetected = false;
   } while (eventDetected);
+
+  do {
+    if (
+      calendarListsEvents.contains(
+        document.querySelector('div.addEventBtnPopUp')
+      )
+    ) {
+      document.querySelector('div.addEventBtnPopUp').remove();
+      btnDetected = true;
+    } else btnDetected = false;
+  } while (btnDetected);
 }
 
-function changeLayer() {
+async function changeLayer() {
   listsSection.style.display = 'none';
   calendarSection.style.display = 'block';
   renderCalendar();
-  clearCalendar();
-  getListsAndEvents();
+  await clearCalendar();
+  await getListsAndEvents();
+  await addEventBtnsRender();
+  popUpAddEvent();
 }
 
 calendarNavBtns.forEach((calendarNavBtn) => {
@@ -41,9 +65,11 @@ function changeMonth() {
   );
 
   divFcBtnsGroup.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      clearCalendar();
-      getListsAndEvents();
+    btn.addEventListener('click', async function () {
+      await clearCalendar();
+      await addEventBtnsRender();
+      await getListsAndEvents();
+      popUpAddEvent();
     });
   });
 }

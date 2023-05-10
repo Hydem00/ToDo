@@ -101,6 +101,7 @@ function addEvent(){
 
     $obj = json_decode($_POST["json"], false);
     $list_id = $obj->listID;
+    $chosen_date = $obj->chosenDate;
 
     $stmt = $dbh->prepare('SELECT * FROM listy WHERE id = :list_id AND user_id = :user_id');
     $stmt->bindParam(':list_id', $list_id);
@@ -111,7 +112,12 @@ function addEvent(){
 
     if($list){
         $event_name = $_POST['event_name'];
-        $event_date = $_POST['event_date'];
+
+        if(!empty($chosen_date))
+            $event_date = $chosen_date;
+        else
+            $event_date = $_POST['event_date'];
+
         $event_time = $_POST['event_time'];
         $event_location = $_POST['event_location'];
         $event_description = $_POST['event_description'];
