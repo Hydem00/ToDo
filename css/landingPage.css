@@ -49,6 +49,7 @@ nav.mobile {
   background-color: #0e0d0d;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  z-index: 1;
 }
 nav.mobile.active {
   height: 40vh;
@@ -499,21 +500,57 @@ main div.banner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("../images/pocket.jpg");
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
-main div.banner h1 {
+main div.banner div.film {
+  position: relative;
+}
+main div.banner div.film video {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  margin-bottom: 20px;
+}
+main div.banner div.film div.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
+  height: 100%;
+  width: 100%;
+}
+main div.banner div.film h1 {
+  font-size: 1rem;
+  width: 100%;
   text-align: center;
-  color: white;
   text-transform: uppercase;
-  padding: 80px 5px 80px 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 15px;
+  color: white;
+  opacity: 0;
+  -webkit-animation: fadeIn 19s infinite;
+          animation: fadeIn 19s infinite;
+}
+main div.banner div.film h1:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+main div.banner div.film h1:nth-of-type(2) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+main div.banner div.film h1:nth-of-type(3) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+main div.banner div.film h1:nth-of-type(4) {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
 }
 main p.information {
   color: white;
@@ -557,6 +594,10 @@ main div.offer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -606,6 +647,14 @@ main div.aboutUs img {
   display: block;
   margin: 0 auto;
   width: 50%;
+  opacity: 0;
+  visibility: hidden;
+}
+main div.aboutUs img.animate-logo {
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: logo-animation 1s forwards;
+          animation: logo-animation 1s forwards;
 }
 main div.offer img {
   display: block;
@@ -614,6 +663,73 @@ main div.offer img {
   height: 220px;
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes logo-animation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes logo-animation {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 @-webkit-keyframes slide-in-left {
   0% {
     -webkit-transform: translateX(-200%);
@@ -626,7 +742,6 @@ main div.offer img {
     opacity: 1;
   }
 }
-
 @keyframes slide-in-left {
   0% {
     -webkit-transform: translateX(-200%);
@@ -712,7 +827,7 @@ main div.offer img {
   }
 }
 @media (min-width: 360px) and (orientation: portrait) {
-  main div.banner h1 {
+  main div.banner div.film h1 {
     font-size: 1.4rem;
   }
   main p.information {
@@ -723,7 +838,7 @@ main div.offer img {
   }
 }
 @media (min-width: 533px) and (orientation: landscape) {
-  main div.banner h1 {
+  main div.banner div.film h1 {
     font-size: 1.4rem;
   }
   main p.information {
@@ -734,6 +849,12 @@ main div.offer img {
   }
   main div.aboutUs img {
     width: 30%;
+  }
+  main div.offer div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   main div.offer p {
     font-size: 0.9rem;
@@ -819,10 +940,8 @@ main div.offer img {
   }
 }
 @media (min-width: 760px) and (orientation: portrait) {
-  main div.banner h1 {
+  main div.banner div.film h1 {
     font-size: 2.15rem;
-    line-height: 150px;
-    height: 300px;
   }
   main div.banner {
     height: 300px;
@@ -855,13 +974,8 @@ main div.offer img {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
-  main div.banner h1 {
+  main div.banner div.film h1 {
     font-size: 2.7rem;
-    line-height: 320px;
-    height: 500px;
-  }
-  main div.banner {
-    height: 500px;
   }
   main a {
     padding: 20px 30px;
@@ -916,10 +1030,8 @@ main div.offer img {
   }
 }
 @media (min-width: 1280px) and (orientation: landscape) {
-  main div.banner h1 {
+  main div.banner div.film h1 {
     font-size: 3.6rem;
-    line-height: 320px;
-    height: 500px;
   }
   main div.link {
     width: 100%;
@@ -930,7 +1042,7 @@ main div.offer img {
     font-size: 2.5rem;
     width: 20%;
     text-align: center;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
   }
   main p.information {
     width: 95%;
