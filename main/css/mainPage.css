@@ -2023,6 +2023,7 @@ main div.modal div.removeModal button:hover {
   main div.modal div.editModal {
     max-width: 30vw;
     min-width: 435px;
+    max-height: 500px;
     padding-top: 50px;
   }
   main div.modal div.editModal .close {
@@ -2334,6 +2335,7 @@ main div.modal div.removeModal button:hover {
   main div.modal div.editModal {
     max-width: 30vw;
     min-width: 435px;
+    max-height: 600px;
     padding-top: 50px;
   }
   main div.modal div.editModal .close {
@@ -3869,7 +3871,6 @@ div.chooseList p {
   .modal .editModal {
     max-width: 30vw;
     min-width: 435px;
-    max-height: 50%;
     padding-top: 30px;
   }
   .modal .editModal .close {
@@ -3902,7 +3903,6 @@ div.chooseList p {
   .modal .editModal {
     max-width: 30vw;
     min-width: 435px;
-    min-height: 50vh;
     padding-top: 50px;
   }
   .modal .editModal .close {
