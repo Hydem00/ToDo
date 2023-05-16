@@ -1455,26 +1455,32 @@ div.wrap main section.lists div.addList i.active {
 }
 div#popUpCalendarEventProperties {
   display: none;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
-div.popUpContentEventProperties {
+div#popUpCalendarEventProperties div.popUpContentEventProperties {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  /* height: 500px; */
-  width: 500px;
+  background-color: white;
+  height: 400px;
+  width: 340px;
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border: 4px solid black;
+  overflow: hidden;
 }
-div.popUpContentEventProperties div.popUpHeader {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader {
+  position: relative;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1482,73 +1488,65 @@ div.popUpContentEventProperties div.popUpHeader {
   display: -ms-flexbox;
   display: flex;
   padding: 5px 10px;
-  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid black;
 }
-div.popUpContentEventProperties div.popUpHeader i {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader i {
   color: black;
   text-shadow: 0 0 5px blue;
   cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 2px;
+  right: 4px;
 }
-div.popUpContentEventProperties div.popUpHeader p {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader p {
   color: black;
   font-weight: bold;
   font-family: arial;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
-div.popUpContentEventProperties div.popUpHeader div {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader div {
+  margin-top: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: black;
-  width: 20%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-div.popUpContentEventProperties div.popUpHeader div i {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader div i {
+  position: static;
   padding: 2px 0;
-  font-size: 20px;
+  font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 20px;
   text-align: center;
-  /* cursor: pointer; */
+  text-shadow: none;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-div.popUpContentEventProperties div.popUpHeader div button:hover {
-  background-color: cadetblue;
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader div i:hover:nth-of-type(1) {
+  color: yellow;
+  text-shadow: 0 0 5px black;
 }
-
-div.popUpMain {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  overflow: hidden;
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader div i:hover:nth-of-type(2) {
+  color: red;
+  text-shadow: 0 0 5px black;
 }
-div.popUpMain h1 {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain {
   color: black;
-  text-align: center;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  padding-top: 20px;
+  position: relative;
+  height: 80%;
 }
-div.popUpMain div.colorPropEvent {
-  height: 10px;
-  width: 100%;
-  background-color: blue;
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list {
   position: absolute;
-  bottom: 0;
-  right: -200px;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-}
-div.popUpMain div.icons {
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1558,11 +1556,59 @@ div.popUpMain div.icons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 50%;
+  background-color: gray;
+  height: 50px;
+  width: 50px;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
+  font-size: 1.8rem;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid black;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px 20px;
+  width: 75%;
+  margin: 10px 10px 0 10px;
+  background-color: white;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive:active {
+  display: block;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive h1 {
+  padding: 0;
+  font-size: 1.3rem;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive p {
+  font-size: 0.8rem;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain h1 {
+  margin: 0;
+  padding-top: 75px;
+  font-size: 1.3rem;
+}
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 30px auto;
 }
-div.popUpMain div.icons p {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p {
+  font-size: 0.8rem;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1570,74 +1616,26 @@ div.popUpMain div.icons p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: black;
+  margin-top: 15px;
 }
-div.popUpMain div.icons p i {
-  text-shadow: 0 0 10px blue;
-  color: white;
-  margin-bottom: 10px;
-}
-div.popUpMain div.icons p:nth-of-type(1) {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p:nth-of-type(1) {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-div.popUpMain div.list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
-  border: 2px solid black;
-  border-radius: 50%;
-  text-transform: uppercase;
-  font-family: arial;
-  padding: 10px;
-  margin: 2px 5px;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p i {
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px blue;
+  margin-bottom: 5px;
 }
-div.popUpMain div.list:hover {
-  background-color: cadetblue;
-  color: white;
-}
-div.popUpMain div.listActive {
-  display: none;
-  border: 2px solid black;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  padding-left: 20px;
-  margin-right: 10px;
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.colorPropEvent {
   position: absolute;
-  left: -100%;
-  background-color: white;
-}
-div.popUpMain div.listActive.active {
-  display: block;
-  left: 15%;
-}
-div.popUpMain div.list i {
-  font-size: 40px;
-}
-div.popUpMain div.event {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  bottom: 0;
+  right: -150px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  height: 15px;
+  width: 400px;
+  background-color: black;
 }
 
 main div.modal {
