@@ -141,6 +141,14 @@ function listPropertiesSection() {
     });
   });
 
+  document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && event.altKey && event.code === 'KeyD') {
+      calendarSection.style.display = 'none';
+      sectionEventMenu.style.display = 'none';
+      sectionLists.style.display = 'flex';
+    }
+  });
+
   goBackArrow.addEventListener('click', () => {
     sectionEventMenu.style.display = 'none';
     sectionLists.style.display = 'flex';
