@@ -1,4 +1,12 @@
-function popUpEventRemove(prevPopUp, event_id, event_name) {
+async function popUpEventRemove(prevPopUp, event_id, event_name) {
+  const editEventBtn = document.querySelector('.popUpHeader i.fa-pen');
+  const editEventBtnClone = editEventBtn.cloneNode(true);
+  editEventBtn.parentNode.replaceChild(editEventBtnClone, editEventBtn);
+  editEventBtnClone.querySelectorAll('*').forEach((node) => {
+    const oldNode = node.cloneNode(true);
+    node.parentNode.replaceChild(oldNode, node);
+  });
+
   const modalRemoveEvent = document.getElementById('popUpRemoveCalendarEvent');
   const closePopUpEventRemove = document.querySelector(
     '.popUpRemoveEventCalendar span.close'
@@ -34,16 +42,20 @@ function popUpEventRemove(prevPopUp, event_id, event_name) {
       modalRemoveEvent.style.display = 'none';
       confirmationBtns[0].removeEventListener('click', removeListEventAction);
       confirmationBtns[1].removeEventListener('click', modalHidden);
+      removeEventBtn.removeEventListener('click', removeEvent);
     }
 
     confirmationBtns[0].addEventListener('click', removeListEventAction);
     confirmationBtns[1].addEventListener('click', modalHidden);
+    removeEventBtn.removeEventListener('click', removeEvent);
   }
 
   removeEventBtn.addEventListener('click', removeEvent);
 
   closePopUpEventRemove.addEventListener('click', function () {
     modalRemoveEvent.style.display = 'none';
+    removeEventBtn.removeEventListener('click', removeEvent);
+    editEventBtn.removeEventListener('click', editEvent);
   });
 
   window.addEventListener('mousedown', function (event) {

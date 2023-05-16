@@ -1,4 +1,12 @@
-function popUpEventEdit(prevPopUp, event_id, event) {
+async function popUpEventEdit(prevPopUp, event_id, event) {
+  const removeEventBtn = document.querySelector('.popUpHeader i.fa-trash');
+  const removeEventBtnClone = removeEventBtn.cloneNode(true);
+  removeEventBtn.parentNode.replaceChild(removeEventBtnClone, removeEventBtn);
+  removeEventBtnClone.querySelectorAll('*').forEach((node) => {
+    const oldNode = node.cloneNode(true);
+    node.parentNode.replaceChild(oldNode, node);
+  });
+
   const modalEditEvent = document.getElementById('popUpEditCalendarEvent');
   const closePopUpEventEdit = document.querySelector(
     '.popUpEditEventCalendar span.close'
@@ -8,7 +16,7 @@ function popUpEventEdit(prevPopUp, event_id, event) {
   function editEvent() {
     modalEditEvent.style.display = 'block';
     prevPopUp.style.display = 'none';
-
+    editEventBtn.removeEventListener('click', editEvent);
     eventID = event_id;
 
     const eventTitleEdit = document.querySelector(
@@ -65,6 +73,8 @@ function popUpEventEdit(prevPopUp, event_id, event) {
             .querySelector('.popUpEditEventCalendar div.editEvent form button')
             .removeEventListener('click', editEventValidation);
 
+          editEventBtn.removeEventListener('click', editEvent);
+
           await addEventBtnsRender();
           popUpAddEvent();
         }
@@ -80,11 +90,13 @@ function popUpEventEdit(prevPopUp, event_id, event) {
 
   closePopUpEventEdit.addEventListener('click', function () {
     modalEditEvent.style.display = 'none';
+    editEventBtn.removeEventListener('click', editEvent);
   });
 
   window.addEventListener('mousedown', function (event) {
     if (event.target == modalEditEvent) {
       modalEditEvent.style.display = 'none';
+      editEventBtn.removeEventListener('click', editEvent);
     }
   });
 }
