@@ -21,10 +21,22 @@ function popUpEventProperties() {
     }
   });
 
+  function listInfo() {
+    const divList = document.querySelector('div.popUpMain div.list');
+    const divListActive = document.querySelector('div.listActive');
+
+    divList.addEventListener('click', function () {
+      divListActive.classList.toggle('active');
+    });
+  }
+
   calendarEvents.forEach((calendarEvent) =>
     calendarEvent.addEventListener('click', async function () {
       popUpVisible();
+
       await getEventDetails(this.dataset.numberOfListEvent);
+      listInfo();
+
       popUpEventRemove(
         modalDisplayEvent,
         this.dataset.numberOfListEvent,
