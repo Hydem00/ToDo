@@ -353,148 +353,91 @@ async function getEventDetails(event_id) {
 
 function renderDetailsToPopUp(eventDetails) {
   const popUp = document.querySelector(
-    '#popUpCalendarEventProperties .modal-content'
+    '#popUpCalendarEventProperties div.popUpContentEventProperties'
   );
 
-  if (popUp.contains(document.querySelector('div.eventDetails'))) {
-    document.querySelector('div.eventDetails').remove();
+  if (popUp.contains(document.querySelector('div.popUpMain'))) {
+    document.querySelector('div.popUpMain').remove();
   }
 
-  const divEventDetails = document.createElement('div');
+  const popUpMain = document.createElement('div');
+  popUpMain.classList.add('popUpMain');
+  // ('div.popUpContentEventProperties div.popUpMain');
 
-  const divHeader = document.createElement('div');
-  divHeader.classList.add('eventDetailsHeader');
+  const divList = document.createElement('div');
+  divList.classList.add('list');
+  const listIcon = document.createElement('i');
+  listIcon.classList.add('fa-solid');
+  listIcon.classList.add('fa-list');
+  divList.appendChild(listIcon);
+  popUpMain.appendChild(divList);
 
-  const divEventEdit = document.createElement('div');
-  divEventEdit.classList.add('editListEventCalendar');
-  const buttonEdit = document.createElement('i');
-  buttonEdit.className = 'fa-solid fa-pen';
-  divEventEdit.appendChild(buttonEdit);
+  const divListActive = document.createElement('div');
+  divListActive.classList.add('listActive');
 
-  const h1PopUpInfo = document.createElement('h2');
-  h1PopUpInfo.innerText = 'Event Properties';
-
-  const divEventRemove = document.createElement('div');
-  divEventRemove.classList.add('removeListEventCalendar');
-  const buttonRemove = document.createElement('i');
-  buttonRemove.className = 'fa-solid fa-trash';
-  divEventRemove.appendChild(buttonRemove);
-
-  divHeader.appendChild(divEventEdit);
-  divHeader.appendChild(h1PopUpInfo);
-  divHeader.appendChild(divEventRemove);
-
-  const divListInfo = document.createElement('div');
-  divListInfo.classList.add('listInfo');
-
-  const divListInfoBackground = document.createElement('div');
-  divListInfoBackground.classList.add('listInfoBackground');
   const h1ListTitle = document.createElement('h1');
-  const pListDescription = document.createElement('p');
-
-  const divEventInfo = document.createElement('div');
-  divEventInfo.classList.add('eventInfo');
-
-  const divEventInfoBackground = document.createElement('div');
-  divEventInfoBackground.classList.add('eventInfoBackground');
-
-  const h1EventTitle = document.createElement('h1');
-
-  const pEventData = document.createElement('p');
-  const pData = document.createElement('i');
-  pData.classList.add('fa-solid', 'fa-calendar-days');
-
-  const pEventTime = document.createElement('p');
-  const pCzas = document.createElement('i');
-  pCzas.classList.add('fa-solid', 'fa-clock');
-  // pCzas.textContent = "Time";
-
-  const pEventDescription = document.createElement('p');
-  const pOpis = document.createElement('i');
-  pOpis.classList.add('fa-solid', 'fa-pen-nib');
-  // pOpis.textContent = "Description";
-
-  const pEventLocalization = document.createElement('p');
-  const pLokalizacja = document.createElement('i');
-  pLokalizacja.classList.add('fa-solid', 'fa-location-dot');
-  // pLokalizacja.textContent = "Location";
-
-  const pEventPriority = document.createElement('p');
-  const pPriorytet = document.createElement('i');
-  pPriorytet.classList.add('fa-solid', 'fa-star');
-  // pPriorytet.textContent = "Priority";
-
-  const divEventColor = document.createElement('div');
-  const pKolor = document.createElement('i');
-  pKolor.classList.add('fa-solid', 'fa-palette');
-  // pKolor.textContent = "Color";
-
-  divEventColor.classList.add('eventColorCalendar');
-
-  divEventDetails.classList.add('eventDetails');
-
   h1ListTitle.innerText = eventDetails[0].lista_nazwa;
-
+  const pListDescription = document.createElement('p');
   if (eventDetails[0].lista_opis == '') {
     pListDescription.innerText = '...';
   } else {
     pListDescription.innerText = eventDetails[0].lista_opis;
   }
+  divListActive.appendChild(h1ListTitle);
+  divListActive.appendChild(pListDescription);
 
+  const h1EventTitle = document.createElement('h1');
+  h1EventTitle.classList.add('title');
   h1EventTitle.innerText = eventDetails[0].nazwa;
 
+  const divIcons = document.createElement('div');
+  divIcons.classList.add('icons');
+
+  const pEventDescription = document.createElement('p');
   if (eventDetails[0].opis == '') {
-    pEventDescription.innerText = '...';
+    pEventDescription.innerHTML = `<i class="fa-solid fa-pen-nib"></i>...`;
   } else {
-    pEventDescription.innerText = eventDetails[0].opis;
+    pEventDescription.innerHTML =
+      `<i class="fa-solid fa-pen-nib"></i>` + eventDetails[0].opis;
   }
+  divIcons.appendChild(pEventDescription);
 
-  pEventData.innerHTML = eventDetails[0].data;
-  pEventTime.innerHTML = eventDetails[0].czas;
+  const pEventData = document.createElement('p');
+  pEventData.innerHTML =
+    `<i class="fa-solid fa-calendar-days"></i>` + eventDetails[0].data;
+  divIcons.appendChild(pEventData);
 
+  const pEventTime = document.createElement('p');
+  pEventTime.innerHTML =
+    `<i class="fa-solid fa-clock"></i>` + eventDetails[0].czas;
+  divIcons.appendChild(pEventTime);
+
+  const pEventLocalization = document.createElement('p');
   if (eventDetails[0].lokalizacja == '') {
-    pEventLocalization.innerHTML = '...';
+    pEventLocalization.innerHTML =
+      `<i class="fa-solid fa-location-dot"></i>` + '...';
   } else {
-    pEventLocalization.innerHTML = eventDetails[0].lokalizacja;
+    pEventLocalization.innerHTML =
+      `<i class="fa-solid fa-location-dot"></i>` + eventDetails[0].lokalizacja;
   }
+  divIcons.appendChild(pEventLocalization);
 
-  pEventPriority.innerHTML = eventDetails[0].priorytet;
+  const pEventPriority = document.createElement('p');
+  pEventPriority.innerHTML =
+    `<i class="fa-solid fa-star"></i>` + eventDetails[0].priorytet;
+  divIcons.appendChild(pEventPriority);
 
-  divListInfoBackground.appendChild(h1ListTitle);
-  divListInfoBackground.appendChild(pListDescription);
-  divListInfo.appendChild(divListInfoBackground);
+  popUpMain.appendChild(divListActive);
+  popUpMain.appendChild(h1EventTitle);
+  popUpMain.appendChild(divIcons);
 
-  divEventInfoBackground.appendChild(h1EventTitle);
-  pEventDescription.appendChild(pOpis);
-  divEventInfoBackground.appendChild(pEventDescription);
+  const divEventColor = document.createElement('div');
+  divEventColor.classList.add('colorPropEvent');
+  divEventColor.style.backgroundColor =
+    `<i class="fa-solid fa-palette"></i>` + eventDetails[0].kolor;
 
-  pEventData.appendChild(pData);
-  divEventInfoBackground.appendChild(pEventData);
-
-  // divEventInfoBackground.appendChild(pCzas);
-  pEventTime.appendChild(pCzas);
-  divEventInfoBackground.appendChild(pEventTime);
-
-  // divEventInfoBackground.appendChild(pLokalizacja);
-  pEventLocalization.appendChild(pLokalizacja);
-  divEventInfoBackground.appendChild(pEventLocalization);
-
-  // divEventInfoBackground.appendChild(pPriorytet);
-  pEventPriority.appendChild(pPriorytet);
-  divEventInfoBackground.appendChild(pEventPriority);
-
-  divEventColor.style.backgroundColor = eventDetails[0].kolor;
-  // divEventInfoBackground.appendChild(pKolor);
-  divEventColor.appendChild(pKolor);
-  divEventInfoBackground.appendChild(divEventColor);
-
-  divEventInfo.appendChild(divEventInfoBackground);
-
-  divEventDetails.appendChild(divHeader);
-  divEventDetails.appendChild(divListInfo);
-  divEventDetails.appendChild(divEventInfo);
-
-  popUp.appendChild(divEventDetails);
+  popUpMain.appendChild(divEventColor);
+  popUp.appendChild(popUpMain);
 }
 
 async function editListEvent() {

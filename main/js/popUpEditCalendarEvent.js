@@ -3,9 +3,7 @@ function popUpEventEdit(prevPopUp, event_id, event) {
   const closePopUpEventEdit = document.querySelector(
     '.popUpEditEventCalendar span.close'
   );
-  const editEventBtn = document.querySelector(
-    '.eventDetailsHeader .editListEventCalendar i'
-  );
+  const editEventBtn = document.querySelector('.popUpHeader i.fa-pen');
 
   function editEvent() {
     modalEditEvent.style.display = 'block';

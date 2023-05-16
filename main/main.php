@@ -212,10 +212,28 @@ if(!$auth->isLogged()){
           <button>NO</button>
         </div>
       </div>
-      <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
+      <!-- <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
         <div class="modal-content">
           <span class="close">&times;</span>
           
+        </div>
+      </div> -->
+      <div id="popUpCalendarEventProperties">
+        <div class="popUpContentEventProperties">
+          <div class="popUpHeader">
+            <div>
+              <i class="fa-solid fa-pen"></i
+              ><!--tutaj zrobić edycje eventu-->
+              <p>Properties</p>
+              <i class="fa-solid fa-trash"></i
+              ><!--tutaj zrobić usunięcie eventu-->
+            </div>
+            <div>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <!--tutaj zrobić wyłączenie modalu-->
+          </div>
+            
         </div>
       </div>
       <div id="popUpRemoveCalendarEvent" class="modal popUpRemoveEventCalendar">

@@ -3,9 +3,7 @@ function popUpEventRemove(prevPopUp, event_id, event_name) {
   const closePopUpEventRemove = document.querySelector(
     '.popUpRemoveEventCalendar span.close'
   );
-  const removeEventBtn = document.querySelector(
-    '.eventDetailsHeader .removeListEventCalendar i'
-  );
+  const removeEventBtn = document.querySelector('.popUpHeader i.fa-trash');
 
   function removeEvent() {
     modalRemoveEvent.style.display = 'block';

@@ -3,7 +3,7 @@ function popUpEventProperties() {
     'popUpCalendarEventProperties'
   );
   const closePopUpEventProperties = document.querySelector(
-    '.popUpEventProperties span.close'
+    'div.popUpContentEventProperties div.popUpHeader .fa-xmark'
   );
   const calendarEvents = document.querySelectorAll('div.listEventCalendar');
 
