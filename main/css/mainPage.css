@@ -1560,11 +1560,13 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
   background-color: gray;
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
   font-size: 1.8rem;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -1578,7 +1580,7 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
   margin: 10px 10px 0 10px;
   background-color: white;
 }
-div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive:active {
+div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive.active {
   display: block;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive h1 {

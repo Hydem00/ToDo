@@ -433,8 +433,7 @@ function renderDetailsToPopUp(eventDetails) {
 
   const divEventColor = document.createElement('div');
   divEventColor.classList.add('colorPropEvent');
-  divEventColor.style.backgroundColor =
-    `<i class="fa-solid fa-palette"></i>` + eventDetails[0].kolor;
+  divEventColor.style.backgroundColor = eventDetails[0].kolor;
 
   popUpMain.appendChild(divEventColor);
   popUp.appendChild(popUpMain);
