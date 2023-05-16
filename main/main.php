@@ -228,9 +228,7 @@ if(!$auth->isLogged()){
               <i class="fa-solid fa-trash"></i
               ><!--tutaj zrobić usunięcie eventu-->
             </div>
-            <div>
               <i class="fa-solid fa-xmark"></i>
-            </div>
             <!--tutaj zrobić wyłączenie modalu-->
           </div>
             
