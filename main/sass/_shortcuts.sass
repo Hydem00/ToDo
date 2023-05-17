@@ -1,0 +1,81 @@
+body
+    overflow: auto
+    overflow-x: hidden
+    i.fa-keyboard
+        display: none
+        color: white
+        position: fixed
+        bottom: 20px
+        right: 20px
+        z-index: 3
+        transform: rotate(-45deg)
+        font-size: 50px
+        opacity: 1
+        // transition: opacity 0.3s
+        &:hover + div.circleKey p
+            opacity: 1
+        &:hover + div.circleKey
+            height: 500px
+            width: 500px
+    div.circleKey
+        display: none
+        position: fixed
+        bottom: 0
+        right: 0
+        transform: translate(50%, 50%)
+        background-color: black
+        height: 200px
+        width: 200px
+        border-radius: 50%
+        transition: 0.3s
+        overflow: hidden
+        // display: flex
+        align-items: center
+        justify-content: center
+        z-index: 2
+        &:hover
+            height: 500px
+            width: 500px
+        &:hover p
+            opacity: 1
+        p
+            color: white
+            font-size: 18px
+            // opacity: 0
+            // transition: opacity 0.3s
+            position: absolute
+            transform-origin: left bottom
+            padding: 5px
+            border-radius: 20px
+            transition: 0.3s
+            cursor: pointer
+            &:nth-of-type(1)
+                transform: rotate(70deg)
+                left: 160px
+                top: 0px
+            &:nth-of-type(2)
+                transform: rotate(49deg)
+                left: 95px
+                top: 40px
+            &:nth-of-type(3)
+                transform: rotate(33deg)
+                left: 45px
+                top: 100px
+            &:nth-of-type(4)
+                transform: rotate(8deg)
+                left: 20px
+                top: 180px
+            &:hover
+                background-color: gray
+            i
+                color: yellow
+                margin-right: 2px
+                font-size: 1.4rem
+
+@media (min-width: 1024px) and (orientation: landscape)
+    body
+        i.fa-keyboard
+            display: block
+        div.circleKey
+            display: flex
+      
