@@ -1557,10 +1557,11 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
-  background-color: gray;
+  background-color: #d0d0d0;
   height: 50px;
   width: 50px;
   cursor: pointer;
+  border: 2px solid black;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
   font-size: 1.8rem;
@@ -1578,7 +1579,7 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
   padding: 10px 20px;
   width: 75%;
   margin: 10px 10px 0 10px;
-  background-color: white;
+  background-color: #d0d0d0;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive.active {
   display: block;
@@ -2271,6 +2272,25 @@ main div.modal div.removeModal button:hover {
   }
 }
 @media (min-width: 500px) and (orientation: landscape) {
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties {
+    height: 290px;
+    width: 340px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader p {
+    font-size: 1.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader i {
+    font-size: 1.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain h1 {
+    padding-top: 45px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p {
+    margin-top: 9px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p i {
+    margin-bottom: 5px;
+  }
   main div.modal div.addModal {
     height: 80vh;
     overflow-y: scroll;
@@ -2420,6 +2440,41 @@ main div.modal div.removeModal button:hover {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties {
+    height: 590px;
+    width: 500px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader p {
+    font-size: 2rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader i {
+    font-size: 2rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain h1 {
+    font-size: 2rem;
+    padding-top: 90px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p i {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list {
+    height: 70px;
+    width: 70px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
+    font-size: 2.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive h1 {
+    font-size: 1.8rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive p {
+    font-size: 1.3rem;
+  }
   main div.modal div.modal-content {
     width: 50vw;
   }
