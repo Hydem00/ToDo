@@ -57,9 +57,6 @@ function popUpEdit() {
   const listsToChoose = document.querySelectorAll('section.lists div.list');
 
   const popUpEditFunctionality = function () {
-    listsToChoose.forEach((listToChoose) => {
-      listToChoose.removeEventListener('click', popUpEditFunctionality);
-    });
     listID = this.dataset.numberOfList;
     divChooseList.style.display = 'none';
 
@@ -92,6 +89,9 @@ function popUpEdit() {
 
     function exitChoosing() {
       divChooseList.style.display = 'none';
+      listsToChoose.forEach((listToChoose) => {
+        listToChoose.removeEventListener('click', popUpEditFunctionality);
+      });
       choosingIsActive = false;
     }
 
@@ -100,6 +100,12 @@ function popUpEdit() {
 
       exitChoosingElements.forEach((exitElement) => {
         exitElement.addEventListener('click', exitChoosing);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.altKey && event.code === 'KeyC') {
+          exitChoosing();
+        }
       });
 
       if (!choosingIsActive) {
