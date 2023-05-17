@@ -50,7 +50,6 @@ if(!$auth->isLogged()){
     </ul>
 </nav>
 <div class="wrap"> 
-  
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -291,12 +290,18 @@ if(!$auth->isLogged()){
         </div>
       </div>
     </main>
-
     <footer id="footer">
           <div class="copy">
               <p>&copy; All rights reserved</p>
           </div>
-      </footer>
+    </footer>
+    <i class="fa-solid fa-keyboard"></i>
+    <div class="circleKey">
+      <p><i class="fa-solid fa-plus"></i> Ctrl + Alt + L</p>
+      <p><i class="fa-regular fa-pen-to-square"></i> Ctrl + Alt + E</p>
+      <p><i class="fa-solid fa-clipboard-list"></i> Ctrl + Alt + D</p>
+      <p><i class="fa-solid fa-calendar-days"></i> Ctrl + Alt + C</p>
+    </div>
 </div>
   <script src="./js/navigation.js"></script>
   <script src="./js/windowOnLoad.js"></script>

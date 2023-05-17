@@ -81,10 +81,11 @@ div
                     justify-content: center
                     align-items: center
                     border-radius: 50%
-                    background-color: gray
+                    background-color: #d0d0d0
                     height: 50px
                     width: 50px
                     cursor: pointer
+                    border: 2px solid black
                     i
                         font-size: 1.8rem
                 div.listActive
@@ -100,7 +101,7 @@ div
                     padding: 10px 20px
                     width: 75%
                     margin: 10px 10px 0 10px
-                    background-color: white
+                    background-color: #d0d0d0
                     &.active
                         display: block
                     h1
@@ -612,6 +613,23 @@ main
                     margin-top: 35px
 @media (min-width: 500px) and (orientation: landscape)
     main
+        div#popUpCalendarEventProperties
+            div.popUpContentEventProperties
+                height: 290px
+                width: 340px
+                div.popUpHeader
+                    p
+                        font-size: 1.4rem
+                    i
+                        font-size: 1.4rem
+                div.popUpMain
+                    h1
+                        padding-top: 45px
+                    div.icons
+                        p
+                            margin-top: 9px
+                            i
+                                margin-bottom: 5px
         div.modal
             div.addModal
                 height: 80vh
@@ -739,6 +757,36 @@ main
 
 @media (min-width: 1024px) and (orientation: landscape)
     main
+        div#popUpCalendarEventProperties
+            div.popUpContentEventProperties
+                height: 590px
+                width: 500px
+                div.popUpHeader
+                    p
+                        font-size: 2rem
+                    i
+                        font-size: 2rem
+                div.popUpMain
+                    h1
+                        font-size: 2rem
+                        padding-top: 90px
+                    div.icons
+                        p
+                            font-size: 1.3rem 
+                            margin-bottom: 5px
+                            i
+                                font-size: 2.2rem
+                                margin-bottom: 20px
+                    div.list
+                        height: 70px
+                        width: 70px
+                        i
+                            font-size: 2.4rem
+                    div.listActive
+                        h1
+                            font-size: 1.8rem
+                        p
+                            font-size: 1.3rem
         div.modal
             div.modal-content
                 width: 50vw

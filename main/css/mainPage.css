@@ -1557,10 +1557,11 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
-  background-color: gray;
+  background-color: #d0d0d0;
   height: 50px;
   width: 50px;
   cursor: pointer;
+  border: 2px solid black;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
   font-size: 1.8rem;
@@ -1578,7 +1579,7 @@ div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain d
   padding: 10px 20px;
   width: 75%;
   margin: 10px 10px 0 10px;
-  background-color: white;
+  background-color: #d0d0d0;
 }
 div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive.active {
   display: block;
@@ -2271,6 +2272,25 @@ main div.modal div.removeModal button:hover {
   }
 }
 @media (min-width: 500px) and (orientation: landscape) {
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties {
+    height: 290px;
+    width: 340px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader p {
+    font-size: 1.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader i {
+    font-size: 1.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain h1 {
+    padding-top: 45px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p {
+    margin-top: 9px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p i {
+    margin-bottom: 5px;
+  }
   main div.modal div.addModal {
     height: 80vh;
     overflow-y: scroll;
@@ -2420,6 +2440,41 @@ main div.modal div.removeModal button:hover {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties {
+    height: 590px;
+    width: 500px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader p {
+    font-size: 2rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpHeader i {
+    font-size: 2rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain h1 {
+    font-size: 2rem;
+    padding-top: 90px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.icons p i {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list {
+    height: 70px;
+    width: 70px;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.list i {
+    font-size: 2.4rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive h1 {
+    font-size: 1.8rem;
+  }
+  main div#popUpCalendarEventProperties div.popUpContentEventProperties div.popUpMain div.listActive p {
+    font-size: 1.3rem;
+  }
   main div.modal div.modal-content {
     width: 50vw;
   }
@@ -4206,5 +4261,112 @@ footer div.copy p {
 @media (min-width: 1280px) and (orientation: landscape) {
   footer div.copy p {
     font-size: 1.5rem;
+  }
+}
+body {
+  overflow: auto;
+  overflow-x: hidden;
+}
+body i.fa-keyboard {
+  display: none;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  font-size: 50px;
+  opacity: 1;
+}
+body i.fa-keyboard:hover + div.circleKey p {
+  opacity: 1;
+}
+body i.fa-keyboard:hover + div.circleKey {
+  height: 500px;
+  width: 500px;
+}
+body div.circleKey {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  background-color: black;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+body div.circleKey:hover {
+  height: 500px;
+  width: 500px;
+}
+body div.circleKey:hover p {
+  opacity: 1;
+}
+body div.circleKey p {
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body div.circleKey p:nth-of-type(1) {
+  -webkit-transform: rotate(70deg);
+          transform: rotate(70deg);
+  left: 160px;
+  top: 0px;
+}
+body div.circleKey p:nth-of-type(2) {
+  -webkit-transform: rotate(49deg);
+          transform: rotate(49deg);
+  left: 95px;
+  top: 40px;
+}
+body div.circleKey p:nth-of-type(3) {
+  -webkit-transform: rotate(33deg);
+          transform: rotate(33deg);
+  left: 45px;
+  top: 100px;
+}
+body div.circleKey p:nth-of-type(4) {
+  -webkit-transform: rotate(8deg);
+          transform: rotate(8deg);
+  left: 20px;
+  top: 180px;
+}
+body div.circleKey p:hover {
+  background-color: gray;
+}
+body div.circleKey p i {
+  color: yellow;
+  margin-right: 2px;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  body i.fa-keyboard {
+    display: block;
+  }
+  body div.circleKey {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }/*# sourceMappingURL=mainPage.css.map */
