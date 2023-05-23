@@ -82,7 +82,7 @@ if(!$auth->isLogged()){
         <h2></h2>
         <select id="typeOfSort">
           <option value="PA">Sort Ascending By Priority</option>
-          <option value="PB">Sort Descending By Priority</option>
+          <option value="PD">Sort Descending By Priority</option>
           <option value="DTA">Sort Ascending By Date And Time</option>
           <option value="DTD" selected>Sort Descending By Date And Time</option>
         </select>
