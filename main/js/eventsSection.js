@@ -114,6 +114,19 @@ function listPropertiesSection() {
     ).textContent;
     getListsEvents();
 
+    const typeOfSort = document.getElementById('typeOfSort');
+    typeOfSort.addEventListener('change', function () {
+      document.querySelector('div.loader').classList.add('active');
+
+      setTimeout(
+        function () {
+          document.querySelector('div.loader').classList.remove('active');
+          getListsEvents(this.options[this.selectedIndex].value);
+        }.bind(this),
+        500
+      );
+    });
+
     addEvent.addEventListener('click', addListEventValidation);
   }
 

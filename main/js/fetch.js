@@ -192,9 +192,10 @@ async function addListEventPopUp(listId, chosenDate) {
   await getListsAndEvents();
 }
 
-async function getListsEvents() {
+async function getListsEvents(event_sort_type = null) {
   let url = 'functions/events.php?action=show';
   url += '&' + 'list_id' + '=' + '' + listID + '';
+  url += '&' + 'event_sort_type' + '=' + '' + event_sort_type + '';
   let odp = await fetch(url, {
     method: 'GET',
     mode: 'cors',
