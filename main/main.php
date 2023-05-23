@@ -29,6 +29,7 @@ if(!$auth->isLogged()){
   <script src="dist/generateCalendar.js"></script>
 </head>
 <body>
+<div class="loader"></div>
 <nav class="menuMobile">
     <ul>
     <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
@@ -79,6 +80,12 @@ if(!$auth->isLogged()){
       <section class="menu">
         <i class="fa-solid fa-arrow-up"></i>
         <h2></h2>
+        <select id="typeOfSort">
+          <option value="PA">Sort Ascending By Priority</option>
+          <option value="PB">Sort Descending By Priority</option>
+          <option value="DTA">Sort Ascending By Date And Time</option>
+          <option value="DTD" selected>Sort Descending By Date And Time</option>
+        </select>
         <p></p>
         <div class="addEvent">
           <h2>Add Event</h2>
