@@ -9,67 +9,42 @@
     overflow: auto
     background-color: rgba(0,0,0,.6)
     z-index: 1
-    .modal-content
+    .editModal
         display: flex
         flex-direction: column
-        justify-content: flex-start
+        align-items: center
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
-        width: 85%
-        padding: 20px
+        width: 80vw
+        min-height: 30vh
+        padding: 30px 10px
         background-color: #fefefe
-        border: 1px solid #888
-        border-radius: 20px
-        text-align: center
+        border: 2px solid gray
+        border-top-left-radius: 20px
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
         h2
-            width: 100%
-            padding: 5px
-            text-align: center
             text-transform: uppercase
-            font-size: 1rem
-            // margin-bottom: 8px
-        h3
-            font-size: 1rem
-            margin-top: 20%
-            word-break: break-all
-            text-align: left
-        i
-            position: absolute
-            top: 17%
-            left: 50%
-            transform: translateX(-50%)
             font-size: 2rem
-            color: red
-        button
-            height: 25px
-            width: 50px
-            margin: 0 auto
-            margin-top: 15px
-            background-color: #179CF0
-            color: white
-            border: 1px solid #179CF0
-            box-shadow: 0 0 0 2px white, 0 0 0 4px black
-            border-radius: 20px
-            transition: 0.3s
-            &:hover
-                background-color: #14130C
-                border-color: transparent
-                box-shadow: 0 0 0 5px black, 0 0 0 7px white
+            margin-bottom: 10px
+            text-align: center
         .close
             position: absolute
-            top: -2%
+            top: -4%
             right: 2%
             color: black
             font-size: 2.5rem
             font-weight: bold
             text-shadow: 0 0 5px blue
-        .close:hover,
-        .close:focus
-            color: black
-            text-decoration: none
+            transition: 0.2s
             cursor: pointer
+            .close:hover,
+            .close:focus
+                color: white
+                text-decoration: none
+                cursor: pointer
         form
             display: flex
             flex-direction: column
@@ -83,19 +58,17 @@
                 border: 2px solid #ccc
                 border-radius: 4px
                 font-size: 1rem
-                margin-bottom: 8px
+                margin-bottom: 10px
             textarea
                 width: 100%
-                flex-basis: 50%
                 padding: 5px 20px
                 border: 2px solid #ccc
                 border-radius: 4px
                 background-color: #f8f8f8
                 resize: none
                 font-size: 1rem
-                margin-bottom: 8px
             button
-                margin-top: 5%
+                margin-top: 20px
                 padding: 5px 10px
                 border-radius: 10px
                 background-color: #179CF0
@@ -104,396 +77,181 @@
                 box-shadow: 0 0 0 2px white, 0 0 0 4px black
                 cursor: pointer
                 transition: 0.3s
-                font-size: 1rem
-                margin-bottom: 15px
-                width: 90px
-                height: 35px
+                font-size: 1.4rem
                 &:hover
                     background-color: #14130C
                     border-color: transparent
                     box-shadow: 0 0 0 5px black, 0 0 0 7px white
+    .removeModal
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 80vw
+        min-height: 30vh
+        padding: 30px 10px
+        background-color: #fefefe
+        border: 2px solid gray
+        border-top-left-radius: 20px
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
+        h2
+            text-transform: uppercase
+            font-size: 2rem
+            margin-bottom: 10px
+            text-align: center
+        .close
+            position: absolute
+            top: -4%
+            right: 2%
+            color: black
+            font-size: 2.5rem
+            font-weight: bold
+            text-shadow: 0 0 5px blue
+            transition: 0.2s
+            cursor: pointer
+            .close:hover,
+            .close:focus
+                color: white
+                text-decoration: none
+                cursor: pointer
+        h3
+            font-size: 1rem
+            text-align: center
+        i
+            color: red
+            text-shadow: 0 0 4px yellow
+            position: absolute
+            left: 50%
+            top: 2px
+            transform: translateX(-50%)
+            font-size: 1.8rem
+        button
+            background-color: #179CF0
+            color: white
+            border: 1px solid #179CF0
+            box-shadow: 0 0 0 2px white, 0 0 0 4px black
+            cursor: pointer
+            transition: 0.3s
+            margin-top: 20px
+            padding: 5px 10px
+            border-radius: 10px
+            width: 30%
+            &:hover
+                background-color: #14130C
+                border-color: transparent
+                box-shadow: 0 0 0 5px black, 0 0 0 7px white
 
-@media (min-width:360px) and (orientation:portrait)
+@media (min-width:500px) and (orientation:portrait)
     .modal
-        .modal-content
-            justify-content: space-around
-            // height: 50%
-            button
-                height: 30px
-                width: 75px
-            i
-                top: 19%
-                font-size: 2.5rem
-            h3
-                margin-top: 20%
-            h2
-                font-size: 1.1rem
-            form
-                display: flex
-                flex-direction: column
-                button
-                    width: 100px
-                    height: 35px
-
-@media (min-width:375px) and (orientation:portrait)
-    .modal
-        .modal-content
-            h3
-                margin-top: 30%
-            h2
-                font-size: 1.2rem
-            i
-                top: 22%
-@media (min-width:390px) and (orientation:portrait)
-    .modal
-        .modal-content
-            i
-                font-size: 3.2rem
-                top: 20%
-            button
-                height: 35px
-                width: 90px
-@media (min-width:411px) and (orientation:portrait)
-    .modal
-        .modal-content
-            h3
-                margin-top: 30%
-                font-size: 1.3rem
-            h2
-                font-size: 1.5rem
-            i
+        .editModal
+            max-width: 30vw
+            min-width: 435px
+            min-height: 30vh
+            padding-top: 50px
+            .close
+                top: -2%
                 font-size: 3.5rem
-                top: 19%
-            button
-                height: 35px
-                width: 90px
-
-@media (min-width:533px) and (orientation:landscape)
-    .modal
-        .modal-content
-            .close
-                font-size: 2.5rem
             h2
-                font-size: 1.2rem
-            form
-                input, textarea
-                    font-size: 1.2rem
-                button
-                    font-size: 1.2rem
-                    width: 110px
-            i
-                top: 19%
                 font-size: 2.5rem
-            h3
-                font-size: 1.1rem
-                margin-top: 10%
-            button
-                font-size: 1.1rem
-                height: 35px
-                width: 80px
-
-@media (min-width:540px) and (orientation:portrait)
-    .modal
-        .modal-content
-            width: 50%
-            .close
-                font-size: 2.5rem
-            h2
-                font-size: 1.2rem
-            form
-                input, textarea
-                    font-size: 1.2rem
-                button
-                    font-size: 1.2rem
-                    width: 110px
-            i
-                top: 17%
-                font-size: 3rem
-            h3
-                font-size: 1.2rem
-                margin-top: 25%
-            button
-                font-size: 1.2rem
-                height: 45px
-                width: 80px
-
-@media (min-width:568px) and (orientation:landscape)
-    .modal
-        .modal-content
-            height: 85%
-
-@media (min-width:640px) and (orientation:landscape)
-    .modal
-        .modal-content
-            height: 85%
-            width: 50%
-            .close
-                font-size: 2.5rem
-            h2
-                font-size: 1.2rem
-            form
-                input, textarea
-                    font-size: 1.2rem
-                button
-                    font-size: 1.2rem
-                    width: 110px
-            i
-                top: 19%
-                font-size: 3rem
-            h3
-                font-size: 1.2rem
-                margin-top: 20%
-            button
-                font-size: 1.2rem
-                height: 45px
-                width: 80px
-
-@media (min-width:653px) and (orientation:landscape)
-    .modal
-        .modal-content
-            width: 50%
-            // height: 95%
-            .close
-                font-size: 3rem
-            h2
-                font-size: 1.2rem
-            form
-                input, textarea
-                    font-size: 1.1rem
-                button
-                    font-size: 1.1rem
-                    width: 110px
-            i
-                top: 19%
-                font-size: 2.5rem
-            h3
-                font-size: 1.1rem
-                margin-top: 10%
-            button
-                font-size: 1.1rem
-                height: 45px
-                width: 80px
-
-@media (min-width:667px) and (orientation:landscape)
-    .modal
-        .modal-content
-            h3
-                margin-top: 20%
-            button
-                height: 40px
-
-@media (min-width:720px) and (orientation:landscape)
-    .modal
-        .modal-content
-            width: 50%
-            height: 65%
-            justify-content: space-around
-            .close
-                font-size: 3rem
-            h2
-                font-size: 1.5rem
             form
                 input, textarea
                     font-size: 1.4rem
+                input
+                    margin-bottom: 20px
                 button
-                    font-size: 1.4rem
-                    width: 110px
-            i
-                top: 20%
+                    font-size: 2rem
+                    border-radius: 20px
+                    padding: 10px 30px
+                    margin-top: 30px
+        .removeModal
+            max-width: 30vw
+            min-width: 435px
+            min-height: 30vh
+            padding-top: 50px
+            .close
+                top: -2%
                 font-size: 3.5rem
-            h3
-                font-size: 1.1rem
-                margin-top: 25%
-            button
-                font-size: 1.4rem
-                height: 35px
-                width: 85px
-
-@media (min-width:740px) and (orientation:landscape)
-    .modal
-        .modal-content
-            h3
-                margin-top: 15%
-
-@media (min-width:768px) and (orientation: portrait)
-    .modal
-        .modal-content
-            height: 45%
-            width: 50%
-            .close
-                font-size: 3rem
             h2
-                font-size: 1.5rem
+                font-size: 2.5rem
+            i
+                font-size: 3rem
+            h3
+                font-size: 1.8rem
+            button
+                font-size: 1.8rem
+
+@media (min-width:420px) and (orientation:landscape)
+    .modal
+        .editModal
+            max-width: 30vw
+            min-width: 435px
+            // max-height: 50%
+            padding-top: 30px
+            .close
+                top: -2%
+                font-size: 2.5rem
+            h2
+                font-size: 1.8rem
             form
                 input, textarea
-                    font-size: 1.4rem
+                    font-size: 1rem
+                input
+                    margin-bottom: 10px
                 button
-                    font-size: 1.4rem
-                    width: 110px
-            i
-                top: 19%
-                font-size: 3.5rem
-            h3
-                font-size: 1.4rem
-                margin-top: 25%
-            button
-                font-size: 1.4rem
-                height: 45px
-                width: 80px
-
-@media (min-width:812px) and (orientation: landscape)
-    .modal
-        .modal-content
-            justify-content: space-around
-            h3
-                margin-top: 15%
-
-@media (min-width:812px) and (orientation: portrait)
-    .modal
-        .modal-content
-            height: 45%
-            width: 50%
-            .close
-                font-size: 3rem
-            h2
-                font-size: 1.5rem
-            form
-                input, textarea
-                    font-size: 1.4rem
-                button
-                    font-size: 1.4rem
-                    width: 125px
-                    height: 45px
-            i
-                top: 20%
-                font-size: 3.5rem
-            h3
-                font-size: 1.4rem
-                margin-top: 25%
-            button
-                font-size: 1.4rem
-                height: 45px
-                width: 100px
-
-@media (min-width: 908px)
-    .modal
-        .modal-content
-            h3
-                margin-top: 20%
-
-@media (min-width: 912px) and (orientation:portrait)
-    .modal
-        .modal-content
-            height: 40%
-            width: 65%
-
-@media (min-width: 930px) and (orientation:landscape)
-    .modal
-        .modal-content
-            height: 40%
-            h3
-                margin-top: 25%
+                    font-size: 1.2rem
+                    border-radius: 20px
+                    padding: 10px 30px
+                    margin-top: 20px
+        .removeModal
+            max-width: 30vw
+            min-width: 435px
+            max-height: 250px
+            padding-top: 30px
 
 @media (min-width:1024px) and (orientation:landscape)
     .modal
-        .modal-content
-            display: flex
-            flex-direction: column
-            justify-content: space-around
-            height: 50%
-            width: 45%
+        .editModal
+            max-width: 30vw
+            min-width: 435px
+            // min-height: 50vh
+            padding-top: 50px
             .close
-                font-size: 3rem
-            h2
-                font-size: 1.5rem
-            form
-                input, textarea
-                    font-size: 1.4rem
-                button
-                    font-size: 1.4rem
-                    width: 110px
-            i
-                top: 18%
-                font-size: 4.5rem
-            h3
-                font-size: 1.4rem
-                margin-top: 18%
-            button
-                font-size: 1.4rem
-                height: 45px
-                width: 90px
-
-@media (min-width:1180px) and (orientation:landscape)
-    .modal
-        .modal-content
-            height: 45%
-            width: 50%
-            .close
-                font-size: 3rem
-            h2
-                font-size: 1.5rem
-            form
-                input, textarea
-                    font-size: 1.4rem
-                button
-                    font-size: 1.4rem
-                    width: 110px
-            i
-                top: 20%
+                top: -2%
                 font-size: 3.5rem
-            h3
-                font-size: 1.4rem
-                margin-top: 18%
-            button
-                font-size: 1.4rem
-                height: 45px
-                width: 100px
-
-@media (min-width:1280px) and (orientation:landscape)
-    .modal
-        .modal-content
-            height: 50%
-            width: 50%
-            .close
-                font-size: 3rem
             h2
-                font-size: 1.5rem
+                font-size: 3rem
             form
                 input, textarea
-                    font-size: 1.4rem
+                    font-size: 1.6rem
+                input
+                    margin-bottom: 20px
                 button
-                    font-size: 1.4rem
-                    width: 140px
-                    height: 45px
-            i
-                top: 23%
+                    font-size: 2.4rem
+                    border-radius: 20px
+                    padding: 10px 30px
+                    margin-top: 30px
+        .removeModal
+            max-width: 30vw
+            min-width: 435px
+            min-height: 50vh
+            padding-top: 70px
+            .close
+                top: -2%
                 font-size: 3.5rem
-            h3
-                font-size: 1.4rem
-                margin-top: 18%
-            button
-                font-size: 1.4rem
-                height: 45px
-                width: 100px
-
-@media (min-width:1368px) and (orientation:landscape)
-    .modal
-        .modal-content
             h2
+                font-size: 2.4rem
+                margin-bottom: 30px
+            h3
+                font-size: 1.8rem
+            i
+                top: 10px
+                font-size: 2.8rem
+            button
+                margin-top: 30px
+                padding: 5px 10px
+                border-radius: 20px
                 font-size: 2rem
-            i
-                font-size: 4rem
-            h3
-                font-size: 1.9rem
-            button
-                font-size: 1.9rem
-
-@media (min-width:1400px) and (orientation:landscape)
-    .modal
-        .modal-content
-            width: 35%
-            button
-                width: 120px
-                height: 50px
-            i
-                top: 19%

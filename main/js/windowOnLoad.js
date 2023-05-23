@@ -1,11 +1,13 @@
 let loginStatus;
 
-window.onload = function () {
+window.onload = async function () {
   getLists();
   getProfileInformations();
   getLoginStatus();
   renderCalendar();
   getListsAndEvents();
+  addEventBtnsRender();
+  popUpAddEvent();
   changeMonth();
 
   if (loginStatus) {
