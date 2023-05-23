@@ -88,16 +88,16 @@ function showEvents(){
     if($list){
 
         if($event_sort_type == "DTA"){
-            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :list_id ORDER BY data ASC, czas ASC;');
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY data ASC, czas ASC;');
         }
         else if($event_sort_type == "DTD"){
-            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :list_id ORDER BY data DESC, czas DESC;');
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY data DESC, czas DESC;');
         }
         else if($event_sort_type == "PA"){
-            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :list_id ORDER BY priorytet ASC;');
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet ASC;');
         }
         else if($event_sort_type == "PD"){
-            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE id = :list_id ORDER BY priorytet DESC;');
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet DESC;');
         }
         else{
             $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id');
