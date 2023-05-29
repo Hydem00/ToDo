@@ -80,13 +80,16 @@ if(!$auth->isLogged()){
       <section class="menu">
         <i class="fa-solid fa-arrow-up"></i>
         <h2></h2>
-        <select id="typeOfSort">
+        <!-- <div class="box"> -->
+        
+        <!-- </div> -->
+        <p></p>
+        <select class = "sort" id="typeOfSort">
           <option value="PA">Sort Ascending By Priority</option>
           <option value="PD">Sort Descending By Priority</option>
           <option value="DTA">Sort Ascending By Date And Time</option>
           <option value="DTD" selected>Sort Descending By Date And Time</option>
         </select>
-        <p></p>
         <div class="addEvent">
           <h2>Add Event</h2>
           <span class="close">&times;</span>

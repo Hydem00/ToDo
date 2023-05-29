@@ -2726,6 +2726,14 @@ div.wrap main section.menu div.addEvent form button, div.wrap main section.menu 
       flex-basis: 57%;
   font-size: 1.5rem;
 }
+div.wrap main section.menu select.sort {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  font-size: 0.6rem;
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
 div.wrap main section.menu div.events {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3004,6 +3012,10 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 411px) and (orientation: portrait) {
+  div.wrap main section.menu select.sort {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+  }
   div.wrap main section.menu div.editEvent form input:nth-last-of-type(1), div.wrap main section.menu div.addEvent form input:nth-last-of-type(1) {
     -ms-flex-preferred-size: 18%;
         flex-basis: 18%;
@@ -3042,6 +3054,14 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
+  div.wrap main section.menu select.sort {
+    font-size: 1.7rem;
+    width: 380px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
   div.wrap main section.menu div.events div.listEvent {
     margin: 20px 0;
   }
@@ -3127,6 +3147,14 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 820px) and (orientation: portrait) {
+  div.wrap main section.menu select.sort {
+    font-size: 1.7rem;
+    width: 380px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
   div.wrap main section.menu i.fa-arrow-up {
     font-size: 3rem;
   }
@@ -3318,6 +3346,15 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 1024px) and (orientation: landscape) {
+  div.wrap main section.menu select.sort {
+    margin-top: 20px;
+    font-size: 1.7rem;
+    width: 380px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
   div.wrap main section.menu i.fa-arrow-up {
     left: 40px;
     font-size: 3rem;
@@ -3410,6 +3447,16 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 1180px) and (orientation: landscape) {
+  div.wrap main section.menu select.sort {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    width: 380px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
   div.wrap main section.menu p {
     padding: 20px 80px 0 80px;
     margin-bottom: 30px;
@@ -3455,6 +3502,18 @@ div.wrap main section.menu form button:hover {
         flex-basis: 74%;
   }
 }
+@media (min-width: 1350px) and (orientation: landscape) {
+  div.wrap main section.menu select.sort {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    width: 480px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+}
 @media (min-width: 1368px) and (orientation: landscape) {
   div.wrap main section.menu p {
     padding: 20px 80px 0 80px;
@@ -3479,6 +3538,16 @@ div.wrap main section.menu form button:hover {
   }
 }
 @media (min-width: 1400px) and (orientation: landscape) {
+  div.wrap main section.menu select.sort {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    width: 580px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
+  }
   div.wrap main section.menu h2 {
     max-width: 1100px;
   }
@@ -3486,7 +3555,7 @@ div.wrap main section.menu form button:hover {
     left: 70px;
   }
   div.wrap main section.menu p {
-    max-width: 1200px;
+    width: 100%;
   }
   div.wrap main section.menu div.events div.listEvent {
     -ms-flex-preferred-size: 700px;
@@ -3502,6 +3571,18 @@ div.wrap main section.menu form button:hover {
   }
   div.wrap main section.menu div.addEvent form button, div.wrap main section.menu div.editEvent form button {
     font-size: 2rem;
+  }
+}
+@media (min-width: 1800px) and (orientation: landscape) {
+  div.wrap main section.menu select.sort {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    width: 680px;
+  }
+  div.wrap main section.menu select.sort option {
+    font-size: 1.2rem;
+    width: 100%;
   }
 }
 main section.profile {
