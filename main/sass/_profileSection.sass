@@ -1,5 +1,6 @@
 main
     section.profile
+        position: relative
         display: none
         flex-direction: column
         flex-wrap: wrap
@@ -48,7 +49,7 @@ main
                 display: block
                 margin: 0 auto 10px auto
                 border-radius: 50%
-                box-shadow: 0 0 10px yellow
+                box-shadow: 0 0 10px black
                 // flex-basis: 15%
             p
                 font-size: 1rem
@@ -74,6 +75,40 @@ main
                     color: black
                 &:hover
                     background-color: white
+        div.theme
+            position: absolute
+            top: 0
+            left: 20px
+            display: flex
+            flex-direction: row
+            width: 100px
+            background-color: transparent
+            overflow: hidden
+            border-radius: 20px
+            background-color: white
+            i
+                &:nth-of-type(1)
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-basis: 50%
+                    margin-right: 2px
+                    cursor: pointer
+                    transition: 0.3s
+                    padding: 2px 0
+                    font-size: 1rem
+                    color: black
+                &:nth-of-type(2)
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-basis: 50%
+                    margin-left: 2px
+                    cursor: pointer
+                    transition: 0.3s
+                    padding: 10px 0
+                    font-size: 1rem
+                    color: gray            
 
 @media(min-width: 375px) and (orientation: portrait)
     main

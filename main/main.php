@@ -134,13 +134,20 @@ if(!$auth->isLogged()){
       </section>
       <section class="profile">    
         <div class="profileInfo">
-        </div>    
+          
+        </div>
+        <div class="theme">
+            <i class="fa-solid fa-moon" id="moon"></i>
+            <i class="fa-solid fa-lightbulb" id="sun"></i>
+          </div>    
         <div class="profileButtons">
+        
           <button>Change Password</button>        
           <button>Change Email</button>        
           <button>Delete Account</button>
           <button>Set/Change Your Nick</button>
           <button><a href="https://pl.gravatar.com/" target="blank">Change your Gravatar</a></button>
+          
         </div>
         
         <div class="changePassword">
@@ -327,5 +334,6 @@ if(!$auth->isLogged()){
   <script src="./js/popUpRemoveCalendarEvent.js"></script>
   <script src="./js/popUpEditCalendarEvent.js"></script>
   <script src="./js/popUpAddEvent.js"></script>
+  <script src="./js/selectTheme.js"></script>
 </body>
 </html>

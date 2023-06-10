@@ -13,6 +13,7 @@ navProfileBtns.forEach((navProfileBtn) => {
     profileSection.style.display = "flex";
     sectionLists.style.display = "none";
     sectionMenu.style.display = "none";
+    changeThemeYourProfile();
   });
 });
 
@@ -31,13 +32,18 @@ const changePasswordNewPassword = document.querySelector(
 const changePasswordRPassword = document.querySelector(
   "main section.profile div.changePassword form input#repeatNewPassword"
 );
-const changePasswordBtn = document.querySelector("main section.profile div.changePassword form button");
+const changePasswordBtn = document.querySelector(
+  "main section.profile div.changePassword form button"
+);
 
 const p = document.querySelector("div.informationText p");
 
-const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
+const passwordValidation =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
 
-const changePasswordMessage = document.querySelector("main section.profile div.changePassword p");
+const changePasswordMessage = document.querySelector(
+  "main section.profile div.changePassword p"
+);
 
 let passwordsOK = false;
 
@@ -82,13 +88,22 @@ function validationPasswordChange(e) {
 
 changePasswordBtn.addEventListener("click", validationPasswordChange);
 
-const changeEmailEmail = document.querySelector("main section.profile div.changeEmail form input#email");
-const changeEmailPassword = document.querySelector("main section.profile div.changeEmail form input#password");
-const changeEmailBtn = document.querySelector("main section.profile div.changeEmail form button");
+const changeEmailEmail = document.querySelector(
+  "main section.profile div.changeEmail form input#email"
+);
+const changeEmailPassword = document.querySelector(
+  "main section.profile div.changeEmail form input#password"
+);
+const changeEmailBtn = document.querySelector(
+  "main section.profile div.changeEmail form button"
+);
 
-const emailValidation = /^(?=.{7,100})[\w\.\-]{3,}[@]{1}[\w\.\-]{1,}[.]{1}[\w]{1,}$/gm;
+const emailValidation =
+  /^(?=.{7,100})[\w\.\-]{3,}[@]{1}[\w\.\-]{1,}[.]{1}[\w]{1,}$/gm;
 
-const changeEmailMessage = document.querySelector("main section.profile div.changeEmail p");
+const changeEmailMessage = document.querySelector(
+  "main section.profile div.changeEmail p"
+);
 
 let emailOK = false;
 
@@ -104,7 +119,10 @@ const validateEmailInput = () => {
 };
 
 function validationEmailChange(e) {
-  if (changeEmailEmail.value.length != 0 && changeEmailPassword.value.length != 0) {
+  if (
+    changeEmailEmail.value.length != 0 &&
+    changeEmailPassword.value.length != 0
+  ) {
     e.preventDefault();
     window.addEventListener("input", validateEmailInput);
     emailOK = validateEmailInput();
@@ -119,8 +137,12 @@ function validationEmailChange(e) {
 
 changeEmailBtn.addEventListener("click", validationEmailChange);
 
-const deleteAccountPassword = document.querySelector("main section.profile div.deleteAccount form input");
-const deleteAccountBtn = document.querySelector("main section.profile div.deleteAccount form button");
+const deleteAccountPassword = document.querySelector(
+  "main section.profile div.deleteAccount form input"
+);
+const deleteAccountBtn = document.querySelector(
+  "main section.profile div.deleteAccount form button"
+);
 
 deleteAccountBtn.addEventListener("click", (e) => {
   if (deleteAccountPassword.value.length != 0) {
@@ -130,8 +152,12 @@ deleteAccountBtn.addEventListener("click", (e) => {
   }
 });
 
-const nick = document.querySelector("main section.profile div.additionalInformations form input");
-const addInformationsBtn = document.querySelector("main section.profile div.additionalInformations form button");
+const nick = document.querySelector(
+  "main section.profile div.additionalInformations form input"
+);
+const addInformationsBtn = document.querySelector(
+  "main section.profile div.additionalInformations form button"
+);
 
 addInformationsBtn.addEventListener("click", (e) => {
   if (nick.value.length != 0) {
@@ -144,12 +170,25 @@ addInformationsBtn.addEventListener("click", (e) => {
 const chooseProfileOptionBtns = document.querySelectorAll(
   "main section.profile div.profileButtons button:nth-of-type(1),main section.profile div.profileButtons button:nth-of-type(2),main section.profile div.profileButtons button:nth-of-type(3),main section.profile div.profileButtons button:nth-of-type(4)"
 );
-const changePasswordForm = document.querySelector("main section.profile div.changePassword");
-const changeEmailForm = document.querySelector("main section.profile div.changeEmail");
-const deleteAccountForm = document.querySelector("main section.profile div.deleteAccount");
-const additionalInformationsForm = document.querySelector("main section.profile div.additionalInformations");
+const changePasswordForm = document.querySelector(
+  "main section.profile div.changePassword"
+);
+const changeEmailForm = document.querySelector(
+  "main section.profile div.changeEmail"
+);
+const deleteAccountForm = document.querySelector(
+  "main section.profile div.deleteAccount"
+);
+const additionalInformationsForm = document.querySelector(
+  "main section.profile div.additionalInformations"
+);
 
-const profileDivForms = [changePasswordForm, changeEmailForm, deleteAccountForm, additionalInformationsForm];
+const profileDivForms = [
+  changePasswordForm,
+  changeEmailForm,
+  deleteAccountForm,
+  additionalInformationsForm,
+];
 
 chooseProfileOptionBtns.forEach((chooseProfileOptionBtn, iterator) => {
   chooseProfileOptionBtn.addEventListener("click", () => {
