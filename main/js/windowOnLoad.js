@@ -21,6 +21,8 @@ window.onload = async function () {
   changeThemeYourLists();
   changeThemeYourProfile();
   changeThemeYourEvents();
+  // const sectionEventMenu = document.querySelector("main section.menu");
+  // sectionEventMenu.style.display = "none";
 
   if (loginStatus) {
     window.location.reload();
