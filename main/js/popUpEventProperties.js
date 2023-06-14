@@ -3,11 +3,11 @@ function popUpEventProperties() {
     'popUpCalendarEventProperties'
   );
   const closePopUpEventProperties = document.querySelector(
-    '.popUpEventProperties span.close'
+    'div.popUpContentEventProperties div.popUpHeader .fa-xmark'
   );
   const calendarEvents = document.querySelectorAll('div.listEventCalendar');
 
-  const popUpProperties = () => {
+  const popUpVisible = () => {
     modalDisplayEvent.style.display = 'block';
   };
 
@@ -21,10 +21,32 @@ function popUpEventProperties() {
     }
   });
 
+  function listInfo() {
+    const divList = document.querySelector('div.popUpMain div.list');
+    const divListActive = document.querySelector('div.listActive');
+
+    divList.addEventListener('click', function () {
+      divListActive.classList.toggle('active');
+    });
+  }
+
   calendarEvents.forEach((calendarEvent) =>
-    calendarEvent.addEventListener('click', function () {
-      popUpProperties();
-      getEventDetails(this.dataset.numberOfListEvent);
+    calendarEvent.addEventListener('click', async function () {
+      popUpVisible();
+
+      await getEventDetails(this.dataset.numberOfListEvent);
+      listInfo();
+
+      popUpEventRemove(
+        modalDisplayEvent,
+        this.dataset.numberOfListEvent,
+        calendarEvent.childNodes[2].textContent
+      );
+      popUpEventEdit(
+        modalDisplayEvent,
+        this.dataset.numberOfListEvent,
+        calendarEvent
+      );
     })
   );
 }

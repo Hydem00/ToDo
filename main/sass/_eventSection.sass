@@ -82,7 +82,12 @@ div.wrap
                     button
                         flex-basis: 57%
                         font-size: 1.5rem
-
+            select.sort
+                background-color: rgba(0,0,0,0.5)
+                color: white
+                padding: 5px
+                font-size: 0.6rem
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2)
             div.events
                 display: flex
                 flex-wrap: wrap
@@ -287,6 +292,9 @@ div.wrap
     div.wrap
         main
             section.menu
+                select.sort
+                    margin-bottom:20px
+                    font-size: 0.8rem
                 div.editEvent, div.addEvent
                     form
                         input
@@ -331,6 +339,12 @@ div.wrap
     div.wrap
         main
             section.menu
+                select.sort
+                    font-size: 1.7rem
+                    width: 380px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
                 div.events
                     div.listEvent
                         margin: 20px 0
@@ -397,6 +411,12 @@ div.wrap
     div.wrap
         main
             section.menu
+                select.sort
+                    font-size: 1.7rem
+                    width: 380px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
                 i.fa-arrow-up
                     font-size: 3rem
                 h2
@@ -563,6 +583,16 @@ div.wrap
     div.wrap
         main
             section.menu
+                display: flex
+                flex-direction: column
+                align-items: center
+                select.sort
+                    margin-top: 20px
+                    font-size: 1.7rem
+                    width: 380px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
                 i.fa-arrow-up
                     left: 40px
                     font-size: 3rem
@@ -633,6 +663,14 @@ div.wrap
     div.wrap
         main
             section.menu
+                select.sort
+                    margin-top: 0
+                    margin-bottom: 20px
+                    font-size: 1.7rem
+                    width: 380px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
                 p
                     padding: 20px 80px 0 80px
                     margin-bottom: 30px
@@ -672,7 +710,18 @@ div.wrap
                                 height: 10%
                         button
                             flex-basis: 74%
-
+@media (min-width:1350px) and (orientation:landscape)
+    div.wrap
+        main
+            section.menu
+                select.sort
+                    margin-top: 0
+                    margin-bottom: 20px
+                    font-size: 1.7rem
+                    width: 480px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
 @media (min-width:1368px) and (orientation:landscape)
     div.wrap
         main
@@ -693,18 +742,26 @@ div.wrap
                                 flex-basis: 15%
                                 height: 10%
                         button
-                            flex-basis: 74%
+                            flex-basis: 80%
 
 @media (min-width:1400px) and (orientation:landscape)
     div.wrap
         main
             section.menu
+                select.sort
+                    margin-top: 0
+                    margin-bottom: 20px
+                    font-size: 1.7rem
+                    width: 860px
+                    option
+                        font-size: 1.2rem
+                        width: 100%
                 h2
                     max-width: 1100px
                 i.fa-arrow-up
                     left: 70px
                 p
-                    max-width: 1200px
+                    width: 100%
                 div.events
                     div.listEvent
                         flex-basis: 700px
@@ -717,3 +774,15 @@ div.wrap
                                 height: 42px
                         button
                             font-size: 2rem
+@media (min-width:1800px) and (orientation:landscape)
+    div.wrap
+        main
+            section.menu
+                select.sort
+                    margin-top: 0
+                    margin-bottom: 20px
+                    font-size: 1.7rem
+                    width: 680px
+                    option
+                        font-size: 1.2rem
+                        width: 100%

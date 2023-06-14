@@ -31,6 +31,7 @@ function clearEvents() {
 }
 
 function listPropertiesSection() {
+  addEventBtn.addEventListener('click', addEventBtnActions);
   const listDivs = document.querySelectorAll(
     'section.lists div.list h1, section.lists div.list p'
   );
@@ -86,6 +87,7 @@ function listPropertiesSection() {
     ) {
       e.preventDefault();
       addListEvent();
+
       eventTitleAdd.value = '';
       eventDescriptionAdd.value = '';
       eventLocationAdd.value = '';
@@ -97,9 +99,12 @@ function listPropertiesSection() {
   }
 
   function listProperties(currentObject) {
+    listDivs.forEach((list) => {
+      list.removeEventListener('click', chosenList);
+    });
     sectionLists.style.display = 'none';
     sectionEventMenu.style.display = 'flex';
-
+    changeThemeYourEvents();
     listID = currentObject.parentElement.dataset.numberOfList;
     listTitleProp.textContent = document.querySelector(
       `div.list[data-number-of-list='${listID}'] h1`
@@ -109,12 +114,25 @@ function listPropertiesSection() {
     ).textContent;
     getListsEvents();
 
+    const typeOfSort = document.getElementById('typeOfSort');
+    typeOfSort.addEventListener('change', function () {
+      document.querySelector('div.loader').classList.add('active');
+
+      setTimeout(
+        function () {
+          document.querySelector('div.loader').classList.remove('active');
+          getListsEvents(this.options[this.selectedIndex].value);
+        }.bind(this),
+        500
+      );
+    });
+
     addEvent.addEventListener('click', addListEventValidation);
   }
 
   let btnActive = false;
 
-  addEventBtn.addEventListener('click', () => {
+  function addEventBtnActions() {
     if (!btnActive) {
       const addEventFormPosition =
         document.querySelector('div.addEvent').offsetTop;
@@ -131,14 +149,29 @@ function listPropertiesSection() {
       addEventBtn.classList.remove('active');
       btnActive = false;
     }
-  });
+  }
 
   browseListsNavBtn.forEach((navBtn) => {
     navBtn.addEventListener('click', () => {
       calendarSection.style.display = 'none';
       sectionEventMenu.style.display = 'none';
       sectionLists.style.display = 'flex';
+      addEventBtn.removeEventListener('click', addEventBtnActions);
+      changeThemeYourLists();
     });
+    browseListsNavBtn.forEach((navBtn) => {
+      navBtn.removeEventListener('click', addEventBtnActions);
+    });
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && event.altKey && event.code === 'KeyD') {
+      calendarSection.style.display = 'none';
+      sectionEventMenu.style.display = 'none';
+      sectionLists.style.display = 'flex';
+      addEventBtn.removeEventListener('click', addEventBtnActions);
+      changeThemeYourLists();
+    }
   });
 
   goBackArrow.addEventListener('click', () => {
@@ -147,12 +180,15 @@ function listPropertiesSection() {
     addEventForm.style.display = 'none';
     editEventForm.style.display = 'none';
     addEventBtn.classList.remove('active');
+    addEventBtn.removeEventListener('click', addEventBtnActions);
   });
 
+  function chosenList() {
+    if (!choosingIsActive) listProperties(this);
+  }
+
   listDivs.forEach((list) => {
-    list.addEventListener('click', function (e) {
-      if (!choosingIsActive) listProperties(this);
-    });
+    list.addEventListener('click', chosenList);
   });
 
   function editEventValidation(e) {

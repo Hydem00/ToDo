@@ -73,7 +73,10 @@ function showEvents(){
     global $dbh;
 
     $list_id = $_GET['list_id'];
+    $event_sort_type = $_GET['event_sort_type'];
+
     $stmt = $dbh->prepare('SELECT * FROM listy WHERE id = :list_id AND user_id = :user_id');
+
     $stmt->bindParam(':list_id', $list_id);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
@@ -83,7 +86,23 @@ function showEvents(){
     // print $list_id;
 
     if($list){
-        $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet DESC');
+
+        if($event_sort_type == "DTA"){
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY data ASC, czas ASC;');
+        }
+        else if($event_sort_type == "DTD"){
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY data DESC, czas DESC;');
+        }
+        else if($event_sort_type == "PA"){
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet ASC;');
+        }
+        else if($event_sort_type == "PD"){
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY priorytet DESC;');
+        }
+        else{
+            $stmt = $dbh->prepare('SELECT * FROM wydarzenia WHERE lista_id = :list_id ORDER BY data DESC, czas DESC;');
+        }
+
         $stmt->bindParam(':list_id', $list_id);
         $stmt->execute();
     
@@ -101,6 +120,7 @@ function addEvent(){
 
     $obj = json_decode($_POST["json"], false);
     $list_id = $obj->listID;
+    $chosen_date = $obj->chosenDate;
 
     $stmt = $dbh->prepare('SELECT * FROM listy WHERE id = :list_id AND user_id = :user_id');
     $stmt->bindParam(':list_id', $list_id);
@@ -111,7 +131,12 @@ function addEvent(){
 
     if($list){
         $event_name = $_POST['event_name'];
-        $event_date = $_POST['event_date'];
+
+        if(!empty($chosen_date))
+            $event_date = $chosen_date;
+        else
+            $event_date = $_POST['event_date'];
+
         $event_time = $_POST['event_time'];
         $event_location = $_POST['event_location'];
         $event_description = $_POST['event_description'];

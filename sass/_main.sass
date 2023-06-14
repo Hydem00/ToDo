@@ -14,22 +14,50 @@ main
     display: -webkit-box
     display: -ms-flexbox
     display: flex
-    background-image: url("../images/pocket.jpg")
-    height: 200px
-    background-position: center
-    background-size: cover
-    background-repeat: no-repeat
-    background-attachment: fixed
-
-    h1
-      background-color: rgba(0, 0, 0, 0.5)
-      -ms-flex-preferred-size: 100%
-      flex-basis: 100%
-      text-align: center
-      color: white
-      text-transform: uppercase
-      padding: 80px 5px 80px 5px
-
+    // background-image: url("../images/pocket.jpg")
+    // height: 200px
+    // background-position: center
+    // background-size: cover
+    // background-repeat: no-repeat
+    // background-attachment: fixed
+    div.film
+      position: relative
+      video
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        width: 100%
+        margin-bottom: 20px
+      div.bg
+        position: absolute
+        top: 0
+        left: 0
+        background-color: rgba(0, 0, 0, 0.5)
+        height: 100%
+        width: 100%
+      h1
+        font-size: 1rem
+        width: 100%
+        text-align: center
+        text-transform: uppercase
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        // background-color: rgba(0, 0, 0, 0.5)
+        padding: 15px
+        color: white
+        opacity: 0
+        animation: fadeIn 19s infinite
+        &:nth-of-type(1)
+          animation-delay: 0s
+        &:nth-of-type(2)
+          animation-delay: 5s
+        &:nth-of-type(3)
+          animation-delay: 10s
+        &:nth-of-type(4)
+          animation-delay: 15s
+          
   p.information
     color: white
     width: 95%
@@ -50,7 +78,6 @@ main
     margin: 30px 0
     background-color: #179CF0
     transition: 0.3s
-
     &:hover
       background-color: transparent
 
@@ -62,14 +89,28 @@ main
       padding-bottom: 20px
 
     &.offer
+      overflow: hidden
       width: 95%
       border-top: 1px solid gray
       color: white
       padding-bottom: 20px
-
       div
+        display: flex
+        flex-direction: column
         align-items: center
         justify-content: space-between
+        &.left
+          transform: translateX(-200%)
+        &.right
+          transform: translateX(200%)
+        &.slide-out-left
+          animation: slide-out-left .6s forwards
+        &.slide-out-right
+          animation: slide-out-right .6s forwards
+        &.slide-in-left
+          animation: slide-in-left .6s forwards
+        &.slide-in-right
+          animation: slide-in-right .6s forwards
 
     &.aboutUs h1, &.offer h1
       font-size: 1.3rem
@@ -89,6 +130,17 @@ main
       display: block
       margin: 0 auto
       width: 50%
+      opacity: 0
+      visibility: hidden
+      transition: opacity 0.3s ease-in-out
+      &.animate-logo
+        opacity: 1
+        visibility: visible
+        animation: logo-animation 1s forwards
+      &.animate-logo-reverse
+        opacity: 1
+        visibility: visible
+        animation: logo-animation-reverse 1s forwards
 
     &.offer img
       display: block
@@ -97,10 +149,69 @@ main
       width: 80%
       height: 220px
 
+@keyframes fadeIn
+  0%
+    opacity: 0
+  5%
+    opacity: 0
+  8%
+    opacity: 1
+  20%
+    opacity: 1
+  23%
+    opacity: 0
+  25%
+    opacity: 0
+  100%
+    opacity: 0
+
+@keyframes logo-animation
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
+
+@keyframes logo-animation-reverse
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(0)
+
+@keyframes slide-in-left
+  0%
+    transform: translateX(-200%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+@keyframes slide-in-right
+  0%
+    transform: translateX(200%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+@keyframes slide-out-right
+  0%
+    transform: translateX(0)
+    opacity: 1
+  100%
+    transform: translateX(200%)
+    opacity: 0
+@keyframes slide-out-left
+  0%
+    transform: translateX(0)
+    opacity: 1
+  100%
+    transform: translateX(-200%)
+    opacity: 0
+    
 @media (min-width: 360px) and (orientation: portrait)
   main
-    div.banner h1
-      font-size: 1.4rem
+    div.banner
+      div.film 
+        h1
+          font-size: 1.4rem
 
     p.information
       font-size: 1rem
@@ -111,8 +222,10 @@ main
 
 @media (min-width: 533px) and (orientation: landscape)
   main
-    div.banner h1
-      font-size: 1.4rem
+    div.banner
+      div.film 
+        h1
+          font-size: 1.4rem
 
     p.information
       font-size: 0.9rem
@@ -124,6 +237,8 @@ main
         width: 30%
 
       &.offer
+        div
+          flex-direction: row
         p
           font-size: 0.9rem
 
@@ -214,11 +329,12 @@ main
 @media (min-width: 760px) and (orientation: portrait)
   main
     div.banner
-      h1
-        font-size: 2.15rem
-        line-height: 150px
+      div.film 
+        h1
+          font-size: 2.15rem
+        // line-height: 150px
 
-        height: 300px
+        // height: 300px
   main
     div.banner
       height: 300px
@@ -253,13 +369,14 @@ main
 @media (min-width: 1024px) and (orientation: landscape)
   main
     div.banner
-      h1
-        font-size: 2.7rem
-        line-height: 320px
-        height: 500px
+      div.film 
+        h1
+          font-size: 2.7rem
+        // line-height: 320px
+        // height: 500px
   main
     div.banner
-      height: 500px
+      // height: 500px
     a
       padding: 20px 30px
       font-size: 1.7rem
@@ -308,10 +425,11 @@ main
 @media (min-width: 1280px) and (orientation: landscape)
   main
     div.banner
-      h1
-        font-size: 3.6rem
-        line-height: 320px
-        height: 500px
+      div.film 
+        h1
+          font-size: 3.6rem
+        // line-height: 320px
+        // height: 500px
     div.link
       width: 100%
       margin-bottom: 20px
@@ -320,7 +438,7 @@ main
         font-size: 2.5rem
         width: 20%
         text-align: center
-        margin: 0 auto
+        margin: 10px auto 0 auto
 
     p.information
       width: 95%

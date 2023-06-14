@@ -29,6 +29,7 @@ if(!$auth->isLogged()){
   <script src="dist/generateCalendar.js"></script>
 </head>
 <body>
+<div class="loader"></div>
 <nav class="menuMobile">
     <ul>
     <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
@@ -50,7 +51,6 @@ if(!$auth->isLogged()){
     </ul>
 </nav>
 <div class="wrap"> 
-  
   <header>
     <div class="leftHeader">
       <div class="burger">
@@ -80,7 +80,16 @@ if(!$auth->isLogged()){
       <section class="menu">
         <i class="fa-solid fa-arrow-up"></i>
         <h2></h2>
+        <!-- <div class="box"> -->
+        
+        <!-- </div> -->
         <p></p>
+        <select class = "sort" id="typeOfSort">
+          <option value="PA">Sort Ascending By Priority</option>
+          <option value="PD">Sort Descending By Priority</option>
+          <option value="DTA">Sort Ascending By Date And Time</option>
+          <option value="DTD" selected>Sort Descending By Date And Time</option>
+        </select>
         <div class="addEvent">
           <h2>Add Event</h2>
           <span class="close">&times;</span>
@@ -125,13 +134,20 @@ if(!$auth->isLogged()){
       </section>
       <section class="profile">    
         <div class="profileInfo">
-        </div>    
+          
+        </div>
+        <div class="theme">
+            <i class="fa-solid fa-moon" id="moon"></i>
+            <i class="fa-solid fa-lightbulb" id="sun"></i>
+          </div>    
         <div class="profileButtons">
+        
           <button>Change Password</button>        
           <button>Change Email</button>        
           <button>Delete Account</button>
           <button>Set/Change Your Nick</button>
           <button><a href="https://pl.gravatar.com/" target="blank">Change your Gravatar</a></button>
+          
         </div>
         
         <div class="changePassword">
@@ -171,7 +187,7 @@ if(!$auth->isLogged()){
         </div>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <h2>Creating List</h2>
           <span class="close">&times;</span>
           <form method="POST">
@@ -182,7 +198,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpEditList" class="modal popUpEdit">
-        <div class="modal-content">
+        <div class="modal-content editModal">
           <h2>Edit List</h2>
           <span class="close">&times;</span>
           <form method="POST">
@@ -193,7 +209,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpRemoveList" class="modal popUpRemove">
-        <div class="modal-content">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
           <h2>Remove List</h2>
           <h3></h3>
@@ -203,7 +219,7 @@ if(!$auth->isLogged()){
         </div>
       </div>
       <div id="popUpRemoveEvent" class="modal popUpRemove">
-        <div class="modal-content">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
           <h2>Remove Event</h2>
           <h3></h3>
@@ -212,24 +228,97 @@ if(!$auth->isLogged()){
           <button>NO</button>
         </div>
       </div>
-      <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
+      <!-- <div id="popUpCalendarEventProperties" class="modal popUpEventProperties">
         <div class="modal-content">
           <span class="close">&times;</span>
           
         </div>
+      </div> -->
+      <div id="popUpCalendarEventProperties">
+        <div class="popUpContentEventProperties">
+          <div class="popUpHeader">
+            <div>
+              <i class="fa-solid fa-pen"></i
+              ><!--tutaj zrobić edycje eventu-->
+              <p>Properties</p>
+              <i class="fa-solid fa-trash"></i
+              ><!--tutaj zrobić usunięcie eventu-->
+            </div>
+              <i class="fa-solid fa-xmark"></i>
+            <!--tutaj zrobić wyłączenie modalu-->
+          </div>
+            
+        </div>
       </div>
-      <div id="popUpList" class="modal popUp">
-        <div class="modal-content">
+      <div id="popUpRemoveCalendarEvent" class="modal popUpRemoveEventCalendar">
+        <div class="modal-content removeModal">
           <span class="close">&times;</span>
+          <h2>Remove Event</h2>
+          <h3></h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <button>YES</button>
+          <button>NO</button>
+        </div>
+      </div>
+      <div id="popUpEditCalendarEvent" class="modal popUpEditEventCalendar">
+        <div class="modal-content editModal">
+          <span class="close">&times;</span>
+          <div class="editEvent">
+          <h2>Edit Event</h2>
+          <form method="POST">
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="date" name="event_date" placeholder = "Enter the date" required>
+            <input type="time" name="event_time" placeholder = "Enter the time" required>
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button>Edit event</button>
+          </form>
+        </div>
+        </div>
+      </div>
+      <div id="popUpAddEvent" class="modal popUpAddEvent">
+        <div class="modal-content addModal">
+          <span class="close">&times;</span>
+          <div class="addEvent">
+          <h2>Add Event</h2>
+          <form method="POST">
+            <p>Select the list you want to add an event to</p>
+            <select name="" id="chosen_list">
+            </select>
+            <input type="text" maxlength="50" name="event_name" placeholder = "Enter the title" required>
+            <textarea maxlength="255" name="event_description" placeholder = "Enter the description"></textarea>
+            <input type="text" maxlength = "50" name="event_location" placeholder = "Enter the location">
+            <input type="time" name="event_time" placeholder = "Enter the time" required>
+            <select name="event_priority">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <input type="color" name="event_color">
+            <button id="addEventBtnPopUp">Add event</button>
+          </form>
+        </div>
         </div>
       </div>
     </main>
-
     <footer id="footer">
           <div class="copy">
               <p>&copy; All rights reserved</p>
           </div>
-      </footer>
+    </footer>
+    <i class="fa-solid fa-keyboard"></i>
+    <div class="circleKey">
+      <p><i class="fa-solid fa-plus"></i> Ctrl + Alt + L</p>
+      <p><i class="fa-regular fa-pen-to-square"></i> Ctrl + Alt + E</p>
+      <p><i class="fa-solid fa-clipboard-list"></i> Ctrl + Alt + D</p>
+      <p><i class="fa-solid fa-calendar-days"></i> Ctrl + Alt + C</p>
+    </div>
 </div>
   <script src="./js/navigation.js"></script>
   <script src="./js/windowOnLoad.js"></script>
@@ -242,6 +331,9 @@ if(!$auth->isLogged()){
   <script src="./js/popUpEditList.js"></script>
   <script src="./js/popUpDeleteList.js"></script>
   <script src="./js/popUpEventProperties.js"></script>
-
+  <script src="./js/popUpRemoveCalendarEvent.js"></script>
+  <script src="./js/popUpEditCalendarEvent.js"></script>
+  <script src="./js/popUpAddEvent.js"></script>
+  <script src="./js/selectTheme.js"></script>
 </body>
 </html>
