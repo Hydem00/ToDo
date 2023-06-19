@@ -58,7 +58,6 @@ async function changeLayer() {
 document.addEventListener("keydown", function (event) {
   if (event.ctrlKey && event.altKey && event.code === "KeyC") {
     changeLayer();
-    // changeThemeCalendar();
   }
 });
 
@@ -77,6 +76,7 @@ function changeMonth() {
       await addEventBtnsRender();
       await getListsAndEvents();
       popUpAddEvent();
+      changeThemeCalendar();
     });
   });
 }
