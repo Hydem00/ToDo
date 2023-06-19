@@ -1,48 +1,48 @@
-const profileSection = document.querySelector("main section.profile");
-const sectionMenu = document.querySelector("main section.menu");
+const profileSection = document.querySelector('main section.profile');
+const sectionMenu = document.querySelector('main section.menu');
 const navProfileBtns = document.querySelectorAll(
-  "nav.menuMobile ul li:nth-of-type(5) a, nav.menuDesktop ul li:nth-of-type(5) a"
+  'nav.menuMobile ul li:nth-of-type(5) a, nav.menuDesktop ul li:nth-of-type(5) a'
 );
 const navBtnsProf = document.querySelectorAll(
-  "nav.menuDesktop ul li:nth-of-type(1) a ,nav.menuDesktop ul li:nth-of-type(2) a, nav.menuDesktop ul li:nth-of-type(3) a,nav.menuDesktop ul li:nth-of-type(4) a, nav.menuMobile ul li:nth-of-type(1) a, nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(4) a"
+  'nav.menuDesktop ul li:nth-of-type(1) a ,nav.menuDesktop ul li:nth-of-type(2) a, nav.menuDesktop ul li:nth-of-type(3) a,nav.menuDesktop ul li:nth-of-type(4) a, nav.menuMobile ul li:nth-of-type(1) a, nav.menuMobile ul li:nth-of-type(2) a, nav.menuMobile ul li:nth-of-type(3) a, nav.menuMobile ul li:nth-of-type(4) a'
 );
 
 navProfileBtns.forEach((navProfileBtn) => {
-  navProfileBtn.addEventListener("click", () => {
-    calendarSection.style.display = "none";
-    profileSection.style.display = "flex";
-    sectionLists.style.display = "none";
-    sectionMenu.style.display = "none";
+  navProfileBtn.addEventListener('click', () => {
+    calendarSection.style.display = 'none';
+    profileSection.style.display = 'flex';
+    sectionLists.style.display = 'none';
+    sectionMenu.style.display = 'none';
     changeThemeYourProfile();
   });
 });
 
 navBtnsProf.forEach((navBtn) => {
-  navBtn.addEventListener("click", () => {
-    profileSection.style.display = "none";
+  navBtn.addEventListener('click', () => {
+    profileSection.style.display = 'none';
   });
 });
 
 const changePasswordCPassword = document.querySelector(
-  "main section.profile div.changePassword form input#currentPassword"
+  'main section.profile div.changePassword form input#currentPassword'
 );
 const changePasswordNewPassword = document.querySelector(
-  "main section.profile div.changePassword form input#newPassword"
+  'main section.profile div.changePassword form input#newPassword'
 );
 const changePasswordRPassword = document.querySelector(
-  "main section.profile div.changePassword form input#repeatNewPassword"
+  'main section.profile div.changePassword form input#repeatNewPassword'
 );
 const changePasswordBtn = document.querySelector(
-  "main section.profile div.changePassword form button"
+  'main section.profile div.changePassword form button'
 );
 
-const p = document.querySelector("div.informationText p");
+const p = document.querySelector('div.informationText p');
 
 const passwordValidation =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,100}$/;
 
 const changePasswordMessage = document.querySelector(
-  "main section.profile div.changePassword p"
+  'main section.profile div.changePassword p'
 );
 
 let passwordsOK = false;
@@ -50,18 +50,18 @@ let passwordsOK = false;
 const validatePasswordInputs = () => {
   if (changePasswordNewPassword.value.match(passwordValidation)) {
     passwordsOK = true;
-    changePasswordMessage.innerHTML = "";
+    changePasswordMessage.innerHTML = '';
     if (changePasswordNewPassword.value === changePasswordRPassword.value) {
       passwordsOK = true;
-      changePasswordMessage.innerHTML = "";
+      changePasswordMessage.innerHTML = '';
     } else {
       passwordsOK = false;
-      changePasswordMessage.innerHTML = "Passwords are not the same!";
+      changePasswordMessage.innerHTML = 'Passwords are not the same!';
     }
   } else {
     passwordsOK = false;
     changePasswordMessage.innerHTML =
-      "Your password is not safe. Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.";
+      'Your password is not safe. Must be least 10 characters, must contain: 1 uppercase, 1 lowercase, 1 numeric, and 1 special characters.';
   }
 
   return passwordsOK;
@@ -74,35 +74,35 @@ function validationPasswordChange(e) {
     changePasswordRPassword.value.length != 0
   ) {
     e.preventDefault();
-    window.addEventListener("input", validatePasswordInputs);
+    window.addEventListener('input', validatePasswordInputs);
     passwordsOK = validatePasswordInputs();
 
     if (passwordsOK) {
       changePassword();
-      changePasswordCPassword.value = "";
-      changePasswordNewPassword.value = "";
-      changePasswordRPassword.value = "";
+      changePasswordCPassword.value = '';
+      changePasswordNewPassword.value = '';
+      changePasswordRPassword.value = '';
     }
   }
 }
 
-changePasswordBtn.addEventListener("click", validationPasswordChange);
+changePasswordBtn.addEventListener('click', validationPasswordChange);
 
 const changeEmailEmail = document.querySelector(
-  "main section.profile div.changeEmail form input#email"
+  'main section.profile div.changeEmail form input#email'
 );
 const changeEmailPassword = document.querySelector(
-  "main section.profile div.changeEmail form input#password"
+  'main section.profile div.changeEmail form input#password'
 );
 const changeEmailBtn = document.querySelector(
-  "main section.profile div.changeEmail form button"
+  'main section.profile div.changeEmail form button'
 );
 
 const emailValidation =
   /^(?=.{7,100})[\w\.\-]{3,}[@]{1}[\w\.\-]{1,}[.]{1}[\w]{1,}$/gm;
 
 const changeEmailMessage = document.querySelector(
-  "main section.profile div.changeEmail p"
+  'main section.profile div.changeEmail p'
 );
 
 let emailOK = false;
@@ -110,10 +110,10 @@ let emailOK = false;
 const validateEmailInput = () => {
   if (changeEmailEmail.value.match(emailValidation)) {
     emailOK = true;
-    changeEmailMessage.innerHTML = "";
+    changeEmailMessage.innerHTML = '';
   } else {
     emailOK = false;
-    changeEmailMessage.innerHTML = "Provided e-mail is invalid!";
+    changeEmailMessage.innerHTML = 'Provided e-mail is invalid!';
   }
   return emailOK;
 };
@@ -124,63 +124,66 @@ function validationEmailChange(e) {
     changeEmailPassword.value.length != 0
   ) {
     e.preventDefault();
-    window.addEventListener("input", validateEmailInput);
+    window.addEventListener('input', validateEmailInput);
     emailOK = validateEmailInput();
 
     if (emailOK) {
       changeEmail();
-      changeEmailEmail.value = "";
-      changeEmailPassword.value = "";
+      changeEmailEmail.value = '';
+      changeEmailPassword.value = '';
     }
   }
 }
 
-changeEmailBtn.addEventListener("click", validationEmailChange);
+changeEmailBtn.addEventListener('click', validationEmailChange);
 
 const deleteAccountPassword = document.querySelector(
-  "main section.profile div.deleteAccount form input"
+  'main section.profile div.deleteAccount form input'
 );
 const deleteAccountBtn = document.querySelector(
-  "main section.profile div.deleteAccount form button"
+  'main section.profile div.deleteAccount form button'
 );
 
-deleteAccountBtn.addEventListener("click", (e) => {
+deleteAccountBtn.addEventListener('click', (e) => {
   if (deleteAccountPassword.value.length != 0) {
     e.preventDefault();
     deleteAccount();
-    deleteAccountPassword.value = "";
+    deleteAccountPassword.value = '';
   }
 });
 
 const nick = document.querySelector(
-  "main section.profile div.additionalInformations form input"
+  'main section.profile div.additionalInformations form input'
 );
 const addInformationsBtn = document.querySelector(
-  "main section.profile div.additionalInformations form button"
+  'main section.profile div.additionalInformations form button'
 );
 
-addInformationsBtn.addEventListener("click", (e) => {
+addInformationsBtn.addEventListener('click', (e) => {
   if (nick.value.length != 0) {
     e.preventDefault();
     updateInformations();
-    nick.value = "";
+    nick.value = '';
   }
 });
 
 const chooseProfileOptionBtns = document.querySelectorAll(
-  "main section.profile div.profileButtons button:nth-of-type(1),main section.profile div.profileButtons button:nth-of-type(2),main section.profile div.profileButtons button:nth-of-type(3),main section.profile div.profileButtons button:nth-of-type(4)"
+  'main section.profile div.profileButtons button:nth-of-type(1),main section.profile div.profileButtons button:nth-of-type(2),main section.profile div.profileButtons button:nth-of-type(3),main section.profile div.profileButtons button:nth-of-type(4), main section.profile div.profileButtons button:nth-of-type(5)'
 );
 const changePasswordForm = document.querySelector(
-  "main section.profile div.changePassword"
+  'main section.profile div.changePassword'
 );
 const changeEmailForm = document.querySelector(
-  "main section.profile div.changeEmail"
+  'main section.profile div.changeEmail'
 );
 const deleteAccountForm = document.querySelector(
-  "main section.profile div.deleteAccount"
+  'main section.profile div.deleteAccount'
 );
 const additionalInformationsForm = document.querySelector(
-  "main section.profile div.additionalInformations"
+  'main section.profile div.additionalInformations'
+);
+const chooseBackground = document.querySelector(
+  'main section.profile div.background'
 );
 
 const profileDivForms = [
@@ -188,19 +191,20 @@ const profileDivForms = [
   changeEmailForm,
   deleteAccountForm,
   additionalInformationsForm,
+  chooseBackground,
 ];
 
 chooseProfileOptionBtns.forEach((chooseProfileOptionBtn, iterator) => {
-  chooseProfileOptionBtn.addEventListener("click", () => {
+  chooseProfileOptionBtn.addEventListener('click', () => {
     profileDivForms.forEach((profileDivForm) => {
-      profileDivForm.style.display = "none";
+      profileDivForm.style.display = 'none';
     });
 
-    profileDivForms[iterator].style.display = "flex";
+    profileDivForms[iterator].style.display = 'flex';
 
     window.scrollTo({
       top: profileDivForms[iterator].offsetTop,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   });
 });
