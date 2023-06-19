@@ -147,6 +147,7 @@ if(!$auth->isLogged()){
           <button>Delete Account</button>
           <button>Set/Change Your Nick</button>
           <button><a href="https://pl.gravatar.com/" target="blank">Change your Gravatar</a></button>
+          <button>Choose Background</button>
           
         </div>
         
@@ -185,6 +186,33 @@ if(!$auth->isLogged()){
           </form>
           <p></p>
         </div>
+        <section class="background">
+            <div class="bgImageBlue">
+              <div class="backgroundRGBA">
+                <p class="clicked">Click Me</p>
+                <p class="remove">Remove Me</p>
+              </div>
+            </div>
+            <div class="bgImageLime">
+              <div class="backgroundRGBA">
+                <p class="clicked">Click Me</p>
+                <p class="remove">Remove Me</p>
+              </div>
+            </div>
+            <div class="bgImageGreen">
+              <div class="backgroundRGBA">
+                <p class="clicked">Click Me</p>
+                <p class="remove">Remove Me</p>
+              </div>
+            </div>
+            <div class="bgImageBlack">
+              <div class="backgroundRGBA">
+                <p class="clicked">Click Me</p>
+                <p class="remove">Remove Me</p>
+              </div>
+            </div>
+        
+        </section>
       </section>
       <div id="popUpAddList" class="modal popUpAdd">
         <div class="modal-content editModal">
