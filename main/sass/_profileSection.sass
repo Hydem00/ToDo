@@ -42,7 +42,40 @@ main
                 text-align: center
                 margin: 0 auto
                 font-size: 0.8rem
-
+        section.background
+            display: flex
+            align-items: center
+            flex-direction: column
+            margin-top: 10px
+            div.bgImageBlue
+                background-image: url("../../images/bgBlue.png")
+                width: 200px
+                height: 100px
+            div.bgImageGreen
+                background-image: url("../../images/bgGreen.png")
+                width: 200px
+                height: 100px
+            div.bgImageLime
+                background-image: url("../../images/bgLime.png")
+                width: 200px
+                height: 100px
+            div.bgImageBlack
+                background-image: url("../../images/bgBlack.png")
+                width: 200px
+                height: 100px
+            div.bgImageBlue,div.bgImageGreen,div.bgImageLime,div.bgImageBlack
+                border-radius: 20px
+                margin-bottom: 10px
+                div.backgroundRGBA
+                    background-color: rgba(0, 0, 0, 0.4)
+                    width: 100%
+                    height: 100%
+                    border-radius: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    p
+                        text-transform: uppercase
         div.profileInfo
             padding-left: 10px
             img
@@ -252,3 +285,31 @@ main
                         margin-bottom: 15px
                     button
                         font-size: 1.5rem
+
+            section.background
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                flex-basis: 45%
+                align-items: center
+                justify-content: space-between
+                div.bgImageBlue,div.bgImageGreen,div.bgImageLime,div.bgImageBlack
+                    width: auto
+                    flex-basis: 45%
+                    height: 250px
+                    margin-bottom: 40px
+                    cursor: pointer
+                    &:hover div.backgroundRGBA
+                            display: flex
+                    &:hover div.backgroundRGBA p.clicked
+                            display: block
+                    div.backgroundRGBA
+                        display: none
+                        p.clicked
+                            display: none
+                            font-size: 2rem
+                        p.remove
+                            display: none
+                        .bgActive
+                            box-shadow: 0 0 20px blue
+                            
