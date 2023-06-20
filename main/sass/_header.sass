@@ -8,6 +8,7 @@ header
     background-color: black
     color: #e0e1dc
     z-index: 2
+
 div.leftHeader
     position: relative
     flex-basis: 20%
@@ -208,9 +209,10 @@ div.rightHeader
         position: relative
         justify-content: flex-end
         background-color: transparent
-        width: 85%
+        width: 100%
         margin: 0 auto
-        border-bottom: 1px solid gray
+        z-index: -1
+        // border-bottom: 1px solid gray
         div.leftHeader
             display: none
             div.burger

@@ -1,13 +1,31 @@
 footer
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
   background-color: #1d2538
   color: #e0e1dc
   width: 100%
-  min-height: 5vh
+  min-height: 9.9vh
+.bgLimeActive
+  
+  background-image: url("../../images/bgLime.png")
+  border-radius: 0
+.bgBlueActive
+  background-image: url("../../images/bgBlue.png")
+  border-radius: 0
+.bgGreenActive
+  background-color: transparent
+  background-image: url("../../images/bgGreen.png")
+  border-radius: 0
+.bgBlackActive
+  background-image: url("../../images/bgBlack.png")
+  border-radius: 0
   div
     &.copy
       width: 95%
       margin: 0 auto 10px auto
-      border-top: 1px solid gray
+      // border-top: 1px solid gray
     &.copy p
       text-align: center
       height: 100%
@@ -20,7 +38,7 @@ footer
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    padding-top: 10px
+    // padding-top: 10px
 
 @media (min-width: 760px) and (orientation: portrait)
   footer
