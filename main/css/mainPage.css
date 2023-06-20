@@ -27,6 +27,26 @@ body {
   background-color: #1d2538;
 }
 
+.bgLimeActive {
+  background-image: url("../../images/bgLime.png");
+  border-radius: 0;
+}
+
+.bgBlueActive {
+  background-image: url("../../images/bgBlue.png");
+  border-radius: 0;
+}
+
+.bgGreenActive {
+  background-image: url("../../images/bgGreen.png");
+  border-radius: 0;
+}
+
+.bgBlackActive {
+  background-image: url("../../images/bgBlack.png");
+  border-radius: 0;
+}
+
 @-webkit-keyframes logoAnimate100 {
   0% {
     background-position: 0 0;
@@ -647,9 +667,9 @@ div.rightHeader p {
         -ms-flex-pack: end;
             justify-content: flex-end;
     background-color: transparent;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid gray;
+    z-index: -1;
   }
   header div.leftHeader {
     display: none;
@@ -673,7 +693,6 @@ div.wrap {
 div.wrap main {
   background-color: #1d2538;
   padding: 10px 0;
-  border-radius: 20px;
   min-height: 80vh;
 }
 div.wrap main section.lists {
@@ -842,7 +861,6 @@ div.wrap main section.lists div.addList i.sunAdd.active {
 @media (min-width: 750px) {
   div.wrap main {
     width: 100%;
-    border-radius: 20px;
   }
   div.wrap main section.lists {
     -webkit-box-pack: justify;
@@ -906,7 +924,6 @@ div.wrap main section.lists div.addList i.sunAdd.active {
   }
   div.wrap main {
     width: 100%;
-    border-radius: 20px;
   }
   div.wrap main section.lists {
     -webkit-box-pack: justify;
@@ -953,7 +970,6 @@ div.wrap main section.lists div.addList i.sunAdd.active {
   }
   div.wrap main {
     width: 100%;
-    border-radius: 20px;
   }
   div.wrap main section.lists {
     -webkit-box-pack: justify;
@@ -2648,7 +2664,8 @@ div.wrap {
 div.wrap main {
   background-color: #1d2538;
   padding: 10px 0;
-  border-radius: 20px;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
 }
 div.wrap main section.menu {
   position: relative;
@@ -3631,6 +3648,22 @@ div.wrap main section.menu form button:hover {
     width: 100%;
   }
 }
+main .bgLimeActive {
+  background-image: url("../../images/bgLime.png");
+  border-radius: 0;
+}
+main .bgBlueActive {
+  background-image: url("../../images/bgBlue.png");
+  border-radius: 0;
+}
+main .bgGreenActive {
+  background-image: url("../../images/bgGreen.png");
+  border-radius: 0;
+}
+main .bgBlackActive {
+  background-image: url("../../images/bgBlack.png");
+  border-radius: 0;
+}
 main section.profile {
   position: relative;
   display: none;
@@ -4087,7 +4120,7 @@ main section.profile div.theme i:nth-of-type(2) {
     width: auto;
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
-    height: 250px;
+    height: 180px;
     margin-bottom: 40px;
     cursor: pointer;
   }
@@ -4482,17 +4515,50 @@ div.chooseList p {
   }
 }
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #1d2538;
   color: #e0e1dc;
   width: 100%;
-  min-height: 5vh;
+  min-height: 9.9vh;
 }
-footer div.copy {
+
+.bgLimeActive {
+  background-image: url("../../images/bgLime.png");
+  border-radius: 0;
+}
+
+.bgBlueActive {
+  background-image: url("../../images/bgBlue.png");
+  border-radius: 0;
+}
+
+.bgGreenActive {
+  background-color: transparent;
+  background-image: url("../../images/bgGreen.png");
+  border-radius: 0;
+}
+
+.bgBlackActive {
+  background-image: url("../../images/bgBlack.png");
+  border-radius: 0;
+}
+.bgBlackActive div.copy {
   width: 95%;
   margin: 0 auto 10px auto;
-  border-top: 1px solid gray;
 }
-footer div.copy p {
+.bgBlackActive div.copy p {
   text-align: center;
   height: 100%;
   font-size: 1rem;
@@ -4511,7 +4577,6 @@ footer div.copy p {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    padding-top: 10px;
   }
 }
 @media (min-width: 760px) and (orientation: portrait) {
