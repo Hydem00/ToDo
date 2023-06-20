@@ -1,9 +1,13 @@
 let loginStatus;
 let myValue = null;
+let myBgValue = null;
 
 window.onload = async function () {
-  myValue = getCookie("Theme_mode");
+  myValue = getCookie('Theme_mode');
+  myBgValue = getCookie('Background_mode');
   console.log(myValue);
+  console.log(myBgValue);
+  changeBackground();
   if (myValue == 1) {
     sun();
   } else if (myValue == 0) {

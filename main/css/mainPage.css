@@ -362,6 +362,9 @@ header {
   color: #e0e1dc;
   z-index: 2;
 }
+header.sun {
+  background-color: #504d4d;
+}
 
 div.leftHeader {
   position: relative;
@@ -670,6 +673,9 @@ div.rightHeader p {
     width: 100%;
     margin: 0 auto;
     z-index: -1;
+  }
+  header.sun {
+    background-color: white;
   }
   header div.leftHeader {
     display: none;
@@ -4123,6 +4129,12 @@ main section.profile div.theme i:nth-of-type(2) {
     height: 180px;
     margin-bottom: 40px;
     cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  main section.profile div.background div.bgImageBlue:hover, main section.profile div.background div.bgImageGreen:hover, main section.profile div.background div.bgImageLime:hover, main section.profile div.background div.bgImageBlack:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   main section.profile div.background div.bgImageBlue:hover div.backgroundRGBA, main section.profile div.background div.bgImageGreen:hover div.backgroundRGBA, main section.profile div.background div.bgImageLime:hover div.backgroundRGBA, main section.profile div.background div.bgImageBlack:hover div.backgroundRGBA {
     display: -webkit-box;
@@ -4136,11 +4148,10 @@ main section.profile div.theme i:nth-of-type(2) {
     display: none;
   }
   main section.profile div.background div.bgImageBlue div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageGreen div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageLime div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageBlack div.backgroundRGBA p.clicked {
-    display: none;
     font-size: 2rem;
   }
   main section.profile div.background div.bgImageBlue div.backgroundRGBA p.remove, main section.profile div.background div.bgImageGreen div.backgroundRGBA p.remove, main section.profile div.background div.bgImageLime div.backgroundRGBA p.remove, main section.profile div.background div.bgImageBlack div.backgroundRGBA p.remove {
-    display: none;
+    font-size: 2rem;
   }
   main section.profile div.background div.bgImageBlue div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageGreen div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageLime div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageBlack div.backgroundRGBA .bgActive {
     -webkit-box-shadow: 0 0 20px blue;

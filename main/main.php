@@ -190,25 +190,21 @@ if(!$auth->isLogged()){
             <div class="bgImageBlue">
               <div class="backgroundRGBA">
                 <p class="clicked">Click Me</p>
-                <p class="remove">Remove Me</p>
               </div>
             </div>
             <div class="bgImageLime">
               <div class="backgroundRGBA">
                 <p class="clicked">Click Me</p>
-                <p class="remove">Remove Me</p>
               </div>
             </div>
             <div class="bgImageGreen">
               <div class="backgroundRGBA">
                 <p class="clicked">Click Me</p>
-                <p class="remove">Remove Me</p>
               </div>
             </div>
             <div class="bgImageBlack">
               <div class="backgroundRGBA">
                 <p class="clicked">Click Me</p>
-                <p class="remove">Remove Me</p>
               </div>
             </div>
         
