@@ -25,6 +25,11 @@ main
             margin: 0 auto
             padding: 10px 0
             border-top: 1px solid gray
+            div
+                p
+                    text-transform: uppercase
+                    font-size: 0.8rem
+                    text-align: center
             h2
                 width: 100%
                 text-align: center
@@ -161,6 +166,7 @@ main
             div.changePassword, div.changeEmail, div.deleteAccount, div.additionalInformations
                 form
                     width: 60%
+           
 
 @media(min-width: 400px) and (orientation: portrait)
     main
@@ -168,6 +174,28 @@ main
             div.changePassword, div.changeEmail, div.deleteAccount, div.additionalInformations
                 p
                     font-size: 1rem
+            div.background
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                div.bgImageBlue, div.bgImageLime, div.bgImageGreen, div.bgImageBlack
+                    flex-basis: 42%
+                    margin: 10px
+
+@media(min-width: 530px) and (orientation: landscape)
+    main
+        section.profile
+            div.background
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                div.bgImageBlue, div.bgImageLime, div.bgImageGreen, div.bgImageBlack
+                    flex-basis: 42%
+                    margin: 10px
 @media(min-width: 700px) and (orientation: landscape)
     main
         section.profile
@@ -176,6 +204,17 @@ main
             div.changePassword, div.changeEmail, div.deleteAccount, div.additionalInformations
                 p
                     font-size: 1.2rem
+            div.background
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                flex-basis: 45%
+                align-content: center
+                div.bgImageBlue, div.bgImageLime, div.bgImageGreen, div.bgImageBlack
+                    flex-basis: 42%
+                    height: 150px
 @media(min-width: 768px) and (orientation: portrait)
     main
         section.profile
@@ -215,7 +254,20 @@ main
                         margin-bottom: 15px
                     button
                         font-size: 1.5rem
-
+            div.background
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                flex-basis: 45%
+                align-content: center
+                div.bgImageBlue, div.bgImageLime, div.bgImageGreen, div.bgImageBlack
+                    flex-basis: 42%
+                    height: 150px
+                    div
+                        p
+                            font-size: 1rem
 @media(min-width: 768px) and (orientation: landscape)
     main
         section.profile
@@ -302,7 +354,7 @@ main
                 display: flex
                 flex-direction: row
                 flex-wrap: wrap
-                flex-basis: 45%
+                flex-basis: 50%
                 align-items: center
                 justify-content: space-between
                 div.bgImageBlue,div.bgImageGreen,div.bgImageLime,div.bgImageBlack
@@ -320,10 +372,9 @@ main
                             display: block
                     div.backgroundRGBA
                         display: none
-                        p.clicked
+                        p
                             font-size: 2rem
-                        p.remove
-                            font-size: 2rem
+                            text-align: center
                         .bgActive
                             box-shadow: 0 0 20px blue
                             
