@@ -43,7 +43,7 @@ body {
 }
 
 .bgBlackActive {
-  background-image: url("../../images/bgBlack.png");
+  background-image: url("../../images/bgBlack2.png");
   border-radius: 0;
 }
 
@@ -3667,7 +3667,7 @@ main .bgGreenActive {
   border-radius: 0;
 }
 main .bgBlackActive {
-  background-image: url("../../images/bgBlack.png");
+  background-image: url("../../images/bgBlack2.png");
   border-radius: 0;
 }
 main section.profile {
@@ -3769,7 +3769,7 @@ main section.profile div.background div.bgImageLime {
   height: 100px;
 }
 main section.profile div.background div.bgImageBlack {
-  background-image: url("../../images/bgBlack.png");
+  background-image: url("../../images/bgBlack2.png");
   width: 200px;
   height: 100px;
 }
@@ -4666,7 +4666,7 @@ footer {
 }
 
 .bgBlackActive {
-  background-image: url("../../images/bgBlack.png");
+  background-image: url("../../images/bgBlack2.png");
   border-radius: 0;
 }
 .bgBlackActive div.copy {
