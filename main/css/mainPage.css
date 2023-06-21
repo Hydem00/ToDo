@@ -3696,6 +3696,11 @@ main section.profile div.changePassword, main section.profile div.changeEmail, m
   padding: 10px 0;
   border-top: 1px solid gray;
 }
+main section.profile div.changePassword div p, main section.profile div.changeEmail div p, main section.profile div.deleteAccount div p, main section.profile div.additionalInformations div p {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-align: center;
+}
 main section.profile div.changePassword h2, main section.profile div.changeEmail h2, main section.profile div.deleteAccount h2, main section.profile div.additionalInformations h2 {
   width: 100%;
   text-align: center;
@@ -3903,6 +3908,52 @@ main section.profile div.theme i:nth-of-type(2) {
   main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
     font-size: 1rem;
   }
+  main section.profile div.background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main section.profile div.background div.bgImageBlue, main section.profile div.background div.bgImageLime, main section.profile div.background div.bgImageGreen, main section.profile div.background div.bgImageBlack {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    margin: 10px;
+  }
+}
+@media (min-width: 530px) and (orientation: landscape) {
+  main section.profile div.background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main section.profile div.background div.bgImageBlue, main section.profile div.background div.bgImageLime, main section.profile div.background div.bgImageGreen, main section.profile div.background div.bgImageBlack {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    margin: 10px;
+  }
 }
 @media (min-width: 700px) and (orientation: landscape) {
   main section.profile {
@@ -3911,6 +3962,32 @@ main section.profile div.theme i:nth-of-type(2) {
   }
   main section.profile div.changePassword p, main section.profile div.changeEmail p, main section.profile div.deleteAccount p, main section.profile div.additionalInformations p {
     font-size: 1.2rem;
+  }
+  main section.profile div.background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  main section.profile div.background div.bgImageBlue, main section.profile div.background div.bgImageLime, main section.profile div.background div.bgImageGreen, main section.profile div.background div.bgImageBlack {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    height: 150px;
   }
 }
 @media (min-width: 768px) and (orientation: portrait) {
@@ -3974,6 +4051,35 @@ main section.profile div.theme i:nth-of-type(2) {
   }
   main section.profile div.changePassword form button, main section.profile div.changeEmail form button, main section.profile div.deleteAccount form button, main section.profile div.additionalInformations form button {
     font-size: 1.5rem;
+  }
+  main section.profile div.background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  main section.profile div.background div.bgImageBlue, main section.profile div.background div.bgImageLime, main section.profile div.background div.bgImageGreen, main section.profile div.background div.bgImageBlack {
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
+    height: 150px;
+  }
+  main section.profile div.background div.bgImageBlue div p, main section.profile div.background div.bgImageLime div p, main section.profile div.background div.bgImageGreen div p, main section.profile div.background div.bgImageBlack div p {
+    font-size: 1rem;
   }
 }
 @media (min-width: 768px) and (orientation: landscape) {
@@ -4113,8 +4219,8 @@ main section.profile div.theme i:nth-of-type(2) {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -4147,11 +4253,9 @@ main section.profile div.theme i:nth-of-type(2) {
   main section.profile div.background div.bgImageBlue div.backgroundRGBA, main section.profile div.background div.bgImageGreen div.backgroundRGBA, main section.profile div.background div.bgImageLime div.backgroundRGBA, main section.profile div.background div.bgImageBlack div.backgroundRGBA {
     display: none;
   }
-  main section.profile div.background div.bgImageBlue div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageGreen div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageLime div.backgroundRGBA p.clicked, main section.profile div.background div.bgImageBlack div.backgroundRGBA p.clicked {
+  main section.profile div.background div.bgImageBlue div.backgroundRGBA p, main section.profile div.background div.bgImageGreen div.backgroundRGBA p, main section.profile div.background div.bgImageLime div.backgroundRGBA p, main section.profile div.background div.bgImageBlack div.backgroundRGBA p {
     font-size: 2rem;
-  }
-  main section.profile div.background div.bgImageBlue div.backgroundRGBA p.remove, main section.profile div.background div.bgImageGreen div.backgroundRGBA p.remove, main section.profile div.background div.bgImageLime div.backgroundRGBA p.remove, main section.profile div.background div.bgImageBlack div.backgroundRGBA p.remove {
-    font-size: 2rem;
+    text-align: center;
   }
   main section.profile div.background div.bgImageBlue div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageGreen div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageLime div.backgroundRGBA .bgActive, main section.profile div.background div.bgImageBlack div.backgroundRGBA .bgActive {
     -webkit-box-shadow: 0 0 20px blue;
