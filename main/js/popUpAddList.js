@@ -8,11 +8,45 @@ const popupAdd = () => {
 };
 
 addListDiv.addEventListener('click', popupAdd);
+
+ctrlPressed = false;
+altPressed = false;
+let lPressed = false;
+
 document.addEventListener('keydown', function (event) {
-  if (event.ctrlKey && event.altKey && event.code === 'KeyL') {
+  if (event.code === 'ControlLeft') {
+    ctrlPressed = true;
+  } else if (event.code === 'AltLeft') {
+    altPressed = true;
+  } else if (event.code === 'KeyL') {
+    lPressed = true;
+  }
+
+  if (
+    (ctrlPressed && altPressed && lPressed) ||
+    (event.ctrlKey && event.altKey && event.code === 'KeyL')
+  ) {
+    console.log('ctrl+alt+l');
     popupAdd();
   }
 });
+
+document.addEventListener('keyup', function (event) {
+  if (event.code === 'ControlLeft') {
+    ctrlPressed = false;
+  } else if (event.code === 'AltLeft') {
+    altPressed = false;
+  } else if (event.code === 'KeyL') {
+    lPressed = false;
+  }
+});
+
+// document.addEventListener('keydown', function (event) {
+//   if (event.ctrlKey && event.altKey && event.code === 'KeyL') {
+//     console.log('ctrl+alt+l');
+//     popupAdd();
+//   }
+// });
 
 document
   .querySelector('nav.menuMobile li a.addList')

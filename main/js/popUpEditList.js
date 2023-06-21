@@ -102,11 +102,44 @@ function popUpEdit() {
         exitElement.addEventListener('click', exitChoosing);
       });
 
+      let ctrlPressed = false;
+      let altPressed = false;
+      let cPressed = false;
+
       document.addEventListener('keydown', function (event) {
-        if (event.ctrlKey && event.altKey && event.code === 'KeyC') {
+        if (event.code === 'ControlLeft') {
+          ctrlPressed = true;
+        } else if (event.code === 'AltLeft') {
+          altPressed = true;
+        } else if (event.code === 'KeyC') {
+          cPressed = true;
+        }
+
+        if (
+          (ctrlPressed && altPressed && cPressed) ||
+          (event.ctrlKey && event.altKey && event.code === 'KeyC')
+        ) {
+          console.log('ctrl+alt+c');
           exitChoosing();
         }
       });
+
+      document.addEventListener('keyup', function (event) {
+        if (event.code === 'ControlLeft') {
+          ctrlPressed = false;
+        } else if (event.code === 'AltLeft') {
+          altPressed = false;
+        } else if (event.code === 'KeyC') {
+          cPressed = false;
+        }
+      });
+
+      // document.addEventListener('keydown', function (event) {
+      //   if (event.ctrlKey && event.altKey && event.code === 'KeyC') {
+      //     console.log('ctrl+alt+c');
+      //     exitChoosing();
+      //   }
+      // });
 
       if (!choosingIsActive) {
         exitChoosingElements.forEach((exitElement) => {
@@ -116,18 +149,56 @@ function popUpEdit() {
     });
   }
 
+  let ctrlPressed = false;
+  let altPressed = false;
+  let ePressed = false;
+
+  const sectionProfile = document.querySelector('section.profile');
+
   if (listsSection.contains(document.querySelector('div.list'))) {
     document.addEventListener('keydown', function (event) {
-      if (event.ctrlKey && event.altKey && event.code === 'KeyE') {
+      if (event.code === 'ControlLeft') {
+        ctrlPressed = true;
+      } else if (event.code === 'AltLeft') {
+        altPressed = true;
+      } else if (event.code === 'KeyE') {
+        ePressed = true;
+      }
+
+      if (
+        (ctrlPressed && altPressed && ePressed) ||
+        (event.ctrlKey && event.altKey && event.code === 'KeyE')
+      ) {
+        console.log('ctrl+alt+e');
         calendarSection.style.display = 'none';
         sectionEventMenu.style.display = 'none';
         sectionLists.style.display = 'flex';
+        sectionProfile.style.display = 'none';
         chooseTheListToEdit();
       }
     });
+    // document.addEventListener('keydown', function (event) {
+    //   if (event.ctrlKey && event.altKey && event.code === 'KeyE') {
+    //     console.log('ctrl+alt+e');
+    //     calendarSection.style.display = 'none';
+    //     sectionEventMenu.style.display = 'none';
+    //     sectionLists.style.display = 'flex';
+    //     chooseTheListToEdit();
+    //   }
+    // });
 
     editListBtnNav.forEach((editListBtn) => {
       editListBtn.addEventListener('click', chooseTheListToEdit);
+    });
+
+    document.addEventListener('keyup', function (event) {
+      if (event.code === 'ControlLeft') {
+        ctrlPressed = false;
+      } else if (event.code === 'AltLeft') {
+        altPressed = false;
+      } else if (event.code === 'KeyE') {
+        ePressed = false;
+      }
     });
   }
 }

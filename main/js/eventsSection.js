@@ -164,8 +164,27 @@ function listPropertiesSection() {
     });
   });
 
+  let ctrlPressed = false;
+  let altPressed = false;
+  let dPressed = false;
+
+  const sectionProfile = document.querySelector('section.profile');
+
   document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.altKey && event.code === 'KeyD') {
+    if (event.code === 'ControlLeft') {
+      ctrlPressed = true;
+    } else if (event.code === 'AltLeft') {
+      altPressed = true;
+    } else if (event.code === 'KeyD') {
+      dPressed = true;
+    }
+
+    if (
+      (ctrlPressed && altPressed && dPressed) ||
+      (event.ctrlKey && event.altKey && event.code === 'KeyD')
+    ) {
+      console.log('Ctrl+alt+d');
+      sectionProfile.style.display = 'none';
       calendarSection.style.display = 'none';
       sectionEventMenu.style.display = 'none';
       sectionLists.style.display = 'flex';
@@ -173,6 +192,26 @@ function listPropertiesSection() {
       changeThemeYourLists();
     }
   });
+
+  document.addEventListener('keyup', function (event) {
+    if (event.code === 'ControlLeft') {
+      ctrlPressed = false;
+    } else if (event.code === 'AltLeft') {
+      altPressed = false;
+    } else if (event.code === 'KeyD') {
+      dPressed = false;
+    }
+  });
+  // document.addEventListener('keydown', function (event) {
+  //   if (event.ctrlKey && event.altKey && event.code === 'KeyD') {
+  //     console.log('Ctrl+alt+d');
+  //     calendarSection.style.display = 'none';
+  //     sectionEventMenu.style.display = 'none';
+  //     sectionLists.style.display = 'flex';
+  //     addEventBtn.removeEventListener('click', addEventBtnActions);
+  //     changeThemeYourLists();
+  //   }
+  // });
 
   goBackArrow.addEventListener('click', () => {
     sectionEventMenu.style.display = 'none';
