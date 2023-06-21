@@ -13,6 +13,17 @@ window.onload = async function () {
   } else if (myValue == 0) {
     moon();
   }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 1024) {
+      if (myValue == 1) {
+        header.classList.add('sun');
+      }
+    } else {
+      if (myValue == 1) {
+        header.classList.remove('sun');
+      }
+    }
+  });
   getLists();
   getProfileInformations();
   getLoginStatus();

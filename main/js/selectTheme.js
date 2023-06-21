@@ -202,6 +202,7 @@ function changeThemeYourEvents() {
 }
 
 function moon() {
+  header.classList.remove('sun');
   body.style.backgroundColor = '#1d2538';
   moonIcon.style.color = 'black';
   sunIcon.style.color = 'gray';
@@ -214,9 +215,12 @@ function moon() {
   menuMobile.style.backgroundColor = 'black';
   menuMobileUl.style.backgroundColor = 'black';
   divCircleKey.style.backgroundColor = 'black';
-  header.classList.remove('sun');
+  // header.classList.remove('sun');
 }
 function sun() {
+  if (window.innerWidth < 1024) {
+    header.classList.add('sun');
+  }
   body.style.backgroundColor = 'white';
   moonIcon.style.color = 'none';
   sunIcon.style.color = 'yellow';
@@ -230,7 +234,7 @@ function sun() {
   menuMobile.style.backgroundColor = '#504d4d';
   menuMobileUl.style.backgroundColor = '#504d4d';
   divCircleKey.style.backgroundColor = '#504d4d';
-  header.classList.add('sun');
+  // header.classList.add('sun');
 }
 
 moonIcon.addEventListener('click', () => {

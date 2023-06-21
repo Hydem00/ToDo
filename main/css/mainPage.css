@@ -675,7 +675,7 @@ div.rightHeader p {
     z-index: -1;
   }
   header.sun {
-    background-color: white;
+    background-color: #504d4d;
   }
   header div.leftHeader {
     display: none;
